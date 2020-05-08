@@ -1,5 +1,5 @@
-# Solaufein's Rescue  
-jastey's Solaufein NPC mod for BGII
+# Solaufein's Rescue - jastey's Solaufein NPC mod for BGII
+NPC mod for BGII, BGT, BGII:EE, and EET!
 
 With this modification the game character Solaufein, drow fighter from Ust Natha, is extended to a joinable NPC. Before he can join, Solaufein has to be freed from drider chambers. This starting quest can be played independently to whether he should then join the group or not.
  
