@@ -1,0 +1,58 @@
+IF
+	!PartyHasItem("c#sorun1") // runenstein
+	Global("c#solaufein_rune","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("c#solaufein_rune","GLOBAL",3)
+		TriggerActivation("Tranc#so",FALSE)
+		TriggerActivation("c#sorune",TRUE)
+		Continue()
+END
+
+IF
+	GlobalGT("SolaufeinJob","GLOBAL",8)
+	GlobalGT("PhaereJob","GLOBAL",9)
+	!Dead("Solaufein")
+	!Dead("Sola") //Weimers Solaufein
+	!InParty("Sola") //Weimers Solaufein
+	!InPartyAllowDead("Sola") //Weimers Solaufein
+	!Global("SolaLeave","GLOBAL",4) //Weimer's Solaufein is not waiting in Underdark
+	Global("C#SolauRettung","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CreateCreatureDoor("c#solau1",[4241.1416],0)
+//		ActionOverride("C#Solaufein",Polymorph(DROW))
+		SetGlobal("C#SolauRettung","GLOBAL",1)
+		Continue()
+END
+
+
+
+
+
+IF
+	Global("C#SolauRettung","GLOBAL",2)
+THEN
+	RESPONSE #100
+		ActionOverride("Felsspalte",CreateItem("c#sorun1",1,0,0))
+		SetGlobal("C#SolauRettung","GLOBAL",3)
+		Continue()
+END
+
+IF
+	Global("C#SolauMapPoint","AR2100",0)
+THEN
+	RESPONSE #100
+		AddMapNote([100.2600],@1848)
+		SetGlobal("C#SolauMapPoint","AR2100",1)
+		Continue()
+END
+
+IF
+	InParty("Rasaad")
+	InMyArea("Rasaad")
+	Global("C#Solaufein_RasaadBanterUD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("C#Solaufein_RasaadBanterUD","GLOBAL",1)
+END

@@ -1,0 +1,33 @@
+
+IF
+	Global("c#solaufein_so01Creation","c#so01",0)
+	!Dead("Solaufein")
+	!Dead("c#Solau1")
+THEN
+	RESPONSE #100
+		CreateCreature("c#sodrf0",[3308.1037],0)
+		CreateCreature("c#sodrm0",[3402.1074],0)
+		CreateCreature("c#sodrc0",[3354.1203],0)
+		CreateCreature("c#sodrf1",[3277.1116],0)
+		CreateCreature("c#sodrd1",[2077.486],0)
+		CreateCreature("c#sodrd4",[2030.466],0)
+		CreateCreature("c#sodrd3",[1369.1315],0)
+		CreateCreature("c#sospd1",[1997.454],0) //spider
+		CreateCreature("c#sospd1",[1544.400],0)
+		CreateCreature("c#sospd1",[1483.439],0)
+		CreateCreature("c#sospd1",[1580.629],0) //spider
+		SetGlobal("c#solaufein_so01Creation","c#so01",1)
+END
+
+
+
+
+
+
+
+
+
+
+
+
+

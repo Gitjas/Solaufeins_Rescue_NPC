@@ -1,0 +1,10 @@
+IF
+  !See([ENEMY])
+  See([PC])
+  Range([PC],20)
+  !StateCheck([PC],STATE_INVISIBLE)
+  !StateCheck([PC],STATE_IMPROVEDINVISIBILITY)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet([PC])
+END

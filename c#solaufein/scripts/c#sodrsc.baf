@@ -1,0 +1,13 @@
+IF
+	Global("PlayerLooksLikeDrow","GLOBAL",0)
+	Allegiance(Myself,NEUTRAL)
+  See([PC])
+  !StateCheck([PC],STATE_INVISIBLE)
+  !StateCheck([PC],STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+
+

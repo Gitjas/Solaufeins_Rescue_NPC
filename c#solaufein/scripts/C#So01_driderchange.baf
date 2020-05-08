@@ -1,0 +1,15 @@
+/* Drider change - c#so01.bcs */
+
+IF
+	Global("c#solaufein_so01Creation","c#so01",1)
+	Exists("c#sodrd3")
+THEN
+	RESPONSE #100
+		ActionOverride("c#sodrd1",Polymorph(%Drideranimation_male%))
+		ActionOverride("c#sodrd1",SetName(@11))
+		ActionOverride("c#sodrd4",Polymorph(%Drideranimation_female%))
+		ActionOverride("c#sodrd4",SetName(@11))
+		ActionOverride("c#sodrd3",Polymorph(%Drideranimation_male%))
+		ActionOverride("c#sodrd3",SetName(@11))
+		SetGlobal("c#solaufein_so01Creation","c#so01",2)
+END

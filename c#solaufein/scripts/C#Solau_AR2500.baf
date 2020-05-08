@@ -1,0 +1,16 @@
+IF
+	Global("C#Solaufein_Waits","GLOBAL",3)
+	!Dead("Solaufein")
+	!Dead("Sola") //Weimers Solaufein
+	!InPartyAllowDead("Sola") //Weimers Solaufein
+	!InParty("Sola") //Weimers Solaufein
+THEN
+	RESPONSE #100
+		CreateCreatureDoor("c#sola12",[2477.2023],0)
+		SetGlobal("C#Solaufein_Waits","GLOBAL",4)
+		Actionoverride("C#Solaufein",CreateItem("IWDUST",1,0,0))
+		Continue()
+END
+
+
+

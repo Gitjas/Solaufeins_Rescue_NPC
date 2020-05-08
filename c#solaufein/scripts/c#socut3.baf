@@ -1,0 +1,25 @@
+IF
+      True()
+THEN
+    RESPONSE #100
+	CutSceneId(Player1)
+	Wait(1)
+	MoveViewObject("C#Solaufein",INSTANT)
+	Wait(1)
+	ActionOverride("c#somob2",MoveToObject("C#Solaufein"))
+	ActionOverride("c#somob3",MoveToObject("C#Solaufein"))
+	ActionOverride("c#somob4",MoveToObject("C#Solaufein"))
+	Wait(5)
+	ActionOverride("C#Solaufein",FaceObject("c#somob2"))
+	Wait(1)
+	ActionOverride("C#Solaufein",FaceObject("c#somob3"))
+	Wait(1)
+	ActionOverride("C#Solaufein",FaceObject("c#somob4"))
+	Wait(1)
+	ActionOverride("c#somob2",FaceObject("C#Solaufein"))
+	ActionOverride("c#somob3",FaceObject("C#Solaufein"))
+	ActionOverride("c#somob4",FaceObject("C#Solaufein"))
+	EndCutSceneMode()
+	ActionOverride("c#somob4",StartDialogNoSet("C#Solaufein"))
+END
+

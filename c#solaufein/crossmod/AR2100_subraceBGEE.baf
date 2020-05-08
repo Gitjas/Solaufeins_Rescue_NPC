@@ -1,0 +1,11 @@
+
+IF
+	Global("C#Solaufein_PCIsDrow","GLOBAL",0)
+	OR(2)
+		Race(Player1,Drow) //Corsymyr's BG:EE Subrace mod
+		Race(Player1,Half-Drow) //Corsymyr's BG:EE Subrace mod
+THEN 
+	RESPONSE #100
+		SetGlobal("C#Solaufein_PCIsDrow","GLOBAL",1)
+		Continue()
+END

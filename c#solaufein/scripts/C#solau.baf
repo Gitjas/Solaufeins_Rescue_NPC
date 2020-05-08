@@ -1,0 +1,1306 @@
+//////////////////////////////////////////////////////////////////////////
+// Rescue Solaufein NPC Mod by jastey
+// This is not Weimer's Solaufein
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+
+
+/* spell and principle taken from Zed Nocear's BG1 Trigger Simulations! */
+
+IF
+	Global("C#SolaufeinRestCounter","GLOBAL",1)
+	RealGlobalTimerExpired("C#7thPartyMemberRestAfterTimer","GLOBAL")
+	CombatCounter(0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("C#SolaufeinRestCounter","GLOBAL",0)
+END
+
+IF
+	Global("C#SolaufeinRestCounter","GLOBAL",0)
+	!RealGlobalTimerExpired("C#7thPartyMemberRestAfterTimer","GLOBAL")
+	Global("C#SolauJoined","GLOBAL",2)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("C#SolaufeinRestCounter","GLOBAL",1)
+		Rest()
+		ReallyForceSpellRES("C#SOREST",Myself)	
+		SetInterrupt(TRUE)
+END
+
+
+/* follows as familiar: reset variable for refreshing of min HP spell after fight */
+
+IF
+	Global("C#Solaufein_Has1HPEffect","GLOBAL",2)
+	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	CombatCounter(0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("C#Solaufein_Has1HPEffect","GLOBAL",1)
+END
+
+/* refresh min HP spell before a fight */
+IF
+	Global("C#Solaufein_Has1HPEffect","GLOBAL",1)
+	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	See([ENEMY])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("C#Solaufein_Has1HPEffect","GLOBAL",2)
+		ReallyForceSpellRES("C#MIN5HP","C#Solaufein") 
+		SetInterrupt(TRUE)
+END
+
+
+
+/* follows as familiar: fight is over - Solaufein had passed out at 1 HP. Regains consciousness and gets healing boost to be ready to be taken into the group and not die upon joining the group */
+
+IF
+	Global("C#Solaufein_IsUnconscious","GLOBAL",1)
+	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ReallyForceSpellRES("C#SOREST","C#Solaufein")     	
+		SetGlobal("C#Solaufein_IsUnconscious","GLOBAL",0)		
+		DisplayStringHead(Myself,@1856)
+		ChangeEnemyAlly(Myself, FAMILIAR)
+		AddFamiliar()	
+		SetDialog("C#SolauJ")	
+		ChangeAIScript("DEFAULT",CLASS)
+//		ChangeAIScript("FIGHTER2",CLASS)
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",GENERAL)
+		ChangeAIScript("",DEFAULT)	
+		DisplayStringHead(Myself,@1857)
+		SetInterrupt(TRUE)
+END
+
+/* follows as familiar: fight ends - resetting health warn variable */
+IF
+	Global("C#Solaufein_HPAlarmDone","GLOBAL",1)
+	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("C#Solaufein_HPAlarmDone","GLOBAL",0)
+END
+
+/* follows as familiar: Solaufein warns about HP too low: auto pause. auto pause can be switched on and off via PID */
+
+IF
+	Global("C#Solaufein_HPAlarm","GLOBAL",1)  //PC told Solaufein to warn
+	Global("C#Solaufein_HPAlarmDone","GLOBAL",0)
+	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	!CombatCounter(0)
+	HPPercentLT(Myself,45)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1858) 		
+		SetGlobal("C#Solaufein_HPAlarmDone","GLOBAL",1)
+		PauseGame()
+END
+
+/* follows as familiar: Solaufein warns about HP too low: no auto pause. auto pause can be switched on and off via PID */
+
+IF
+	Global("C#Solaufein_HPAlarm","GLOBAL",0)  //PC told Solaufein not to warn
+	Global("C#Solaufein_HPAlarmDone","GLOBAL",0)
+	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	!CombatCounter(0)
+	HPPercentLT(Myself,45)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1858) 		
+		SetGlobal("C#Solaufein_HPAlarmDone","GLOBAL",1)
+END
+
+
+
+/* follows as familiar: Solaufein passes out if at 1 HP and following as a 7th party member (otherwise he would be a killing machine) */
+
+IF
+	Global("C#Solaufein_IsUnconscious","GLOBAL",0)
+	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	!CombatCounter(0)
+	Range(NearestEnemyOf(Myself),10)
+	HPLT(Myself,6)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DisplayStringHead(Myself,@1859) 
+		ClearActions(Myself)
+		RemoveFamiliar()
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		ChangeAIScript("",CLASS)
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",GENERAL)
+		ChangeAIScript("",DEFAULT)	
+		SetGlobal("C#Solaufein_IsUnconscious","GLOBAL",1)
+		SetInterrupt(TRUE)
+END
+
+/* follows as familiar: Solaufein is at 1 HP and passes out */
+IF
+	Global("C#Solaufein_IsUnconscious","GLOBAL",1)
+	!CombatCounter(0)
+THEN
+	RESPONSE #100
+		PlayDead(100)
+END
+
+
+/* following as familiar/7th party member. Give 1 HP effect */
+
+IF
+	!InParty(Myself)
+	Global("C#SolauJoined","GLOBAL",2)
+	Global("C#Solaufein_Has1HPEffect","GLOBAL",0)
+THEN
+  RESPONSE #100
+		SetInterrupt(FALSE)
+		ReallyForceSpellRES("C#SOREST","C#Solaufein") //make sure there is no negative effect
+		ReallyForceSpellRES("C#MIN5HP","C#Solaufein") //give him min 5 HP and immunities
+		SetGlobal("C#Solaufein_Has1HPEffect","GLOBAL",1)
+		IncrementGlobal("C#7thPartyMemberRestCounter","GLOBAL",1)
+		SetInterrupt(TRUE)	
+END
+
+
+/* Solaufein joined the party as full member. remove 1 HP effect */
+
+IF
+	InParty(Myself)
+	Global("C#Solaufein_Has1HPEffect","GLOBAL",1)
+THEN
+  RESPONSE #100
+	SetInterrupt(FALSE)
+	ReallyForceSpellRES("C#MIN0HP","C#Solaufein")
+	SetGlobal("C#Solaufein_Has1HPEffect","GLOBAL",0)
+	IncrementGlobal("C#7thPartyMemberRestCounter","GLOBAL",-1)
+	SetInterrupt(TRUE)	
+END
+
+
+
+
+/* Solaufein was summoned in the pocketplane. (fate spirits, in tob_ict.d): dialogue triggering (C#Aja25.d)*/
+
+IF
+	Global("C#SolaufeinSummoned","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF	
+	OR(2)
+	Global("C#Solaufein_Waits","GLOBAL",1)
+	Global("C#Solaufein_Waits","GLOBAL",2)
+	AreaCheck("AR2401")
+	See([PC])
+THEN
+  RESPONSE #100
+	StartDialogNoSet([PC])
+END
+
+
+/* Solaufein's sun (daylight) penalties. These are applied in OUTDOOR areas regardless of weather */
+
+/* Penalties are applied upon entering an OUTDOOR area during DAY */
+
+IF
+  Global("C#Solaufein_SunEffect","GLOBAL",0)
+    AreaType(OUTDOOR)
+  TimeOfDay(DAY)
+THEN
+  RESPONSE #100
+    SetGlobal("C#Solaufein_SunEffect","GLOBAL",1)
+DisplayString(Myself,@1934)
+    ApplySpellRES("c#soblin",Myself)
+END
+
+
+/* Penalties are removed upon entering an !OUTDOOR area OR if !TimeOfDAY(DAY) */
+IF
+  Global("C#Solaufein_SunEffect","GLOBAL",1)
+    OR(2)
+    !AreaType(OUTDOOR)
+    !TimeOfDay(DAY)
+THEN
+  RESPONSE #100
+    SetGlobal("C#Solaufein_SunEffect","GLOBAL",0)  
+DisplayString(Myself,@1935)  
+    ApplySpellRES("c#sobrec",Myself)
+END
+
+
+// with Solaufein out of group, rep goes up again
+IF
+    !InParty(Myself) Global("C#SolauJoined","GLOBAL",0)
+	Global("C#SolauKickedOut","GLOBAL",1)
+    Global("C#SolauRepLoss","GLOBAL",1)
+THEN
+    RESPONSE #100
+      SetGlobal("C#SolauRepLoss","GLOBAL",0)
+      ReputationInc(2)
+END
+
+// Solaufein is a drow: lose Reputation upon joining
+IF
+    Global("C#SolauKickedOut","GLOBAL",0)
+    OR(2)
+	Global("C#SolauJoined","GLOBAL",1)
+	Global("C#SolauJoined","GLOBAL",2)
+    ReputationGT(Player1,10)
+    !Global("C#SolauRepLoss","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ReputationInc(-2)
+        SetGlobal("C#SolauRepLoss","GLOBAL",1)
+END
+
+/* "quest" reaction */
+
+
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    See(Player1)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    Global("C#Solaufein_Quest","GLOBAL",3)
+    !See("C#Somob1")
+    !See("C#Somob2")
+    !See("C#Somob3")
+    !See("C#Somob4")
+THEN
+    RESPONSE #100
+        SetGlobal("C#Solaufein_Quest","GLOBAL",4)
+END
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    See(Player1)
+    !Detect([ENEMY])
+    CombatCounter(0)
+    Global("C#Solaufein_Quest","GLOBAL",4)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+/* scenery dialogues */
+
+/* inside a temple 
+
+AR0512 //temple of Helm
+AR0901 //temple of Helm
+AR0902 //temple of Lathander
+AR1010 //temple of Waukeen
+AR2008 //temple of Waukeen
+tob:
+AR5004 	Temple of Waukeen
+*/
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    See(Player1)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    Global("C#SolauNoScenery","GLOBAL",0)
+    Global("C#SolauTemple","GLOBAL",0)
+OR(6)
+    AreaCheck("AR0512")
+    AreaCheck("AR0901")
+    AreaCheck("AR0902")
+    AreaCheck("AR1010")
+    AreaCheck("AR2008")
+    AreaCheck("AR5004")
+THEN
+    RESPONSE #100
+        SetGlobal("C#SolauTemple","GLOBAL",1)
+END
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("C#SolauTemple","GLOBAL",1)
+    See(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+
+
+/* Elves at the exit */
+
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    See(Player1)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    See("c6elhan")
+    !Dead("c6elhan")
+    CombatCounter(0)
+    Global("C#SolauElvesExit","GLOBAL",0)
+    RealGlobalTimerExpired("C#SolauSceneryTimer","GLOBAL")
+    AreaCheck("AR2500")
+THEN
+    RESPONSE #100
+        SetGlobal("C#SolauElvesExit","GLOBAL",1)
+END
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("C#SolauElvesExit","GLOBAL",1)
+    See(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+
+
+/* Drizzt */
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("C#SolaufeinDrizzt","GLOBAL",1)
+    RealGlobalTimerExpired("C#SolauSceneryTimer","GLOBAL")
+    See(Player1)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        SetGlobal("C#SolaufeinDrizzt","GLOBAL",2)
+END
+
+/* Drizzt: dialogue triggering */
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("C#SolaufeinDrizzt","GLOBAL",2)
+    See(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+/* Suldanessalar  */
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    Global("C#SolauSuldanessalar","GLOBAL",0)
+    AreaCheck("AR2801")
+THEN
+    RESPONSE #100
+        SetGlobal("C#SolauSuldanessalar","GLOBAL",1)
+END
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    See(Player1)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    Global("C#SolauSuldanessalar","GLOBAL",1)
+    AreaCheck("AR2800")
+THEN
+    RESPONSE #100
+        SetGlobal("C#SolauSuldanessalar","GLOBAL",2)
+END
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("C#SolauSuldanessalar","GLOBAL",2)
+    See(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+/* scenery: ToB */
+
+
+/* after Oasis */
+
+/* Dialogue activation */
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	InMyArea(Player1)
+	CombatCounter(0) 
+	!See([ENEMY])
+	!Range([ENEMY],2500)
+	!Range([NEUTRAL],10)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	RealGlobalTimerExpired("C#SolauDialogTimer","GLOBAL")
+	GlobalGT("TethyrBattleStart","GLOBAL",0)
+	Global("C#Solaufein_Oasis","GLOBAL",0)
+	GlobalGT("C#Solaufein_Dialog","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("C#Solaufein_Oasis","GLOBAL",1)
+END
+
+/* Dialogue triggering */
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("C#Solaufein_Oasis","GLOBAL",1)	
+
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",800)
+		StartDialogueNoSet(Player1)
+END
+
+
+/* Sendai's enclave */
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	InMyArea(Player1)
+	CombatCounter(0) !See([ENEMY])
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	AreaCheck("AR6101")
+	Global("C#Solaufein_SendaiLair","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("C#Solaufein_SendaiLair","GLOBAL",1)
+END
+
+/* Dialogue triggering */
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("C#Solaufein_SendaiLair","GLOBAL",1)	
+
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",800)
+		StartDialogueNoSet(Player1)
+END
+
+
+/* spider passage */
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	InMyArea(Player1)
+	CombatCounter(0) !See([ENEMY])
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	AreaCheck("AR6103")
+	Global("C#Solaufein_SendaiLair","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("C#Solaufein_SendaiLair","GLOBAL",3)
+END
+
+/* Dialogue triggering */
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("C#Solaufein_SendaiLair","GLOBAL",3)	
+
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",800)
+		StartDialogueNoSet(Player1)
+END
+
+
+
+
+
+
+
+
+
+
+
+/* scenery: surface world */
+
+
+
+
+
+
+/* morning: dialogue activation */
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    TimeOfDay(MORNING)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(FOREST)
+    Global("C#SolauMorningTalk","GLOBAL",0)
+    See(Player1)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("C#SolauMorningTalk","GLOBAL",1)
+END
+
+/* morning: dialogue triggering */
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("C#SolauMorningTalk","GLOBAL",1)
+    See(Player1)
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+//erster "Sonnen"-Dialog
+
+/* force weather change */
+
+
+IF //sonne.. Weather change (no weather)
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    TimeOfDay(DAY)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+    GlobalGT("C#Solaufein_Dialog","GLOBAL",4) 
+    RealGlobalTimerExpired("C#SolauSceneryTimer","GLOBAL")
+    Global("C#SolauSunTalk","GLOBAL",0)
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+ RESPONSE #100
+   SetGlobal("C#SolauSunTalk","GLOBAL",1)
+   Weather(NOWEATHER)
+   RealSetGlobalTimer("C#SolauWeatherTimer","GLOBAL",5)
+   MoveToObject(Player1)
+END
+
+/* sun dialogue: dialogue activation */
+
+IF
+     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    TimeOfDay(DAY)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+    RealGlobalTimerExpired("C#SolauWeatherTimer","GLOBAL")
+    Global("C#SolauSunTalk","GLOBAL",1)
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("C#SolauSunTalk","GLOBAL",2)
+END
+
+/* sun: dialogue triggering */
+
+
+IF
+     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    Global("C#SolauSunTalk","GLOBAL",2)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+//zweiter "Sonnen"-Dialog
+
+/* force weather change */
+
+
+IF //sonne.. Weather change (no weather)
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    TimeOfDay(DAY)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+    GlobalGT("C#Solaufein_Dialog","GLOBAL",34) 
+    RealGlobalTimerExpired("C#SolauSceneryTimer","GLOBAL")
+    Global("C#SolauSunTalk","GLOBAL",3)
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+ RESPONSE #100
+   SetGlobal("C#SolauSunTalk","GLOBAL",4)
+   Weather(NOWEATHER)
+   RealSetGlobalTimer("C#SolauWeatherTimer","GLOBAL",5)
+   MoveToObject(Player1)
+END
+
+/* sun dialogue: dialogue activation */
+
+IF
+     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    TimeOfDay(DAY)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+    RealGlobalTimerExpired("C#SolauWeatherTimer","GLOBAL")
+    Global("C#SolauSunTalk","GLOBAL",4)
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("C#SolauSunTalk","GLOBAL",5)
+END
+
+/* sun: dialogue triggering */
+
+
+IF
+     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    Global("C#SolauSunTalk","GLOBAL",5)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+
+
+//moon
+
+IF //Weather change (no weather)
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    TimeOfDay(NIGHT)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+	Global("C#SolauMoonTalk","GLOBAL",0)
+    RealGlobalTimerExpired("C#SolauSceneryTimer","GLOBAL")
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+ RESPONSE #100
+   SetGlobal("C#SolauMoonTalk","GLOBAL",1)
+   Weather(NOWEATHER)
+   RealSetGlobalTimer("C#SolauWeatherTimer","GLOBAL",5)
+   MoveToObject(Player1)
+END
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    TimeOfDay(NIGHT)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+	Global("C#SolauMoonTalk","GLOBAL",1)
+	RealGlobalTimerExpired("C#SolauWeatherTimer","GLOBAL")
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("C#SolauMoonTalk","GLOBAL",2)
+END
+
+/* moon: dialogue triggering */
+
+IF
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+	Global("C#SolauMoonTalk","GLOBAL",2)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+//stormy wheather
+
+/* force weather change: rain */
+
+
+IF 
+    OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+    GlobalGT("C#Solaufein_Dialog","GLOBAL",16) 
+    RealGlobalTimerExpired("C#SolauSceneryTimer","GLOBAL")
+    Global("C#SolauRainTalk","GLOBAL",0)
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+ RESPONSE #100
+   SetGlobal("C#SolauRainTalk","GLOBAL",1)
+   Weather(RAIN)
+   RealSetGlobalTimer("C#SolauWeatherTimer","GLOBAL",8)
+   MoveToObject(Player1)
+END
+
+/* rain dialogue: dialogue activation */
+
+IF
+     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    TimeOfDay(DAY)
+    OR(2)
+    AreaType(OUTDOOR)
+    AreaType(CITY)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !Detect([ENEMY])
+    !Detect([EVILBUTBLUE])
+    CombatCounter(0)
+    !AreaCheck("AR1404")
+    RealGlobalTimerExpired("C#SolauWeatherTimer","GLOBAL")
+    Global("C#SolauRainTalk","GLOBAL",1)
+    Global("C#SolauNoScenery","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("C#SolauRainTalk","GLOBAL",2)
+END
+
+/* rain: dialogue triggering */
+
+
+IF
+     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+    See(Player1)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    Global("C#SolauRainTalk","GLOBAL",2)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet(Player1)
+END
+
+
+
+
+
+
+// Solaufein friendship path
+
+
+/* "Last" dialogue, should trigger in all cases. There might be other FP dialogues after it, if there is still time. */
+
+IF
+  OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  RealGlobalTimerExpired("C#SolauDialogTimer","GLOBAL")
+  Global("C#SolaufeinFriends","GLOBAL",1)
+  !See([ENEMY])
+	!Range([NEUTRAL],10)
+  InMyArea(Player1) 
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)  
+	Dead("Abazigal")
+	Dead("Sendai")
+	!AreaCheck("AR6005")  //nicht in Abazigals Lair
+	!AreaCheck("AR6102") //nicht in Sendais Höhlen
+	!AreaCheck("AR6103")
+	!AreaCheck("AR6104")
+	!AreaCheck("AR6105")
+	!AreaCheck("AR6106")
+	!AreaCheck("AR6107")
+	!AreaCheck("AR6108")
+	!AreaCheck("AR6109")
+	!AreaCheck("AR6110")
+  GlobalGT("C#SolaufeinDrizzt","GLOBAL",0)
+  Global("C#Solaufein_LastDialog","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("C#Solaufein_LastDialog","GLOBAL",1)
+END
+
+
+
+
+
+
+/* to ensure that the dialogue does not fire directly after wake up */
+IF
+  OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  RealGlobalTimerExpired("C#SolauDialogTimer","GLOBAL")
+  PartyRested()
+  !Global("C#SolaufeinFriends","GLOBAL",2)
+  InMyArea(Player1) 
+  CombatCounter(0)
+OR(25)
+    Global("C#Solaufein_Dialog","GLOBAL",1)
+    Global("C#Solaufein_Dialog","GLOBAL",3)
+    Global("C#Solaufein_Dialog","GLOBAL",5)
+    Global("C#Solaufein_Dialog","GLOBAL",7)
+    Global("C#Solaufein_Dialog","GLOBAL",9)
+    Global("C#Solaufein_Dialog","GLOBAL",11)
+    Global("C#Solaufein_Dialog","GLOBAL",13)
+    Global("C#Solaufein_Dialog","GLOBAL",15)
+    Global("C#Solaufein_Dialog","GLOBAL",17)
+    Global("C#Solaufein_Dialog","GLOBAL",19)
+    Global("C#Solaufein_Dialog","GLOBAL",21)
+    Global("C#Solaufein_Dialog","GLOBAL",23)
+    Global("C#Solaufein_Dialog","GLOBAL",25)
+    Global("C#Solaufein_Dialog","GLOBAL",27)
+    Global("C#Solaufein_Dialog","GLOBAL",29)
+    Global("C#Solaufein_Dialog","GLOBAL",31)
+    Global("C#Solaufein_Dialog","GLOBAL",33)
+    Global("C#Solaufein_Dialog","GLOBAL",35)
+    Global("C#Solaufein_Dialog","GLOBAL",37)
+    Global("C#Solaufein_Dialog","GLOBAL",39)
+    Global("C#Solaufein_Dialog","GLOBAL",41)
+    Global("C#Solaufein_Dialog","GLOBAL",43)
+    Global("C#Solaufein_Dialog","GLOBAL",45)
+    Global("C#Solaufein_Dialog","GLOBAL",47)
+    Global("C#Solaufein_Dialog","GLOBAL",49)
+    Global("C#Solaufein_Dialog","GLOBAL",51)
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",20)
+END
+
+
+/* FP dialogue activation */
+IF
+  OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  RealGlobalTimerExpired("C#SolauDialogTimer","GLOBAL")
+  !Global("C#SolaufeinFriends","GLOBAL",2)
+  !See([ENEMY])
+	!Range([NEUTRAL],10)
+  InMyArea(Player1) 
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+    OR(14)
+    Global("C#Solaufein_Dialog","GLOBAL",1)
+    Global("C#Solaufein_Dialog","GLOBAL",3)
+    Global("C#Solaufein_Dialog","GLOBAL",5)
+    Global("C#Solaufein_Dialog","GLOBAL",7)
+    Global("C#Solaufein_Dialog","GLOBAL",9)
+    Global("C#Solaufein_Dialog","GLOBAL",11)
+    Global("C#Solaufein_Dialog","GLOBAL",13)
+    Global("C#Solaufein_Dialog","GLOBAL",15)
+    Global("C#Solaufein_Dialog","GLOBAL",17)
+    Global("C#Solaufein_Dialog","GLOBAL",19)
+    Global("C#Solaufein_Dialog","GLOBAL",21)
+    Global("C#Solaufein_Dialog","GLOBAL",23)
+    Global("C#Solaufein_Dialog","GLOBAL",25)
+    Global("C#Solaufein_Dialog","GLOBAL",27)
+THEN
+  RESPONSE #100
+    IncrementGlobal("C#Solaufein_Dialog","GLOBAL",1)
+END
+
+/* Global("C#Solaufein_Dialog","GLOBAL",27): Intermezzo: Friendship path only continues, if rep > 14 and 
+GlobalGT("C#SolauFriendshipCounter","LOCALS",0) */
+
+
+/* FP dialogue activation - before SetGlobal("C#SolaufeinFriends","GLOBAL",1) */
+IF
+  OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  RealGlobalTimerExpired("C#SolauDialogTimer","GLOBAL")
+  Global("C#SolaufeinFriends","GLOBAL",0)
+  !See([ENEMY])
+	!Range([NEUTRAL],10)
+  InMyArea(Player1) 
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  ReputationGT(Player1,14)
+  GlobalGT("C#SolauFriendshipCounter","LOCALS",0)
+    OR(12)
+    Global("C#Solaufein_Dialog","GLOBAL",29)
+    Global("C#Solaufein_Dialog","GLOBAL",31)
+    Global("C#Solaufein_Dialog","GLOBAL",33)
+    Global("C#Solaufein_Dialog","GLOBAL",35)
+    Global("C#Solaufein_Dialog","GLOBAL",37)
+    Global("C#Solaufein_Dialog","GLOBAL",39)
+    Global("C#Solaufein_Dialog","GLOBAL",41)
+    Global("C#Solaufein_Dialog","GLOBAL",43)
+    Global("C#Solaufein_Dialog","GLOBAL",45)
+    Global("C#Solaufein_Dialog","GLOBAL",47)
+    Global("C#Solaufein_Dialog","GLOBAL",49)
+    Global("C#Solaufein_Dialog","GLOBAL",51)
+THEN
+  RESPONSE #100
+    IncrementGlobal("C#Solaufein_Dialog","GLOBAL",1)
+END
+
+
+
+/* Skip Dialogue: Global("C#Solaufein_Dialog","GLOBAL",44) if PC did not 
+free the drow slaves */
+
+IF
+	Global("C#Solaufein_Dialog","GLOBAL",46)
+	  !Global("DrowSlavesFree","GLOBAL",1) //slaves have weapons
+	  !Global("DrowSlavesFree","GLOBAL",2) //slaves are defensless
+THEN
+  RESPONSE #100
+    SetGlobal("C#Solaufein_Dialog","GLOBAL",48)
+END
+
+
+
+
+
+
+
+
+/* FP dialogue triggering: SoA */
+IF
+  GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+  OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !Range([NEUTRAL],10)
+  InMyArea(Player1) 
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  OR(26)
+    Global("C#Solaufein_Dialog","GLOBAL",2)  //talk_hallo
+    Global("C#Solaufein_Dialog","GLOBAL",4)  //ability_drain
+    Global("C#Solaufein_Dialog","GLOBAL",6)  //bhaal_heritage
+    Global("C#Solaufein_Dialog","GLOBAL",8)  //surfacer_leader
+    Global("C#Solaufein_Dialog","GLOBAL",10) //attitude
+    Global("C#Solaufein_Dialog","GLOBAL",12) //silberdrache
+    Global("C#Solaufein_Dialog","GLOBAL",14) //sprache
+    Global("C#Solaufein_Dialog","GLOBAL",16) //weapons
+    Global("C#Solaufein_Dialog","GLOBAL",18) //raubzuege
+    Global("C#Solaufein_Dialog","GLOBAL",20) //kampf
+    Global("C#Solaufein_Dialog","GLOBAL",22) //kraft
+    Global("C#Solaufein_Dialog","GLOBAL",24) //schwaeche
+    Global("C#Solaufein_Dialog","GLOBAL",26) //weakness
+    Global("C#Solaufein_Dialog","GLOBAL",28) //ansage
+    Global("C#Solaufein_Dialog","GLOBAL",30) //zweifel
+    Global("C#Solaufein_Dialog","GLOBAL",32) //erklaerung
+    Global("C#Solaufein_Dialog","GLOBAL",34) //erklaerung2
+    Global("C#Solaufein_Dialog","GLOBAL",36) //difficult
+    Global("C#Solaufein_Dialog","GLOBAL",38) //freundliche_gesichter
+    Global("C#Solaufein_Dialog","GLOBAL",40) //lob
+    Global("C#Solaufein_Dialog","GLOBAL",42) //oberflaechenbewohner
+    Global("C#Solaufein_Dialog","GLOBAL",44) //sklavin
+    Global("C#Solaufein_Dialog","GLOBAL",46) //slaves
+    Global("C#Solaufein_Dialog","GLOBAL",48) //vertrauen
+    Global("C#Solaufein_Dialog","GLOBAL",50) //gestoert
+    Global("C#Solaufein_Dialog","GLOBAL",52) //zufrieden
+
+
+
+THEN
+  RESPONSE #100
+//    RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",1800) //s %SOLAUFEIN_TIMER%
+    RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",%SOLAUFEIN_TIMER%)
+    RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500) //s
+		PlaySong(0)
+		PlaySound("C#SOLAU")
+    StartDialogNoSet(Player1)
+END
+
+
+/* FP dialogue triggering: ToB */
+IF
+  GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+  OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+  !Range([NEUTRAL],10)
+  InMyArea(Player1) 
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  OR(26)
+    Global("C#Solaufein_Dialog","GLOBAL",2)  //talk_hallo
+    Global("C#Solaufein_Dialog","GLOBAL",4)  //ability_drain
+    Global("C#Solaufein_Dialog","GLOBAL",6)  //bhaal_heritage
+    Global("C#Solaufein_Dialog","GLOBAL",8)  //surfacer_leader
+    Global("C#Solaufein_Dialog","GLOBAL",10) //attitude
+    Global("C#Solaufein_Dialog","GLOBAL",12) //silberdrache
+    Global("C#Solaufein_Dialog","GLOBAL",14) //sprache
+    Global("C#Solaufein_Dialog","GLOBAL",16) //weapons
+    Global("C#Solaufein_Dialog","GLOBAL",18) //raubzuege
+    Global("C#Solaufein_Dialog","GLOBAL",20) //kampf
+    Global("C#Solaufein_Dialog","GLOBAL",22) //kraft
+    Global("C#Solaufein_Dialog","GLOBAL",24) //schwaeche
+    Global("C#Solaufein_Dialog","GLOBAL",26) //weakness
+    Global("C#Solaufein_Dialog","GLOBAL",28) //ansage
+    Global("C#Solaufein_Dialog","GLOBAL",30) //zweifel
+    Global("C#Solaufein_Dialog","GLOBAL",32) //erklaerung
+    Global("C#Solaufein_Dialog","GLOBAL",34) //erklaerung2
+    Global("C#Solaufein_Dialog","GLOBAL",36) //difficult
+    Global("C#Solaufein_Dialog","GLOBAL",38) //freundliche_gesichter
+    Global("C#Solaufein_Dialog","GLOBAL",40) //lob
+    Global("C#Solaufein_Dialog","GLOBAL",42) //oberflaechenbewohner
+    Global("C#Solaufein_Dialog","GLOBAL",44) //sklavin
+    Global("C#Solaufein_Dialog","GLOBAL",46) //slaves
+    Global("C#Solaufein_Dialog","GLOBAL",48) //vertrauen
+    Global("C#Solaufein_Dialog","GLOBAL",50) //gestoert
+    Global("C#Solaufein_Dialog","GLOBAL",52) //zufrieden
+
+
+
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",%SOLAUFEIN_TIMERTOB%)
+    RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500) //s
+		PlaySong(0)
+		PlaySound("C#SOLAU")
+    StartDialogNoSet(Player1)
+END
+
+////////////////////////////////////////////////////////////
+/* Trigger Solaufein's Banter if he is following as 7th party member. xxxB. dlg works here, too, but it's not automatically triggered by the engine if he is not in party. */
+
+/* Global("C#Solaufein_BanterSpeed","GLOBAL",-1): so selten wie möglich
+Global("C#Solaufein_BanterSpeed","GLOBAL",0): Startwert, Mittel
+Global("C#Solaufein_BanterSpeed","GLOBAL",1): so häufig wie möglich */
+
+
+IF
+	Global("C#Solaufein_BanterSpeed","GLOBAL",0)
+	Global("C#SolauJoined","GLOBAL",2)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)  
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("C#SolauBanterTimer","GLOBAL")
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)
+		Interact(Player1)
+END
+
+IF
+	Global("C#Solaufein_BanterSpeed","GLOBAL",1)
+	Global("C#SolauJoined","GLOBAL",2)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)  
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("C#SolauBanterTimer","GLOBAL")
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)
+		Interact(Player1)
+END
+
+IF
+	Global("C#Solaufein_BanterSpeed","GLOBAL",-1)
+	Global("C#SolauJoined","GLOBAL",2)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)  
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	RealGlobalTimerExpired("C#SolauBanterTimer","GLOBAL")
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_SLOW%)
+		Interact(Player1)
+END
+
+
+
+///////////////////////////
+// Solaufein gives notice if there are new PID options
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	Global("C#SolaufeinEier","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)  
+		SetGlobal("C#SolaufeinEier","GLOBAL",2)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#SolaufeinPID1","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)  
+		SetGlobal("C#SolaufeinPID1","LOCALS",1)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	Global("SolaufeinSvA_Hoelle","LOCALS",0)
+	OR(7)
+		AreaCheck("AR2900")
+		AreaCheck("AR2901")
+		AreaCheck("AR2902")
+		AreaCheck("AR2903")
+		AreaCheck("AR2904")
+		AreaCheck("AR2905")
+		AreaCheck("AR2906")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)
+		SetGlobal("SolaufeinSvA_Hoelle","LOCALS",1)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	Global("C#SolaufeinPID3","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)  
+		SetGlobal("C#SolaufeinPID3","GLOBAL",2)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	Global("C#SolaufeinDrizzt","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)  
+		SetGlobal("C#SolaufeinDrizzt","GLOBAL",4)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	GlobalGT("C#Solaufein_Dialog","GLOBAL",4) 
+	Global("C#solaufein_MagicGone","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)  
+		SetGlobal("C#solaufein_MagicGone","LOCALS",1)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	AreaCheck("AR4000")
+	Global("ToBPID_unterwegs","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865) 
+		SetGlobal("ToBPID_unterwegs","LOCALS",1)
+		SetGlobal("C#SolauPIDToB","LOCALS",6) //set this to check whether it's conti
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	GlobalGT("SarevokAlive","GLOBAL",0)
+	Global("C#SolauPIDToB","LOCALS",6) //no info for new ToB game
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)
+		SetGlobal("C#SolauPIDToB","LOCALS",0)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	AreaCheck("AR5500") 
+	Global("C#SolauPIDAmke","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)
+		SetGlobal("C#SolauPIDAmke","LOCALS",1)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	Global("C#Solaufein_Quest","GLOBAL",5)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)
+		SetGlobal("C#Solaufein_Quest","GLOBAL",6)
+END
+
+IF
+	OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
+	GlobalGT("C#Solaufein_Quest","GLOBAL",2)
+	Global("C#Solau_CarrasOffer","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1865)
+		SetGlobal("C#Solau_CarrasOffer","GLOBAL",3)
+END

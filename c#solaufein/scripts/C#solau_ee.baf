@@ -1,0 +1,11 @@
+/* EE: Remove story mode extras if not in party */
+
+IF
+	!InParty(Myself)
+	!Global("C#SolauJoined","GLOBAL",2)
+	CheckSpellState(Myself,STORY_MODE)
+THEN
+	RESPONSE #100
+		ReallyForceSpellDeadRES("OHSMODE3",Myself) 
+		Continue()
+END

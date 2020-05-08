@@ -1,0 +1,101 @@
+/* in-game texts */
+@1   = ~Schutzrune~
+@2   = ~Dies ist offensichtlich eine der von Drow verwendeten magischen Runen, wie sie zur Neutralisation von Schutzzaubern verwendet werden. Mit dieser Rune könnt Ihr einen bisher versiegelten Eingang betreten.~
+
+/* epilogue: no friendship */
+@3   = ~Nachdem sich Eure Wege getrennt haben, nahm Solaufein seine Suche nach Anhängern Eilistraees wieder auf. Gerüchte besagen, dass er nach einer Zeit des ziellosen Herumstreifens in den Unterberg unter Tiefwasser ging, um dort das Leben der Oberflächendrow kennen zu lernen. 
+
+Von seiner geringen Verbundenheit mit seinen ehemaligen Kampfgefährten enttäuscht, fand er hier wahre Freundschaft und Gleichgesinnte. Solaufein fand Frieden mit seinen Glaubensbrüdern, doch zu den Oberflächenbewohnern, wie er sie bis zum Schluss nannte, hielt er sich distanziert.
+ 
+Über seinen weiteren Weg ist nicht viel bekannt. Obwohl er in vielen Erzählungen über das mächtige Bhaalkind auftauchte, blieb sein weiterer Werdegang nach dem Ende der Bhaalkriege im Dunkeln.~
+
+/* epilogue: friendship */
+@4   = ~Nachdem sich Eure Wege getrennt haben, nahm Solaufein seine Suche nach Anhängern Eilistraees wieder auf. Gerüchte besagen, dass er nach einer Zeit des ziellosen Herumstreifens in den Unterberg unter Tiefwasser ging, um dort das Leben der Oberflächendrow kennen zu lernen.
+
+Er fand dort viele Gleichgesinnte. Gestärkt durch seine Freundschaft mit Euch, suchte er jedoch auch weiterhin die Nähe der Menschen und Elfen, der "Oberflächenbewohner", wie er gerne betonte.
+
+Über seinen weiteren Weg ist nicht viel bekannt. Obwohl er in vielen Erzählungen über das mächtige Bhaalkind auftauchte, blieb sein weiterer Werdegang nach dem Ende der Bhaalkriege im Dunkeln.~
+@5   = ~Drowkrieger~
+@6   = ~Drowkrieger
+Der Drowkrieger ist der am wenigsten magisch begabte Drowtyp. 
+  
+  Vorzüge:
+  -Erhält zusätzliche 2% magische Resistenz bei jedem Stufenaufstieg bis zu einem Maximum von 80% auf Stufe 16.
+  -Spezialfähigkeiten: Feenfeuer, Dunkelheit, Dimensionstor, Magie Bannen je 1 / Tag
+  
+  Nachteile:
+  -während des Tages hat der Drowkrieger außerhalb geschlossener Räume folgende Nachteile aufgrund des Sonnenlichts:
+	-Verschlechterung von EtW0 und Rüstungsklasse um je 4
+	-Reduzierung aller Rettungswürfe um 2
+	-Sichtweite reduziert auf 2
+	-Reduzierung der Magieresistenz um 50% (gezählt von 100%)
+  
+Beschreibung der Fähigkeiten:
+Feenfeuer (Veränderung)
+
+Wetterzyklus
+
+Grad: 1
+Reichweite: 50 m
+Wirkungsbereich: 9 m Radius
+Wirkungsdauer: 4 Runden pro Stufe bis zu einer Maximaldauer von 16 Runden
+Zeitaufwand: 4
+Rettungswurf: Nein
+
+Nach Aussprechen dieses Zaubers, werden die Gegner im Wirkungsbereich von farbigen Lichtern umtanzt, was insbesondere in der Dunkelheit die Wahrscheinlichkeit eines erfolgreichen Angriffs auf sie erhöht. Der Betroffene erhält daher einen Malus von 1 auf seine Rüstungsklasse pro Stufe des Zaubernden bis zu einem maximalen Malus von vier. Außerdem enttarnen die tanzenden Lichter auch unsichtbare Gegner. Sie verfolgen die Betroffenen auch über den anfänglichen Wirkungsbereich des Zaubers hinaus, solange, bis die Wirkung des Zaubers endet oder mittels "Magie bannen" vorzeitig beendet wird.
+
+
+Dunkelheit (Veränderung)
+
+Erschaffungszyklus
+
+Grad: 1
+Reichweite: 70 m
+Wirkungsbereich: 1 Wesen
+Wirkungsdauer: 1 Runde pro Stufe bis zu einer Maximaldauer von 16 Runden
+Zeitaufwand: 4
+Rettungswurf: Keine Wirkung
+
+Dieser Zauber erzeugt eine kreisförmige Sphäre magischer Dunkelheit mit einem Durchmesser von etwa 2 Metern über dem Ziel. Innerhalb dieser Sphäre herscht absolute Dunkelheit, so wie in einem fensterlosen, unbeleuchteten Raum. Dadurch sinkt die Sichtweite des Zieles praktisch auf 0, selbst dann, wenn es über die Fähigkeit der Infravision verfügt. Durch die fehlende Orientierung in dieser Dunkelheit erleidet das Ziel einen Malus von -1 auf seine Trefferwürfe und +1 auf die Rüstklasse pro Stufe des Zaubernden bis zu maximalen Maluswerten von jeweils vier. Sichtabhängige Schadensmodifikatoren, wie der mehrfache Schaden eines hinterhältigen Angriffes, werden aufgehoben.
+
+Von diesem Zauber nicht betroffen sind Kreaturen der Finsternis und Wesen, die ihre Orientierung nicht vom Sichtkontakt abhängig machen, etwa Tiere, die ihrem ausgeprägten Hör- oder Geruchssinn folgen können. Ebenfalls nicht betroffen sind übergroße Wesen, da die Sphäre nicht groß genug ist, um sie einzuhüllen.
+
+Dem Ziel steht ein Rettungswurf zu, um sich im Augenblick des Erschaffens der Sphäre ihrem Wirkungsbereich zu entziehen. Einmal erschaffen, bleibt die Sphäre auf dem Ziel ruhen und bewegt sich mit ihm, solange wie die Wirkungsdauer des Spruches vorhält, oder bis er vorzeitig durch einen Bannzauber gebrochen wird.
+~
+@7   = ~Feenfeuer~
+@8   = ~Dunkelheit~
+@9   = ~Dimensionstor~
+@10   = ~Wenn Ihr ihn nach seiner Vergangenheit befragt, erzählt Euch SOLAUFEIN das, was Ihr bereits aus Eurem Zusammentreffen aus Ust-Natha wisst. Wenn Ihr mehr aus ihm herauszulocken versucht, ist seine Antwort nur: "Ich bin Drow, <CHARNAME>, und habe getan, was Drow eben tun. Was erwartet Ihr?"~
+
+
+@11   = ~Drinne~
+
+@12   = ~Ah.~ [c#solau6]
+@13   = ~Schwächlinge!~ [c#sola17]
+@14   = ~Ein wunderbarer Sieg!~ [c#solau9]
+@15   = ~Lasst mich in Frieden.~ [UDSOLA13]
+@16   = ~Ihr seid ein Narr, Oberflächenbewohner!~ [UDSOLA11]
+@17   = ~Ich verstehe.~ [c#solau3]
+@18   = ~Als ob ich nicht schon den ganzen Tag genug zu tun hätte!~ [c#solau2]
+@19   = ~Ich schätze es gar nicht, wenn man mich warten lässt!~ [c#solau8]
+@20   = ~Ihr seid ein Narr!~ [c#sola15]
+@21   = ~Für die Ehre!~ [c#sola16]
+@22   = ~Es ist noch nicht vorbei!~ [c#sola14]
+@23   = ~Ah!~ [c#solau5]
+@24   = ~Ich tue, was ich tun muss.~ [c#solau1]
+@25   = ~Ich tue, was ich tun muss, wenn ich es tun muss. Merkt Euch das gut!~ [UDSOLA01]
+@26   = ~Gut.~ [c#sola12]
+@27   = ~Wenn ich es tun muss.~ [c#sola11]
+@28   = ~Wunderbar!~ [c#sola18]
+@29   = ~Verdammt!~ [c#sola10]
+@30   = ~Gift in ihr schwarzes Herz!~ [c#sola13]
+
+@31  = ~Melissa~
+@32  = ~Alexia~
+@33  = ~Lydia~
+
+@34  = ~Alexias Vater~
+
+
+@35  = ~(schnaubt)~
+@36  = ~(gähn)~

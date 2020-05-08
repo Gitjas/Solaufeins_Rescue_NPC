@@ -1,0 +1,12 @@
+IF
+	OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+	Global("C#Solaufein_Quest","GLOBAL",5)
+	Dead("c6bodhi")
+THEN
+	RESPONSE #100
+		CreateCreature("c#somob5",[2005.1810],6)
+		SetGlobal("C#Solaufein_Quest","GLOBAL",6)
+END
+
+
+

@@ -1,0 +1,15 @@
+IF
+	Global("PlayerLooksLikeDrow","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+  RESPONSE #100
+    EscapeArea()
+END
+
+
+IF 
+	Global("c#solau_Noweapon","LOCALS",0)
+THEN
+  RESPONSE #100
+	DestroyAllEquipment()
+END

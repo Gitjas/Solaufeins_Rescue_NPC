@@ -1,0 +1,46 @@
+/* cocoon2 in c#so01.are*/
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	Global("C#Solaufein_Cocoon2","c#so01",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Player1,@0)
+		SetGlobal("C#Solaufein_Cocoon2","c#so01",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	Global("C#Solaufein_Cocoon2","c#so01",1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Player1,@1)
+		SetGlobal("C#Solaufein_Cocoon2","c#so01",2)
+StartCutSceneMode()
+CutSceneId(Player1)
+	ClearAllActions()
+	MoveViewPoint([1251.844],INSTANT)
+	Wait(1)
+	
+	PlaySound("EFF_P08")
+	ScreenShake([1251.844],5)
+	FadeToColor([20.0],0)
+	Wait(1)
+	CreateCreature("c#sodrd2",[1251.844],0)
+	OpenDoor("Cocoon02")
+	Wait(1)
+	FadeFromColor([20.0],0)
+	Wait(1)
+	EndCutSceneMode()
+	TriggerActivation("c#sococ2",FALSE)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,15)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@2)
+END

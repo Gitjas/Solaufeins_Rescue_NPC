@@ -1,0 +1,93 @@
+@1  = ~Rune of Protection~ 
+@2  = ~This is obviously one of the magical runes used by drows, such as are used to negate protection spells. With this rune you can pass a previously sealed entrance.~
+/* epilogue: no friendship */
+@3  = ~After you parted ways, Solaufein returned to his search for followers of Eilistraee. Rumor has it that after some time roaming around without purpose, he ventured into the Undermountain beneath Waterdeep, and that there he studied the ways of the surface drow.
+
+Disappointed by his insufficient bond with his former comrades, it was here that he found true friendship and camaraderie. Solaufein found peace with his fellow brethren, but towards the surface dwellers, as he kept on calling them to the very end, he remained aloof.
+
+Not much is known of his future. Many a tale was told of the drow fighting alongside the one Alaundo's prophecies had spoken of, but almost nothing was heard about his whereabouts after the Bhaal struggles were over.~ 
+
+/* epilogue: friendship */
+@4  = ~After you parted ways, Solaufein returned to his search for followers of Eilistraee. Rumor has it that after some time roaming around without purpose, he ventured into the Undermountain beneath Waterdeep, and that there he studied the ways of the surface drow.
+
+He found many like-minded fellows. Strengthened by his friendship with you he kept on seeking out the company of humans and elves; those "surface dwellers", as he eagerly emphasized.
+
+Not much is known of his future. Many a tale was told of the drow fighting alongside the one Alaundo's prophecies had spoken of, but almost nothing was heard about his whereabouts after the Bhaal struggles were over.~
+@5  = ~Drow Fighter~ 
+@6  = ~Drow Fighter
+The drow fighter is the less magically trained drow type. 
+  
+  Advantages:
+  -Gains 2% magical resistance upon every level up to a max of 80% at level 16.
+  -Innate abilities Faerie Fire, Darkness, Dimension Door, and Dispel Magic, all 1/day
+  
+  Disadvantages:
+  -during daylight, the drow has the following penalties due to the sunlight:
+	-Penalty of 4 to each THACO and AC
+	-Reduction of 2 to all saving throws
+	-Sets the visual range to 2
+	-Magic resistance reduction by 50% (counted from 100%)
+  
+Description of Skills:
+Faerie Fire 
+(Alteration)
+
+Level: 1
+Sphere: Weather
+Range: 70 feet
+Duration: 4 rounds per level until a max of 16 rounds
+Casting Time: 4
+Area of Effect: 10-ft. radius
+Saving Throw: None
+
+This spell outlines one or more creatures with a pale violet glow, making positions and movements easily visible. Outlined creatures are easier to strike, giving them an Armor Class penalty of -1 per level until a penalty of -4. Moreover, the dancing lights also unmask invisible enemies. They pursues those affected even beyond the initial area of spell effect, until the effect of the spell ends or is prematurely terminated by "Dispel Magic".
+
+
+
+Darkness 
+(Alteration)
+
+Level: 1
+Sphere: Creation
+Range: 90 feet
+Area of Effect: 1 Creature
+Duration: 1 round per level until a max pf 16 rounds
+Casting Time: 4
+Saving Throw: No effect
+
+This spell creates a circular sphere of magical darkness with a diameter of about 2 meters around the target. Within this sphere absolute darkness prevails, just as in a windowless, unlit room. Thus, the sight of the target decreases practically to 0, even if it has the infravision ability. By the lack of orientation in the darkness, the target gets a 1 penalty to hit rolls as well as to AC per caster level up to a penalty of 4 each. Sight-dependent damage modifiers, such as the multiple damage of a sneak attack will be negated.
+
+Not affected by this spell are creatures of darkness and creatures which do not get orientation by sight, like animals which can follow strong hearing or sense of smell. Also oversized creatures will not be affected, because the sphere is not large enough to envelop them.
+
+The target can try a saving throw to evade the spell effect at the moment of creation of the sphere. Once created, the sphere stays on the target and moves with it as long as the duration of the spell lasts, or until it is prematurely terminated by a Dispel Magic.
+~
+@7  = ~Faery Fire~
+@8  = ~Darkness~ 
+@9  = ~Dimension Door~
+@10 = ~When asked about his past, SOLAUFEIN tells what you already know from meeting him in Ust-Natha. When you try to elicit more from him, his answer is: "I am a drow, <CHARNAME>, and I did what drow usually do. What do you expect?"~ 
+@11 = ~Drider~
+@12 = ~Ah.~ [c#solau6]
+@13 = ~Suffering!~ [c#sola17] 
+@14 = ~A most brilliant victory!~ [c#solau9]
+@15 = ~Leave me be.~ [UDSOLA13] 
+@16 = ~You are a fool, surfacer!~ [UDSOLA11]
+@17 = ~I see.~ [c#solau3]
+@18 = ~As if I did not have enough to accomplish in a day!~ [c#solau2]
+@19 = ~I do not appreciate having to wait!~ [c#solau8] 
+@20 = ~You are a fool!~ [c#sola15]
+@21 = ~For the welfare of the weak!~ [c#sola16] 
+@22 = ~This is not over!~ [c#sola14] 
+@23 = ~Ah!~ [c#solau5]
+@24 = ~I do what I must.~ [c#solau1] 
+@25 = ~I do what I must, when I must. Know this well.~ [UDSOLA01]
+@26 = ~Well.~ [c#sola12]
+@27 = ~If I must.~ [c#sola11]
+@28 = ~Most brilliant!~ [c#sola18]
+@29 = ~Blasted!~ [c#sola10]
+@30 = ~Bite at her black heart!~ [c#sola13]
+@31 = ~Melissa~
+@32 = ~Alexia~
+@33 = ~Lydia~
+@34 = ~Alexia's father~
+@35 = ~(snort!)~
+@36 = ~(yawn)~

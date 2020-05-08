@@ -1,0 +1,25 @@
+IF
+      True()
+THEN
+    RESPONSE #100
+	CutSceneId(Player1)
+	ClearAllActions()
+//	FadeToColor([20.0],0)
+	Wait(1)
+	MoveViewPoint([4241.1416],INSTANT)
+//	MoveViewObject(Myself,INSTANT)
+	CreateCreatureDoor("C#SOCRE1",[4251.1350],5)//
+	CreateCreatureDoor("c#sodrf0",[4203.1447],5)//
+	CreateCreatureDoor("c#sodrm0",[4271.1484],5)// 
+	CreateCreatureDoor("c#sodrc0",[4295.1369],5)// 
+	ActionOverride("C#SOCRE1",FaceObject("c#solau1"))
+	ActionOverride("c#sodrf0",FaceObject("c#solau1"))
+	ActionOverride("c#sodrm0",FaceObject("c#solau1"))
+	ActionOverride("c#sodrc0",FaceObject("c#solau1"))
+	Wait(1)
+//	FadeFromColor([20.0],0)
+	Wait(4)
+	EndCutSceneMode()
+	ActionOverride("C#SOCRE1",StartDialogueNoSet("c#solau1"))
+END
+

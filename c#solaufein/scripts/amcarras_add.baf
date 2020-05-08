@@ -1,0 +1,16 @@
+IF
+	OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+	!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+	Detect("C#Solaufein")
+	OR(2)
+		Global("ThfArrest","GLOBAL",1)
+		Global("SmugglerPlot","GLOBAL",2)
+	Global("C#Solau_CarrasOffer","GLOBAL",0)
+	!See([ENEMY.0.0.MONK])
+	CombatCounter(0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("C#Solau_CarrasOffer","GLOBAL",1)
+		Dialogue([PC])
+END

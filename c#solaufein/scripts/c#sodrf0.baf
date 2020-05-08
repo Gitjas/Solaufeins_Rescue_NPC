@@ -1,0 +1,43 @@
+IF
+	Global("PlayerLooksLikeDrow","GLOBAL",0)
+	Allegiance(Myself,NEUTRAL)
+  See([PC])
+  !StateCheck([PC],STATE_INVISIBLE)
+  !StateCheck([PC],STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("c#solau_drowshout","LOCALS",0)
+THEN
+	RESPONSE #100
+		Shout(111)
+	SetGlobal("c#solau_drowshout","LOCALS",1)
+END
+
+
+IF
+	Global("C#SolauDrowHostile","c#So01",1)
+	Allegiance(Myself,NEUTRAL)
+	See("c#sodrc0")
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF 
+	Allegiance(Myself,NEUTRAL)
+	OR(5)
+	OpenState("Cocoon01",TRUE)
+	OpenState("Cocoon02",TRUE)
+	OpenState("Cocoon03",TRUE)
+	OpenState("Cocoon04",TRUE)
+	OpenState("Cocoon05",TRUE)
+THEN
+	RESPONSE #100
+		Enemy()
+END

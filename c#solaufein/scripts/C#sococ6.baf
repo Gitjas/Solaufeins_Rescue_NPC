@@ -1,0 +1,8 @@
+/* cocoon6 in c#so01.are*/
+
+IF
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@3)
+END

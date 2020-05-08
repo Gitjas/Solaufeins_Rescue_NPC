@@ -1,0 +1,35 @@
+/* The list of conditions is simple: Global("StartEndBios","AR6200",1) means the epilogues are playing,
+then there go InParty() and O#BranwenRomanceActive variable. O#BranwenBio ensures the block runs only once.
+PlayerChoseEssence means that the player became god, so !Global("PlayerChoseEssence","GLOBAL",1) means he didn't.
+SmallWait(1) and Continue() are taken from the original game. */
+
+// There are two epilogues: one for regular Branwen, one for the romanced Branwen if PC hasn't ascended.
+// Both epilogues are available in Setup-Branwen.tp2.
+
+/* no friendship */
+IF
+Global("StartEndBios","AR6200",1)
+OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+Global("C#SolaufeinFriends","GLOBAL",0)
+Global("C#Solaufein_Epilog","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("C#Solaufein_Epilog","GLOBAL",1)
+TextScreen("c#soep01")
+SmallWait(1)
+Continue()
+END
+
+/* friendship */
+IF
+Global("StartEndBios","AR6200",1)
+OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+GlobalGT("C#SolaufeinFriends","GLOBAL",0)
+Global("C#Solaufein_Epilog","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("C#Solaufein_Epilog","GLOBAL",1)
+TextScreen("c#soep02")
+SmallWait(1)
+Continue()
+END

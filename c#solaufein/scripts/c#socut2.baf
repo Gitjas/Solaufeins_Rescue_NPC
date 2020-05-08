@@ -1,0 +1,50 @@
+IF
+      True()
+THEN
+    RESPONSE #100
+	CutSceneId(Player1)
+	ClearAllActions()
+//	FadeToColor([20.0],0)
+	Wait(1)
+//	MoveViewPoint([4241.1416],INSTANT)
+	MoveViewObject("c#solau1",INSTANT)
+	CreateVisualEffectObject("SPDIMNDR","C#SOCRE1")
+	CreateVisualEffectObject("SPDIMNDR","c#sodrf0")
+	CreateVisualEffectObject("SPDIMNDR","c#sodrm0")
+	CreateVisualEffectObject("SPDIMNDR","c#sodrc0")
+	CreateVisualEffectObject("SPDIMNDR","c#solau1")
+	Wait(1)
+	ActionOverride("C#SOCRE1",DestroySelf())
+	ActionOverride("c#sodrf0",DestroySelf())
+	ActionOverride("c#sodrm0",DestroySelf())
+	ActionOverride("c#sodrc0",DestroySelf())
+	ActionOverride("c#solau1",DestroySelf())
+//	FadeFromColor([20.0],0)
+	SetGlobal("C#SolauRettung","GLOBAL",2)
+	Wait(1)
+	EndCutSceneMode()
+END
+
+
+
+/* Originalskript aus dem BGII:
+
+IF
+	Global("udMoveToBeholder","GLOBAL",1)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		CreateVisualEffectObject("SPDIMNDR","Phaere")
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		Wait(1)
+		ActionOverride("Phaere",JumpToPoint([4021.3390]))
+		JumpToPoint([3988.3304])
+		Wait(2)
+		ActionOverride("Phaere",MoveToPoint([4021.3390]))
+		MoveToPoint([3988.3304])
+		DialogInterrupt(TRUE)
+		SetGlobal("udMoveToBeholder","GLOBAL",2)
+END
+
+*/

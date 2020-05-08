@@ -1,0 +1,8 @@
+/* Brutmutter in c#so01.are */
+
+IF
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@4)
+END
