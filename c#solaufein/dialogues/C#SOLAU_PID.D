@@ -1000,6 +1000,7 @@ IF ~~ THEN suche
 SAY @1626
 IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN + suche_01
 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN + suche_02
+IF ~Dead("helljon")~ THEN EXIT
 END
 
 IF ~~ THEN suche_01
