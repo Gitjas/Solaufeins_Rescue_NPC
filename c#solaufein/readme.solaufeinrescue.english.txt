@@ -9,8 +9,6 @@
 
 GENERAL DESCRIPTION
 
-This is not Weimer's Solaufein NPC mod. 
-
 With this modification the game character Solaufein, drow fighter from Ust Natha, is extended to a joinable NPC. Before he can join, Solaufein has to be freed from drider chambers. This starting quest can be played independently to whether he should then join the group or not.
  
 Compatibility with Weimers Solaufein for this case is described below in detail.
@@ -25,8 +23,7 @@ For BGII:EE and EET the animations will be included and used automatically.
 
 The forth, optional component enables to install the alternative portrait for Solaufein, also from Holger Kirste!
 
-
-For version1, the rescue quest can be played fully in English. The rest of the mod is still mostly in German. English version is done to 55%.
+The fifth, optional component adds one additonal reply option to Adalon's dialogue, with which the player can tell that the PC is drow. This will set a variable so that Solaufein will address the PC as drow. This was content of the main component before but I made it a separate component for v2 because it might be immersion breaking of players do not plan on playing as drow PC. The detection of the subrace mods mentioned below is independent to this.
 
 
 
@@ -57,7 +54,7 @@ CONTENT
 
 -Solaufein as a full-fledged party member: friendship path (with 26 base dialogues), NPC banter (at least 2 in SoA and 1 in ToB with every BioWare and BeamDog NPC), additional scenery dialogues and interjections, PID (player initiated dialogue) with several full-fledged dialogues. There is no romance.
 
--There is a small encounter in Athkatla with two follow-ups, the last in Amkethran (to call this quest would be highly exaggerated). The PC can lay down his arms for those, though.
+-There is a small encounter in Athkatla with two follow-ups, the last in Amkethran (to call this a quest would be highly exaggerated). The PC can lay down his arms for those, though.
 
 -Solaufein's alignment is lawful neutral. The mod gives him the kit "drow fighter" with the following specifications:
 
@@ -73,9 +70,9 @@ CONTENT
 	-Magic resistance reduction by 50% (counted from 100%)
 Many thanks to Knight who allowed me to use his spells Faerie Fire and Darkness from his mod "Knights Kits" (all files are renamed and use my prefix). Partly the spells also use ressources from the spells available in SoD / BGII:EE.
 
--Both portraits ares taken from pictures of drow fighters by Holger Kirste. Thank you very much to Holger Kirste!
+-Both portraits are taken from pictures of drow fighters by Holger Kirste. Thank you very much to Holger Kirste!
 
--Solaufein will acknowledge your PC being a drow - but do not expect him to be available to teach drow lore, as he tries to leave all this behind. For activation, you either have to install one of the subrace mods befor the Solaufein mod and use the drow or half-drow kits of these mods. Supported mods are (so far, only English version is considered since these mods aren't traify_d yet): Welverin's Subrace mod, FinnJO's Subrace mod, Corsymyr's BG:EE Subrace mod.
+-Solaufein will acknowledge your PC being a drow - but do not expect him to be available to teach drow lore, as he tries to leave all this behind. For activation, you either have to install one of the subrace mods before the Solaufein mod and use the drow or half-drow kits of these mods. Supported mods are (so far, only English version is considered since these mods aren't traify_d yet): Welverin's Subrace mod, FinnJO's Subrace mod, Corsymyr's BG:EE Subrace mod.
 Alternatively, for "hand-made" drow NPCs there is one reply option added to Adalon's dialogue for en elven PC to tell her that Player1 is a drow. It will show after Adalon revealed her plan about the drow illusion. Only click this if Solaufein should adddress your PC as a drow. 
 
 
@@ -88,13 +85,13 @@ If the group consist of 6 NPCs already, Solaufein will join as a "7th party memb
 -To have access to his inventory or to equip him with items or new quickslot items, Solaufein needs to join the group as a full party member.
 -For levelling up he needs to join the group. His script adjusts his amount of XP to the PC's automatically.
 -To change from full party member to "7th party member", kick Solaufein out of the party and tell him then to "get in line behind the others."
--While being in this modus, Solaufein cannot die. Once his HP drop to 1, he will pass out until the current fight is over, turning "neutral" with a blue circle so that enemies will also stop attacking him. After the fight, he will be healed completely and rejoin as familiar. The healing is a tweak needed because there were instances where he died upon regaining his group status if his HP dropped too low.
+-While being in this modus, Solaufein cannot die. Once his HPs drop to 1, he will pass out until the current fight is over, turning "neutral" with a blue circle so that enemies will also stop attacking him. After the fight, he will be healed completely and rejoin as familiar. The healing is a tweak needed because there were instances where he died upon regaining his group status if his HP dropped too low.
 
-Note: Following as a familiar means Solaufein will always be behind the last full group member, for walking as well as area transitions. This is unfortunate if you need him as a full fighter or even tank who is supposed to be in first line upon fights.
+Note: Following as a familiar means Solaufein will always be behind the last full group member, for walking as well as area transitions. This is unfortunate if you need him as a full fighter or even tank who is supposed to be in first line upon unexpected fights.
 
 Hint: If you have another NPC of whom you know that he will not leave forever if kicked out, you can manage Solaufein's level-up and inventory by a quick switch of group slots - the trick being that letting Solaufein join and doing all the management is done before the other NPC had time to walk to the PC and start his "Do you really want me to leave the group"-dialogue. You can then let the other NPC rejoin and tell Solaufein to get in line behind the others.
 
-I don't have any extensive experience with the "7th party member mode" ingame yet, so we will have to see whether it disturbes balance and makes some fights too easy. The conditions could be misused for a quicker party level-up.  
+I don't have any extensive experience with the "7th party member mode" ingame yet, so we will have to see whether it disturbes balance and makes some fights too easy. The conditions could be misused for a quicker party level-up. Don't do that if it would spoil your fun. I'm only offering the chocolate. You have to make sure you don't eat too much at once yourself. 
 
 
 
@@ -106,22 +103,18 @@ The main theme of the mod's dialogues is the change that leaving the Underdark b
 
 He will befriend a PC who is ready to talk to him and deals with quests in a good or neutral way. Suspiciousness against him, the drow, is a wise sentiment in his opinion. He hardly feels offended by any PC remark.
 
-Note: The friendship path also deals with Solaufein's problems of actually allowing the feeling of friendship and could be a bit stereotype at times.
+Note: The friendship path also deals with Solaufein's problems of actually allowing the feeling of friendship and could be a bit stereotype at times. Not to say cliche. Yes, it's probably cliche.
 
 
 
 INSTALLATION (Windows)
 
 BGII:EE
-If you use BGII Enhanced Edition from GOG or Steam, you need to prepare your game with modmerge before installing any mods:
-https://forums.beamdog.com/discussion/50441/modmerge-merge-your-steam-gog-zip-based-dlc-into-something-weidu-nearinfinity-dltcep-can-use/p1
-
 NOTE: BG(II):EE are actively supported games. Please note that every patch update will wipe your current mod setup! If in the middle of a modded game you might want to delay the patch update as even after reinstalling the mods, you might not be able to continue with your old savegames.
 
-For EET, install this mod to the BGII:EE folder after the EET transformation (i.e. somewhere after EET_main.exe) but before running the final EET-end.exe. 
+For EET, install this mod to the BGII:EE folder after the EET transformation (i.e. after EET_main.exe) but before running the final EET-end.exe. 
 
 
-Make sure you back up your dialog.tlk file (and dialogf.tlk, if it exists), just to be sure.
 Extract the contents of the archive to your game's main directory (BGII - SoA).
 
 Run the "setup-c#solaufein.exe" program. Choose the language you prefer and confirm installation.
@@ -175,7 +168,7 @@ I will try to answer as soon as possible.
 
 DECLARATION
 
-Solaufein is ein BioWare charakter, but the mod is based on my view. I do not mind if you write crossmod banters for my Solaufein without consulting me, as long as you try to match the mod's characterization, do not ridicule him or write offensive content, and as long as it's banter that have no other impact on the content of this mod, i.e. don't make Solaufein leave the party due to a conflict with your NPC (feel free to make *your* NPC leave the goup), and also don't make him fall in love with your NPC even though I am sure he/she is the greatest, just to name some things. 
+Solaufein is a BioWare charakter, but the mod is based on my view. I do not mind if you write crossmod banters for my Solaufein without consulting me, as long as you try to match the mod's characterization, do not ridicule him or write offensive content, and as long as it's banter that have no other impact on the content of this mod, i.e. don't make Solaufein leave the party due to a conflict with your NPC (feel free to make *your* NPC leave the goup), and also don't make him fall in love with your NPC even though I am sure he/she is the greatest, just to name some things. 
 
 You can add reactions of your NPC to any and all content of this mod without my consent, albeit I'd ask you not to add interjections inside my mod's dialogues.
 
@@ -183,7 +176,7 @@ For your private use you can do with this mod what you like, obviously.
 
 If you think using code from this mod is a good idea then go ahead.
 
-Holger Kirste allowed the portraits to be used for this mod, but do not make edits other than for your personal use. All uses outside the mod are copyrighted.
+Holger Kirste allowed the portraits to be used for this mod, but do not make edits other than for your personal use. All uses of the portraits outside the mod are copyrighted.
 
 I'll be happy to have a look at crossmod you designed, of course.
 
@@ -198,6 +191,7 @@ Many thanks to Holger Kirste for the wonderful drow portraits! You can see the d
 
 Also my thanks go to:
 
+Acifer: for the graphics of the spell Darkness 
 
 Annalena: much interest in the mod and constructive criticism
 
@@ -269,6 +263,13 @@ Spellhold Studios	http://www.spellholdstudios.net/
 
 
 HISTORY
+
+Version 2.0:
+-English version finished
+-Elhan's geas: Optimized scripting in case there will be other drow NPCs in the future, EE version considers Hexxat's presence as well.
+-Drizzt interjection: added possibility to shorten the conversation
+-splitted component "Install additional Detection for Drow PC" from the main component.
+-download link in der ini auf GitHub geändert.
 
 Version 1.6:
 -fatesp summoning: transition to correct state 

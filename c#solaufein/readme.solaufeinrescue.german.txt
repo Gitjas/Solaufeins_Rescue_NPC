@@ -21,6 +21,7 @@ Für BGII:EE und EET werden die Animationen immer installiert, und diese Komponen
 
 Die vierte, optionale Komponente bietet die Möglichkeit, das alternative Portrait für Solaufein zu installieren, ebenfalls von Holger Kirste!
 
+Die fünfte, optionale Komponente fügt eine Abtwortoption zu Adalons Dialog, mit dem der HC (wahrheitsgemäß) sagen kann, dass er oder sie ein Drow ist. Dies war vorher Inhalt der Hauptkomponente, aber da es leicht immersionsbrechend sein kann, wenn dies nicht auf den HC zutrifft, habe ich es ab Version 2 in eine optionale Komponente verschoben. Die Detektion der unten erwähnten Subrace Mods ist hiervon unabhängig.
 
 
 BITTE UNBEDINGT BEACHTEN
@@ -176,9 +177,11 @@ Vielen herzlichen Dank an Holger Kirste für die wunderschönen Drow-Portraits! Da
 Des weiteren Danke ich:
 
 
+Acifer: for the graphics of the spell Darkness 
+
 Annalena: viel Interesse und konstruktive Kritik
 
-Isewein: Korrekturlesen englisch
+Isewein: proofreading English
 
 Knight: für die Erlaubnis, für die Abilities Feenfeuer und Dunkelheit die Files seines Dunkelelfen-Kits zu verwenden
 
@@ -244,6 +247,13 @@ Spellhold Studios	http://www.spellholdstudios.net/
 
 
 HISTORY
+
+Version 2.0:
+-English version finished
+-Elhan's geas: Optimized scripting in case there will be other drow NPCs in the future, EE version considers Hexxat's presence as well.
+-Drizzt interjection: added possibility to shorten the conversation
+-splitted component "Install additional Detection for Drow PC" from the main component.
+-download link in der ini auf GitHub geändert.
 
 Version 1.6:
 -fatesp summoning: transition to correct state 
