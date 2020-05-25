@@ -1,3 +1,4 @@
+/* in-game texts */
 @1  = ~Rune of Protection~ 
 @2  = ~This is obviously one of the magical runes used by drows, such as are used to negate protection spells. With this rune you can pass a previously sealed entrance.~
 /* epilogue: no friendship */
@@ -64,7 +65,7 @@ The target can try a saving throw to evade the spell effect at the moment of cre
 @7  = ~Faery Fire~
 @8  = ~Darkness~ 
 @9  = ~Dimension Door~
-@10 = ~When asked about his past, SOLAUFEIN tells what you already know from meeting him in Ust-Natha. When you try to elicit more from him, his answer is: "I am a drow, <CHARNAME>, and I did what drow usually do. What do you expect?"~ 
+@10 = ~When asked about his past, SOLAUFEIN tells what you already know from meeting him in Ust Natha. When you try to elicit more from him, his answer is: "I am a drow, <CHARNAME>, and I did what drow usually do. What do you expect?"~ 
 @11 = ~Drider~
 @12 = ~Ah.~ [c#solau6]
 @13 = ~Suffering!~ [c#sola17] 
@@ -85,6 +86,7 @@ The target can try a saving throw to evade the spell effect at the moment of cre
 @28 = ~Most brilliant!~ [c#sola18]
 @29 = ~Blasted!~ [c#sola10]
 @30 = ~Bite at her black heart!~ [c#sola13]
+
 @31 = ~Melissa~
 @32 = ~Alexia~
 @33 = ~Lydia~

@@ -2,7 +2,7 @@ BACKUP ~C#Solaufein\backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~1.6~ //
+VERSION ~2.0 pre~ //
 
 README ~C#Solaufein/readme.solaufeinrescue.%LANGUAGE%.txt~ ~C#Solaufein/readme.solaufeinrescue.english.txt~
 
@@ -268,6 +268,12 @@ COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\C#SOLAUJ.d~
 USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
 COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\c#solaufein_interjections.d~
 USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\c#solaufein_interjections_ee.d~
+USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+END
+
 COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\scenery_dialogues_soa.d~
 USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
 
@@ -895,3 +901,12 @@ COPY ~C#Solaufein/Portraits/Portrait2/Portrait2_EE/C#SolauM.bmp~ ~override/C#Sol
 
 END
 
+//////////////////////////////////////////////////////////////////
+// Install additional Detection for Drow PC //
+/////////////////////////////////////////////////////////
+
+BEGIN @90007
+REQUIRE_COMPONENT ~c#solaufein/setup-c#solaufein.tp2~ ~0~ @90003
+
+COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\detect_drowpc.d~
+USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
