@@ -26,7 +26,7 @@
 @20   = ~Wollt Ihr mich jetzt begleiten oder wollt Ihr Euch unterhalten?~
 @21   = ~Zwei lumpige Messer ist alles, was Ihr habt? Wollt Ihr mich veralbern?~
 @22   = ~Hmpf. Ob Eure Ausrüstung es wirklich mit dem aufnehmen kann, was ich im Unterreich zur Verfügung hatte, werden wir sehen.~
-@23   = ~Kommt, reiht Euch ein.~
+@23   = ~Kommt, lasst uns gehen.~
 @24   = ~Hochmütige Worte!~
 @25   = ~Ihr könnt gerne stattdessen Euren Staub da auf Eurer Brust verteilen.~
 @26   = ~Ich habe momentan leider keinen Platz für Euch in der Gruppe. Ihr müsst noch etwas warten.~
@@ -164,6 +164,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @154  = ~Danke, aber ich habe bereits genug gekämpft. Ich habe kein Interesse, einer Verwechslung zum Opfer zu fallen. Ihr müsst Euren eigenen Weg an die Oberfläche antreten.~
 @155  = ~Diesen Gang müsst Ihr alleine machen, Solaufein.~
 @156  = ~(schnaubt) Soviel zu meinem edlen Vorhaben. Wobei Eure Entscheidung rational in Eurem Sinne ist - ich hätte es an Eurer Stelle auch nicht anders entschieden. Ich werde mich also weiter hinter der Bugwelle verstecken, die Ihr auftürmt. Sucht mich außerhalb der Elfenbefestigungen.~
+
 //c#solauJ
 @157  = ~Nun bin ich also mit Euch an die Oberfläche gegangen. Ich habe eine Gesellschaft verlassen, in der ich kommentarlos hin- und hergeschickt, grundlos gedemütigt und wegen Nichtigkeiten bestraft werden konnte. Ich hoffe, dass ich dies hinter mir gelassen habe. Was also ist Euer Ziel für unser weiteres Vorgehen, in dem ich Euch unterstützen soll?~ [c#ablank]
 @158  = ~Ich jage einen mächtigen Magier, der mir meine Seele geklaut hat.~
@@ -713,7 +714,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @702  = ~Vielleicht.~
 @703  = ~Die Sklaven hatten großes Glück, dass Ihr da wart und ihnen diese Möglichkeit gegeben habt.~
 @704  = ~Wenn meine Brüder und Schwestern Eure Worte hören könnten, würden sie es zum Anlass nehmen, um die Überlegenheit unserer Rasse zu preisen. Eine Gesellschaft, die die Starken sterben lässt und die Schwachen erhält, muss unweigerlich schwach werden und untergehen, so denken die Drow.~
-@705  = ~Auch die Drow würden aussterben, wen sie ihre Kinder nicht schützen würden.~
+@705  = ~Auch die Drow würden aussterben, wenn sie ihre Kinder nicht schützen würden.~
 @706  = ~Das macht nur Sinn, wenn Schwache immer schwach und Starke immer stark wären. So ist es aber meist nicht. Weder über längere Zeit, noch in Bezug auf unterschiedliche Bereiche des täglichen Lebens.~
 @707  = ~Ihr meint, jeder bringe sich da am meisten ein, wo er oder sie am besten ist? Das ist eine schöne Vorstellung, aber sie wird wohl auch hier an der Oberfläche an den Eitelkeiten Mancher scheitern.~
 @708  = ~Aber die Motivation dahinter ist eine ganz andere. Und die Art der Umsetzung ebenfalls.~
@@ -726,7 +727,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @715  = ~Ihr meint... Dieser Spruch ist seltsam weise. Ja, ich glaube ich verstehe, wie Ihr ihn meint. Ihr nennt es auch "Eine Hand wäscht die andere", nicht wahr?~
 @716  = ~Das Konzept des gegenseitigen Helfens ist mir durchaus vertraut, und ich bin mir bewusst, dass ich davon bereits überdurchschnittlich provitiert habe.~
 @717  = ~Ich sehe es auch als durchaus erfolgsträchtig an. Aber nur, solange ein Großteil die Prinzipien einhält, und sein Verhalten nicht von Eigennutz leiten lässt. Oder es aus anderem Grund verweigert, zum Beispiel... Verzagtheit.~
-@718  = ~Ich... ich habe den Sklaven nicht geholfen, obwohl ich es wohl gekonnt hätte. Aber ich versteckte mich selbst bereits zu dieser Zeit, und ich fühlte mich nicht für sie verantwortlich.~
+@718  = ~Ich... ich habe den Sklaven nicht geholfen, obwohl ich es wohl gekonnt hätte. Aber ich fühlte mich nicht für sie verantwortlich... und ich versteckte mich selbst bereits zu dieser Zeit und war besorgt um meinen eigenen Schutz.~
 @719  = ~Glaubt mir, diese ganze Sache gibt mir viel zum Nachdenken.~
 @720  = ~<CHARNAME>, Ihr habt mich verwandelt. Erkennt Ihr noch den Drow, der Euch in Ust Natha gegenüberstand? Ich habe mich Euch geöffnet. Ich... vertraue Euch, <CHARNAME>.~ [c#ablank]
 @721  = ~Es ist ein seltsames Gefühl... Und ständig überlege ich, ob es angebracht ist. Ob ich nicht doch zweifeln sollte. Ob ich unvorsichtig bin, nachlässig geradezu. Warum? Wird es immer so sein?~
@@ -736,11 +737,12 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @725  = ~Hm. Wenn Ihr so viel darüber nachdenkt, dann vertraut Ihr mir aber doch noch nicht.~
 @726  = ~Von einem Drow kann man wohl nichts anderes erwarten.~
 @727  = ~Oh doch, das tue ich, <CHARNAME>. Denn ich frage mich vielleicht, ob es klug ist, aber ich drehe Euch den Rücken zu. Was anderes als Vertrauen ist dies? Aber es scheint, als müsste sie jeden Tag aufs neue auf den Prüfstand.~
-@728  = ~Für den einen mehr, für den anderen weniger. Ihr seid aufgrund Eurer Vergangeheit eben besonders misstrauisch.~
+/* same as @723 */
+@728  = ~Für den einen mehr, für den anderen weniger. Ihr seid aufgrund Eurer Vergangenheit eben besonders misstrauisch.~
 @729  = ~Ja, ich müsste Euch eigentlich töten, so nachlässig, wie ich mich Euch gegenüber verhalte. Das zumindest wäre die Drow-Herangehensweise.~
-@730  = ~Ich habe nicht vor, Euch zu hintergehen. Ich überprüfe auch nicht unsere Freundschaft. Ich stelle nur fest, dass Vertrauen schwierig ist, denn es ist ein Kontrollverlust, der mein Leben gefährden könnte. Das zumindst habe ich die letzten Jahrhunderte gelernt und gelebt.~
+@730  = ~Ich habe nicht vor, Euch zu hintergehen. Ich zweifle auch nicht unsere Freundschaft an. Ich stelle nur fest, dass Vertrauen schwierig ist, denn es ist ein Kontrollverlust, der mein Leben gefährden könnte. Das zumindst habe ich die letzten Jahrhunderte gelernt und gelebt.~
 @731  = ~Ich muss mich langsam an die neue Situation gewöhnen, dass Vertrauen auch Stärke bedeutet. Die Stärke derjenigen, die sich aus freiem Willen füreinander einsetzen. Wie sehr habe ich Euch Oberflächenbewohner immer darum beneidet! Und das tue ich noch immer, denn mich, mich strengt es an.~
-@732  = ~Und doch ist es ein... schönes Gefühl. Ich fühle mich lebendig, so lebendig wie lange nicht mehr. Wer hätte gedacht, dass so ein Küken wie Ihr solche Gefühle in mir entfachen könnte!~
+@732  = ~Und doch ist es ein... schönes Gefühl. Ich fühle mich lebendig, so lebendig wie lange nicht mehr. Wer hätte gedacht, dass so ein junges Küken wie Ihr solche Gefühle in mir entfachen könnte!~
 @733  = ~Ich hatte Euch damals gesagt, dass ich eine Oberflächenrüstung nicht mehr holen konnte...~ [c#ablank]
 @734  = ~Die Wahrheit ist, dass ich mein Versteck mit der Oberflächenrüstung nicht mehr plündern konnte, weil zu viele Feinde in der Nähe waren. Ich... ich habe es nicht gewagt. Ich fürchtete, entdeckt zu werden. Und Ihr wart bereits auf dem Weg zum Ausgang.~
 @735  = ~Ich habe es nicht gewagt! Nur, weil ein paar lumpige Drow sich in der Nähe der Felsspalte aufhielten.~
@@ -752,9 +754,9 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @741  = ~Umso wichtiger wäre dann eine gute Rüstung gewesen!~
 @742  = ~Auch, wenn ich mich wissentlich in unbekannte Gefahr begab, und das ohne eine vernünftige Rüstung?~
 @743  = ~Meine Nervosität aufgrund Eures Voranschreitens mag zwar verständlich sein, aber trotzdem war es kein Grund, mich wissentlich ohne angemessene Ausrüstung in die unbekannten Gefahren der Oberwelt zu begeben!~
-@744  = ~Doch irgendwie wollte ich lieber schlecht ausgerüstet rechtzeitig zu Euch stoßen, als gut ausgerüstet Euch nicht mehr antreffen. Ich vertraute auf meine Kampfeskraft, naiv, wie ich war. Und stand dann geblendet und geschwächt in der aufgehenden Sonne und zweifelte ernsthaft an meinem Verstand.~
+@744  = ~Doch irgendwie wollte ich lieber schlecht ausgerüstet rechtzeitig zu Euch stoßen, als gut ausgerüstet Euch nicht mehr anzutreffen. Ich vertraute auf meine Kampfeskraft, naiv, wie ich war. Und stand dann geblendet und geschwächt in der aufgehenden Sonne und zweifelte ernsthaft an meinem Verstand.~
 @745  = ~Ihr... Ihr glaubt nicht, wie sehr es mich beeindruckt hat, als Ihr mich trotzdem aufgenommen und ohne Zögern ausgerüstet habt. Es war Euer dritter gnädiger Akt mir gegenüber gewesen, aber diesmal hatte ich mich selbst in Eure Hände begeben... Ihr habt dort den Grundstein für meine Freundschaft gelegt, <CHARNAME>, auch wenn ich es damals noch nicht hätte benennen können.~
-@746  = ~Trotzdem ist mir meine Verzagtheit dort hinter dem Felsvorsprung noch immer in äußerst unangenehmer Erinnerung. Noch immer weiß ich nicht genau, was mich damals angetrieben hat. Ich hätte bleiben und um eine gute Rüstung kämpfen müssen. Erst jetzt wage ich es, Euch dies zu berichten. Ich hätte es vorher niemals zugegeben. Eher hätte ich behauptet, die Rüstung wäre gestohlen worden!~
+@746  = ~Trotzdem ist mir meine Verzagtheit dort hinter dem Felsvorsprung noch immer in äußerst unangenehmer Erinnerung. Noch immer weiß ich nicht genau, was mich damals abgehalten hat. Ich hätte bleiben und um eine gute Rüstung kämpfen müssen. Erst jetzt wage ich es, Euch dies zu berichten. Ich hätte es vorher niemals zugegeben. Eher hätte ich behauptet, die Rüstung wäre gestohlen worden!~
 @747  = ~Hmpf. Das ist Euer gutes Recht, und doch stößt es mich seltsam vor den Kopf: Dass Ihr meine Gedanken, die ich Euch erst nach so langer, reifer Überlegung ausbreiten möchte, gar nicht hören wollt.~
 @748  = ~Nun, das Leben ist voller Überraschungen.~
 @749  = ~<CHARNAME>, seid Ihr... zufrieden mit mir? Es ist ungewöhnlich für mich, dies direkt zu fragen, aber ich möchte sichergehen.~ [c#ablank]
@@ -763,17 +765,17 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @752  = ~Wieso ist es für einen Drow ungewöhnlich? Sprecht Ihr die Dinge aus Angst vor Repressalien nicht direkt an?~
 @753  = ~Nein, eigentlich nicht.~
 @754  = ~Danke. Und doch muss ich Euch fragen...~
-@755  = ~(seufz) Manchmal wünschte ich, Ihr wärt Drow. Ihr würdet Euren Zorn an mir auslassen, und ich könnte so dazu beitragen, dass Ihr bei guter Stimmung seid. So bleibt mir nichts, als zu fragen.~
+@755  = ~(seufz) Manchmal wünschte ich, Ihr wärt Drow. Ihr würdet Euren Zorn an mir auslassen, und wüsste immer, woran ich bei Euch bin. So bleibt mir nichts, als zu fragen.~
 @756  = ~Ist unsere Freundschaft in Gefahr?~
 @757  = ~Nein. Ihr seid und bleibt mein Freund.~
 @758  = ~Was? Nein, seid nicht albern.~
 @759  = ~Ehrlich gesagt war sie bereits seit längerem beendet. Ich kann es nicht glauben, dass ich einen Drow als Freund bezeichnet habe.~
-@760  = ~Repressalien? Es ist schon so mancher männlicher Kämpfer wegen geringerem als einer direkte Frage grausam hingerichtet worden. Deshalb genieße ich es, Euch direkt fragen zu können.~
+@760  = ~Repressalien? Es ist schon so mancher männlicher Kämpfer wegen geringerem als einer direkten Frage grausam hingerichtet worden. Deshalb genieße ich es, Euch direkt fragen zu können.~
 @761  = ~Habt Dank für diese Worte.~
 @762  = ~Ich dachte immer, das Leben im Unterreich ist schwierig. Das richtige Verhalten, um keinen Zorn zu erregen. Sich nichts anmerken lassen, nicht das Falsche sagen... Nun merke ich, dass es hier nicht besser ist.~
 @763  = ~Es ist sogar schlimmer, denn ich habe keinerlei Erfahrung. So kann es sein, dass ich Euren Zorn errege, und das fürchte ich. Denn ich fürchte die Folgen. Das macht mir mehr Angst als alles, was ich jemals in Ust Natha gefürchtet habe.~
 @764  = ~Doch nicht etwa, weil ich um meine körperliche Unversehrtheit bangen muss. Nein, ich muss fürchten, Euch zu verletzen, und damit Eure Freundschaft zu verspielen. Aber so ungewohnt und kräftezehrend ich es auch finde, so weiß ich doch, dass es die Anstrengung wert ist!~
-@765  = ~Lasst uns weitergehen, mein Freund. Eure Aufgaben warten.~ ~Lasst uns weitergehen, meine Freundin. Eure Aufgaben warten.~
+@765  = ~Lasst uns weitergehen, mein Freund. Eure Aufgaben warten.~ ~Lasst uns weitergehen, meine Freundin. Unsere Aufgaben warten.~
 @766  = ~Ich habe jetzt endlich verstanden, was Drizzt Do'Urden damals sagte.~ [c#ablank]
 @767  = ~Ist dem so?~
 @768  = ~Was sagte er denn?~
@@ -788,7 +790,9 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @777  = ~Lasst uns weiterziehen!~
 @778  = ~Sicherlich. Ich... hätte es merken müssen. Ich werde Euch in Zukunft nicht mehr mit meinen Gefühlsduseleien belästigen.~
 @779  = ~Ich bin ein Narr, dass ich meine Gedanken mit Euch teilen wollte, ich werde es in Zukunft unterlassen! Es ist vielleicht besser so.~
-@780  = ~Die Elfen wissen nicht, wieviel Glück sie haben. Jetzt, da das Haus Despana gefallen ist, werden die anderen versuchen, den Platz einzunehmen und sich gegenseitig bekriegen. Ich bin mir sicher, dass viele Kämpfer der Häuser wieder in die Stadt gezogen werden.~
+
+/* scenery_dialogues_soa.d */
+@780  = ~Die Elfen wissen nicht, wieviel Glück sie haben. Jetzt, da das Haus Despana gefallen ist, werden die anderen versuchen, den Platz einzunehmen und sich gegenseitig bekriegen. Ich bin mir sicher, dass viele Kämpfer der Häuser wieder in die Stadt abgezogen werden.~
 @781  = ~Zusätzlich haben sie Verluste hinnehmen müssen, nachdem Ihr Euch durch die Außenposten geschlagen habt... Die Elfen hätten Euch nicht so misstrauisch beäugen müssen. Ihr habt ihnen da unten gute Dienste erwiesen.~
 @782  = ~Da mögt Ihr Recht haben.~
 @783  = ~Ich habe es nicht in diesem Wissen getan.~
@@ -801,7 +805,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @790  = ~Sorgt Euch nicht um meine Loyalität Euren Zielen gegenüber.~
 @791  = ~Allein der Gedanke, wie zornig die Zofen Lolths wären, wenn sie mich hier sehen könnten, treibt mir eine solche Schadenfreude ins Gesicht, dass es sich lohnt, den Elfen zu helfen.~
 @792  = ~Aber nicht nur dies, sondern auch die Worte meiner Dame mit dem Silberhaar lässt es mich als gut erkennen, das Übel von dieser Stadt der Oberflächenelfen abzuwenden.~
-@793  = ~Also haben wir tatsächlich den legendären Drizzt Do'Urden getroffen. Niemand spricht über ihn, und doch kennt jedes Drowkind seinen Namen. Ich danke Euch.~
+@793  = ~Also haben wir tatsächlich den legendären Drizzt Do'Urden getroffen. Niemand spricht über ihn, und doch kennt jedes Drowkind seinen Namen.~
 @794  = ~Für das Treffen? Das habe ich nicht verursacht.~
 @795  = ~Wofür?~
 @796  = ~In der Tat. Lasst uns weiterziehen.~
@@ -816,7 +820,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @805  = ~Nun, Ihr werdet es schon schaffen, zu finden, was Ihr sucht.~
 @806  = ~Aber doch, das tue ich, <CHARNAME>, und ich denke, dass es das einzig Richtige ist, was ich mit seinen Worten tun kann.~
 @807  = ~Dem ist wohl nichts hinzuzufügen.~
-@808  = ~Ich... danke Euch, Ja, was Ihr sagt, macht Sinn. Es ist die Seite des anderen, nicht wahr? Ich frage mich, warum er mir diese Seite nicht gesagt hat. Es liegt wohl daran, dass ich zuerst die Seite verstehen muss, die er mir erläutert hat.~
+@808  = ~Ich... danke Euch. Ja, was Ihr sagt, macht Sinn. Es ist die Seite des anderen, nicht wahr? Ich frage mich, warum er mir diese Seite nicht gesagt hat. Es liegt wohl daran, dass ich zuerst die Seite verstehen muss, die er mir erläutert hat.~
 @809  = ~Ich muss in der Tat noch einen weiten Weg gehen, um dort anzukommen: Ich habe in meinem Trotz, von ihm zurechtgewiesen zu werden, vergessen, mich bei ihm für seinen Rat zu bedanken.~
 @810  = ~Seine Worte haben mir genug zum Nachdenken gegeben, <CHARNAME>. Ich sehe daher Euer Versprechen erfüllt, mich mit Gleichgesinnten zusammenzubringen. Lasst uns nun weiter Eure Feinde verfolgen.~
 @811  = ~Welch Ruhe...~
@@ -854,24 +858,36 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @843  = ~Das ist in Ordnung. Ich wollte nicht müßig erscheinen. Ich werde nun wohl noch häufiger Gelegenheit dazu finden, die leuchtende Scheibe am Himmel zu bewundern.~
 @844  = ~Nicht wirklich. Der volle Mond ist viel zu hell, als dass sich die Drow in seinem Licht wohlfühlen würden. Nicht, dass er uns blenden würde, aber die Dunkelheit durchdringt der Mondschein durchaus und erschwert das Verstecken im Schatten.~
 @845  = ~(schnaubt)~
+
+/* c#solaufein_interjections.D */
+/* #58981 for male drow/Solaufein */
 @846  = ~Sie werden Eurer nächsten Aussage aufmerksam lauschen, besonders da Ihr Euch bereits schuldig gemacht habt, weil Ihr mit einem Drow reist.~
+/* #58982 for male drow/Solaufein */
 @847  = ~Aber sicher, ich hab' doch Solaufein bei mir, oder nicht? Das bedeutet, dass ich ein Diener der Drow sein *muss*.~
+/* #58987 for male drow/Solaufein */
 @848  = ~Besonders weil da immer noch dieser Drow ist, der mit Euch reist. Auf ihn komme ich später zurück, seid dessen gewiss.~
+/* #59231 for male drow/Solaufein */
 @849  = ~Passt auf den Drow, der bei Euch ist, auf. Seit ihrem Untergang hat keiner seiner Art mehr die Schönheit einer Stadt der Elfen erblickt. Ich würde ihm die Augen verbinden, wenn ich könnte. Andere hätten ihm die Augen ausgestochen.~
+/* #59129 for male drow/Solaufein */
 @850  = ~Unglücklicherweise muss ich jetzt noch einen letzten Streitpunkt zur Sprache bringen. Ich sagte, ich würde zu dem Drow zurückkehren, und jetzt ist die Zeit dafür gekommen. Ich werde nicht zulassen, dass er Euch begleitet.~
 @851  = ~Ihr kommt zurück! Aber was sehe ich da? Ein weiterer Drow, mitten in Euren Reihen! Habt Ihr Euch von Eurem Versprechen abgewandt, dass Ihr einen unserer Feinde mit Euch ziehen lasst?!~
 @852  = ~Ich bin nicht hier um Eure Stadt zu gefährden, Elhan. Ich stehe vor Euch, weil ich den Drow den Rücken gekehrt habe.~
+/* #59139 for male drow/Solaufein */
 @853  = ~Dann bringt ihn eben um. Das wird Euer kleines Problem lösen.~
+/* #59140 for male drow/Solaufein */
 @854  = ~Ich kann dies nur mit der mir vertrauten Gruppe erledigen. Er muss mich begleiten.~
+/* #59141 for male drow/Solaufein */
 @855  = ~Es gibt nur eine Bedingung, unter der ich das zulassen kann. Er muss als Erstes Euch und Eurer Sache die Treue schwören, <CHARNAME>.~
 @856  = ~Das tue ich ohne zu zögern, Elhan. Ich schwöre <CHARNAME> die Treue, solange <PRO_HESHE> meine Unterstützung benötigt.~
+/* #59142 for male drow/Solaufein */
 @857  = ~Und er muss einem geistigen Brandzeichen zustimmen. Das ist die einzige Möglichkeit.~
 @858  = ~Ein... ein magischer Knebel? Ich weiß, dass es viel verlangt ist, mir zu glauben, Elhan, aber ich werde Euch auch ohne eine solche Maßnahme nicht hintergehen.~
+/* #59144 for male drow/Solaufein */
 @859  = ~Wenn das getan ist, sind alle meine Zweifel ausgeräumt, Solaufein. Wenn Ihr uns verratet, wird es Euer Tod sein, nur so lasse ich es zu.~
 @860  = ~Ich habe geschworen, <CHARNAME> zu unterstützen. Verpasst mir also Euer magisches Zeichen, wenn es sein muss.~
 @861  = ~Ich hoffe sehr, dass Ihr Euch mit dieser Bemerkung in Sarkasmus übt, <CHARNAME>.~
 @862  = ~Nun sollte es gut sein... Geht also und bringt die Lanthorpe. Aber es wäre mir lieber gewesen, wenn Ihr Euch nicht mit Drow verbündet hättet, <CHARNAME>!~
-@863  = ~Kommen wir also zu dem zweiten Drow, der Euch begleitet... Wenn meine Magier nicht Eure Intentionen so gut durchschauen könnten, würde ich nicht glauben, dass Ihr nicht mit den Drow zusammenarbeitet.~
+@863  = ~Kommen wir also zu dem männlichen Drow, der Euch begleitet... Wenn meine Magier nicht Eure Intentionen so gut durchschauen könnten, würde ich nicht glauben, dass Ihr nicht mit den Drow zusammenarbeitet.~
 @864  = ~Solaufein, auch Ihr seid nun an die Aufgabe gebunden, und ich fürchte keinen Verrat.~
 @865  = ~Nein, das kann ich nicht unterstützen, <CHARNAME>. Dieser Drow steht für das, was ich erreichen möchte!~
 @866  = ~Ein Drow, der an meiner Seite kämpft! Das ist lange nicht mehr geschehen.~
@@ -916,6 +932,8 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @905  = ~Nirgends, wohin Ihr mich führen könntet, wäre es so grausam wie dort, von wo Ihr mich gerettet habt, <CHARNAME>. Ihr habt mich vor der Verwandlung in eine Drinne bewahrt und mich unter Euren Schutz genommen. Dass ich Euch in Eurem Kampf um Eure Seele beistehe, ist das einzig Richtige.~
 @906  = ~(schnaubt) Die Aussage, dass es nirgends so schlimm sein könnte wie dort, von wo Ihr mich befreit habt, muss ich in Anbetracht unseres Aufenthaltsortes zurücknehmen, <CHARNAME>.~
 @907  = ~Aber ich bin hier, und ich werde Euch unterstützen, so gut ich kann. Und das nicht nur, weil Ihr wohl den einzigen Weg zurück zu den Lebenden darstellt!...~
+
+/* C#SOLAUB.D */
 @908  = ~Imoen, Ihr seid... auch ein Kind des Bhaal.~
 @909  = ~Sieht so aus, ja.~
 @910  = ~Eigentlich sollte es mich nicht überraschen, dass sich Kinder des Bhaal zumindest temporär zusammen tun.~
@@ -956,9 +974,9 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @945  = ~Peh, Ihr wärt der erste, der mir was wegguckt. Es macht mich nur latent nervös, mich von einem Drow beobachtet zu wissen, auch wenn dieser vermeintlich auf meiner Seite kämpft.~
 @946  = ~Mazzy, ich hatte Euch in der Tat beobachtet.~
 @947  = ~Ich weiß.~
-@948  = ~Diese Ruhe! Diese Selbstsicherheit! Mazzy, Ihr jagt mir mehr Angst ein als die gute Imrae in einem ihrer Anfälle.~
+@948  = ~Diese Ruhe! Diese Selbstsicherheit! Mazzy, Ihr jagt mir mehr Angst ein als die gute Imrae bei einem ihrer Anfälle.~
 @949  = ~Nicht ernsthaft.~
-@950  = ~Nun, sie hat mir definitiv mehr Schwerzen zugefügt, aber in gewisser Weise schon. Ich habe Euch beobachtet, weil mich Eure Kampfkraft beeindruckt, zusammen mit der Entschlossenheit, mit der Ihr Eure Waffe schwingt.~
+@950  = ~Nun, sie hat mir definitiv mehr Schmerzen zugefügt, aber in gewisser Weise schon. Ich habe Euch beobachtet, weil mich Eure Kampfkraft beeindruckt, zusammen mit der Entschlossenheit, mit der Ihr Eure Waffe schwingt.~
 @951  = ~Aber nur, weil Ihr es einer so kleinen Person nicht zutrauen würdet. (seufzt) Also wieder die alte Leier.~
 @952  = ~Jan, Ihr seid ein drolliger Gesell.~
 @953  = ~Oha, auf eine solche Einleitung folgt meist nichts Gutes.~
@@ -989,7 +1007,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @978  = ~Das ist wohl war, aber die Gewichtung ist doch stark unterschiedlich. Wenn es Drow gewesen wären, wärt Ihr nicht mehr am Leben.~
 @979  = ~Das... das empfinde ich jetzt nicht wirklich als Trost, Solaufein.~
 @980  = ~So war es auch nicht gemeint.~
-@981  = ~Obwohl da mehr Wahrheit in Euren Worten ist, als es Euch vielleicht bewusst ist. Ich... ich weiß sehr wohl, dass ich großes Glück im Unglück hatte, durch Quaile gerettet und aufgenommen zu werden.~
+@981  = ~Obwohl da mehr Wahrheit in Euren Worten ist, als es Euch vielleicht bewusst ist. Ich... ich weiß sehr wohl, dass ich großes Glück im Unglück hatte, durch Quaile gerettet und aufgenommen worden zu sein.~
 @982  = ~Mazzy, könnt Ihr es mir verübeln, dass mir Eure Größe auffällt? Als ich Euch das erste mal sah, habt Ihr mich an einen Oberflächen-Snirflebi erinnert.~
 @983  = ~Eure Snirflebi waren wohl nicht so mutig?~
 @984  = ~Oh, mutig waren sie, die Kleinen. Aber sie waren definitiv nicht so schlagkräftig.~
@@ -1016,7 +1034,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1005 = ~Edwin, aus Euch werde ich nicht schlau. Warum seid Ihr noch immer an <CHARNAME>s Seite?~
 @1006 = ~Gemeinsame Abenteuer! Lagerfeuerromantik! Tiefe, freundschaftliche Verbundenheit!~
 @1007 = ~Ein Mann wie Ihr sollte zu Freundschaft fähig sein?~
-@1008 = ~(Also, jetzt wird er frech.) Also, jetzt werdet Ihr frech. Wer spricht denn da gerade, hm? Habt Ihr das Scheppern und Klirren Eures Glashauses gehört, als Ihr den Stein eben geworfen habt?~
+@1008 = ~(Also, jetzt wird er frech.) Jetzt werdet Ihr frech. Wer spricht denn da gerade, hm? Habt Ihr das Scheppern und Klirren Eures Glashauses gehört, als Ihr den Stein eben geworfen habt?~
 @1009 = ~Da... da habt Ihr Recht. Ich bin in der Tat nicht der Richtige, um es anzuzweifeln.~
 @1010 = ~Ha! Ich war ja noch nicht fertig mit meiner Aufzählung. Das Schicksal mit beeinflussen! Die Sicherung des größten Stück Kuchens betreiben! Den anderen Bhaalkindern ins Gesicht lachen! Der mächtigste Magier von ganz Faerûn werden!~
 @1011 = ~Nun, das klingt mir eher nach Euch.~
@@ -1038,7 +1056,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1027 = ~Das habe ich, aber nur sehr wenige. Selten nur gab es Besuche von außerhalb der Ebenen in das Reich der Dunkelelfen, und mein Volk hat jeweils schnell dafür gesorgt, dass diese aufhörten.~
 @1028 = ~Also keine Begegnung, die Euch so beeindruckt hat, dass Ihr sie gerne mit anderen teilen möchtet? Keine Geschichte, die es Wert wäre, erhalten und weitererzählt zu werden?~
 @1029 = ~Wie auch immer meine Begegnungen mit Tieflingen im Unterreich aussahen, Haer'Dalis, glaubt mir bitte, wenn ich sage, dass Ihr diese nicht in einem Theaterstück zur Unterhaltung vortragen wolltet.~
-@1030 = ~Imoen, ich wollte letzthin nichts andeuten, was Eure und <CHARNAME>s Verbundenheit betrifft. Meine Wortwahl war ungeschickt. Ich bezog mich auf die Zusammenschlüsse beliebiger Bhaalkinder, wie sie momentan aus Zweckgründen bestehen.~
+@1030 = ~Imoen, ich wollte letzthin nichts bezüglich Eurer und <CHARNAME>s Verbundenheit andeuten. Meine Wortwahl war ungeschickt. Ich bezog mich auf die Zusammenschlüsse beliebiger Bhaalkinder, wie sie momentan aus Zweckgründen bestehen.~
 @1031 = ~Das ist mir schon klar, Solaufein.~
 @1032 = ~Wobei die Wortwahl *wirklich* ungünstig war, wenn man bedenkt, dass <CHARNAME> und ich zwischenzeitig... nunja, getrennt waren.~
 @1033 = ~Nun hört schon auf, selbstkritisch die Stirn zu runzeln! So schlimm war Eure Bemerkung auch wieder nicht. Sonst bin ich noch Schuld an Euren Falten!~
@@ -1131,7 +1149,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1120 = ~Da Ihr letzthin fragtet, Korgan: Ja, Lolth wacht über ihre geliebten Spinnen, und sie sühnt äußerst gerne Vergehen an ihnen, oder besser gesagt, sie lässt sühnen.~
 @1121 = ~Wollt Ihr mir jetzt Angst machen?~
 @1122 = ~Was? Nein, ich beantworte lediglich Eure Frage von letzthin.~
-@1123 = ~Und ja, sie sieht mich höchstwahrscheinlich als Abtrünnigen. Inwieweit allerdings eine Göttin sich bemühen wird, mir nach zu stellen... Das halte ich nicht für sehr wahrscheinlich.~
+@1123 = ~Und ja, sie sieht mich höchstwahrscheinlich als Abtrünnigen. Inwieweit allerdings eine Göttin sich bemühen wird, mir nach zu stellen... Das halte ich nicht für sehr wahrscheinlich. Sie kann sich darauf verlassen, dass meine "Brüder und Schwestern" das für sie erledigen, wenn wir ihnen begegnen.~
 @1124 = ~Aber tretet ruhig weiter auf die kleinen Spinnen auf unserem Pfad. Wenn Ihr genug an Eurem Schuh kleben habt und wir noch immer zusammen unterwegs sind, dann erwecken wir vielleicht eher ihre Aufmerksamkeit.~
 @1125 = ~Aerie, dass Ihr einen schweren Schicksalsschlag verkraften musstet, ist wohl war. Warum aber schwächt Ihr Euch selbst?~
 @1126 = ~Was... was meint Ihr damit? Ich bin vielleicht nicht so stark wie Ihr, aber was gibt Euch das Recht, mich schwach zu nennen?~
@@ -1140,7 +1158,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1129 = ~Wenn ich wollte?!~
 @1130 = ~Ja. Ihr schwächt Euch selbst, indem Ihr an dem versucht festzuhalten, was unwiederbringlich verloren ist.~
 @1131 = ~D-Das sagt sich so einfach! Ich bin durch Grausamkeiten verstümmelt und meiner Heimat beraubt worden. Ihr könnt es wohl nicht nachvollziehen, Solaufein, dass dies nicht so einfach abzuschütteln ist.~
-@1132 = ~Ich muss Euch eine gewisse... Bewunderung aussprechen.~
+@1132 = ~Minsk, ich muss Euch eine gewisse... Bewunderung aussprechen.~
 @1133 = ~Minsk ist es gewohnt, dass seine Körpergröße und Stärke bemerkt wird.~
 @1134 = ~Nun, damit hat es indirekt zu tun...~
 @1135 = ~Was ich sagen wollte: Es beeindruckt mich zutiefst, wie Ihr es schafft, für dieses... Tier in Eurem Gepäck zu sorgen, trotz allem, was uns geschieht.~
@@ -1182,7 +1200,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1171 = ~Weise ausgewählt? Ich habe meinen Gott nicht ausgewählt, sondern meine Gebete wurden erhöhrt, als Helm mich verstoßen hat! Ich habe auch nicht <CHARNAME> ausgesucht, sondern <PRO_HESHE> wählte mich als Kampfgefährte, als ich es vorschlug.~
 @1172 = ~Oh, aber Ihr habt diesen Gott nicht abgewiesen, und ebenso habt Ihr <CHARNAME> nicht im Stich gelassen, Anomen, sondern habt Euch führen lassen. Ihr habt sehr viel mehr Einfluss auf Euer Schicksal, als Ihr es selbst glauben wollt.~
 @1173 = ~Warum habt Ihr letzthin eigentlich so auf diesem Zauber herumgeritten, Solaufein?~
-@1174 = ~Wollt Ihr mir vorschlagen, den Zauber meistbietend im Unterreich zu verscherbeln? Wie schade, dass wir dort bereits waren, und wohl nicht mehr so schnell wieder hinkommen! (Ein bisschen Ironie...)~
+@1174 = ~Wollt Ihr mir vorschlagen, den Zauber meistbietend im Unterreich zu verscherbeln? Wie schade, dass wir dort bereits waren, und wohl nicht mehr so schnell wieder hinkommen! (Ein bisschen Ironie... Versteht hier sowieso keiner.)~
 @1175 = ~Auf keinen Fall. Man würde Euch nur auslachen. Wisst Ihr, ein einfaches Männchen kann seinen Wert in den Spinnengruben und bei anderen Kämpfen zu Ehren Lolths beweisen und so in der Hierarchie aufsteigen. Ein Weibchen dagegen ist ohne bestehenden Einfluss bereits so gut wie tot.~
 @1176 = ~Ach, *schade*. Und ich hatte bereits auf eine annehmliche Nebenerwerbsquelle gehofft! (Ich hoffe, der Idiot erkennt Ironie überhaupt.)~
 @1177 = ~Hm, es eröffnet aber diverse Anwendungsmöglichkeiten, um feindlichen Häusern zu schaden. Eventuell würde man Euch doch nicht so sehr auslachen, wie ich dachte.~
@@ -1203,7 +1221,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1192 = ~Weil es jeden nur einmal gibt?~
 @1193 = ~Nein, weil es dort nur wenige gibt, die die Weisheit haben, zu sehen, wann sie nichts ändern können, und die Breitschaft, diesen Umstand zu akzeptieren. Und weil es dort niemanden gibt, der Liebe nicht mit Besitzenwollen verwechselt.~
 @1194 = ~Oha, Dunkelelf, jetzt geht mir das zu sehr ins Persönliche. Das will ich bestimmt nicht mit Euch besprechen.~
-@1195 = ~Außerdem meint Ihr bestimmt nicht mehr mich. "Weisheit" ist ein Attribut, dass mir das letzte 3/4 meines Lebens weitesgehen abgesprochen wurde.~
+@1195 = ~Außerdem meint Ihr bestimmt nicht mehr mich. "Weisheit" ist ein Attribut, dass mir das letzte 3/4 meines Lebens weitestgehend abgesprochen wurde.~
 @1196 = ~Solaufein, Eure Worte letzthin waren drollig. Ha! Verbannt in der Hölle zu sein, kann auch seine Vorteile haben. Meintet Ihr das?~
 @1197 = ~Zumindest, wenn man am Leben bleiben will und Kinder Bhaals als Geschwister hat, wie es scheint. Wie ich bereits sagte: Der Erfolgreiche nutzt die Möglichkeiten, die er hat.~
 @1198 = ~Und hat dann hoffentlich die Weisheit, zu sehen, was er erreicht hat und gibt sich damit zufrieden.~
@@ -1260,13 +1278,13 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1249 = ~Schweigt! Ich sagte, darüber werdet Ihr nicht sprechen.~
 @1250 = ~Auch nicht als abstraktes Beispiel, damit ich Eure Gebräuche besser verstehe?~
 @1251 = ~Auch das nicht. Nicht ein Wort!~
-@1252 = ~Warum nicht? ~
+@1252 = ~Warum nicht?~
 @1253 = ~Weil es... meine Familie ist. Und weil das Vorgefallene schmerzt.~
 @1254 = ~Habt Dank. Ich denke, ich habe durch Eure Reaktion durchaus etwas über die Gebräuche der Oberweltler gelernt.~
 @1255 = ~Viconia, ich... spreche Euch meinen Respekt aus. Ihr habt Recht, wenn Ihr meine Situation als komfortabel bezeichnet gegenüber dem, was Ihr erleiden musstet.~
 @1256 = ~Ihr könnt froh sein, dass wir nun in <CHARNAME>s Begleitung reisen, oder ich würde Euch im Staub knien lassen!~
 @1257 = ~Ich sagte Respekt aussprechen, nicht um Vergebung bitten. Ihr verdient meinen Respekt, wenn Ihr diese Zeit der Blindheit, Hitze und schwindenden Fähigkeiten alleine gemeistert habt.~
-@1258 = ~Und doch bin ich mir nicht sicher, ob es nicht doch auch Vorteile hätte, diese Zeit alleine zu verbringen. In diesem geschwächten Zustand auch noch sämtliche Instinkte des Selbstschutzes ignorieren zu müssen, um die Freundlichkeit der wohlgesonnenen Oberweltler nicht zu brüskieren, ist auf eine gewisse Art auch anstrengend!...~
+@1258 = ~Und doch bin ich mir nicht sicher, ob es nicht doch auch Vorteile hätte, diese Zeit alleine zu verbringen. In diesem geschwächten Zustand auch noch sämtliche Instinkte des Selbstschutzes ignorieren zu müssen, um die Freundlichkeit der wohlgesonnenen Oberweltler nicht zu brüskieren, ist auf eine gewisse Art auch anstrengend...~
 @1259 = ~Gejammer! Geht mir aus den Augen. Meine Ohren klingen von Eurem Geheule!~
 @1260 = ~Ich habe über meine eigenen Worte nachgedacht, und eine Inkonsistenz festgestellt, Aerie. Ihr seid nicht schwächlich oder verzagt. Im Gegenteil, Ihr seid den Umständen Eurer Situation entsprechend sogar sehr tapfer.~
 @1261 = ~Dass... Dass Ihr das sagt, freut mich, Solaufein.~
@@ -1274,11 +1292,11 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1263 = ~Dabei... dabei habe ich letzthin gar nichts gesagt, obwohl ich es wollte.~
 @1264 = ~Ja. Ich kam nicht zu Wort. Jemand... jemand beschwerte sich ausgiebig über die grelle Sonne.~
 @1265 = ~Ich... verstehe. Gut pariert, Avariel.~
-@1266 = ~Keldorn, ich habe Euch letzhin beten hören... Ihr nehmt Eure Familie mit in Eure Gebete, jeden Tag.~
+@1266 = ~Keldorn, ich habe Euch letzthin beten hören... Ihr nehmt Eure Familie mit in Eure Gebete.~
 @1267 = ~Verwundert Euch das? Ich bete für die, die ich liebe, Drow. Ist Euch das Beten für andere so fremd?~
 @1268 = ~Nun... Wir haben auch gebetet, für unsere Mutter Oberin und die Zofen Lolths. Aber das war, weil wir es mussten, nicht, weil wir es wollten.~
 @1269 = ~Der Gedanke, für jemanden zu beten, weil dessen Wohlergehen einem einfach nur am Herzen liegt... Ich habe es noch nie gefühlt.~
-@1270 = ~Ihr habt jetzt die Möglichkeit, diese Erfahrung zu machen, Solaufein. Wahre Freunde zu finden, die Ihr um ihrer selbst willen liebt.~
+@1270 = ~Ihr habt jetzt die Möglichkeit, diese Erfahrung zu machen, Solaufein. Wahre Freunde zu finden, die Ihr um ihrer selbst Willen liebt.~
 @1271 = ~Ihr meint, falls nach unserem Ritt durch dieses Chaos noch jemand übrig ist?~
 @1272 = ~Es werden viele übrig sein, und sie werden dankbar für jede Art Hilfe sein, um sich wieder ein normales Leben aufzubauen.~
 @1273 = ~Und das, Solaufein, war jetzt wirklich das allerletzte mal, dass ich mit Euch über meine Familie sprechen wollte.~
@@ -1336,7 +1354,11 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1325 = ~Ihr seid nicht mehr im Unterreich, Solaufein. Ihr habt... habt Freunde, die Euch helfen.~
 @1326 = ~Es ist nicht allzu lange her, da wäre allein dies ein Grund für mein Ende als Spinnenfraß gewesen.~
 @1327 = ~Aber ich verstehe, was Ihr meint. Habt Dank für Eure freundlichen Worte.~
+
+/* C#SOLAU_ToB_fatesp.D */
 @1328 = ~Bringt mir Solaufein, den Drowkrieger, den ich vor der Drinnenverwandlung bewahrt habe.~
+
+/* C#SOLAU_ToB.D */
 @1329 = ~<CHARNAME>! Wenn Ihr es wart, der mich hierher gerufen hat, dann kann ich meine Waffen weglegen... vermute ich? Was bin ich für Euch, an diesem Ort?~ [c#ablank]
 @1330 = ~Solaufein, mein Freund! Wir sind bereits zusammen gereist. Ich bräuchte erneut Eure Hilfe.~
 @1331 = ~Ich weiß, dass wir nach Eurer Rettung aus den Drinnenkokoons getrennte Wege gegangen sind, aber ich bräuchte Euch jetzt.~
@@ -1380,6 +1402,8 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1369 = ~Aber es ist durchaus einen Gedanken wert, das müsst Ihr doch zugeben? So ganz habe ich meinen Jahrhunderte langen Drill auf Abwägen der eigenen Vorteilsnahme nicht abgelegt, auch wenn ich nicht danach handele.~
 @1370 = ~Und noch mehr Spinnen...~
 @1371 = ~Falls irgendjemand sich die Frage gestellt haben sollte: Nein, ich fühle mich hier nicht wie zu Hause. Lasst uns dieses Getier töten und weiterziehen.~
+
+/* C#SOLAU_PID.D */
 @1372 = ~Lasst... lasst mich, <CHARNAME>.~
 @1373 = ~Hmpf. Was habt Ihr, <CHARNAME>?~ [c#ablank]
 @1374 = ~Ihr seid so still in letzter Zeit...~
@@ -1531,7 +1555,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1520 = ~Ja. Dieser Zauber funktioniert noch so wie er es vorher tat, aber ich muss meine gesamte Kraft darauf verwenden. Früher konnte ich von nahezu endlosen Reserven zehren.~
 @1521 = ~Vermutlich, wenn man bedenkt, dass ich Euch als Feind bekämpft hätte, wenn wir anders zusammen gekommen wären.~
 @1522 = ~Weil es keine Notwendigkeit dafür gab. Wo hätte ich sie einsetzen sollen? Gegen die Snirflebi? Gegen die Sauger? Erstere sind es nicht wert, letztere nahezu immun gegen das meiste davon.~
-@1523 = ~Unsere Gesellschaft ist in 'Häuser' organisiert, jedes geführt von einer Mutter Oberin. Die Weibchen haben die Macht. Die Männchen sind dazu da, die mächtigen Weibchen zu erfreuen, und für sie zu kämpfen.~
+@1523 = ~Unsere Gesellschaft ist in "Häuser" organisiert, jedes geführt von einer Mutter Oberin. Die Weibchen haben die Macht. Die Männchen sind dazu da, die mächtigen Weibchen zu erfreuen, und für sie zu kämpfen.~
 @1524 = ~Wir sind böse und machtbesessen und töten oder versklaven alle Wesen anderer Rassen, wenn wir können.~
 @1525 = ~Die Weibchen schmieden ihre Ränke und bringen sich gegenseitig um. Die Männchen dienen den Weibchen und werden von ihnen umgebracht, wenn sie deren Unwillen erregen.~
 @1526 = ~Mehr gibt es nicht zu sagen.~
@@ -1543,7 +1567,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1532 = ~Es ist... die allerletzte Strafe, <CHARNAME>. Das grausamste, was einem in Lolths Namen angetan werden kann. Selbst das langsame Zerfleischtwerden als lebendiges Spinnenfutter ist gnädig dagegen.~
 @1533 = ~Ich... ich kann nicht in Worte fassen, was es für mich bedeutet, dass Ihr mir dieses Schicksal erspart habt. Eure Gnade in Ust Natha, mich nicht zu töten, war bemerkenswert. Aber sie war nichts gegen Eure Barmherzigkeit, mir das Schicksal einer Drinne zu ersparen!~
 @1534 = ~Eilistraee ist die Tochter von Lolth und Corellon Larethian und die Schwester von Vhaeraun. Um das Böse der Dunkelelfen auszugleichen, verbannte sie sich selber aus dem Kreis der Elfengötter.~
-@1535 = ~Sie leitet ihre Anhänger an, jedem zu helfen. Sie ist außerdem erfreut von Musik und Tanz, aber nicht die Art, wie es in Ust-Natha üblich war.~
+@1535 = ~Sie leitet ihre Anhänger an, jedem zu helfen. Sie ist außerdem erfreut von Musik und Tanz, aber nicht die Art, wie es in Ust Natha üblich war.~
 @1536 = ~Für die zu kämpfen, die es nicht für sich selber tun können, <CHARNAME>, wie sehr läuft dies den Gebräuchen der Dunkelelfen entgegen! Ich bin sehr froh, ihr nun in dieser Hinsicht besser dienen zu können. Ich werde mich bemühen, es ihren Lehren Recht zu machen.~
 @1537 = ~Heißt das, beim nächsten Mondschein werdet Ihr unbekleidet durch die Wälder streifen?~
 @1538 = ~Danke für die Information, Solaufein.~
@@ -1569,7 +1593,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1558 = ~Ihr meint, nachdem Ihr mich bereits in Ust Natha gekostet habt?~
 @1559 = ~M-Hm... Genau danach.~
 @1560 = ~Schweigt darüber, bitte.~
-@1561 = ~Es tut mir Leid, dass ich Euch in Ust Natha in die Freudengemächer gezwungen habe, Solaufein.~
+@1561 = ~Es tut mir Leid, dass ich Euch in Ust Natha in die Lustkammern gezwungen habe, Solaufein.~
 @1562 = ~Ich... habe dort eine Rolle gespielt, um nicht aufzufallen.~
 @1563 = ~Die Erinnerung daran reicht. Wie kommt Ihr auf die Idee, dass ich es noch einmal wollen würde?~
 @1564 = ~Vielleicht sollten wir nicht weiter über dieses Thema sprechen.~
@@ -1588,7 +1612,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1577 = ~Ich bin froh, dass es so ausgegangen ist.~
 @1578 = ~Ist mir recht.~
 @1579 = ~Nun gut, lassen wir das Thema.~
-@1580 = ~In Ust Natha fordertet Ihr einen Dienst von einem Drow an einem Drow.~
+@1580 = ~In Ust Natha fordertet Ihr einen Dienst von einem Drow an einem Drow.~ ~In Ust Natha fordertet Ihr einen Dienst von einem Drow an einer Drow.~
 @1581 = ~An was ich letzthin dachte wären besser auf Euch Oberweltler zugeschnittene Dienste gewesen...~
 @1582 = ~(schnaubt) Das wollt Ihr nicht wirklich, <CHARNAME>. Nicht von mir.~
 @1583 = ~Habt Ihr es wirklich in Betracht gezogen?~
@@ -1615,7 +1639,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1604 = ~Vielleicht habe ich auch hier einen Bedarf, die Gebräuche der Drow mit Angenehmem zu ersetzen. Doch falls dies so ist, dann habe ich kein Verlangen, dass Ihr hierzu mein Lehrmeister seid.~
 @1605 = ~Und oh, die Weibchen und höheren Männchen genießen durchaus. Es ist nicht für alle nur Pein.~
 @1606 = ~Ihr seid auch ein höheres Männchen gewesen, Solaufein?...~
-@1607 = ~Nicht mein ganzes Leben, <CHARNAME>...~
+@1607 = ~Nicht mein ganzes Leben, <CHARNAME>.~
 @1608 = ~Und als ich eines war, war ich mit genug Empathie verflucht, um nicht das von anderen einzufordern, was ich selbst so ungern gegeben habe.~
 @1609 = ~Mein Verlangen nach körperlichen Intimitäten ist gering, <CHARNAME>. Und wenn, dann bin ich alt genug, um sie nicht mit einem Küken wie Euch zu stillen.~
 @1610 = ~Ihr seid zu jung, junger <PRO_RACE>. Fragt mich in 300 Jahren noch einmal.~
@@ -1992,3 +2016,13 @@ Ich habe Solaufein aus den Drinnenkammern gerettet und ihm ein Schicksal als Dri
 /* C#solau.baf */
 @1934 = ~Verdammte Sonne!~
 @1935 = ~Ah, das ist besser.~
+
+/* c#solaufein_interjections_ee.D */
+@1940 = ~Sind wir *jetzt* fertig?~
+
+/* detect_drowpc.d */
+@2000 = ~(Wahrheit) Da ich bereits Drow bin, sollte das nicht so schwierig sein.~
+@2001 = ~In der Tat. Aber selbst wenn dem nicht so wäre, würde meine Illusion nicht zu durchschauen sein.~
+
+/* scenery_dialogues_soa.d */
+@2010 = ~Ich danke Euch.~
