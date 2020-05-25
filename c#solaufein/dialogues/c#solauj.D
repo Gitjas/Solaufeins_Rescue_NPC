@@ -1430,7 +1430,9 @@ END
 
 IF ~~ THEN lob_10
 SAY @618
-IF ~~ THEN + lob_12
+++ @606 + lob_12
+++ @607 + lob_11
+++ @608 + wie_ihr_meint
 END
 
 IF ~~ THEN lob_11

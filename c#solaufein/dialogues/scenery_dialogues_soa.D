@@ -56,6 +56,12 @@ C#SolaufeinDrizzt = 1*/
 
 IF ~Global("C#SolaufeinDrizzt","GLOBAL",2)~ THEN drizzt
 SAY @793
+IF ~~ THEN + drizzt_07
+IF ~Global("C#Solau_PCListenedDrizzt","GLOBAL",1)~ THEN + drizzt_00
+END
+
+IF ~~ THEN drizzt_00
+SAY @2010
 ++ @794 + drizzt_01
 ++ @795 + drizzt_01
 ++ @796 + drizzt_06
@@ -96,7 +102,11 @@ END
 
 IF ~~ THEN drizzt_06
 SAY @809
-= @810
+IF ~~ THEN + drizzt_07
+END
+
+IF ~~ THEN drizzt_07
+SAY @810
 IF ~~ THEN DO ~SetGlobal("C#SolaufeinDrizzt","GLOBAL",3)~ EXIT
 END
 

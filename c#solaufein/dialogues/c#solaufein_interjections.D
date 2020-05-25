@@ -1,38 +1,14 @@
-/* I_C_T und andere Interjections */
-
-/* this adds a reply option to Adalon's dialogue. The player has to chose this to set the variable that will let Solaufein detect that the PC is drow */
-
-EXTEND_BOTTOM UDSILVER 27
-+ ~Race(Player1,ELF)
-Global("C#Solaufein_PCIsDrow","GLOBAL",0)~ + ~(Truth) Since I'm a drow already, this shouldn't be so hard.~ DO ~SetGlobal("C#Solaufein_PCIsDrow","GLOBAL",1)~ + drow_pc
-END
-
-APPEND UDSILVER 
-
-IF ~~ THEN drow_pc
-SAY ~Indeed. But even without it, my illusion would be unbreakable.~
-COPY_TRANS UDSILVER 27
-END
-
-END //APPEND
-
-
-
 /* Elhan */
 
-
-ADD_TRANS_TRIGGER C6ELHAN2 8 ~OR(2)
-	!See("c#Solaufein")
-	!InParty("c#Solaufein")
-Global("C#SolauJoined","GLOBAL",0)~ DO 0
 
 EXTEND_BOTTOM C6ELHAN2 8
 IF ~See("C#Solaufein")
 OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-OR(3)
-!See("Viconia")
+OR(4)
+Dead("Viconia")
 !InParty("Viconia")
-Dead("Viconia")~ THEN GOTO Elhan_23
+!See("Viconia")
+StateCheck("Viconia",STATE_SLEEPING)~ THEN GOTO Elhan_23
 END
 
 APPEND C6ELHAN2 
@@ -51,18 +27,17 @@ See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN REPLY @847 EXTERN ~C6WARSA1~ 1
 END
 
-ADD_TRANS_TRIGGER C6ELHAN2 24 ~OR(2)
-	!See("c#Solaufein")
-	!InParty("c#Solaufein")
-Global("C#SolauJoined","GLOBAL",0)~ DO 0
-
 EXTEND_BOTTOM C6ELHAN2 24
 IF ~See("C#Solaufein")
 OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-OR(3)
-!See("Viconia")
+OR(2)
+!InParty("hexxat")
+Dead("hexxat")
+OR(4)
+Dead("Viconia")
 !InParty("Viconia")
-Dead("Viconia")~ THEN GOTO Elhan_25
+!See("Viconia")
+StateCheck("Viconia",STATE_SLEEPING)~ THEN GOTO Elhan_25
 END
 
 APPEND C6ELHAN2 
@@ -76,18 +51,14 @@ END //APPEND
 
 
 
-ADD_TRANS_TRIGGER C6ELHAN2 83 ~OR(2)
-	!See("c#Solaufein")
-	!InParty("c#Solaufein")
-Global("C#SolauJoined","GLOBAL",0)~ DO 0
-
 EXTEND_BOTTOM C6ELHAN2 83 
 IF ~See("C#Solaufein")
 OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-OR(3)
-!See("Viconia")
+OR(4)
+Dead("Viconia")
 !InParty("Viconia")
-Dead("Viconia")~ THEN GOTO Elhan_85
+!See("Viconia")
+StateCheck("Viconia",STATE_SLEEPING)~ THEN GOTO Elhan_85
 END
 
 
@@ -101,24 +72,19 @@ END
 END //APPEND
 
 
-
-
-
-ADD_TRANS_TRIGGER C6ELHAN2 53 ~OR(2)
-	!See("c#Solaufein")
-	!InParty("c#Solaufein")
-Global("C#SolauJoined","GLOBAL",0)~ DO 0
-
 EXTEND_BOTTOM C6ELHAN2 53 
 IF ~See("C#Solaufein")
 OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
-OR(3)
-!See("Viconia")
+OR(2)
+!InParty("hexxat")
+Dead("hexxat")
+OR(4)
+Dead("Viconia")
 !InParty("Viconia")
-Dead("Viconia")~ THEN GOTO Elhan_55
+!See("Viconia")
+StateCheck("Viconia",STATE_SLEEPING)~ THEN GOTO Elhan_55
 END
-
 
 
 CHAIN
@@ -164,8 +130,9 @@ IF ~~ THEN C6ELHAN2 Elhan_59
 SetGlobal("C#Solau_ElhanGeas","GLOBAL",1)
 RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500)~
 END
-IF ~!Global("C#Solau_DialogueState","LOCALS",55)~ THEN EXTERN C6ELHAN2 solau_end
-IF ~Global("C#Solau_DialogueState","LOCALS",55)~ THEN EXTERN C6ELHAN2 63
+COPY_TRANS C6ELHAN2 53
+IF ~Global("C#Solau_DialogueState","LOCALS",55)~ THEN EXTERN C6ELHAN2 solau_end
+
 
 
 APPEND c#solauJ 
@@ -186,7 +153,7 @@ END
 
 END //APPEND
 
-
+/* in case Viconia is also in group, she will be dealt with first */
 EXTEND_BOTTOM C6ELHAN2 62 
 IF ~See("C#Solaufein")
 OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
@@ -200,14 +167,7 @@ IF ~~ THEN C6ELHAN2 Elhan_c#solau
 == c#solauJ @860 
 == C6ELHAN2 @864 DO ~SetGlobal("C#Solau_ElhanGeas","GLOBAL",1) ForceSpell("C#Solaufein",FLASHY_1)~
 END
-IF ~~ THEN EXTERN C6ELHAN2 63 
-
-
-
-
-
-
-
+COPY_TRANS C6ELHAN2 62
 
 
 
@@ -310,227 +270,88 @@ END //APPEND
 
 /* Dialog mit Drizt */
 
-I_C_T3 C6DRIZZ1 25 C#SolaufeinDrizzt //Drizzt unzufrieden
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @873
-= @874
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @875
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @876
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @877
-= @878
-= @879
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @880
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @881
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @882
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @883
-= @884
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @885
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @886
-= @887
-= @888
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @889
-= @890
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @891
-= @892
-= @893
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @894
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @895
-= @896
+EXTEND_BOTTOM C6DRIZZ1 25 //Drizzt unzufrieden
+IF ~Global("C#SolaufeinDrizzt","GLOBAL",0)~ THEN DO ~SetGlobal("C#SolaufeinDrizzt","GLOBAL",1) SetGlobal("C#SolaufeinDrizztTracking","LOCALS",25)~ EXTERN c#SolauJ solaufein_drizzt_01
+END
+
+EXTEND_BOTTOM C6DRIZZ1 29 
+IF ~Global("C#SolaufeinDrizzt","GLOBAL",0)~ THEN DO ~SetGlobal("C#SolaufeinDrizzt","GLOBAL",1) SetGlobal("C#SolaufeinDrizztTracking","LOCALS",29)~ EXTERN c#SolauJ solaufein_drizzt_01
+END
+
+EXTEND_BOTTOM C6DRIZZ1 50 //unbelastetes Treffen
+IF ~Global("C#SolaufeinDrizzt","GLOBAL",0)~ THEN DO ~SetGlobal("C#SolaufeinDrizzt","GLOBAL",1) SetGlobal("C#SolaufeinDrizztTracking","LOCALS",50)~ EXTERN c#SolauJ solaufein_drizzt_01
+END
+
+EXTEND_BOTTOM C6DRIZZ1 53 //unbelastetes Treffen
+IF ~Global("C#SolaufeinDrizzt","GLOBAL",0)~ THEN DO ~SetGlobal("C#SolaufeinDrizzt","GLOBAL",1) SetGlobal("C#SolaufeinDrizztTracking","LOCALS",53)~ EXTERN c#SolauJ solaufein_drizzt_01
 END
 
 
-I_C_T3 C6DRIZZ1 50 C#SolaufeinDrizzt  //unbelastetes Treffen
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @873
+CHAIN
+IF ~~ THEN c#SolauJ solaufein_drizzt_01
+@873
 = @874
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @875
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @876
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @877
-= @878
+== C6DRIZZ1 IF ~ReactionLT(Player1,10)~ THEN @875
+== c#SolauJ IF ~ReactionLT(Player1,10)~ THEN @876
+== C6DRIZZ1 @877
+END
+++ ~Wir müssen weiter, Solaufein. Fasst Euch kurz.~ EXTERN C6DRIZZ1 solaufein_drizzt_03
+++ ~(Ihr hört dem Gespräch der zwei Drow weiter zu.)~ DO ~SetGlobal("C#Solau_PCListenedDrizzt","GLOBAL",1)~ EXTERN C6DRIZZ1 solaufein_drizzt_02
+
+CHAIN
+IF ~~ THEN C6DRIZZ1 solaufein_drizzt_02
+@878
 = @879
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @880
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @881
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @882
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @883
+== c#SolauJ @880
+== C6DRIZZ1 @881
+== c#SolauJ @882
+== C6DRIZZ1 @883
 = @884
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @885
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @886
+== c#SolauJ @885
+== C6DRIZZ1 @886
 = @887
 = @888
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @889
+== c#SolauJ @889
 = @890
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @891
+== C6DRIZZ1 @891
 = @892
-= @893
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @894
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @895
-= @896
+END
+IF ~~ THEN EXTERN C6DRIZZ1 solaufein_drizzt_03
+
+CHAIN
+IF ~~ THEN C6DRIZZ1 solaufein_drizzt_03
+@893
+== c#SolauJ @894
+== C6DRIZZ1 @895
+END
+IF ~Global("C#SolaufeinDrizztTracking","LOCALS",25)~ THEN + solaufein_drizzt_04_25
+IF ~Global("C#SolaufeinDrizztTracking","LOCALS",29)~ THEN + solaufein_drizzt_04_29
+IF ~Global("C#SolaufeinDrizztTracking","LOCALS",50)~ THEN + solaufein_drizzt_04_50
+IF ~Global("C#SolaufeinDrizztTracking","LOCALS",53)~ THEN + solaufein_drizzt_04_53
+
+APPEND C6DRIZZ1 
+IF ~~ THEN solaufein_drizzt_04_25
+SAY @896
+COPY_TRANS C6DRIZZ1 25
 END
 
-//51, 52?
-I_C_T3 C6DRIZZ1 53 C#SolaufeinDrizzt  //unbelastetes Treffen
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @873
-= @874
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @875
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @876
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @877
-= @878
-= @879
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @880
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @881
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @882
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @883
-= @884
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @885
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @886
-= @887
-= @888
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @889
-= @890
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @891
-= @892
-= @893
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @894
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @895
-= @896
+IF ~~ THEN solaufein_drizzt_04_29
+SAY @896
+COPY_TRANS C6DRIZZ1 29
 END
 
-I_C_T3 C6DRIZZ1 29 C#SolaufeinDrizzt
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @873
-= @874
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @875
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID) ReactionLT(Player1,15)~ THEN @876
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @877
-= @878
-= @879
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @880
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @881
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @882
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @883
-= @884
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @885
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @886
-= @887
-= @888
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @889
-= @890
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @891
-= @892
-= @893
-== c#SolauJ IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @894
-== C6DRIZZ1 IF ~OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
-InMyArea("C#Solaufein") 
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN @895
-= @896
+IF ~~ THEN solaufein_drizzt_04_50
+SAY @896
+COPY_TRANS C6DRIZZ1 50
 END
+
+IF ~~ THEN solaufein_drizzt_04_53
+SAY @896
+COPY_TRANS C6DRIZZ1 53
+END
+
+END //APPEND
+
 
 
 
