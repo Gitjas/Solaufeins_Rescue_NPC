@@ -15,8 +15,10 @@ For BGII:EE and EET the animations will be included and used automatically.
 
 The forth, optional component enables to install the alternative portrait for Solaufein, also from Holger Kirste!
 
+The fifth, optional component adds one additonal reply option to Adalon's dialogue, with which the player can tell that the PC is drow. This will set a variable so that Solaufein will address the PC as drow. This was content of the main component before but I made it a separate component for v2 because it might be immersion breaking in case players do not plan on playing as drow PC. The detection of the subrace mods mentioned above is independent to this.
 
-For version1, the rescue quest can be played fully in English. The rest of the mod is still mostly in German. English version is done to 55%.
+
+For version 2 (and higher), the English version is complete!
 
 
 ## Copyright
