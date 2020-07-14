@@ -33,6 +33,16 @@ InParty("HEXXAT") InMyArea("HEXXAT") !StateCheck("HEXXAT",CD_STATE_NOTVALID)~ TH
 == BHEXXAT IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1804
 == BHEXXA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1804
 == C#SOLAUB @1805
+== BHEXXAT IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1823
+== BHEXXA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1823
+== C#SOLAUB @1824
+== BHEXXAT IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1825
+== BHEXXA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1825
+== C#SOLAUB @1826
+= @1827
+== BHEXXAT IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1828
+== BHEXXA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1828
+== C#SOLAUB @845
 EXIT
 
 /* Solaufein - Neera */
@@ -138,13 +148,6 @@ InParty("HEXXAT") InMyArea("HEXXAT") !StateCheck("HEXXAT",CD_STATE_NOTVALID)~ TH
 == C#SOLAUB @1813
 == BHEXXAT IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1814
 == BHEXXA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1814
-== C#SOLAUB @1815
-== BHEXXAT IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1816
-== BHEXXA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1816
-== C#SOLAUB @1817
-== BHEXXAT IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1818
-== BHEXXA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1818
-== C#SOLAUB @1819
 EXIT
 
 
@@ -328,6 +331,9 @@ OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
 CombatCounter(0)
 !See([ENEMY])
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_NeeraBanter","GLOBAL",3)
 Global("C#Solaufein_NeeraBanterToB","GLOBAL",0)
 InParty("Neera") InMyArea("Neera") !StateCheck("Neera",CD_STATE_NOTVALID)~ THEN C#SOLAUB neera_04
 @1889 DO ~SetGlobal("C#Solaufein_NeeraBanterToB","GLOBAL",1)~
@@ -346,6 +352,9 @@ OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
 CombatCounter(0)
 !See([ENEMY])
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_RasaadBanter","GLOBAL",2)
 Global("C#Solaufein_RasaadBanterToB","GLOBAL",0)
 InParty("Rasaad") InMyArea("Rasaad") !StateCheck("Rasaad",CD_STATE_NOTVALID)~ THEN C#SOLAUB rasaad_tob
 @1917 DO ~SetGlobal("C#Solaufein_RasaadBanterToB","GLOBAL",1)~
@@ -373,6 +382,9 @@ OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
 CombatCounter(0)
 !See([ENEMY])
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_DornBanter","GLOBAL",2)
 Global("C#Solaufein_DornBanterToB","GLOBAL",0)
 InParty("Dorn") InMyArea("Dorn") !StateCheck("Dorn",CD_STATE_NOTVALID)~ THEN C#SOLAUB dorn_02
 @1903 DO ~SetGlobal("C#Solaufein_DornBanterToB","GLOBAL",1)~
@@ -393,6 +405,9 @@ OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
 CombatCounter(0)
 !See([ENEMY])
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_WilsonBanter","GLOBAL",3)
 Global("C#Solau_WilsonBanterToB","GLOBAL",0)
 InParty("WILSON") InMyArea("WILSON") !StateCheck("WILSON",CD_STATE_NOTVALID)~ THEN C#SOLAUB wilson_tob
 @1893 DO ~SetGlobal("C#Solau_WilsonBanterToB","GLOBAL",1)~
@@ -410,15 +425,12 @@ OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
 CombatCounter(0)
 !See([ENEMY])
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_HexxatBanter","GLOBAL",2)
 Global("C#Solaufein_HexxatBanterToB","GLOBAL",0)
 InParty("HEXXAT") InMyArea("HEXXAT") !StateCheck("HEXXAT",CD_STATE_NOTVALID)~ THEN C#SOLAUB hexxat_03
 @1820 DO ~SetGlobal("C#Solaufein_HexxatBanterToB","GLOBAL",1)~
 == BHEXXA25 @1821
-= @1822
-== C#SOLAUB @1823
-== BHEXXA25 @1824
-== C#SOLAUB @1825
-== BHEXXA25 @1826
-= @1827
-== C#SOLAUB @1828
+== C#SOLAUB @1822
 EXIT

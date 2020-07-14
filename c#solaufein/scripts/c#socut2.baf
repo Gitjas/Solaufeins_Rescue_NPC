@@ -25,26 +25,3 @@ THEN
 	EndCutSceneMode()
 END
 
-
-
-/* Originalskript aus dem BGII:
-
-IF
-	Global("udMoveToBeholder","GLOBAL",1)
-	!Allegiance(Myself,ENEMY)
-THEN
-	RESPONSE #100
-		DialogInterrupt(FALSE)
-		CreateVisualEffectObject("SPDIMNDR","Phaere")
-		CreateVisualEffectObject("SPDIMNDR",Myself)
-		Wait(1)
-		ActionOverride("Phaere",JumpToPoint([4021.3390]))
-		JumpToPoint([3988.3304])
-		Wait(2)
-		ActionOverride("Phaere",MoveToPoint([4021.3390]))
-		MoveToPoint([3988.3304])
-		DialogInterrupt(TRUE)
-		SetGlobal("udMoveToBeholder","GLOBAL",2)
-END
-
-*/

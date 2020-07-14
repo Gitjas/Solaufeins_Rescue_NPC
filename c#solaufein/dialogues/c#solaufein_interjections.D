@@ -295,8 +295,8 @@ IF ~~ THEN c#SolauJ solaufein_drizzt_01
 == c#SolauJ IF ~ReactionLT(Player1,10)~ THEN @876
 == C6DRIZZ1 @877
 END
-++ ~Wir müssen weiter, Solaufein. Fasst Euch kurz.~ EXTERN C6DRIZZ1 solaufein_drizzt_03
-++ ~(Ihr hört dem Gespräch der zwei Drow weiter zu.)~ DO ~SetGlobal("C#Solau_PCListenedDrizzt","GLOBAL",1)~ EXTERN C6DRIZZ1 solaufein_drizzt_02
+++ @2800 EXTERN C6DRIZZ1 solaufein_drizzt_03
+++ @2801 DO ~SetGlobal("C#Solau_PCListenedDrizzt","GLOBAL",1)~ EXTERN C6DRIZZ1 solaufein_drizzt_02
 
 CHAIN
 IF ~~ THEN C6DRIZZ1 solaufein_drizzt_02

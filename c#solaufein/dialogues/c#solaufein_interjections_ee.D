@@ -1,6 +1,6 @@
 /* EE: Elhan's geas in case Hexxat but not Viconia is in group */
 
-I_C_T HEXXATJ 305
+I_C_T HEXXATJ 305 C#Solau_HEXXATJ_305
 == C6ELHAN2 IF ~OR(2) !InParty("viconia")
 Dead("viconia")
 See("C#Solaufein")

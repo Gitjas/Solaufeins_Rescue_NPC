@@ -1,0 +1,32 @@
+IF 
+	GlobalGT("Chapter","GLOBAL",%bg2_chapter_6%)
+	Global("C#SolauNoScenery","GLOBAL",0)
+	!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+	OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("C#Solaufein_MazzyBanter","GLOBAL",2)
+	InParty("MAZZY") InMyArea("MAZZY") 
+	!StateCheck("MAZZY",CD_STATE_NOTVALID)
+	RealGlobalTimerExpired("C#SolauBanterTimer","GLOBAL")
+/* only in a tavern */
+OR(12)
+AreaCheck("AR0704")
+AreaCheck("AR0709")
+AreaCheck("AR0406")
+AreaCheck("AR0513")
+AreaCheck("AR0509")
+AreaCheck("AR0021")
+AreaCheck("AR0313")
+AreaCheck("AR1105")
+AreaCheck("AR2010")
+AreaCheck("AR1602")
+AreaCheck("AR5003")
+AreaCheck("AR5501")
+
+THEN 
+	RESPONSE #100
+		SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",3)
+		RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)
+		StartDialogNoSet("C#Solaufein")
+END

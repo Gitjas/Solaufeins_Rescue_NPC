@@ -189,7 +189,23 @@ Global("C#Solaufein_PCIsDrow","GLOBAL",1)~ THEN @41
 == AMCARRAS IF ~GlobalGT("C#Solaufein_Quest","GLOBAL",2)~ THEN @48
 == C#SolauJ IF ~GlobalGT("C#Solaufein_Quest","GLOBAL",2)~ THEN @49
 == AMCARRAS @50
-EXIT
+== AMCARRAS IF ~OR(14)
+PartyHasItem("DWCHAN01")
+PartyHasItem("DWCHAN02")
+PartyHasItem("DWSW1H01")
+PartyHasItem("DWSW1H02")
+PartyHasItem("DWBLUN01")
+PartyHasItem("DWHALB01")
+PartyHasItem("DWSPER01")
+PartyHasItem("DWXBOW01")
+PartyHasItem("DWSHLD01")
+PartyHasItem("DWCLCK01")
+PartyHasItem("DWBOLT01")
+PartyHasItem("DWBOLT02")
+PartyHasItem("DWBOLT03")
+PartyHasItem("DWPLAT01")~ THEN @65
+END
+IF ~~ THEN + 16
 
 
 

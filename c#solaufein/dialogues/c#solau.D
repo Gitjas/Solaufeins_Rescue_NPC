@@ -59,7 +59,7 @@ END
 
 IF ~~ THEN treffen_08
 SAY @28
-IF ~NumInPartyLT(6)~ THEN DO ~SetInterrupt(FALSE)
+IF ~~ THEN DO ~SetInterrupt(FALSE)
 RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",300)
 RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)
 RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500)
@@ -70,7 +70,12 @@ EraseJournalEntry(@1797)
 EraseJournalEntry(@1796)
 JoinParty()
 SetInterrupt(TRUE)~ SOLVED_JOURNAL @1795 EXIT
-IF ~NumInParty(6)~ THEN DO ~SetInterrupt(FALSE)
+IF ~NumInParty(6)~ THEN + treffen_08_b
+END
+
+IF ~~ THEN treffen_08_b
+SAY @2702
+IF ~~ THEN DO ~SetInterrupt(FALSE)
 RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",300)
 RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)
 RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500)
@@ -154,11 +159,16 @@ END
 
 IF ~~ THEN wartet_wieder_02
 SAY @28
-IF ~NumInPartyLT(6)~ THEN DO ~SetGlobal("C#SolauJoined","GLOBAL",1)
+IF ~~ THEN DO ~SetGlobal("C#SolauJoined","GLOBAL",1)
 EraseJournalEntry(@1797)
 EraseJournalEntry(@1796)
 JoinParty()~ SOLVED_JOURNAL @1795 EXIT
-IF ~NumInParty(6)~ THEN DO ~SetInterrupt(FALSE)
+IF ~NumInParty(6)~ THEN + wartet_wieder_02_b
+END
+
+IF ~~ THEN wartet_wieder_02_b
+SAY @2702
+IF ~~ THEN DO ~SetInterrupt(FALSE)
 SetGlobal("C#SolauJoined","GLOBAL",2)
 EraseJournalEntry(@1797)
 EraseJournalEntry(@1796)
@@ -171,8 +181,6 @@ ChangeAIScript("DEFAULT",CLASS)
 ChangeAIScript("",RACE)
 ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
-SetInterrupt(TRUE)
-
 SetInterrupt(TRUE)~ SOLVED_JOURNAL @1795 EXIT
 END
 
@@ -213,7 +221,7 @@ END
 
 
 
-
+/* first meeting after PC left Ust Natha: in front of Adalon's lair */
 BEGIN ~c#solau1~
 
 IF ~Allegiance(Myself,ENEMY)~ THEN feindlich
@@ -373,7 +381,9 @@ END
 
 IF ~~ THEN rescue_07
 SAY @82
-++ @83 + rescue_08
+IF ~OR(2)
+Alignment(Player1,MASK_EVIL) !ReputationGT(Player1,9)~ THEN + rescue_08
++ ~!Alignment(Player1,MASK_EVIL) ReputationGT(Player1,9)~ + @83 + rescue_08
 + ~!Alignment(Player1,MASK_EVIL) ReputationGT(Player1,9)~ + @84 + rescue_09
 END
 
@@ -381,6 +391,7 @@ END
 IF ~~ THEN rescue_08
 SAY @85
 IF ~~ THEN DO ~CreateVisualEffectObject("SPDIMNDR",Myself)
+SetGlobal("C#SolauRettung","GLOBAL",4)
 SetGlobal("C#Solaufein_Cocoon1","c#so01",3)
 TriggerActivation("c#sococ1",FALSE)
 EraseJournalEntry(@67)
@@ -537,6 +548,7 @@ END
 IF ~~ THEN rescue_21
 SAY @139
 IF ~~ THEN DO ~CreateVisualEffectObject("SPDIMNDR",Myself)
+SetGlobal("C#SolauRettung","GLOBAL",4)
 SetGlobal("C#Solaufein_Cocoon1","c#so01",3)
 TriggerActivation("c#sococ1",FALSE)
 EraseJournalEntry(@67)
@@ -553,6 +565,7 @@ SAY @141
 = @142
 = @143
 IF ~~ THEN DO ~CreateVisualEffectObject("SPDIMNDR",Myself)
+SetGlobal("C#SolauRettung","GLOBAL",4)
 SetGlobal("C#Solaufein_Cocoon1","c#so01",3)
 SetGlobal("C#Solaufein_Waits","GLOBAL",2)
 TriggerActivation("c#sococ1",FALSE)
@@ -565,6 +578,7 @@ IF ~~ THEN rescue_24
 SAY @142
 = @144
 IF ~~ THEN DO ~CreateVisualEffectObject("SPDIMNDR",Myself)
+SetGlobal("C#SolauRettung","GLOBAL",4)
 SetGlobal("C#Solaufein_Cocoon1","c#so01",3)
 SetGlobal("C#Solaufein_Waits","GLOBAL",1)
 TriggerActivation("c#sococ1",FALSE)
@@ -572,11 +586,16 @@ EraseJournalEntry(@67)
 DestroySelf()~ UNSOLVED_JOURNAL @1796 EXIT
 END
 
+
+/* aftr leaving at the drider pits: Solaufein meets up at the Underdark exit */
+
+/* Solaufein wanted to join at the surface */
 IF ~Global("C#Solaufein_Waits","GLOBAL",1)~ THEN dazu
 SAY @145
 IF ~~ THEN + dazu_02
 END
 
+/* Solaufein wanted to join later in Underdark */
 IF ~Global("C#Solaufein_Waits","GLOBAL",2)~ THEN dazu_01
 SAY @146
 IF ~~ THEN + dazu_02
@@ -592,18 +611,32 @@ SAY @147
 ++ @152 + dazu_04
 END
 
-IF ~~ THEN dazu_03
-SAY @153
-++ @154 + dazu_04
+END //APPEND
+
+CHAIN
+IF ~~ THEN c#solau dazu_03
+@153
+== c#solau IF ~OR(2) Global("C#Solaufein_PCIsDrow","GLOBAL",1) InPartyAllowDead("Viconia")~ THEN @2700 
+END
++ ~!Global("C#Solaufein_PCIsDrow","GLOBAL",1) !InPartyAllowDead("Viconia")~ + @154 + dazu_04
++ ~OR(2) Global("C#Solaufein_PCIsDrow","GLOBAL",1) InPartyAllowDead("Viconia")~ + @2701 + dazu_04
 ++ @155 + dazu_04
 ++ @149 + treffen_08
 ++ @21 + treffen_12
 ++ @152 + dazu_04
-END
+
+
+APPEND c#solau
 
 IF ~~ THEN dazu_04
 SAY @156
+IF ~~ THEN + dazu_05
+END
+
+IF ~~ THEN dazu_05
+SAY @2703
 IF ~~ THEN DO ~CreateVisualEffectObject("SPDIMNDR",Myself)
+SetGlobal("C#SolauRettung","GLOBAL",4)
 SetGlobal("C#Solaufein_Waits","GLOBAL",3)
 EraseJournalEntry(@1797)
 DestroySelf()~ UNSOLVED_JOURNAL @1796 EXIT

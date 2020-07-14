@@ -144,6 +144,7 @@ Global("C#Solaufeindrinnen3","LOCALS",0) Global("c#solaufein_PhaerePID","LOCALS"
 + ~Global("C#Solau_CarrasOffer","GLOBAL",3)~ + @1870 /* ~Thank you for not trading with that smuggler. Even if it's only small sums, I do not appreciate people being conned.~ */ DO ~SetGlobal("C#Solau_CarrasOffer","GLOBAL",4)~ + drizzt_hair_tob
 
 + ~Global("C#SolaufeinEier","GLOBAL",2)~ + @1408 DO ~SetGlobal("C#SolaufeinEier","GLOBAL",3)~ + eier
++ ~Global("C#SolaufeinEier","GLOBAL",2)~ + @1935 DO ~SetGlobal("C#SolaufeinEier","GLOBAL",3)~ + eier_01
 
 + ~Global("C#SolaufeinFriends","GLOBAL",1) Global("RE_SolaufeinSex","GLOBAL",1)~ + @1409 + dienste_RE
 
@@ -154,9 +155,20 @@ Global("C#Solaufeindrinnen3","LOCALS",0) Global("c#solaufein_PhaerePID","LOCALS"
 
 + ~Global("C#SolaufeinPID3","GLOBAL",2)~ + @1410 DO ~SetGlobal("C#SolaufeinPID3","GLOBAL",3)~ + ambush
 
-+ ~Global("C#SolaufeinDrizzt","GLOBAL",4)~ + @1411 DO ~SetGlobal("C#SolaufeinDrizzt","GLOBAL",5)~ + suche
++ ~Global("C#SolaufeinDrizzt","GLOBAL",4)
+OR(2)
+Global("EilistraeeBeginning","GLOBAL",0)
+Global("EilistraeeBeginning","GLOBAL",66)~ + @1411 DO ~SetGlobal("C#SolaufeinDrizzt","GLOBAL",5)~ + suche
 
 + ~GlobalGT("C#Solaufein_Dialog","GLOBAL",4) Global("C#solaufein_MagicGone","LOCALS",1)~ + @1412 DO ~SetGlobal("C#solaufein_MagicGone","LOCALS",2)~ + magic_gone
+
++ ~Global("c#solaufein_Magic5","LOCALS",0)
+Global("C#solaufein_MagicGone","LOCALS",1)~ + @1513 DO ~SetGlobal("c#solaufein_Magic5","LOCALS",1)~ + magic_gone_05
+
++ ~Global("c#solaufein_Magic5","LOCALS",0)
+Global("C#solaufein_MagicGone","LOCALS",1)~ + @1514 DO ~SetGlobal("c#solaufein_Magic6","LOCALS",1)
+SetGlobal("c#solaufein_Magic5","LOCALS",1)
+SetGlobal("C#solaufein_MagicGone","LOCALS",2)~ + magic_gone_06
 
 
 
@@ -283,7 +295,8 @@ Global("C#Solau_ElhanGeas","GLOBAL",0)~ + @1416 DO ~SetGlobal("ToBPID_unterwegs"
 
 /* inventory management.  - if Solaufein is not in party but following as companion he has to join the group so the player has access to the inventory. */
 
-+ ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInPartyLT(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ DO ~SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
++ ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInPartyLT(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ DO ~RemoveFamiliar()
+SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
 
 + ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInParty(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ + join
 
@@ -336,7 +349,8 @@ Global("C#Solau_ElhanGeas","GLOBAL",0)~ + @1416 DO ~SetGlobal("ToBPID_unterwegs"
 
 /* inventory management.  - if Solaufein is not in party but following as companion he has to join the group so the player has access to the inventory. */
 
-+ ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInPartyLT(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ DO ~SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
++ ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInPartyLT(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ DO ~RemoveFamiliar()
+SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
 
 + ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInParty(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ + join
 
@@ -374,7 +388,10 @@ END
 
 IF ~~ THEN join
 SAY @1854 /* ~With pleasure - if someone else moves away.~ */
-IF ~~ THEN DO ~SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
+IF ~~ THEN DO ~RemoveFamiliar()
+ChangeAIScript("",DEFAULT)
+ChangeEnemyAlly(Myself,NEUTRAL)
+SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
 END
 
 IF ~~ THEN hp_alarm
@@ -454,16 +471,28 @@ SAY @1440
 IF ~~ THEN + anrede 
 END
 
-
-
-IF ~~ THEN vorbilder
-SAY @1443
-= @1444
-= @1445
+IF ~~ THEN eier_01
+SAY @1934
 IF ~~ THEN + anrede 
 END
 
 
+END //APPEND C#SOLAUJ
+
+CHAIN
+IF ~~ THEN C#SOLAUJ vorbilder
+@1443
+== C#SOLAUJ IF ~OR(2)
+Global("EilistraeeBeginning","GLOBAL",0)
+Global("EilistraeeBeginning","GLOBAL",66)~ THEN @1444
+== C#SOLAUJ IF ~GlobalGT("EilistraeeBeginning","GLOBAL",1)
+GlobalLT("EilistraeeBeginning","GLOBAL",66)~ THEN @2750
+== C#SOLAUJ @1445
+END
+IF ~~ THEN + anrede 
+
+
+APPEND C#SOLAUJ
 
 IF ~~ THEN leben_01
 SAY @1446
@@ -668,8 +697,6 @@ SAY @1508
 + ~Global("c#solaufein_Magic2","LOCALS",0)~ + @1510 DO ~SetGlobal("c#solaufein_Magic2","LOCALS",1)~ + magic_gone_02
 + ~Global("c#solaufein_Magic3","LOCALS",0)~ + @1511 DO ~SetGlobal("c#solaufein_Magic3","LOCALS",1)~ + magic_gone_03
 + ~Global("c#solaufein_Magic4","LOCALS",0)~ + @1512 DO ~SetGlobal("c#solaufein_Magic4","LOCALS",1)~ + magic_gone_04
-+ ~Global("c#solaufein_Magic5","LOCALS",0)~ + @1513 DO ~SetGlobal("c#solaufein_Magic5","LOCALS",1)~ + magic_gone_05
-+ ~Global("c#solaufein_Magic6","LOCALS",0)~ + @1514 DO ~SetGlobal("c#solaufein_Magic6","LOCALS",1)~ + magic_gone_06
 ++ @1515 + anrede
 END
 
@@ -699,10 +726,9 @@ END
 
 IF ~~ THEN magic_gone_05
 SAY @1521
-IF ~~ THEN + magic_gone
+= @1522
+IF ~~ THEN + anrede
 END
-
-//deutsch: "Sauger"
 
 IF ~~ THEN magic_gone_06
 SAY @1522
@@ -1000,7 +1026,7 @@ IF ~~ THEN suche
 SAY @1626
 IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN + suche_01
 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN + suche_02
-IF ~Dead("helljon")~ THEN EXIT
+IF ~Dead("helljon2")~ THEN + anrede
 END
 
 IF ~~ THEN suche_01

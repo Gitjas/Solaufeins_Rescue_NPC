@@ -48,7 +48,12 @@ SetGlobal("C#Solaufein_Waits","GLOBAL",5)
 SetGlobal("C#SolauJoined","GLOBAL",1)
 JoinParty()
 SetInterrupt(TRUE)~ EXIT
-IF ~NumInParty(6)~ THEN DO ~SetInterrupt(FALSE)
+IF ~NumInParty(6)~ THEN + solaufein_summoned_02_b
+END
+
+IF ~~ THEN solaufein_summoned_02_b
+SAY @2702
+IF ~~ THEN DO ~SetInterrupt(FALSE)
 RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",300)
 RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500)
 SetGlobal("C#Solaufein_Waits","GLOBAL",5)
@@ -63,9 +68,6 @@ ChangeAIScript("",RACE)
 ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
 SetInterrupt(TRUE)~ EXIT
-
-
-
 END
 
 IF ~~ THEN not_yet

@@ -1,22 +1,18 @@
 /* in-game texts */
 @1  = ~Rune of Protection~ 
-@2  = ~This is obviously one of the magical runes used by drows, such as are used to negate protection spells. With this rune you can pass a previously sealed entrance.~
+@2  = ~This is obviously one of the magical runes used by the drow to negate protection spells. With this rune you can pass a previously sealed entrance.~
 /* epilogue: no friendship */
-@3  = ~After you parted ways, Solaufein returned to his search for followers of Eilistraee. Rumor has it that after some time roaming around without purpose, he ventured into the Undermountain beneath Waterdeep, and that there he studied the ways of the surface drow.
+@3  = ~Not much is known of Solaufein's final days.  While many a tale is told of the drow who fought alongside the Bhaalspawn of Alaundo's prophecy only a few details are known of Solaufein's story after he parted ways with <CHARNAME>.  What is known, is that Solaufein - disappointed by the shallow bonds with his former comrades - wandered aimlessly for some time before finding his way into the Undermountain beneath Waterdeep in search for the surface followers of Eilistraee.
 
-Disappointed by his insufficient bond with his former comrades, it was here that he found true friendship and camaraderie. Solaufein found peace with his fellow brethren, but towards the surface dwellers, as he kept on calling them to the very end, he remained aloof.
-
-Not much is known of his future. Many a tale was told of the drow fighting alongside the one Alaundo's prophecies had spoken of, but almost nothing was heard about his whereabouts after the Bhaal struggles were over.~ 
+It was there at the Promenade of the Dark Maiden that Solaufein finally found true friendship and camaraderie among the surface drow followers of Eilistraee.  While he found peace with his brethren, towards the surface dwellers - as he called them to the very end - he remained aloof.~ 
 
 /* epilogue: friendship */
-@4  = ~After you parted ways, Solaufein returned to his search for followers of Eilistraee. Rumor has it that after some time roaming around without purpose, he ventured into the Undermountain beneath Waterdeep, and that there he studied the ways of the surface drow.
+@4  = ~Not much is known of Solaufein's final days.  While many a tale is told of the drow who fought alongside the Bhaalspawn of Alaundo's prophecy only a few details are known of Solaufein's story after he parted ways with <CHARNAME>.  What is known, is that after you parted ways Solaufein traveled the surface of Faerûn learning of its places and inhabitants.  In time, he made his way to Waterdeep and there he ventured into the Undermountain to find the surface followers of Eilistraee.
 
-He found many like-minded fellows. Strengthened by his friendship with you he kept on seeking out the company of humans and elves; those "surface dwellers", as he eagerly emphasized.
-
-Not much is known of his future. Many a tale was told of the drow fighting alongside the one Alaundo's prophecies had spoken of, but almost nothing was heard about his whereabouts after the Bhaal struggles were over.~
+There at the Promenade of the Dark Maiden Solaufein found many like-minded drow and other races who had been drawn to the strange community.  However, while he did find true friendship and camaraderie among the surface drow followers of Eilistraee, he did not restrict his bonds to just those of his own race.  Strengthened by his friendship with <CHARNAME>, Solaufein was known to seek out and enjoy friendships with many *surface dwellers*, as he affectionately called them. His final days are clouded in obscurity, but those who knew him have little doubt that he spent them in the company of his good and true friends.~
 @5  = ~Drow Fighter~ 
 @6  = ~Drow Fighter
-The drow fighter is the less magically trained drow type. 
+The drow's world is one in which violent conflict is part of everyday life. While the violence of their upbringing means that most drow warriors are skilled combatants by surface standards, elite drow fighters often have their martial training supplemented with instruction in a narrow set of basic magical abilities. This precaution is taken so the elite drow fighters do not have to rely on their innate racial magic which could fail during a surface raid that lasted longer than planned.
   
   Advantages:
   -Gains 2% magical resistance upon every level up to a max of 80% at level 16.

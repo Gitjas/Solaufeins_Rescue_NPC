@@ -216,7 +216,7 @@ CHAIN
 IF ~~ THEN C#SOLAUJ bhaal_heritage_03
 @216
 = @217
-== C#SOLAUJ IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @218
+== C#SOLAUJ IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) !Dead("helljon2")~ THEN @218
 == C#SOLAUJ IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @219
 END
 IF ~~ THEN DO ~IncrementGlobal("C#Solaufein_Dialog","GLOBAL",1)~ EXIT
@@ -503,6 +503,7 @@ END
 
 IF ~~ THEN sprache_gelernt
 SAY @300
+++ @2606 + sprache_gelernt_2_1
 ++ @86 + sprache_gelernt_2_1
 ++ @301 + sprache_gelernt_2
 ++ @296 + sprache_gelernt_ende
@@ -807,9 +808,21 @@ END
 IF ~~ THEN weakness_01 
 SAY @402
 ++ @403 + weakness_03 
-++ @404 + weakness_04
++ ~!Dead("helljon2")~ + @2614 + weakness_01_c
++ ~Dead("helljon2")~ + @2615 + weakness_01_c
+++ @404 + weakness_01_b 
 ++ @405 + weakness_02 
 ++ @406 + weakness_02 
+END
+
+IF ~~ THEN weakness_01_b 
+SAY @2617
+IF ~~ THEN + weakness_03 
+END
+
+IF ~~ THEN weakness_01_c
+SAY @2616
+IF ~~ THEN + weakness_01_b 
 END
 
 IF ~~ THEN weakness_02 
@@ -1091,11 +1104,16 @@ END
 
 IF ~~ THEN erklaerung_14
 SAY @492
-IF ~~ THEN + erklaerung_13
+++ @487 + erklaerung_12
+++ @2607 + erklaerung_15 
+++ @2608 + erklaerung_15
+++ @484 + erklaerung_13
 END
 
-
-
+IF ~~ THEN erklaerung_15
+SAY @2609
+IF ~~ THEN + erklaerung_13
+END
 
 /* ---- */
 
@@ -1221,6 +1239,9 @@ SAY @534
 = @537
 ++ @538 + difficult_02 
 ++ @539 + difficult_02 
+++ @2610 + difficult_01_b
+++ @2611 + difficult_01_b
+++ @2612 + difficult_02 
 ++ @540 + difficult_02 
 ++ @541 + difficult_01
 END
@@ -1228,6 +1249,11 @@ END
 IF ~~ THEN difficult_01
 SAY @542 
 IF ~~ THEN DO ~IncrementGlobal("C#Solaufein_Dialog","GLOBAL",1)~ EXIT
+END
+
+IF ~~ THEN difficult_01_b
+SAY @2613
+IF ~~ THEN + difficult_02 
 END
 
 IF ~~ THEN difficult_02 
@@ -1373,8 +1399,8 @@ END
 IF ~Global("C#Solaufein_Dialog","GLOBAL",40)~ THEN lob
 SAY @599
 ++ @600 + lob_01
-++ @601 + lob_05 
 ++ @602 + lob_04
+++ @2605 + lob_01
 END
 
 IF ~~ THEN lob_01
@@ -1385,6 +1411,7 @@ END
 IF ~~ THEN lob_02
 SAY @604
 ++ @605 + lob_10
+++ @601 + lob_05 
 ++ @606 + lob_12
 ++ @607 + lob_11
 ++ @608 + wie_ihr_meint
@@ -1402,7 +1429,7 @@ END
 
 IF ~~ THEN lob_05
 SAY @611
-IF ~~ THEN + lob_02
+IF ~~ THEN + lob_12
 END
 
 IF ~~ THEN lob_06 
@@ -1465,11 +1492,22 @@ SAY @628
 ++ @630 + oberflaechenbewohner_02
 ++ @631 + oberflaechenbewohner_03
 ++ @632 + oberflaechenbewohner_01
++ ~GlobalGT("StopJarTimer","GLOBAL",0)~ + @2600 + oberflaechenbewohner_00
 ++ @633 + wie_ihr_meint
+END
+
+IF ~~ THEN oberflaechenbewohner_00
+SAY @2601
+IF ~~ THEN + oberflaechenbewohner_01_b
 END
 
 IF ~~ THEN oberflaechenbewohner_01
 SAY @634
+IF ~~ THEN + oberflaechenbewohner_01_b
+END
+
+IF ~~ THEN oberflaechenbewohner_01_b
+SAY @2602
 IF ~~ THEN + oberflaechenbewohner_04
 END
 
@@ -1494,6 +1532,14 @@ END
 
 IF ~~ THEN oberflaechenbewohner_05
 SAY @642
+++ @643 + oberflaechenbewohner_08
+++ @644 + oberflaechenbewohner_07
+++ @2603 + oberflaechenbewohner_05_0
+++ @645 + oberflaechenbewohner_05_1
+END
+
+IF ~~ THEN oberflaechenbewohner_05_0
+SAY @2604
 ++ @643 + oberflaechenbewohner_08
 ++ @644 + oberflaechenbewohner_07
 ++ @645 + oberflaechenbewohner_05_1

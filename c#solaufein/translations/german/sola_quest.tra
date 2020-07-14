@@ -4,7 +4,7 @@
 @3    = ~Verdammte Rivvin! Wollen sie uns etwa wieder an den Scheiterhaufen stellen?!~
 @4    = ~Vorsicht, <CHARNAME>. Lasst Eure Waffen stecken. In dieser Stadt soll es meinetwegen kein Blutvergießen geben.~
 @5    = ~(schnaubt) Nein, viel Blut wird nicht fließen, wenn sie uns an den Pfahl binden. Ich erwarte, dass Ihr uns der Meute nicht ausliefert, <CHARNAME>!~
-@6    = ~Aber... Seht doch! Seht! Es ist... OH MEIN GOTT! Es ist...~
+@6    = ~Aber... Seht doch! Seht! Es ist... BEI DEN GÖTTERN! Es ist...~
 @7    = ~Drizzt! Es ist Drizzt!~
 @8    = ~Drizzt Do'Urden, der gute, rechtschaffene Drow!~
 @9    = ~Oohhh...~
@@ -38,18 +38,19 @@
 @37   = ~Wie ich sehe, habt Ihr einen Drow unter Euch. H-hm... Vielleicht können wir trotzdem geschäftlich in Kontakt bleiben. Sagt, Herr Dunkelelf, wärt Ihr an einem kleinen Zusatzeinkommen interessiert? Ihr habt sicher noch ein paar Möglichkeiten, zurück ins Unterreich zu kommen, oder? Und könnt an Waffen und Rüstungsteilen aus Adamantit kommen?~
 @38   = ~Warum fragt Ihr mich, das Männchen? Warum fragt Ihr nicht *sie*?~
 @39   = ~Na, weil ein Männchen viel mehr Erfahrung darin hat, sich Dinge zu seinen Gunsten zu organisieren, sonst wäre er nicht mehr am Leben. Ich habe ein bisschen Ahnung vom Drowleben, müsst Ihr wissen.~
+/* line for male drow PC */
 @40   = ~Warum fragt Ihr nicht <CHARNAME>? Ihr seht, dass er unser Anführer ist.~
+/* line for male drow PC */
 @41   = ~Na, weil Ihr unverkennbar ein viel *älteres* Männchen seid, und älterer Drow heißt mehr Erfahrung im Organisieren zum Überleben. Ich habe ein bisschen Ahnung vom Drowleben, müsst Ihr wissen.~
 @42   = ~Und von welchem Nutzen sollen Adamantitwaffen sein, wenn sie hier zu Staub zerfallen?~
-@43   = ~Ah, ich sehe, dass Euch die nötigen Informationen fehlen, um das Gesamtbild zu bewerten. Es gibt eine *Menge* viel zu reicher Leute, die bereit sind, viel Gold für ausgefallene und seltene Dinge auszugeben. Der neueste Schrei sind momentan Drowgegenstände. Die sind halt sehr rar - eben *weil* sie am Tageslicht zu Staub zerfallen. Damit zu handeln ist leicht verdientes Gold, versteht Ihr, weil der Kunde kein Rückgaberecht hat. Die Kisten müssen verschlossen bleiben, und wenn der Kunde nachschaut, und die Waffe ist nur noch Staub - na, dann ist das nicht das Problem des Händlers, Ihr versteht?~
-@44   = ~Sie... geben Gold für Dinge aus, die sie eigentlich nie anschauen können? Ich... möchte... damit nichts zu tun haben, denke ich. Selbst wenn - ich habe keine Kontakte ins Unterreich mehr.~
-@45   = ~Zu schade. Man findet selten ein solches Geschäftsfeld wie diese Hysterie um Drowgegenstände, in dem der Kunde derart über den Tisch gezogen werden *will*.~
+@43   = ~Ah, ich sehe, dass Euch die nötigen Informationen fehlen, um das Gesamtbild zu bewerten. Es gibt eine *Menge* viel zu reicher Leute, die bereit sind, viel Gold für ausgefallene und seltene Dinge auszugeben. Der neueste Schrei sind momentan Drowgegenstände. Die sind halt sehr rar - eben *weil* sie im Sonnelicht zu Staub zerfallen. Damit zu handeln ist leicht verdientes Gold, versteht Ihr. Die Waren müssen unter allen Umständen aus dem Licht gehalten werden - ein Erschwernis der Beschaffung, den wir uns selbstverständlich entsprechend bezahlen lassen. Und falls das Adamantit doch zu Staub zerfällt - gibt es kein Rückgaberecht. Stattdessen bekommen wir eine neue Bestellung für weitere Waren! Großartig, oder?~
+@44   = ~Sie... geben Gold für Dinge aus, die sie eigentlich nie verwenden können? Ich... möchte... damit nichts zu tun haben, denke ich. Selbst wenn - ich habe keine Kontakte ins Unterreich mehr.~
+@45   = ~Zu schade. Man findet selten ein solches Geschäftsfeld wie diese Hysterie um Drowgegenstände, in dem der Kunde derart über den Tisch gezogen werden *will*. Wobei ich niemanden betrüge, indem ich einfach gleich Staub verpacke. Ich habe schließlich auch meinen Stolz!~
 @46   = ~Hm, vielleicht könnten wir aber trotzdem einen schnellen und gut bezahlten Handel abschließen. Würdet Ihr mir ein paar Eurer - ja, Haare verkaufen? Es ist zwar insgesamt nicht viel Gold, das ich dafür bieten kann, aber ehrlich und leicht verdient!~
 @47   = ~Haare von mir? Was würdet Ihr mit... Wartet. Ihr verkauft sie dann als *Drizzts*, oder?!~
 @48   = ~Ah, Ihr habt das also schon mitgekriegt. Ja, Haare von Drizzt gehen momentan auch extrem gut, wer hätte das gedacht. Hat wohl irgendwo in Amn angefangen, als die Tochter eines Reichen Schnösels auch welche haben wollte, nachdem ihre Freundin ein paar ergattert hatte, oder irgendwie so. Geht halt nichts über ein bisschen Neid als Triebfeder. So soll dieser ganze Hype um Drowgegenstände ausgelöst worden sein, sagt man. Da ich Euren Namen ja nicht weiß, Herr Dunkelelf, können wir also Eure Haare mit Fug und Recht als Drizzts verkaufen. Ist ja nicht so, als würde ich da mit Absicht täuschen, nicht wahr?~
 @49   = ~Mann, steckt Euer Gold wieder ein und *macht*, dass Ihr mir aus den Augen kommt. Ich höre mir diesen Blödsinn keinen Moment länger an.~
 @50   = ~Ah, ich merke schon, dass Ihr nicht interessiert seid. Nun gut. War kein Fehler, wenigstens zu fragen. Auch ein Schmuggler muss sich seinen Lebensunterhalt verdienen, nicht wahr?~
-
 @51  = ~He, Ihr da! Dunkelelf! Bleibt stehen!~
 @52  = ~Noch einmal? Ich hoffe, dass es nicht diesmal ein feindliches Ansinnen ist!~
 @53  = ~Ihr! Ihr seid es. Meine Tochter hat mit Euch gesprochen. Ihr habt Euch als Drizzt Do'Urden ausgegeben, nicht wahr? Ihr seid aber gar nicht Drizzt. Ich habe den Waldläufer bereits einmal gesehen, und Ihr seid nicht er!~
@@ -64,4 +65,4 @@
 @62  = ~...Ihr habt mich aufgesucht, damit ich Euch ein paar meiner *Haare* gäbe? Um sie dann als Drizzts auszugeben? Guter Mann, hört mir jetzt gut zu. Ich werde nicht bei einem Betrug mitspielen, und wenn er noch so klein ist. Und ich werde *keine* meiner Haare hergeben, auch nicht für Gold! Geht jetzt, bevor ich den Schwur breche, den ich meinem Anführer gab, und mein Schwert gegen Euch erhebe!~
 @63  = ~Wie unfreundlich! Ihr solltet dankbar sein, dass überhaupt jemand mit Euch spricht! Ach, aber was *mache* ich denn jetzt? Ich brauche das Haar eines Dunkelelfen, weiß und doch kräftig. Sonst erholt sich meine arme Alexia niemals von dieser Schmach!~
 @64  = ~<CHARNAME>, kein Kommentar hierzu, ich bitte Euch. Lasst uns gehen!~
-
+@65 = ~Immerhin sehe ich ein paar Eurer Ausrüstungsgegenstände, die aus dem heiß begehrten Material bestehen. Wenn Ihr sie mir gleich verkaufen wollt - ich werde Euch einen guten Preis machen!~

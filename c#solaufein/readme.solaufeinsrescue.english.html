@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Solaufein's Rescue - jastey's Solaufein NPC mod for BGII</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="readme/bgreadme.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+<tr>
+	<td align="center"><a href="https://www.baldurs-gate.de/index.php"><img src="readme/BannerSword.png" border="0" alt="Baldur's Gate Forum" /></a></td>
+	<td align="right">
+		&nbsp;
+	</td>
+</tr>
+
+</table>
+<h1>Solaufein's Rescue - jastey's Solaufein NPC mod for BGII</h1>
+<div class="section"> 
+  <p><strong><a href="https://www.baldurs-gate.de/index.php">A Kerzenburgforum Modification</a><br />  </strong>
+    Author: jastey<br />
+	Portrait Artist: <a href="https://chinasky.artstation.com/">Holger Kirste</a><br />
+    <strong> Languages:</strong> English, German<br />
+    <strong>Platform: </strong>Windows, OSX, Linux</p> 
+  <p>Solaufein's Rescue is a Quest Mod and an NPC Mod for BGII. It is natively compatible with BGII, BGT, BGII:EE, and EET.</p>
+    <img src="readme/SolauDefault.png">
+</div>
+
+
+<h2>Content</h2>
+<div class="section">
+  <ol>
+    <li><a href="#install">Installation</a></li>
+      <ul> 
+		<li><a href="#eegames">Notes to modding EE games</a> </li>
+        <li><a href="#windows">Windows</a> </li>
+		<li><a href="#osx">Mac OS X</a> </li>
+		<li><a href="#linux">Linux</a> </li>
+      </ul> 
+    <li><a href="#compat">Compatibility with other mods and Install Order</a>
+      <ul> 
+		<li><a href="#compatgeneral">General</a> </li>
+        <li><a href="#compatweimer">Compatibility with Weimer's Solaufein</a></li>
+      </ul> 
+    </li> 	
+    <li><a href="#content">Description</a>
+      <ul> 
+		<li><a href="#generalcontent">General Info</a> </li>
+        <li><a href="#note">Please note</a> </li>
+		<li><a href="#details">Details</a> </li>
+		<li><a href="#content">Content</a> </li>
+		<li><a href="#7th">7th Party Member Mode</a> </li>
+		<li><a href="#stats">Solaufein's Stats and Portrait</a> </li>
+		<li><a href="#character">Solaufein's Character</a> </li>
+      </ul> 
+    </li> 
+    <li><a href="#issues">Known Issues</a></li> 
+    <li><a href="#acknow">Credits</a></li> 	
+    <li><a href="#tools">Tools Used</a>
+      <ul> 
+		<li><a href="#communities">Modding Communities, Tutorials, and technical Assistance</a> </li>
+        <li><a href="#links">Resource Packs used or needed for this mod:</a> </li>
+      </ul> 
+    </li> 	
+    <li><a href="#credit">Copyright and Legal Notice</a></li>
+    <li><a href="#version">Version History</a> </li> 
+  </ol> 
+</div> 
+
+<h1><a name="install" id="install">Installation</a></h1>
+<div class="section">
+
+NOTE: If you've previously installed the mod, remove it before extracting a new version. To do this, uninstall all previously installed components and delete the mod folder and executables. 
+<br />
+<br />
+Make sure the game is not running while installing the mod.<br />
+<br />
+When installing or uninstalling, do not close the DOS window by clicking on the X button! Instead, press the Enter key when instructed to do so.<br />
+
+<h2> <a name="eegames" id="quest">Notes to modding EE games</a></h2>
+For Enhanced Edition it is important that you istall the mod to the language version you are playing the game in. Otherwise, the dialogues of the mod will not show but give error messages.
+<br />
+<br />
+The EE games are actively supported games. Please note that every patch update will wipe your current mod setup! If in the middle of a modded game you might want to delay the patch update as even after reinstalling the mods, you might not be able to continue with your old savegames. 
+<h2> <a name="windows" id="quest">Windows</a></h2>
+Extract the contents of the mod archive to your game's main directory (BG2/BGT/BGII:EE/EET which contains the CHITIN.KEY file). On successful extraction, there should be a c#solaufein folder and a setup-c#solaufein.exe file in your game folder. To install, simply double-click setup-c#solaufein.exe and follow the instructions on screen.<br />
+<br />
+Run setup-c#solaufein.exe in your game folder to reinstall, uninstall or otherwise change components.<br />
+<h2> <a name="osx" id="quest">Mac OS X</a></h2>
+Extract the mod archive, then copy the contents of the folder into your game folder (BG2/BGT/BGII:EE/EET which contains the CHITIN.KEY file). If properly extracted, you should have a "c#solaufein" folder, setup-c#solaufein, and setup-c#solaufein.command in your game folder. To install, simply double-click setup-c#solaufein.command and follow the instructions on screen.<br />
+<br />
+Run setup-c#solaufein.command in your game folder to reinstall, uninstall or otherwise change components.<br />
+<h2> <a name="linux" id="quest">Linux</a></h2>
+Extract the contents of the mod to the folder of the game you wish to modify. Download the latest version of WeiDU for Linux from https://github.com/WeiDUorg/weidu/releases and copy WeiDU and WeInstall to /usr/bin. Following that, open a terminal and cd to your BG2 installation directory, run 'tolower' and answer Y to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. If you're unsure, running tolower and choosing both options is the safe bet.<br />
+<br />
+Run WeInstall c#solaufein in your game folder to install the mod. Then run wine BGMain.exe and start playing. <br />
+
+</div>
+
+<h1><a name="compat" id="compat">Compatibility with other mods and Install Order</a></h1>
+<div class="section">
+<h2> <a name="compatgeneral" id="generalcontent">General</a></h2>
+Solaufein's Rescue - jastey's Solaufein NPC for BGII is coded using WeiDU, and it does not overwrite any files, only patches them if necessary.<br />
+</br>
+The mod is compatible with Imoen 4 Ever.<br />
+<br />
+For BGII / BGT you need to install the main component ("Core Mod") of "Infinity Animations" to see the drider animations in the game. If IA is not installed before the main component of the Solaufein mod, the component "Enable Drider Animations in this Mod" of this mod can be installed later to enable the drider animations. <br />
+<br />
+There is some crossmod content in this mod. Solaufein's Rescue - jastey's Solaufein NPC for BGII should be installed after:<br />
+-Corsymyr's BG:EE Subrace mod (if your PC is supposed to be drow)<br />
+-FinnJO's Subrace mod (if your PC is supposed to be drow)<br /> 
+-Welverin's Subrace mod (if your PC is supposed to be drow)<br />
+-Lava's Eilistraee's Song: install Solaufein's Rescue after Eilistraee's Song to make the two mods fully compatible.<br />
+<br />
+All other crossmod is inside the <a href="https://www.gibberlings3.net/mods/npcs/crossmod/">Crossmod Banter Pack</a> which should be installed after Solaufein (from v1.5).<br />
+
+<h2><a name="compatweimer" id="compatweimer">Compatibility with Weimer's Solaufein</a></h2>
+If both Solaufein NPC mods are installed, this is how it is treated in the game. My idea was to enable players to play the rescue quest but let Weimer's Solaufein join later, if they prefer his characterization over mine, with as little immersion breaking as possible.<br />
+<br />
+The content of Weimer's Solaufein mod is not changed in any way by this mod.<br />
+<br />
+Weimer's Solaufein is the first to approach the PC after coming out of Ust Natha after opposing the matron mother in the temple ritual and saving the dragon eggs. If you have Weimer's Solaufein installed and want to play the rescue quest, you need to send Weimer's Solaufein to the surface to wait for you there. The quest "Solaufein's Rescue" (i.e. the whole mod) will only start if Weimer's Solaufein did not join the group in the Underdark and also was not left standing to wait in front of Ust Natha. <br />
+<br />
+After Solaufein was rescued from the drider cocoon, you can make my Solaufein NPC disappear (i.e. only leaving Weimer's Solaufein for joining later) by clicking the appropriate reply choice. Weimer's Solaufein mod will be detected, and Solaufein will tell the player: "We already agreed on meeting at the surface. I will go there now, if you still want me to join you."<br />
+-If you tell him "Yes, Solaufein. I will expect you there, just as we agreed in front of the Ust Natha's city gates!", only Weimer's Solaufein will await you outside the Elven camp.<br />
+-If you reply "No, this experience changed you. I prefer you as you are now.", then my Solaufein will also be available as a joinable NPC. Note: The presence of Weimer's Solaufein will not be changed by this mod.<br />
+<br />
+My Solaufein will be outside the elves's camp at [2477.2023] (south-east corner) - at opposed sides from Weimer's so you don't have to look at both at the same time, in case "both" mod Solaufeins were send to the surface.<br />
+<br />
+For the component "Give Solaufein in Ust Natha the Mod's Portrait" to work, it has to be installed after Weimer's Solaufein.<br />
+</div>
+
+<h1><a name="content" id="content">Description</a></h1>
+<div class="section">
+<h2> <a name="generalcontent" id="generalcontent">General Info</a></h2>
+With this modification the game character Solaufein, drow fighter from Ust Natha, is extended to a joinable NPC. Before he can join, Solaufein has to be freed from drider chambers. This starting quest can be played independently to whether he should then join the group or not.<br /> 
+Compatibility with Weimers Solaufein for this case is described above in detail.<br />
+<br />
+Solaufein can also follow as a '7th party member' in case your group already consists of 6 persons. More details about this please see below.<br />
+<br />
+The second, optional mod component offers the possibility to give the game Solaufein in Ust Natha the mod's portrait. If you want to see this in the game, this component has to be installed after Weimer's Solaufein.<br />
+<br />
+The third, optional component is for BGII and BGT: If the main component of Infinity Animations (link see below section "LINKS") is installed, this component will install and use the drider animations for the mod. 
+Without this component, all driders in the mod will be displayed as drow. There is no loss in gameplay, other than it won't look as nice. :-) 
+For BGII:EE and EET the animations will be included and used automatically.<br />
+Install this component later if you want to install the main component of Solaufein before the Infinity Animations Mod. <br />
+<br />
+The forth, optional component enables to install the alternative portrait for Solaufein, also from Holger Kirste!<br />
+<br />
+The fifth, optional component adds one additonal reply option to Adalon's dialogue, with which the player can tell that the PC is drow. This will set a variable so that Solaufein will address the PC as drow. This was content of the main component before but I made it a separate component for v2 because it might be immersion breaking in case players do not plan on playing as drow PC. The detection of the subrace mods mentioned above is independent to this.<br />
+
+<h2> <a name="note" id="note">Please note</a></h2>
+The mod needs to be installed before visiting the Underdark for the first time because of area modifications of the main Underdark area. For BGII/BGT and using the drider animations you probably need to start a new game.<br />
+<br />
+Solaufein will not join an evil PC with a reputation lower than 10. This is because the friendshp path I wrote is best suited for a PC of good alignment. Also, in my opinion it does make sense since Solaufein tries to leave an evil society behind and would not trust an evil PC with low reputation enough with his life.<br />
+
+<h2> <a name="details" id="details">Details</a></h2>
+Starting point of the mod is once the group leaves Ust Natha after the demon ceremony. Solaufein's life had to be spared before (obviously). Please also note compatibility with Weimer's Solaufein, as the quest will not start if Weimer's Solaufein already joined the party or is left waiting in the Underdark (more details to compatibility below).<br />
+<br />
+Solaufein will wait in front of the entrance to Adalon's Lair (again: only if Weimer's Solaufein is not nearby). He will talk to the PC but then be captured by other drow and brought to the drider chambers. It is then up to the PC to rescue Solaufein from being turned into a drider!<br />
+<br />
+After being freed from the drider pits, Solaufein wants to collect some more things before joining. He will then rejoin shortly before the group exits the Underdark. At this point, he can also be told to exit alone and wait outside. Then he will wait outside the elves' camp at [2477.2023] (south-east corner).<br />
+<br />
+If starting a new game in ToB the player can chose the status of the friendship by chosing the correct reply option. Note: If answering that Solaufein and the PC spent time together, only the normal ToB content will show. If answering that Solaufein left shortly after being freed from the drider cocoon, the whole friendship track will start from the beginning. The latter option was meant for players curious about this mod's characterization but not wanting to play the whole game to see it.
+For ToB, assumption is always that the PC freed Solaufein from the drider chambers.<br />
+
+<h2> <a name="content" id="content">Content</a></h2>
+Quest "Solaufein's Rescue": Adds drider chambers to the main Underdark area (the entrance is at the west cave wall, north of the place where the group enters Underdark for the first time (behind the group of Illithids)).<br />
+<br />
+Solaufein as a full-fledged party member: friendship path (with 26 base dialogues), NPC banter (at least 2 in SoA and 1 in ToB with every BioWare and BeamDog NPC), additional scenery dialogues and interjections, PID (player initiated dialogue) with several full-fledged dialogues. There is no romance.<br />
+<br />
+There is a small encounter in Athkatla with two follow-ups, the last in Amkethran (to call this a quest would be highly exaggerated). The PC can lay down his arms for those, though.<br />
+<br />
+Solaufein will acknowledge your PC being a drow - but do not expect him to be available to teach drow lore, as he tries to leave all this behind. For activation, you either have to install one of the subrace mods before the Solaufein mod: Supported mods are (so far, only English version is considered since these mods aren't traify_d yet): Welverin's Subrace mod, FinnJO's Subrace mod, Corsymyr's BG:EE Subrace mod.<br />
+<br />
+Alternatively, for "hand-made" drow NPCs there is one reply option added to Adalon's dialogue for en elven PC to tell her that Player1 is a drow if the 5th component of the mod is installed. It will show after Adalon revealed her plan about the drow illusion. Only click this if Solaufein should adddress your PC as a drow. <br />
+
+
+<h2> <a name="7th" id="7th">7th Party Member Mode</a></h2>
+If you need the party slot for someone else, Solaufein can be kicked out of the party and told to "fall in behind the others", then he will follow as a "familiar" or, as I call it "7th party member". If in 7th party member mode he needs to join the group from time to time to level up. In 7th party member mode Solaufein can be selected and given commands, as well as told to use quick slot items ab special abilities. All his dialogues, banters, and interjections will trigger as normal. Note: the frequency of banters will not be influenced by banter accellerator mods while following in 7th party member mode, as the banter have to be triggered by Solaufein's script instead of the engine. There are three different spaced timers available, though. Times between banters can be changed via PID. Just tell Solaufein that he should banter more or less often and the timer between banters will be changed accordingly.<br />
+<br />
+To rejoin the group, talk to him and tell him you need "access to (his) inventory", and he will rejoin as a full party member. If you time this accordingly, the moment he is in group before any other kicked out NPC reaches the PC for his post-kickout dialogue is sufficient to let Solaufein level up and rearrange his items, without having to finally kick out any other party NPC to achieve this. (Unless those just leave without a follow-up dialogue, of course.)<br />
+<br />
+He cannot die while following as a 7th party member, but will remain at 1 HP. If Solaufein's HP fall to 1 HP during a fight, he will pass out. Healing him then will not change this. His alignment will change to "neutral" so enemies stop attacking him. Once the fight is over, he will regain consciousness, be healed fully, and rejoin the party as an ally/familiar. The full healing might be seen as a cheat, but it's one way to fix the engine behavior (not to call it bug) with Solaufein dying upon rejoining if his HP are too low.<br />
+<br />
+The 1 HP drop out can be prevented if Solaufein is healed in time during a fight. If told to he will give a warning before his HP drop too low, but this seems to be buggy in BGT.<br />
+<br />
+Note: Following as a familiar means Solaufein will always be behind the last full group member, for walking as well as area transitions. This is unfortunate if you need him as a full fighter or even tank who is supposed to be in first line upon unexpected fights.<br />
+
+
+<h2> <a name="stats" id="stats">Solaufein's Stats and Portrait</a></h2>
+Solaufein's alignment is lawful neutral.<br />
+<br />
+ The mod gives him the kit "drow fighter" with the following specifications:<br />
+<br />
+  Advantages:<br />
+  -Gains 2% magical resistance upon every level up to a max of 80% at level 16.<br />
+  -Innate abilities Faerie Fire, Darkness, Dimension Door, and Dispel Magic, all 1/day<br />
+  <br />
+  Disadvantages:<br />
+  -during daylight, the drow has the following penalties due to the sunlight:<br />
+	-Penalty of 4 to each THACO and AC<br />
+	-Reduction of 2 to all saving throws<br />
+	-Sets the visual range to 2<br />
+	-Magic resistance reduction by 50% (counted from 100%)<br />
+	<br />
+Many thanks to Knight who allowed me to use his spells Faerie Fire and Darkness from his mod "Knights Kits" (all files are renamed and use my prefix). Thanks to Acifer for the spell graphics. Partly the spells also use ressources from the spells available in SoD / BGII:EE.<br />
+<br />
+Solaufein's stats are the following:
+      <ul> 
+		<li>STR: 17</li>
+		<li>DEX: 16</li>
+		<li>CON: 15</li>
+		<li>INT: 14</li>
+		<li>WIS: 11</li>
+		<li>CHA: 10</li>
+      </ul> <br />
+Solaufein uses a soundset created from his original BGII voiceovers.<br /><br />
+Both portraits are taken from pictures of drow fighters by Holger Kirste. Thank you very much to Holger Kirste!<br />
+ There is an alternate portrait that can be installed by the fourth, optional component:<br /><br />
+<img src="readme/SolauDefault.png">
+<img src="readme/SolauAlt.png"><br />
+------- Default Portrait ------- ------- Alternative -------<br />
+
+<h2> <a name="character" id="character">Solaufein's Character</a></h2>	
+Solaufein is a centuries old drow (albeit not "old" yet) who dissociated himself - mentally - from the drow culture. Being stuck in what he sees as an impasse inside the cruel drow society, he arranged himself with the situation by aquiring some status himself as male commander and being backed by a powerful house (whichs name is never mentioned and is not important). Being somewhat protected this way he vents his bitterness with sarcasm and by opposing lesser females to a drow-untypical degree. His love for Phaere is long gone, he dispises her as much as all other drow seeking favor of the spider queen Lolth.<br />
+<br />
+The main theme of the mod's dialogues is the change that leaving the Underdark brought upon him, especially the loss of most of his magic and being blinded by the sun with the resulting weakening of his fighting prowess. Also, he comments on the so much yearned for surfacers' way of living from his drow perspective. <br />
+<br />
+He will befriend a PC who is ready to talk to him and deals with quests in a good or neutral way. Suspiciousness against him, the drow, is a wise sentiment in his opinion. He hardly feels offended by any PC remark.<br />
+<br />
+Note: The friendship path also deals with Solaufein's problems of actually allowing the feeling of friendship and could be a bit stereotype at times. Not to say cliche. Yes, it's probably cliche.<br />
+</div>
+
+<h1><a name="issues" id="issues">Known Issues</a></h1>
+<div class="section">
+In some game cutscenes, Solaufein might be visible at places where he shouldn't be as 7th party member. I'm not sure how to solve this.</br>
+</br>
+Solaufein has no clear fog of war effect, so when following as 7th party member, he might "vanish" behind the line of sight. Rearranging the whole group's position should bring him back at the PC's side. (The reason is that the engines cannot handle more than 8 creatures with CFoW - and that includes the 6 party members and cutscene spies.)</br>
+</div>
+
+<h1><a name="acknow" id="acknow">Credits</a></h1>
+<div class="section">
+Many thanks to <strong>Holger Kirste</strong> for the wonderful drow portraits! You can see the default one in full scale here: <a href="https://chinasky.artstation.com/">https://chinasky.artstation.com/</a></br>
+<br />
+<strong>Acifer:</strong> For the graphics of the spell Darkness.</br>
+<strong>Annalena:</strong> Much interest in the mod and constructive criticism.</br>
+<strong>Caedwyr:</strong> Proof reading, extensive editing (English), many suggestions especially for NPC banters.</br>
+<strong>Isewein:</strong> Proof reading (English).</br>
+<strong>Knight:</strong> For granting me the use of his spells Faerie Fire and Darkness from his drow kit.</br>
+<strong>Morywen:</strong> Beta tests and constructive criticism.</br> 
+<strong>S.:</strong> Beta tests, proof reading, and constructive criticism.</br> 
+<strong>viader:</strong> For granting the use of the drider animations imported from IWDII to BGII:EE from his Extended Animations Mod.</br> 
+<strong>White Agnus:</strong> For a lot of help with coding.</br> 
+</br>
+Thanks to BioWare, Black Isle and Wizards of the Coast for Baldur's Gate 1, 2 and the Infinity Engine, and BeamDog for the revival of the games.</br>
+Thanks to Kerzenburgforum for hosting the mod and giving a place for exchange of ideas.</br>
+Thanks to all modders who developed and are maintaining the IE modding tools, without which this mod would not have been possible.</br>
+Thanks to all who play this mod or any of my mods, and also those of you who give feedback to help improving my mods. Modding would not be as much fun without you. </br>
+I totally mean this although I use this text modules in other readmes, too! :-)</br>
+</div>
+
+<h1><a name="tools" id="tools">Tools Used</a></h1>
+<div class="section">
+      <ul> 
+		<li><a href="https://gibberlings3.github.io/iesdp/index.htm">IESDP</a></li>
+		<li><a href="http://www.shsforums.net/topic/57564-bamworkshop/">BAM Workshop</a></li>
+		<li><a href="http://www.gibberlings3.net/tools/dltcep.php">DLTCEP</a></li>
+		<li><a href="https://forums.beamdog.com/discussion/30593/new-versions-of-nearinfinity-available/p1">Near Infinity</a></li>
+		<li><a href="http://www.mud-master.com/shadowkeeper/index.html">Shadowkeeper</a></li>
+		<li><a href="https://github.com/WeiDUorg/weidu/releases/latest">WeiDU</a></li>
+		<li><a href="https://www.audacityteam.org/">Audacity</a></li>
+		<li><a href="https://sourceforge.net/projects/cp-converter/">CpConverter</a></li>
+		<li><a href="http://tools.stefankueng.com/grepWin.html">grepWin</a></li>
+		<li><a href="http://winmerge.org/">WinMerge</a></li>
+      </ul>
+<h2> <a name="communities" id="communities">Modding Communities, Tutorials, and technical Assistance</a></h2>
+      <ul> 
+		<li><a href="https://www.baldurs-gate.de/index.php">Kerzenburgforum (German)</a></li>
+		<li><a href="https://www.gibberlings3.net/">The Gibberlings Three</a></li>
+		<li><a href="http://pocketplane.net">Pocket Plane Group</a></li>
+		<li><a href="http://www.shsforums.net/">Spellhold Studios</a></li>
+      </ul>
+<h2> <a name="links" id="links">Resource Packs used or needed for this mod:</a></h2>
+      <ul> 
+		<li><a href="http://www.shsforums.net/files/category/98-infinity-animations/">Infinity Animations-Mod</a></li>
+		<li><a href="http://www.shsforums.net/files/file/861-ia-content-002-iwdii-and-unused-bgii-animations/">Link to drider animations for BGII/BGT (included in this mod)</a></li>
+		<li><a href="http://forum.baldursgate.com/discussion/19501/resource-pack-extended-animations/p1">Extended Animations by viader for BGII:EE/EET (included in this mod)</a></li>
+		<li><a href="https://baldurs-gate.de/index.php?resources/knights-kits.11/">Knight Kits (WeiDU-Version, without drow kit)</a></li>
+		<li><a href="https://chinasky.artstation.com/">Holger Kirste</a><br /></li>
+      </ul>
+</div>
+
+
+<h1><a name="credit" id="credit">Copyright and Legal Notice</a></h1>
+<div class="section">
+Solaufein is a BioWare charakter, but the mod is based on my view. I do not mind if you write crossmod banters for my Solaufein without consulting me, as long as you try to match the mod's characterization, do not ridicule him or write offensive content, and as long as it's banter that have no other impact on the content of this mod, i.e. don't make Solaufein leave the party due to a conflict with your NPC (feel free to make *your* NPC leave the goup), and also don't make him fall in love with your NPC even though I am sure he/she is the greatest, just to name some things.</br>
+</br> 
+
+You can add reactions of your NPC to any and all content of this mod without my consent, albeit I'd ask you not to add interjections inside my mod's dialogues.</br>
+</br>
+
+If you think using code from this mod is a good idea then go ahead.</br>
+</br>
+
+Holger Kirste allowed the portraits to be used for this mod, but do not make edits other than for your personal use. All uses of the portraits outside the mod are copyrighted.</br>
+</br>
+
+I'll be happy to have a look at crossmod you designed, of course.</br>
+</br>
+
+Technical updates and bugfixes for this mod will be very welcome in case I'll be no longer active in IE-modding.</br>
+</br>
+
+
+This mod uses changed area graphics and animations from IWDII. I did this because I am not able to create such great area graphics myself. Of course there are great area artists in the modding community who could have created such for me, but I justified it for myself with the thought that it keeps the drider chambers in the same style as BioWare made them, which is how I like it. 
+Further, I created a soundset from Solaufein's original lines. For this, I extracted some phrases and words, which are now used in, for some, different context.
+If there are any objections legally wise, please let me know and I will remove offensive content immediately.</br>
+</br>
+This mod is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+This mod is also not developed, supported, or endorsed by BioWare, Black Isle Studios, Interplay Entertainment Corp., Overhaul Games or Beamdog. All other trademarks and copyrights are property of their respective owners.
+</div> 
+
+<h1><a name="version" id="version">Version History</a></h1>
+<div class="section">
+Version 2.0:</br>
+-English version finished.</br>
+-NPC banters revised.</br>
+-Elhan's geas: Optimized scripting in case there will be other drow NPCs in the future, EE version considers Hexxat's presence as well.</br>
+-Drizzt interjection: added possibility to shorten the conversation via reply option.</br>
+-Smuggler encounter tweaked a little. Smuggler will recognize any drow items in group's possession.</br>
+-splitted component "Install additional Detection for Drow PC" from the main component.</br>
+-Scripting of 7th party member mode improved.</br>
+-Fixed small default portrait for classic engine.</br>
+-Download link in ini changed to GitHub.</br>
+-Changed readme to html.</br>
+-Crossmod content for Eilistraee's Song mod added.</br>
+<br />
+Version 1.6:</br>
+-fatesp summoning: transition to correct state </br>
+-Spell Darkness: corrected BAM display (should be real sphere of darkness), by Acifer</br>
+-Change into 7th party member mode and back should not be interrupted.</br>
+-all lines from script traify-ed.</br>
+-not getting hostile if hit with friendly fire while in 7th party mode </br>
+-C#5MINHP.spl should not be applied to party</br>
+<br />
+Version 1.5:</br>
+-if interacting with the drider cocoons, texts will also be shown on screen (changed to DisplayStringHead)</br>
+-added more variable parameters to EET EET_NPC_TRANSITION (tp2 optimization, no changes ingame) </br>
+-added summoning for new ToB game (EET)</br>
+-crossmod with Ajantis and Gavin moved into Crossmod Banter Pack</br>
+-corrected: infer_charset -> infer_charsets</br>
+-EE use pvrz-tis (no more black lines in areas)</br>
+-setup-c#solaufein.tp2 renamed to c#solaufein.tp2</br>
+-c#solaufein.ini with mod info metadata added.</br>
+<br />
+Version 1.4:</br>
+-Solaufein should always change into the 7th party modus without problems (added SetInterrupt(FALSE/TRUE) to script actions).</br>
+-update to weidu 246</br>
+</br>
+Version 1.3:</br>
+-integrated proof-readings from Isewein (all files except c#solatra.tra)</br>
+-some more lines translated to English</br>
+-update to weidu 245</br>
+</br>
+Version 1.2:</br>
+-changed detection of installed Ajantis BGII mod to a dlg-file to reflect behavior of FILE_EXISTS_IN_GAME</br>
+-changed WEIGHT of crossmod banters in the hopes that they will mix better with the existent ones (instead of firing all first).</br>
+-edited Ajantis crossmod a little</br>
+-adjusted trigger for one of the Ajantis-Solaufein banters (dialogue about belt will not trigger if Ajantis got rid of it alone)</br>
+-some more lines translated to English</br>
+-added link to artstation to portrait artist's page (Holger Kirste)</br>
+-added check whether Player1 was rested (baldur.bcs, baldur25.bcs) using spell "C#FATIG1" that gives Player1 1 point to "FATIGUE" if it is "0" -> same principle as Zed Nocear's rest check for BG1. This is for rare cases that a mod uses a cutscene with Rest() instead of PartyRested(), so 7th party member will be rested, too.</br>
+</br>
+Version 1.1:</br>
+-fixed Gavin crossmod install error</br>
+</br>
+Version 1:</br>
+-official release with German and part-English version</br>
+
+<br />
+</div>
+
+</body>

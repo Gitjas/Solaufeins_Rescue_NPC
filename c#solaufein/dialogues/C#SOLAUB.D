@@ -27,7 +27,7 @@ InParty("IMOEN2") InMyArea("IMOEN2") !StateCheck("IMOEN2",CD_STATE_NOTVALID)~ TH
 EXIT
 
 
-/* Solaufein - Anomen; IsNotKnight = 0*/
+/* Solaufein - Anomen; IsNotKnight = 0 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -67,37 +67,21 @@ CombatCounter(0)
 !See([ENEMY])
 Global("C#Solaufein_MinscBanter","GLOBAL",0)
 InParty("MINSC") InMyArea("MINSC") !StateCheck("MINSC",CD_STATE_NOTVALID)~ THEN C#SOLAUB minsc_01
-@923 DO ~SetGlobal("C#Solaufein_MinscBanter","GLOBAL",1)~
-== BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @924
-== BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @924
-== C#SOLAUB @925
-== BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @926
-== BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @926
-== C#SOLAUB @927
-== BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @928
-== BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @928
-== C#SOLAUB @929
+@2516 DO ~SetGlobal("C#Solaufein_MinscBanter","GLOBAL",1)~
+== BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2517
+== BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2517
+== C#SOLAUB @2518
+= @2519
+== BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2520
+== BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2520
+== C#SOLAUB @2521
+== BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2522
+== BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2522
+== C#SOLAUB @2523
 EXIT
 
 
 /* Solaufein - Jaheira */
-
-CHAIN
-IF 
-~Global("C#SolauNoScenery","GLOBAL",0)
-!StateCheck(Myself,CD_STATE_NOTVALID)
-OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
-CombatCounter(0)
-!See([ENEMY])
-Global("C#Solaufein_JaheiraBanter","GLOBAL",0)
-InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN C#SOLAUB jaheira_01
-@930 DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",1)~
-== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @931
-== BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @931
-== C#SOLAUB @932
-== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @933
-== BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @933
-EXIT 
 
 APPEND BJAHEIR
 
@@ -111,9 +95,10 @@ OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_JaheiraBanter","GLOBAL",1)~ THEN jaheira_02
-SAY @934
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",2)~ EXTERN C#SOLAUB jaheira_02
+Global("C#Solaufein_JaheiraBanter","GLOBAL",0)~ THEN jaheira_00
+SAY @923 /* ~[Jaheira] Solaufein, stay more to my left and protect our flanks!~ */
+= @924 /* ~[Jaheira] ...It provides better coverage against enemy rogues.~ */
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",1)~ EXTERN C#SOLAUB jaheira_00
 END
 END
 
@@ -129,23 +114,81 @@ OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_JaheiraBanter","GLOBAL",1)~ THEN jaheira_02
+Global("C#Solaufein_JaheiraBanter","GLOBAL",0)~ THEN jaheira_00
+SAY @923
+= @924
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",1)~ EXTERN C#SOLAUB jaheira_00
+END
+
+END
+
+CHAIN
+IF ~~ THEN C#SOLAUB jaheira_00
+@925 /* ~[Solaufein] Yes, Jaheira. I will do so right away!~ */
+DO ~RealSetGlobalTimer("C#Solau_JaheiraBanterTimer","GLOBAL",10)~
+EXIT
+
+CHAIN
+IF ~Global("C#Solaufein_JaheiraBanter","GLOBAL",2)~ THEN C#SOLAUJ jaheira_00_followup
+@926 /* ~[Solaufein] ...It... also gives you a better angle to keep an eye on me, the *drow*?~ */ DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",3)~ 
+== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @927 /* ~[Jaheira] That... is true, but it was not my intention. <CHARNAME> obviously trusts you, so we should make the best of it. I was thinking about the best tactical formation against unexpected attacks.~ */
+== BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @927
+== C#SOLAUB @928 /* ~[Solaufein] You did, and I still agree. Yet, when you commanded me so sternly, I jumped to obey like you were one of the Handmaidens.  Who would have thought that though the Priestesses of Lolth always claimed that the elves were our natural hated enemies, I would still find so many similarities in your mannerisms.~ */
+== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @929 /* ~[Jaheira] You think I behave like a drow female? The comparison is ridiculous, Solaufein!~ */
+== BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @929
+== C#SOLAUB @930 /* ~[Solaufein] Considering my head is still attached to my body it was an inappropriate comparison, indeed. I do recognize that you are nothing like them, Jaheira. It was your tone - spoken by a female in a potential combat situation... It seems my conditioning to follow such commands without question in the heat of the moment runs deeper than I thought.~ */
+== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @931 /* ~[Jaheira] I wanted to communicate clearly and succinctly. A potential combat situation is no place for excessive wordiness. Yet... you are not the first one to tell me that my tone might sound harsh and commanding at times. I will... tone it down in the future.~ */
+== BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @931
+== C#SOLAUB @1219 /* ~[Solaufein] I thank you for the sentiment, Jaheira. Although I'm the one who really needs to learn the lesson.  It is going to be a bigger effort than I thought to free myself from old habits and social conditioning.~ */
+EXIT
+
+APPEND BJAHEIR
+
+IF 
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+See("C#Solaufein")
+!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+!Dead("C#Solaufein")
+Global("C#Solaufein_JaheiraBanter","GLOBAL",3)~ THEN jaheira_02
+SAY @934 /* ~[Jaheira] Solaufein, how much do you know about the surface world's flora?~ */
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",4)~ EXTERN C#SOLAUB jaheira_02
+END
+END
+
+APPEND BJAHEI25
+
+IF 
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+See("C#Solaufein")
+!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+!Dead("C#Solaufein")
+Global("C#Solaufein_JaheiraBanter","GLOBAL",3)~ THEN jaheira_02
 SAY @934
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",2)~ EXTERN C#SOLAUB jaheira_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",4)~ EXTERN C#SOLAUB jaheira_02
 END
 
 END
 
 CHAIN
 IF ~~ THEN C#SOLAUB jaheira_02
-@935
-== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @936
-== BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @936
-== C#SOLAUB @937
-== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @938
+@932 /* ~[Solaufein] You are probably not surprised that I find it difficult to name most of the plants we encounter, but you it may surprise you that this is mostly because I am seeing them in the light of the day for the first time, not in the dim light of the night.~ */
+== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @933 /* ~[Jaheira] That, indeed, is a reason I didn't expect. Well, if you have any questions concerning the plants we encounter, especially the fruit-bearing trees, edible roots, and herbs then do not hesitate to profit from my knowledge.~ */
+== BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @933
+== C#SOLAUB @937 /* ~[Solaufein] You would teach me? I am surprised and humbled, Jaheira. I thank you in advance for your offer.~ */
+== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @938 /* ~[Jaheira] It's not charity, Solaufein. <CHARNAME> decided we travel together, so I would prefer not to be accidentally poisoned at our next meal.~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @938
-== C#SOLAUB @939
-== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @940
+== C#SOLAUB @939 /* ~[Solaufein] I see. I will try not to poison you accidentally, then.~ */
+== BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @940 /* ~[Jaheira] That sounded... Never mind.~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @940
 EXIT
 
@@ -192,10 +235,13 @@ CHAIN
 IF ~~ THEN C#SOLAUB mazzy_01
 @942
 == BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @943
+= @944
 == BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @943
-== C#SOLAUB @944
-== BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @945
-== BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @945
+= @944
+== C#SOLAUB @945
+== BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @935
+== BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @935
+== C#SOLAUB @936
 EXIT
 
 /* Solaufein - Mazzy */
@@ -208,7 +254,7 @@ CombatCounter(0)
 !See([ENEMY])
 Global("C#Solaufein_MazzyBanter","GLOBAL",1)
 InParty("MAZZY") InMyArea("MAZZY") !StateCheck("MAZZY",CD_STATE_NOTVALID)~ THEN C#SOLAUB mazzy_02
-@946 DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",2)~
+@946 DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",2) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",800)~
 == BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @947
 == BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @947
 == C#SOLAUB @948
@@ -373,7 +419,7 @@ EXIT
 
 
 /* Solaufein - Aerie: */
-
+/* SoA 1 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -395,24 +441,44 @@ InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN 
 == BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @981
 EXIT
 
-/* Solaufein - Mazzy */
-CHAIN
-IF 
-~Global("C#SolauNoScenery","GLOBAL",0)
+
+/* Solaufein - Mazzy: restbanter */
+/* Global("C#SolauNoScenery","GLOBAL",0)
 !StateCheck(Myself,CD_STATE_NOTVALID)
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
 Global("C#Solaufein_MazzyBanter","GLOBAL",2)
-InParty("MAZZY") InMyArea("MAZZY") !StateCheck("MAZZY",CD_STATE_NOTVALID)~ THEN C#SOLAUB mazzy_03
-@982 DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",3)~
-== BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @983
-== BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @983
-== C#SOLAUB @984
-= @985
-== BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @986
-== BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @986
-EXIT
+InParty("MAZZY") InMyArea("MAZZY") !StateCheck("MAZZY",CD_STATE_NOTVALID) */
+APPEND MAZZYJ 
+IF WEIGHT #-1
+~Global("C#Solaufein_MazzyBanter","GLOBAL",3)~ THEN mazzy_03
+SAY @982 
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",4)~ EXTERN C#SOLAUB mazzy_03
+END
+END //APPEND
+
+APPEND MAZZY25J 
+IF WEIGHT #-1
+~Global("C#Solaufein_MazzyBanter","GLOBAL",3)~ THEN mazzy_03
+SAY @982 
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",4)~ EXTERN C#SOLAUB mazzy_03
+END
+END //APPEND
+
+CHAIN
+IF ~~ THEN C#SOLAUB mazzy_03
+@983
+= @984
+== BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @985
+= @986
+= @2524
+== BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @985
+= @986
+= @2524
+== C#SOLAUB @2525
+END
+IF ~~ THEN DO ~RestParty()~ EXIT
 
 
 
@@ -441,7 +507,7 @@ EXIT
 /* Solaufein - Keldorn: */
 
 CHAIN
-IF 
+IF WEIGHT #-1
 ~Global("C#SolauNoScenery","GLOBAL",0)
 !StateCheck(Myself,CD_STATE_NOTVALID)
 OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
@@ -462,6 +528,7 @@ EXIT
 
 
 /* Solaufein - Cernd */
+/* SoA 1 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -475,8 +542,10 @@ InParty("CERND") InMyArea("CERND") !StateCheck("CERND",CD_STATE_NOTVALID)~ THEN 
 == BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @997
 == BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @997
 == C#SOLAUB @998
-== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @999
-== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @999
+== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2527
+= @999
+== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2527
+= @999
 EXIT
 
 
@@ -507,6 +576,7 @@ EXIT
 
 
 /* Solaufein - Edwin; ToB only */
+/* no check whether SoA banters run */
 
 CHAIN
 IF 
@@ -615,6 +685,9 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_HaerDalisBanter","GLOBAL",2)
 Global("C#Solaufein_HaerDalisBanterToB","GLOBAL",0)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN haerdalis_03
 SAY @1023
@@ -670,6 +743,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_MazzyBanter","GLOBAL",4)
 Global("C#Solaufein_MazzyBanterToB","GLOBAL",0)
 InParty("MAZZY") InMyArea("MAZZY") !StateCheck("MAZZY",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB mazzy_04
@@ -682,7 +758,7 @@ GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB mazzy_04
 EXIT
 
 
-/* Solaufein - Anomen; IsNotKnight = 0*/
+/* Solaufein - Anomen; IsNotKnight = 0 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -818,20 +894,19 @@ SAY @1058
 IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",1)~ EXTERN C#SOLAUB nalia_01
 END
 
-IF WEIGHT #-1
+IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
 !StateCheck(Myself,CD_STATE_NOTVALID)
 InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
+OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_NaliaBanter","GLOBAL",2)~ THEN nalia_03
-SAY @1059
-= @1060
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",3)~ EXTERN C#SOLAUB nalia_03
+Global("C#Solaufein_NaliaBanter","GLOBAL",1)~ THEN nalia_01_b
+SAY @2500
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",2)~ EXTERN C#SOLAUB nalia_01_b
 END
 
 IF WEIGHT #-1
@@ -844,9 +919,25 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_NaliaBanter","GLOBAL",3)~ THEN nalia_04
+Global("C#Solaufein_NaliaBanter","GLOBAL",3)~ THEN nalia_03
+SAY @1059
+= @1060
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUB nalia_03
+END
+
+IF WEIGHT #-1
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
+See("C#Solaufein")
+!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+!Dead("C#Solaufein")
+Global("C#Solaufein_NaliaBanter","GLOBAL",4)~ THEN nalia_04
 SAY @1061
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUB nalia_04
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",5)~ EXTERN C#SOLAUB nalia_04
 END
 
 END
@@ -868,6 +959,21 @@ SAY @1058
 IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",1)~ EXTERN C#SOLAUB nalia_01
 END
 
+IF 
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+See("C#Solaufein")
+!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+!Dead("C#Solaufein")
+Global("C#Solaufein_NaliaBanter","GLOBAL",1)~ THEN nalia_01_b
+SAY @2500
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",2)~ EXTERN C#SOLAUB nalia_01_b
+END
+
 IF WEIGHT #-1
 ~Global("C#SolauNoScenery","GLOBAL",0)
 !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -878,10 +984,10 @@ InParty("C#Solaufein")
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_NaliaBanter","GLOBAL",2)~ THEN nalia_03
+Global("C#Solaufein_NaliaBanter","GLOBAL",3)~ THEN nalia_03
 SAY @1059
 = @1060
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",3)~ EXTERN C#SOLAUB nalia_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUB nalia_03
 END
 
 IF WEIGHT #-1
@@ -894,9 +1000,9 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_NaliaBanter","GLOBAL",3)~ THEN nalia_04
+Global("C#Solaufein_NaliaBanter","GLOBAL",4)~ THEN nalia_04
 SAY @1061
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUB nalia_04
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",5)~ EXTERN C#SOLAUB nalia_04
 END
 
 /* ToB only */
@@ -909,6 +1015,9 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_NaliaBanter","GLOBAL",5)
 Global("C#Solaufein_NaliaBanterToB","GLOBAL",0)~ THEN nalia_05
 SAY @1062
 IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanterToB","GLOBAL",1)~ EXTERN C#SOLAUB nalia_05
@@ -930,6 +1039,17 @@ IF ~~ THEN C#SOLAUB nalia_01
 == C#SOLAUB @1069
 EXIT
 
+CHAIN
+IF ~~ THEN C#SOLAUB nalia_01_b
+@2501
+== BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2502
+== BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2502
+== C#SOLAUB @2503
+== BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2504
+== BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2504
+== C#SOLAUB @2505
+EXIT
+
 
 CHAIN
 IF 
@@ -938,10 +1058,10 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
-Global("C#Solaufein_NaliaBanter","GLOBAL",1)
+Global("C#Solaufein_NaliaBanter","GLOBAL",2)
 InParty("nalia") InMyArea("nalia") !StateCheck("nalia",CD_STATE_NOTVALID)~ THEN C#SOLAUB nalia_02
 @1070
-= @1071 DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",2)~
+= @1071 DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",3)~
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1072
 = @1073
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1072
@@ -993,9 +1113,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
-Global("C#Solaufein_JaheiraBanter","GLOBAL",2)
+Global("C#Solaufein_JaheiraBanter","GLOBAL",4)
 InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN C#SOLAUB jaheira_03
-@1087 DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",3)~
+@1087 DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",5)~
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",8)~ THEN @1088
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",7)~ THEN @1088 
 == C#SOLAUB @1089 
@@ -1095,6 +1215,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_ImoenBanter","GLOBAL",2)
 Global("C#Solaufein_ImoenBanterToB","GLOBAL",0)
 InParty("IMOEN2") InMyArea("IMOEN2") !StateCheck("IMOEN2",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB imoen_tob
@@ -1146,6 +1269,7 @@ EXIT
 
 
 /* Solaufein - Aerie: */
+/* SoA 2 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -1176,6 +1300,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_MinscBanter","GLOBAL",3)
 Global("C#Solaufein_MinscBanterToB","GLOBAL",0)
 InParty("MINSC") InMyArea("MINSC") !StateCheck("MINSC",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",7)~ THEN C#SOLAUB minsc_04
@@ -1201,6 +1328,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_ValygarBanter","GLOBAL",2)
 Global("C#Solaufein_ValygarBanterToB","GLOBAL",0)
 InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB valygar_03
@@ -1219,7 +1349,8 @@ EXIT
 /* Solaufein - Keldorn: */
 CHAIN
 IF 
-~Global("C#SolauNoScenery","GLOBAL",0)
+~!Global("C#Solaufein_Gruebelt","GLOBAL",1)
+Global("C#SolauNoScenery","GLOBAL",0)
 !StateCheck(Myself,CD_STATE_NOTVALID)
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
@@ -1238,6 +1369,7 @@ EXIT
 
 
 /* Solaufein - Cernd */
+/* SoA 2 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -1249,72 +1381,61 @@ Global("C#Solaufein_CerndBanter","GLOBAL",1)
 InParty("CERND") InMyArea("CERND") !StateCheck("CERND",CD_STATE_NOTVALID)~ THEN C#SOLAUB cernd_02
 @1151 DO ~SetGlobal("C#Solaufein_CerndBanter","GLOBAL",2)~
 == BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1152
+= @1153
 == BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1152
-== C#SOLAUB @1153
-== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1154
-== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1154
-== C#SOLAUB @1155
-== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1156
-== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1156
+= @1153
+== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Kit("CERND",SHAPESHIFTER)~ THEN @1154
+== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
+Kit("CERND",SHAPESHIFTER)~ THEN @1154
+== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1155
+== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1155
+== C#SOLAUB @1156
 EXIT
 
 
-APPEND BCERND
+/* add detection variable to Cernd's quest because the variable is reset to "0" in the game :-( */
+ADD_TRANS_ACTION CERNDP BEGIN 10 END BEGIN END ~SetGlobal("C#Solau_CerndBaby","GLOBAL",1)~
 
-IF WEIGHT #-1
-~Global("C#SolauNoScenery","GLOBAL",0)
-!StateCheck(Myself,CD_STATE_NOTVALID)
-InParty(Myself)
-CombatCounter(0)
-!See([ENEMY])
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
-See("C#Solaufein")
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
-!Dead("C#Solaufein")
-Global("C#Solaufein_CerndBanter","GLOBAL",2)~ THEN cernd_03
-SAY @1157
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_CerndBanter","GLOBAL",3)~ EXTERN C#SOLAUB cernd_03
-END
-END
 
-APPEND BCERND25
-
-IF WEIGHT #-1
-~Global("C#SolauNoScenery","GLOBAL",0)
-!StateCheck(Myself,CD_STATE_NOTVALID)
-InParty(Myself)
-CombatCounter(0)
-!See([ENEMY])
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
-See("C#Solaufein")
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
-!Dead("C#Solaufein")
-Global("C#Solaufein_CerndBanter","GLOBAL",2)~ THEN cernd_03
-SAY @1157
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_CerndBanter","GLOBAL",3)~ EXTERN C#SOLAUB cernd_03
-END
-
-END
-
+/* Solaufein - Cernd */
+/* Cernd after quest, SoA only */
 CHAIN
-IF ~~ THEN C#SOLAUB cernd_03
-@1158
-== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1159
-== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1159
-== C#SOLAUB @1160
-== BCERND IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1161
-== BCERND25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1161
+IF WEIGHT #-1
+~Global("C#SolauNoScenery","GLOBAL",0)
+GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+Global("C#Solau_CerndBaby","GLOBAL",1) //after Cerns brought his son to druid grove
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+Global("C#Solaufein_CerndBanterQ","GLOBAL",0)
+InParty("CERND") InMyArea("CERND") !StateCheck("CERND",CD_STATE_NOTVALID)~ THEN C#SOLAUB cernd_02
+@1157 DO ~SetGlobal("C#Solaufein_CerndBanterQ","GLOBAL",1)~
+== BCERND @1158
+== C#SOLAUB @1159
+== BCERND @1160
+== C#SOLAUB @1161
+== BCERND @2528
+== C#SOLAUB @2529
+== BCERND @2530
+== C#SOLAUB @2531
+== BCERND @2532
 EXIT
 
 
 
-/* Solaufein - Anomen; IsNotKnight = 0, rep > 10; ToB only*/
+
+/* Solaufein - Anomen; IsNotKnight = 0, rep > 10; ToB only */
 CHAIN
 IF 
 ~!StateCheck(Myself,CD_STATE_NOTVALID)
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_AnomenBanter","GLOBAL",4)
 Global("C#Solaufein_AnomenBanterToB","GLOBAL",0)
 InParty("ANOMEN") InMyArea("ANOMEN") !StateCheck("ANOMEN",CD_STATE_NOTVALID)
 Global("AnomenIsNotKnight","GLOBAL",0) ReputationGT(Player1,10)
@@ -1329,13 +1450,16 @@ GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB anomen_05_isknight
 EXIT
 
 
-/* Solaufein - Anomen; IsNotKnight = 1, rep < 9; ToB only*/
+/* Solaufein - Anomen; IsNotKnight = 1, rep < 9; ToB only */
 CHAIN
 IF 
 ~!StateCheck(Myself,CD_STATE_NOTVALID)
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_AnomenBanter","GLOBAL",4)
 Global("C#Solaufein_AnomenBanterToB","GLOBAL",0)
 InParty("ANOMEN") InMyArea("ANOMEN") !StateCheck("ANOMEN",CD_STATE_NOTVALID)
 Global("AnomenIsNotKnight","GLOBAL",1) ReputationLT(Player1,9)
@@ -1403,6 +1527,7 @@ EXIT
 
 
 /* Solaufein - Viconia */
+/* 2 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -1411,15 +1536,18 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
 Global("C#Solaufein_ViconiaBanter","GLOBAL",1)
-InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN C#SOLAUB viconia_02
-@1179 DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",2)~
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1180
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1180
-== C#SOLAUB @1181
-= @1182
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1183
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1183
+InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN C#SOLAUB viconia_05
+@1277 DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",2)~
+== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1278
+== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1278
+== C#SOLAUB @1279
+== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1280
+== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1280
+== C#SOLAUB @1281
+== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1282
+== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1282
 EXIT
+
 
 
 
@@ -1431,9 +1559,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
-Global("C#Solaufein_JaheiraBanter","GLOBAL",3)
+Global("C#Solaufein_JaheiraBanter","GLOBAL",5)
 InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN C#SOLAUB jaheira_04
-@1184 DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",4)~
+@1184 DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",6)~
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1185
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1185 
 == C#SOLAUB @1186
@@ -1491,6 +1619,7 @@ EXIT
 
 
 /* Solaufein - Aerie: */
+/* SoA 3 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -1546,23 +1675,46 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_CerndBanter","GLOBAL",2)
 Global("C#Solaufein_CerndBanterToB","GLOBAL",0)
 InParty("CERND") InMyArea("CERND") !StateCheck("CERND",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB cernd_04
 @1214 DO ~SetGlobal("C#Solaufein_CerndBanterToB","GLOBAL",1)~
 == BCERND25 @1215
-== C#SOLAUB @1216
-== BCERND25 @1217
-= @1218
-== C#SOLAUB @1219
-= @1220
+= @1216
+== C#SOLAUB @1220
 == BCERND25 @1221
+== C#SOLAUB @1217
+== BCERND25 @1218
 EXIT
 
 
 
 
 /* Solaufein - Viconia */
+/* 3 */
+CHAIN
+IF 
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+Global("C#Solaufein_ViconiaBanter","GLOBAL",2)
+InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN C#SOLAUB viconia_02
+@1179 DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",3)~
+== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1180
+== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1180
+== C#SOLAUB @1181
+= @1182
+== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1183
+== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1183
+EXIT
+
+/* Solaufein - Viconia */
+/* 4 */
 APPEND BVICONI
 
 IF WEIGHT #-1
@@ -1575,9 +1727,9 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_ViconiaBanter","GLOBAL",2)~ THEN viconia_03
+Global("C#Solaufein_ViconiaBanter","GLOBAL",3)~ THEN viconia_03
 SAY @1222
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",3)~ EXTERN C#SOLAUB viconia_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",4)~ EXTERN C#SOLAUB viconia_03
 END
 END
 
@@ -1593,9 +1745,9 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
 See("C#Solaufein")
 !StateCheck("C#Solaufein",CD_STATE_NOTVALID)
 !Dead("C#Solaufein")
-Global("C#Solaufein_ViconiaBanter","GLOBAL",2)~ THEN viconia_03
+Global("C#Solaufein_ViconiaBanter","GLOBAL",3)~ THEN viconia_03
 SAY @1222 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",3)~ EXTERN C#SOLAUB viconia_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",4)~ EXTERN C#SOLAUB viconia_03
 END
 
 END
@@ -1611,6 +1763,27 @@ EXIT
 
 
 
+
+/* Solaufein - Aerie: */
+/* SoA 4 */
+CHAIN
+IF 
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+Global("C#Solaufein_AerieBanter","GLOBAL",3)
+InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN C#SOLAUB aerie_04
+@1242 DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",4)~
+= @1243
+== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1244
+== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1244
+== C#SOLAUB @1247
+EXIT
+
+
+
 /* Solaufein - Jaheira ToB only */
 CHAIN
 IF 
@@ -1618,6 +1791,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_JaheiraBanter","GLOBAL",6)
 Global("C#Solaufein_JaheiraBanterToB","GLOBAL",0)
 InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB jaheira_05
@@ -1638,6 +1814,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_JanBanter","GLOBAL",3)
 Global("C#Solaufein_JanBanterToB","GLOBAL",0)
 InParty("JAN") InMyArea("JAN") !StateCheck("JAN",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB jan_04
@@ -1653,27 +1832,6 @@ GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB jan_04
 EXIT
 
 
-
-
-/* Solaufein - Aerie: */
-CHAIN
-IF 
-~Global("C#SolauNoScenery","GLOBAL",0)
-!StateCheck(Myself,CD_STATE_NOTVALID)
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
-CombatCounter(0)
-!See([ENEMY])
-Global("C#Solaufein_AerieBanter","GLOBAL",3)
-InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN C#SOLAUB aerie_04
-@1242 DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",4)~
-= @1243
-== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1244
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1244
-== C#SOLAUB @1245
-== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1246
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1246
-== C#SOLAUB @1247
-EXIT
 
 
 
@@ -1704,28 +1862,8 @@ EXIT
 
 
 
-/* Solaufein - Viconia */
-CHAIN
-IF 
-~Global("C#SolauNoScenery","GLOBAL",0)
-!StateCheck(Myself,CD_STATE_NOTVALID)
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
-CombatCounter(0)
-!See([ENEMY])
-Global("C#Solaufein_ViconiaBanter","GLOBAL",3)
-InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN C#SOLAUB viconia_04
-@1255 DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",4)~
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1256
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1256
-== C#SOLAUB @1257
-= @1258
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1259
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1259
-EXIT
-
-
-
 /* Solaufein - Aerie: */
+/* SoA 5 */
 CHAIN
 IF 
 ~Global("C#SolauNoScenery","GLOBAL",0)
@@ -1735,17 +1873,192 @@ CombatCounter(0)
 !See([ENEMY])
 Global("C#Solaufein_AerieBanter","GLOBAL",4)
 InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN C#SOLAUB aerie_05
-@1260 DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",5)~
+@1294 DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",5)~
+= @1295
+== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1296
+== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1296
+== C#SOLAUB @1297
+= @1298
+EXIT
+
+
+
+
+/* Solaufein - Viconia */
+/* 5 */
+CHAIN
+IF 
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+Global("C#Solaufein_ViconiaBanter","GLOBAL",4)
+InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN C#SOLAUB viconia_04
+@1255 DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",5)~
+== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) Alignment("Viconia",MASK_EVIL)~ THEN @1256
+== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%) Alignment("Viconia",MASK_EVIL)~ THEN @1256
+== C#SOLAUB IF ~Alignment("Viconia",MASK_EVIL)~ THEN @1257
+== C#SOLAUB @1258
+== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1259
+== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1259
+EXIT
+
+
+
+/* Solaufein - Keldorn: */
+
+CHAIN
+IF WEIGHT #-1
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
+CombatCounter(0)
+!See([ENEMY])
+Global("C#Solaufein_KeldornBanter","GLOBAL",4)
+InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN C#SOLAUB Keldorn_01
+@2506 DO ~SetGlobal("C#Solaufein_KeldornBanter","GLOBAL",5)~
+= @2507
+= @2508
+== BKELDOR  IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2509
+== BKELDO25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2509
+== C#SOLAUB @2510
+== BKELDOR  IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2511
+= @2512
+== BKELDO25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2511
+= @2512
+== C#SOLAUB @2513
+== BKELDOR  IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2514
+== BKELDO25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2514
+== C#SOLAUB @2515
+EXIT
+
+/* Solaufein - Aerie: */
+/* SoA 6 */
+CHAIN
+IF 
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+Global("C#Solaufein_AerieBanter","GLOBAL",5)
+InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN C#SOLAUB aerie_06
+@1260 DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",6)~
 == BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1261
 == BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1261
 == C#SOLAUB @1262
 == BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1263
+= @1264
 == BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1263
-== C#SOLAUB @86
-== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1264
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1264
+= @1264
 == C#SOLAUB @1265
 EXIT
+
+
+
+/* Solaufein - Korgan, ToB only: */
+CHAIN
+IF 
+~!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_KorganBanter","GLOBAL",2)
+Global("C#Solaufein_KorganBanterToB","GLOBAL",0)
+InParty("KORGAN") InMyArea("KORGAN") !StateCheck("KORGAN",CD_STATE_NOTVALID)
+GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB korgan_03
+@1274 DO ~SetGlobal("C#Solaufein_KorganBanterToB","GLOBAL",1)~
+== BKORGA25 @1275
+== C#SOLAUB @1276
+EXIT
+
+
+
+/* Solaufein - Viconia - ToB only */
+/* ToB 1 */
+CHAIN
+IF 
+~!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_ViconiaBanter","GLOBAL",5)
+Global("C#Solaufein_ViconiaBanterToB","GLOBAL",0)
+InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)
+GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB viconia_06
+@1288 DO ~SetGlobal("C#Solaufein_ViconiaBanterToB","GLOBAL",1)~
+== BVICON25 @1289
+== C#SOLAUB @1290
+= @1291
+== BVICON25 @1292
+== C#SOLAUB @1293
+EXIT
+
+
+
+
+
+
+/* Solaufein - Aerie */
+/* SoA 7 */
+APPEND BAERIE
+
+IF WEIGHT #-1
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
+See("C#Solaufein")
+!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+!Dead("C#Solaufein")
+Global("C#Solaufein_AerieBanter","GLOBAL",6)~ THEN aerie_07
+SAY @1245
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",7)~ EXTERN C#SOLAUB aerie_07
+END
+END
+
+APPEND BAERIE25
+
+IF WEIGHT #-1
+~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
+See("C#Solaufein")
+!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
+!Dead("C#Solaufein")
+Global("C#Solaufein_AerieBanter","GLOBAL",6)~ THEN aerie_07
+SAY @1245 
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",7)~ EXTERN C#SOLAUB aerie_07
+END
+
+END
+
+CHAIN
+IF ~~ THEN C#SOLAUB aerie_07
+@1246
+== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1284
+== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1284
+== C#SOLAUB @1285
+= @1286 
+= @1299
+== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1287
+== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1287
+== C#SOLAUB @2526
+== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1303
+== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1303
+EXIT
+
+
 
 
 /* Solaufein - Keldorn, Tob only: */
@@ -1755,6 +2068,9 @@ IF
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	GlobalGT("C#Solaufein_KeldornBanter","GLOBAL",1)
 Global("C#Solaufein_KeldornBanterToB","GLOBAL",0)
 InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB Keldorn_05
@@ -1770,143 +2086,58 @@ EXIT
 
 
 
-/* Solaufein - Korgan, ToB only: */
-CHAIN
-IF 
-~!StateCheck(Myself,CD_STATE_NOTVALID)
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
-CombatCounter(0)
-!See([ENEMY])
-Global("C#Solaufein_KorganBanterToB","GLOBAL",0)
-InParty("KORGAN") InMyArea("KORGAN") !StateCheck("KORGAN",CD_STATE_NOTVALID)
-GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB korgan_03
-@1274 DO ~SetGlobal("C#Solaufein_KorganBanterToB","GLOBAL",1)~
-== BKORGA25 @1275
-== C#SOLAUB @1276
-EXIT
-
-
-
-/* Solaufein - Viconia */
-CHAIN
-IF 
-~Global("C#SolauNoScenery","GLOBAL",0)
-!StateCheck(Myself,CD_STATE_NOTVALID)
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
-CombatCounter(0)
-!See([ENEMY])
-Global("C#Solaufein_ViconiaBanter","GLOBAL",4)
-InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN C#SOLAUB viconia_05
-@1277 DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",5)~
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1278
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1278
-== C#SOLAUB @1279
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1280
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1280
-== C#SOLAUB @1281
-END
-++ @1282 EXTERN C#SOLAUB viconia_05_2
-++ @1283 EXTERN C#SOLAUB viconia_05_2 
-++ @1284 EXTERN C#SOLAUB viconia_05_2 
-+ ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ + @1285 EXTERN BVICONI viconia_05_2
-+ ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ + @1285 EXTERN BVICON25 viconia_05_2
-
-
-
-APPEND BVICONI 
-IF ~~ THEN viconia_05_2
-SAY @1286
-IF ~~ THEN EXTERN C#SOLAUB viconia_05_1
-END
-END
-
-APPEND BVICON25
-IF ~~ THEN viconia_05_2
-SAY @1286
-IF ~~ THEN EXTERN C#SOLAUB viconia_05_1
-END
-END
-
-APPEND C#SOLAUB 
-IF ~~ THEN viconia_05_1
-SAY @1287
-IF ~~ THEN + viconia_05_2
-END
-END
-
-CHAIN  
-IF ~~ THEN C#SOLAUB viconia_05_2
-@1288
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1289
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1289
-== C#SOLAUB @1290
-= @1291
-== BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1292
-== BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1292
-== C#SOLAUB @1293
-EXIT
-
-
-
-
-
-/* Solaufein - Aerie: */
-CHAIN
-IF 
-~Global("C#SolauNoScenery","GLOBAL",0)
-!StateCheck(Myself,CD_STATE_NOTVALID)
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
-CombatCounter(0)
-!See([ENEMY])
-Global("C#Solaufein_AerieBanter","GLOBAL",5)
-InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN C#SOLAUB aerie_06
-@1294 DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",6)~
-= @1295
-== BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1296
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1296
-== C#SOLAUB @1297
-= @1298
-= @1299
-EXIT
-
-
-
-
 /* Solaufein - Viconia; ToB only */
+/* ToB 2 */
 CHAIN
 IF 
 ~!StateCheck(Myself,CD_STATE_NOTVALID)
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
-Global("C#Solaufein_ViconiaBanterToB","GLOBAL",0)
+Global("C#Solaufein_ViconiaBanterToB","GLOBAL",1)
 InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN C#SOLAUB viconia_06
-@1300 DO ~SetGlobal("C#Solaufein_ViconiaBanterToB","GLOBAL",1)~
+@1300 DO ~SetGlobal("C#Solaufein_ViconiaBanterToB","GLOBAL",2)~
 == BVICON25 @1301
 == C#SOLAUB @1302
+== BVICON25 @1283
 EXIT
 
 
 
 
 /* Solaufein - Aerie; Tob only: */
-APPEND BAERIE25 
-
-IF WEIGHT #-1
-~!StateCheck(Myself,CD_STATE_NOTVALID)
-InParty(Myself)
+/* ToB 1 */
+CHAIN
+IF ~Global("C#SolauNoScenery","GLOBAL",0)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
-OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein")
-See("C#Solaufein")
-!StateCheck("C#Solaufein",CD_STATE_NOTVALID)
-!Dead("C#Solaufein")
+OR(2)
+	Global("C#SolaufeinFriends","GLOBAL",1)
+	Global("C#Solaufein_AerieBanter","GLOBAL",7)
 Global("C#Solaufein_AerieBanterToB","GLOBAL",0)
-GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN aerie_07
-SAY @1303 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanterToB","GLOBAL",1)~ EXTERN C#SOLAUB aerie_07
-END
+InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN C#SOLAUB aerie_tob_01
+@1307 DO ~SetGlobal("C#Solaufein_AerieBanterToB","GLOBAL",1)~
+== BAERIE25 @1308
+== C#SOLAUB @1309
+= @1310
+= @1311
+== BAERIE25 @1312 
+== C#SOLAUB @1313
+== BAERIE25 @1314
+== C#SOLAUB @1315
+== BAERIE25 @1316
+== C#SOLAUB @1317
+== BAERIE25 @1318
+== C#SOLAUB @1319
+EXIT
+
+
+
+/* ToB 2 */
+APPEND BAERIE25 
 
 IF WEIGHT #-1
 ~!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -1922,39 +2153,20 @@ GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN aerie_08
 SAY @1304
 = @1305
 = @1306 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanterToB","GLOBAL",2)~ EXTERN C#SOLAUB aerie_08
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanterToB","GLOBAL",2)~ EXTERN C#SOLAUB aerie_tob_02
 END
 
 END
 
 
-
 CHAIN
-IF ~~ THEN C#SOLAUB aerie_07
-@1307
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1308
-== C#SOLAUB @1309
-= @1310
-= @1311
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1312 
-== C#SOLAUB @1313
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1314
-== C#SOLAUB @1315
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1316
-== C#SOLAUB @1317
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1318
-== C#SOLAUB @1319
-EXIT
-
-
-CHAIN
-IF ~~ THEN C#SOLAUB aerie_08
+IF ~~ THEN C#SOLAUB aerie_tob_02
 @1320
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1321
+== BAERIE25 @1321
 == C#SOLAUB @1322
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1323
+== BAERIE25 @1323
 == C#SOLAUB @1324
-== BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1325
+== BAERIE25 @1325
 == C#SOLAUB @1326
 = @1327
 EXIT
