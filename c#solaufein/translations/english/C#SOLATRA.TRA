@@ -1700,7 +1700,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @1665 = ~Protect her... How was I supposed to spare her this fate? The only thing we could have done was try to run away into the unknown.~
 @1666 = ~Do not think this was an option for Phaere! Or for me, for that matter. It was a game we were both fascinated by, and it worked as long as it did due to Phaere's high rank as a first daughter. We both profited by it. She called a strong and loyal fighter her own, and I had the favor of a high female.~
 @1667 = ~Both our ranks and the advantages coming with them would have been without value if we fled. We weren't ready to leave behind the possibilities offered to us. Had we escaped, I suspect we would have found a reason to kill each other soon after!~
-@1668 = ~All Phaere had left was her ambition. She never had a good judgement, though. She ever only saw her goals and used every opportunity she could in pursuit of them.  This didn't change for the better afterwards her experience under the lashes of the Handmaidens. To the contrary, she became even more deeply absorbed by her ideas and couldn't be dissuaded from them unless there was no other choice. You remember what we had to free her from at your first meeting with her?...~
+@1668 = ~All Phaere had left was her ambition; she never had good judgement. She ever only saw her goals and used every opportunity she could in pursuit of them.  This didn't change for the better afterwards her experience under the lashes of the Handmaidens. To the contrary, she became even more deeply absorbed by her ideas and couldn't be dissuaded from them unless there was no other choice. You remember what we had to free her from at your first meeting with her?...~ 
 @1669 = ~I realized that this was the reason why she got so focused on you. A foreign group, presumably from Ched Nassad... and she allowed you to be present at the conjuration ceremony! It takes some impressive ignorance and blindness to the situation to hand that much power to a group of foreign drow, no matter how young and compliant.~
 @1670 = ~But the daughter is a chip off the old block, as you surfacers say. Ardulace permitted your presence in the temple. Seems she fell victim to her own arrogance as well as Phaere's blindness.~
 @1671 = ~Stubborn as Phaere was in pursuit of her goals, she blindly put all her efforts into you, being so conveniently available just as Ust Natha was preparing for war. And it worked out as I always expected: she tripped over her own arrogance.~
@@ -2094,7 +2094,7 @@ I saved Solaufein from being turned into a drider. Alas, he didn't seem interest
 
 /* c#solau_pid.d */
 @2750 = ~Oh, you weren't referring to that type of role model? But yes, <CHARNAME>, it was Phaere, Ardulace, and others like them who opened my eyes to the cruelty of my people. There were others secretly yearning for our Lady Silverhair, as you know, but they left long before I was ready to make myself known.~
-
+@2751 = ~Those of us who listened closely for signs of discontent or had an eye for deviations from the dogma of Lolth did hear or see things from time to time. I learned of the Lady Silverhair this way, though I was not receptive to the message or its bearer at the time.  Any deviations from Lolth's dogma were always quickly hushed up by the house of the deviant or else they risked the scandal becoming a pretext for the other houses to bring them down.~
 
 /* c#solaufein_interjections.D */
 @2800 = ~We need to move on, Solaufein. Make it short.~

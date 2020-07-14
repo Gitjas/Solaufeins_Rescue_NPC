@@ -2094,6 +2094,7 @@ Ich habe Solaufein aus den Drinnenkammern gerettet und ihm ein Schicksal als Dri
 
 /* c#solau_pid.d */
 @2750 = ~Oh, die meintet Ihr nicht? Aber doch, <CHARNAME>. Genau diese Drow haben mir die Augen geöffnet bezüglich der Grausamkeiten meines Volkes. Da waren auch andere, die ebenfalls im Geheimen unsere Dame mit dem Silberhaar verehrten wie Ihr wisst, aber sie verließen die Stadt lange bevor ich bereit war, mich zu offenbaren.~
+@2751 = ~Die von uns, die bereit waren, Lolths Dogmen anzuzweifeln und nach Zeichen eines anderen Lebens suchten konnten gelegentlich Anzeichen wahrnehmen. Ich habe auf diese Weise von meiner Dame mit dem Silberhaar gehört, jedoch war ich damals bei der einen, konkreten Begegnung mit einer Anhängerin Eilistraees weder bereit sie anzuerkennen noch auf ihre Worte zu hören. Jede Abweichung von Lolths Dogmen werden schnell vom Haus des Abtrünnigen vertuscht und beendet. Zu gefährlich ist es für das Haus, sich durch eine solche Schwachstelle eine Blöße im immerwährenden Kampf um die Vormachtsstellung in der Stadt zu geben.~
 
 /* c#solaufein_interjections.D */
 @2800 = ~Wir müssen weiter, Solaufein. Fasst Euch kurz.~

@@ -487,6 +487,7 @@ Global("EilistraeeBeginning","GLOBAL",0)
 Global("EilistraeeBeginning","GLOBAL",66)~ THEN @1444
 == C#SOLAUJ IF ~GlobalGT("EilistraeeBeginning","GLOBAL",1)
 GlobalLT("EilistraeeBeginning","GLOBAL",66)~ THEN @2750
+== C#SOLAUJ @2751
 == C#SOLAUJ @1445
 END
 IF ~~ THEN + anrede 
