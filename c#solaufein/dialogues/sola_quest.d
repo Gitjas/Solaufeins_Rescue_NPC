@@ -189,7 +189,7 @@ Global("C#Solaufein_PCIsDrow","GLOBAL",1)~ THEN @41
 == AMCARRAS IF ~GlobalGT("C#Solaufein_Quest","GLOBAL",2)~ THEN @48
 == C#SolauJ IF ~GlobalGT("C#Solaufein_Quest","GLOBAL",2)~ THEN @49
 == AMCARRAS @50
-== AMCARRAS IF ~OR(14)
+== AMCARRAS IF ~OR(28)
 PartyHasItem("DWCHAN01")
 PartyHasItem("DWCHAN02")
 PartyHasItem("DWSW1H01")
@@ -203,7 +203,21 @@ PartyHasItem("DWCLCK01")
 PartyHasItem("DWBOLT01")
 PartyHasItem("DWBOLT02")
 PartyHasItem("DWBOLT03")
-PartyHasItem("DWPLAT01")~ THEN @65
+PartyHasItem("DWPLAT01")
+HasItem("DWCHAN01","C#Solaufein")
+HasItem("DWCHAN02","C#Solaufein")
+HasItem("DWSW1H01","C#Solaufein")
+HasItem("DWSW1H02","C#Solaufein")
+HasItem("DWBLUN01","C#Solaufein")
+HasItem("DWHALB01","C#Solaufein")
+HasItem("DWSPER01","C#Solaufein")
+HasItem("DWXBOW01","C#Solaufein")
+HasItem("DWSHLD01","C#Solaufein")
+HasItem("DWCLCK01","C#Solaufein")
+HasItem("DWBOLT01","C#Solaufein")
+HasItem("DWBOLT02","C#Solaufein")
+HasItem("DWBOLT03","C#Solaufein")
+HasItem("DWPLAT01","C#Solaufein")~ THEN @65
 END
 IF ~~ THEN + 16
 
