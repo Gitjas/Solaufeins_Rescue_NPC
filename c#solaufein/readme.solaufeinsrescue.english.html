@@ -188,7 +188,24 @@ He cannot die while following as a 7th party member, but will remain at 1 HP. If
 The 1 HP drop out can be prevented if Solaufein is healed in time during a fight. If told to he will give a warning before his HP drop too low, but this seems to be buggy in BGT.<br />
 <br />
 Note: Following as a familiar means Solaufein will always be behind the last full group member, for walking as well as area transitions. This is unfortunate if you need him as a full fighter or even tank who is supposed to be in first line upon unexpected fights.<br />
-
+<br />
+NOTE: Unfortunately, the "7th group member mode" in the game requires special handling to accommodate all restrictions: 
+(The hints are a mix of the existing engine restrictions and the workarounds I used).<br />
+-The NPC has no "Clear Fog of War" around him in the 7th GM. So he can "disappear" in the "black" area of the map. (If you click on the whole group and let them gather at one place, the NPC will also try to do so, if they are not stuck somewhere. In that case only the teleportation cheat "Ctrl+j" helps to gather the group again. This has not happened to me yet, but it is theoretically possible if the NPC is chasing an enemy, for example).<br />
+-Items in the NPC's inventory are *not* recognized as items owned by the group. This is an engine problem. It follows that quest items that are needed in the game should not be in the NPC's inventory if they are to be recognized by the quest giver. Examples: Elvenhair's book, Ankheg shell for Taerom, etc.<br />
+-Quest items tagged as "critical" will be moved to the PC's inventory when moving to the 7th PMM. This may cause items from the PC's inventory to end up on the floor. This is an engine problem. As a result, you should always check after switching the NPC to the 7th PMM to see if items have landed on the floor!<br />
+-When new items are given to one of my NPCs in 7th PMM in a quest specifically for this NPC, they always appear in the inventory of the group or PC, even if the NPC is supposed to receive them. This is an engine problem. Even if I scripted it so that the items would end up in the NPC's inventory after the encounter, they would still be handled via the PC's inventory. And thus, items from the inventory may have ended up on the floor.<br />
+-For my NPCs, I have tried to have their own quest items (even if they are original in-game items, as long as they are necessary for my NPC's quest) recognized in the NPC's inventory as well. This works with the following restrictions:<br />
+-- All items in question are handled through the PC's inventory before they are either given to or received from a quest giver. This means that other items may have ended up on the floor.<br />
+-- If the item was in a bottomless bag (this includes all kind of bags, gem bags, bags for bottles etcpp.), then the item will not be removed in a dialogue with the quest giver. It is still in the bottomless bag afterwards and can cause problems if the scripting of the quest does not consider this (and assumes that the item should be gone).<br />
+-- 2. Problem with items in bottomless bags: If the item was in a bottomless bag, then the game crashes for unknown reasons if the NPC is to be taken afterwards into the group as a full member. This "crash bug" can be worked around by saving the game and reloading it.<br />
+<br />
+Short summary of things to keep in mind while playing:<br />
+-After each quest event and after moving to the 7th PMM, check whether the PC has lost items from the inventory that should be picked back up from the floor.<br />
+-Save before adding a 7th PM back to the group. If the game then crashes, reload the save game. This should prevent the crash from occurring.<br />
+-Es ist nötig und auch zu empfehlen, nicht-kritische Questitems nicht im Inventar der 7. GM sondern in dem der normalen Gruppenmitglieder zu haben.<br />
+-Take quest items out of bottomless bags in the 7th PM's inventory before approaching the appropriate quest givers, or at least save the game to prevent the "crash bug" before taking the NPC back as a full PM.<br />
+<br />
 
 <h2> <a name="stats" id="stats">Solaufein's Stats and Portrait</a></h2>
 Solaufein's alignment is lawful neutral.<br />
@@ -325,6 +342,18 @@ This mod is also not developed, supported, or endorsed by BioWare, Black Isle St
 
 <h1><a name="version" id="version">Version History</a></h1>
 <div class="section">
+Version 2.1:</br>
+- tipun's subrace mod for EE considered for check whether PC is drow.<br />
+- fixed install error if subrace mod(s) were detected.<br />
+- Solaufein should not start a banter directly after changing into 7th party member mode.<br />
+- ToB encounter now considers items in Solaufein's inventory if he is in 7th party member mode.<br />
+- scripts of 7th party member mode should not make Solaufein stop his attacks.<br />
+- added notes to restrictions of the "7th party member mode" to the readme.<br />
+- added Dynamic Install Order Category to .ini<br />
+- corrected "fatigue" spell for detection of party rested.<br />
+- added check so mod cannot be installed after EET_End.<br />
+- added folder libiconv-1.9.2-1-src.7z with iconv licence info<br />
+<br />
 Version 2.0:</br>
 -English version finished.</br>
 -NPC banters revised.</br>

@@ -188,6 +188,24 @@ Um ihn wieder normal in die Gruppe aufzunehmen, sprecht ihn an und w&auml;hlt in
 W&auml;hrend Solaufein als 7. Gruppenmitglied folgt, kann er nicht sterben, sondern verbleibt bei 1LP. Fallen seine LP in einem Kampf auf 1 LP dann f&auml;llt er in Ohnmacht und wird "neutral" (blauer Kreis), so dass Feinde ihn nicht weiter als Angriffsziel wahrnehmen. Ihn in diesem Zustand zu heilen &auml;ndert nichts daran, dass er au&szlig;er Gefecht gesetzt ist. Erst nach dem Kampf steht Solaufein wieder auf. Aus technischen Gr&uuml;nden wird er vollst&auml;ndig geheilt, bevor er wieder in den 7. Gruppenmitglieds-Modus wechselt. Dies hat mit der Spielengine zu tun und wie sie die LP der Gruppenmitglieder berechnet (Solaufein k&ouml;nnte sonst unter Umst&auml;nden an diesem Punkt sterben, wenn die HP zu niedrig sind, obwohl er eigentlich nicht tot war).<br />
 <br />
 Das Ohn&auml;chtigwerden im Kampf kann verhindert werden, indem Solaufein rechtzeitig geheilt wird. &Uuml;ber PID kann ihm gesagt werden, dass er warnen soll, bevor er diesen Punkt erreicht, dann wird das Spiel pausiert wenn Solaufein droht, zu wenig LP zu haben. Dies scheint in BGT aber nicht zu funktionieren.<br />
+<br />
+HINWEIS: Leider benötigt der "7. Gruppenmitglieds-Modus" im Spiel ein besonderes Handling, um alle Einschränkungen zu berücksichtigen: 
+(Die Hinweise sind eine Mischung aus den vorhandenen Enginerestriktionen und den von mir verwendeten Workarounds.)<br />
+-Der NPC hat im 7.GM keinen "Clear Fog of War" um sich herum. Er kann also im "schwarzen" Bereich der Karte "verschwinden". (Wenn man die gesamte Gruppe anklickt und zu einer Stelle laufen lässt, wird er es ebenfalls versuchen, sofern er nicht irgendwo feststeckt o.ä. Dann hilft nur noch der Teleportationscheat "Strg+j" um die Gruppe wieder zu versammeln. Mir ist das so noch nicht geschehen, es ist aber theoretisch möglich, wenn der NPC z.B. einen Feind verfolgt.)<br />
+-Items im Inventar werden *nicht* als Items im Besitz der Gruppe erkannt. Dies ist ein Engineproblem. Daraus folgt, dass Questitems die im Spiel benötigt werden, nicht im Inventar des NPCs sein sollten, wenn sie vom Questgeber erkannt werden sollen. Beispiele: Elvenhaars Buch, Ankhegpanzer für Taerom etc.<br />
+-Als "critical" getaggte Quest-Items werden beim Wechsel in den 7. GMM in das Inventar des HC verschoben. Dadurch landen eventuell Gegenstände aus dem Inventar des HC auf dem Boden. Dies ist ein Engineproblem. Daraus ergibt sich, dass Ihr immer nach Wechsel des NPC in de 7.GMM nachschauen solltet, ob Items auf dem Boden gelandet sind!<br />
+-Wenn bei einem meiner Quests speziell für diesen NPC neue Items übergeben werden, erscheinen diese immer im Inventar der Gruppe bzw. HC, auch wenn sie eigentlich der NPC erhalten soll. Dies ist ein Engineproblem. Auch wenn ich es so gescriptet haben sollte, dass die Gegenstände schlussendlich im Inventar des NPCs sind, werden sie trotzdem über das Inventar des HC gehändelt. Wie sonst auch im Spiel können auch hierbei Gegenstände aus dem Inventar auf dem Boden gelandet sein.<br />
+-Für meine NPCs habe ich versucht, bei den eigenen Questitems (auch wenn es sich um Originalitems des Spiels handelt, sofern sie für den Quest meines NPCs nötig sind) diese auch im Inventar des NPC erkennen zu lassen. Das klappt mit folgenden Einschränkungen:<br />
+-- Alle Items, um die es geht, werden über das Inventar das HC gehändelt bevor sie entweder einem Questgeber gegeben oder von diesem erhalten wurden. Das bedeutet, dass andere Items auf dem Boden gelandet sein könnten.<br />
+-- Befand sich das weggebene Item in einem Nimmervollen Beutel (dazu zähle ich auch Edelsteinbeutel, Taschen für Flaschen etcpp.), dann wird das Item nicht entfernt. Es ist danach noch immer im Nimmervollen Beutel und kann Probleme bereiten, wenn der Quest nicht stabil gescriptet wurde (und davon ausgeht, dass das Item weg sein sollte).<br />
+-- 2. Problem mit Items im Nimmevollen Beutel: Befand sich das weggebene Item in einem Nimmervollen Beutel, dann stürt aus unerfindlichen Gründen das Spiel ab, wenn der NPC danach wieder über die PID-Option als vollwertiges Mitglied in die Gruppe aufgenommen werden soll. Dieser "Absturzbug" lässt sich umgehen, indem das Spiel gespeichert und wieder geladen wird.<br />
+<br />
+Nochmal in Kürze die wichtigsten Tips zusammengefast:<br />
+-Nach jedem Questereignis und nach dem Wechsel in den 7.GMM nochmal schauen, ob der HC Items aus dem Inventar verloren hat, die wieder vom Boden aufgelesen werden sollten.<br />
+-Speichern, bevor ein 7. GM wieder in die Gruppe aufgenommen werden soll. Sollte das Spiel dann abstürzen, den Spielstand neu laden. Damit sollte der Absturz nicht auftreten.<br />
+-Es ist nötig und auch zu empfehlen, nicht-kritische Questitems nicht im Inventar der 7. GM sondern in dem der normalen Gruppenmitglieder zu haben.<br />
+-Questitems aus Beuteln/Nimmervollen Taschen im Inventar des 7. GM nehmen, bevor man die entsprechenden Questgeber anspricht, um den "Absturzbug" zu verindern, oder auf alle Fälle zu speichern, bevor man ihn wieder richtig in die Gruppe aufnimmt.<br />
+<br />
 
 
 <h2> <a name="stats" id="stats">Solaufeins Eigenschaften und Portrait</a></h2>
@@ -327,6 +345,18 @@ This mod is also not developed, supported, or endorsed by BioWare, Black Isle St
 
 <h1><a name="version" id="version">Versionshistorie</a></h1>
 <div class="section">
+Version 2.1:</br>
+- tipun's subrace mod for EE considered for check whether PC is drow.<br />
+- fixed install error if subrace mod(s) were detected.<br />
+- Solaufein should not start a banter directly after changing into 7th party member mode.<br />
+- ToB encounter now considers items in Solaufein's inventory if he is in 7th party member mode.<br />
+- scripts of 7th party member mode should not make Solaufein stop his attacks.<br />
+- added notes to restrictions of the "7th party member mode" to the readme.<br />
+- added Dynamic Install Order Category to .ini<br />
+- corrected "fatigue" spell for detection of party rested.<br />
+- added check so mod cannot be installed after EET_End.<br />
+- added folder libiconv-1.9.2-1-src.7z with iconv licence info<br />
+<br />
 Version 2.0:</br>
 -English version finished.</br>
 -NPC banters revised.</br>
