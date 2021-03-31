@@ -13,3 +13,7 @@
 @90009   = ~Corsymyr's BG:EE Subrace mod detected. Installing crossmod content...~
 @90010   = ~Eilistraee's Song mod detected. Installing crossmod content...~
 
+/* new for v2.2 */
+@90011   = ~This mod is not compatible with this game.~
+@90012   = ~This mod needs to be installed before EET_End on your EET install.~
+

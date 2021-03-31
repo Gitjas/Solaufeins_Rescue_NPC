@@ -1,0 +1,9 @@
+
+IF
+	Global("C#Solaufein_PCIsDrow","GLOBAL",0)
+	TriggerOverride(Player1,Global("SUBRACE","LOCALS",3)) //tipun's BG:EE Subrace mod
+THEN 
+	RESPONSE #100
+		SetGlobal("C#Solaufein_PCIsDrow","GLOBAL",1)
+		Continue()
+END

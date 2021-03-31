@@ -2,7 +2,7 @@ BACKUP ~C#Solaufein\backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~2.0 Beta~ 
+VERSION ~2.1 Beta~ 
 
 README ~C#Solaufein/readme.solaufeinsrescue.%LANGUAGE%.html~ ~C#Solaufein/readme.solaufeinsrescue.english.html~
 
@@ -110,6 +110,7 @@ END //c#solaufeinreinstall.mrk
 
 
     //TRAs declared in LANGUAGE must be reloaded
+  LOAD_TRA ~C#Solaufein\Translations/autotra/english/game.tra~
   LOAD_TRA ~C#Solaufein\Translations/autotra/%LANGUAGE%/game.tra~
 
 
@@ -128,14 +129,12 @@ LANGUAGE ~English~
 
 
 BEGIN @90000
-
-
-
+REQUIRE_PREDICATE GAME_IS ~bgt bg2ee tob eet~ @90011
+FORBID_COMPONENT ~EET_end.tp2~ ~0~ @90012
+FORBID_COMPONENT ~EET_end.tp2~ ~1~ @90012
 
 
 ADD_JOURNAL TITLE (@1799) @67 @1795 @1796 @1797 @1798 USING ~C#Solaufein\Translations\autotra/%LANGUAGE%/C#SOLATRA.TRA~
-
-
 
 
 COPY_EXISTING ~ar2100.are~ ~override~
@@ -799,18 +798,29 @@ END //~bg2ee eet~
 
 /* crossmod */
 
+
 /* detect subrace mods */
 ACTION_IF (FILE_EXISTS_IN_GAME ~SED.spl~ OR (FILE_EXISTS_IN_GAME ~SrED.spl~ AND NOT FILE_EXISTS_IN_GAME ~srsquir.cre~)) BEGIN
   PRINT @90008
-  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein\Scripts\AR2100_subraceBGII.baf~
+  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGII.baf~
 USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
 END
 
+/* subrace mod from Corsymyr. EE only */
 ACTION_IF (FILE_EXISTS_IN_GAME ~SrED.spl~ AND FILE_EXISTS_IN_GAME ~srsquir.cre~) BEGIN
   PRINT @90009
-  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein\Scripts\AR2100_subraceBGEE.baf~
+  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_Corsymyr.baf~
 USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
 END
+
+/* subrace mod from tipun. EE only */
+/* TriggerOverride(Player1,Global("SUBRACE","LOCALS",3)) */
+ACTION_IF (FILE_EXISTS_IN_GAME ~SR_DROW.spl~ AND FILE_EXISTS_IN_GAME ~srsquir.cre~) BEGIN
+  PRINT @90009
+  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_tipun.baf~
+USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+END
+
 
 /* Eilistraee's Song */
 ACTION_IF FILE_EXISTS_IN_GAME ~ESxMH.dlg~ BEGIN

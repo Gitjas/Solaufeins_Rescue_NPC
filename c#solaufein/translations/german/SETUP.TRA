@@ -14,3 +14,7 @@
 @90009   = ~Corsymyr's BG:EE Subrace Mod detektiert. Installiere Crossmodinhalte...~
 @90010   = ~Eilistraee's Song Mod detektiert. Installiere Crossmodinhalte...~
 
+/* new for v2.2 */
+@90011   = ~Die mod ist nicht mit diesem Spiel kompatibel.~
+@90012   = ~Diese Mod muss vor EET_End installiert werden.~
+
