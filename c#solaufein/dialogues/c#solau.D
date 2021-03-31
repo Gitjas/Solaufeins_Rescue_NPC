@@ -81,7 +81,6 @@ RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)
 RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500)
 SetGlobal("C#Solaufein_Dialog","GLOBAL",1)
 SetGlobal("C#Solaufein_Waits","GLOBAL",5)
-SetGlobal("C#SolauJoined","GLOBAL",2) 
 EraseJournalEntry(@1797)
 EraseJournalEntry(@1796)
 MakeGlobal()
@@ -93,6 +92,8 @@ ChangeAIScript("DEFAULT",CLASS)
 ChangeAIScript("",RACE)
 ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
+RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)
+SetGlobal("C#SolauJoined","GLOBAL",2) 
 SetInterrupt(TRUE)~ SOLVED_JOURNAL @1795 EXIT
 END
 
@@ -169,7 +170,6 @@ END
 IF ~~ THEN wartet_wieder_02_b
 SAY @2702
 IF ~~ THEN DO ~SetInterrupt(FALSE)
-SetGlobal("C#SolauJoined","GLOBAL",2)
 EraseJournalEntry(@1797)
 EraseJournalEntry(@1796)
 MakeGlobal()
@@ -181,6 +181,8 @@ ChangeAIScript("DEFAULT",CLASS)
 ChangeAIScript("",RACE)
 ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
+RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)
+SetGlobal("C#SolauJoined","GLOBAL",2) 
 SetInterrupt(TRUE)~ SOLVED_JOURNAL @1795 EXIT
 END
 
@@ -205,7 +207,6 @@ END
 IF ~~ THEN follow_companion
 SAY @1855
 IF ~~ THEN DO ~SetInterrupt(FALSE)
-SetGlobal("C#SolauJoined","GLOBAL",2)
 MakeGlobal()
 ChangeEnemyAlly(Myself, FAMILIAR)
 AddFamiliar()
@@ -215,6 +216,8 @@ ChangeAIScript("DEFAULT",CLASS)
 ChangeAIScript("",RACE)
 ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
+RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)
+SetGlobal("C#SolauJoined","GLOBAL",2) 
 SetInterrupt(TRUE)~ EXIT
 END
 
