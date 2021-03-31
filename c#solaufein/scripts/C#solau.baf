@@ -49,6 +49,7 @@ END
 IF
 	Global("C#Solaufein_Has1HPEffect","GLOBAL",1)
 	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
+	!CombatCounter(0)
 	See([ENEMY])
 THEN
 	RESPONSE #100
