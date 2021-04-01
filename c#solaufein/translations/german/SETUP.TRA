@@ -7,14 +7,18 @@
 
 @90006   = ~Alternatives Portrait #2 von Chinasky~
 
-@90007   = ~Zusaetzliche Detektion fuer Drow HC~
+@90007   = ~Detektion fuer Drow HC~
 
 
-@90008   = ~FinnJO's Subrace Mod oder Welverin's Subrace Mod detektiert. Installiere Crossmodinhalte...~
-@90009   = ~Corsymyr's BG:EE Subrace Mod detektiert. Installiere Crossmodinhalte...~
+@90008   = ~FinnJOs Subrace Mod oder Welverins Subrace Mod detektiert. Installiere Crossmodinhalte...~
+@90009   = ~Corsymyrs BG:EE Subrace Mod detektiert. Installiere Crossmodinhalte...~
 @90010   = ~Eilistraee's Song Mod detektiert. Installiere Crossmodinhalte...~
 
 /* new for v2.2 */
 @90011   = ~Die mod ist nicht mit diesem Spiel kompatibel.~
 @90012   = ~Diese Mod muss vor EET_End installiert werden.~
+
+/* new for v2.2 */
+@90013   = ~Keine Subrace Mod erkannt. Installiere zusaetzliche drow-spezifische Antwortoption zu Adalons Dialog...~
+@90014   = ~tipuns Subrace Mod detektiert. Installiere Crossmodinhalte...~
 

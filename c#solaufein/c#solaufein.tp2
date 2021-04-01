@@ -2,7 +2,7 @@ BACKUP ~C#Solaufein\backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~2.1 Beta~ 
+VERSION ~2.2 Beta~ 
 
 README ~C#Solaufein/readme.solaufeinsrescue.%LANGUAGE%.html~ ~C#Solaufein/readme.solaufeinsrescue.english.html~
 
@@ -799,29 +799,6 @@ END //~bg2ee eet~
 /* crossmod */
 
 
-/* detect subrace mods */
-ACTION_IF (FILE_EXISTS_IN_GAME ~SED.spl~ OR (FILE_EXISTS_IN_GAME ~SrED.spl~ AND NOT FILE_EXISTS_IN_GAME ~srsquir.cre~)) BEGIN
-  PRINT @90008
-  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGII.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-END
-
-/* subrace mod from Corsymyr. EE only */
-ACTION_IF (FILE_EXISTS_IN_GAME ~SrED.spl~ AND FILE_EXISTS_IN_GAME ~srsquir.cre~) BEGIN
-  PRINT @90009
-  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_Corsymyr.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-END
-
-/* subrace mod from tipun. EE only */
-/* TriggerOverride(Player1,Global("SUBRACE","LOCALS",3)) */
-ACTION_IF (FILE_EXISTS_IN_GAME ~SR_DROW.spl~ AND FILE_EXISTS_IN_GAME ~srsquir.cre~) BEGIN
-  PRINT @90009
-  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_tipun.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-END
-
-
 /* Eilistraee's Song */
 ACTION_IF FILE_EXISTS_IN_GAME ~ESxMH.dlg~ BEGIN
   PRINT @90010
@@ -953,11 +930,36 @@ COPY ~C#Solaufein/Portraits/Portrait2/Portrait2_EE/C#SolauM.bmp~ ~override/C#Sol
 END
 
 //////////////////////////////////////////////////////////////////
-// Install additional Detection for Drow PC //
+// Install Detection for Drow PC //
 /////////////////////////////////////////////////////////
 
 BEGIN @90007
 REQUIRE_COMPONENT ~c#solaufein/setup-c#solaufein.tp2~ ~0~ @90003
 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\detect_drowpc.d~
+/* detect subrace mods */
+ACTION_IF (FILE_EXISTS_IN_GAME ~SED.spl~ OR (FILE_EXISTS_IN_GAME ~SrED.spl~ AND NOT FILE_EXISTS_IN_GAME ~srsquir.cre~)) BEGIN
+  PRINT @90008
+  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGII.baf~
 USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+END
+
+/* subrace mod from Corsymyr. EE only */
+ACTION_IF (FILE_EXISTS_IN_GAME ~SrED.spl~ AND FILE_EXISTS_IN_GAME ~srsquir.cre~) BEGIN
+  PRINT @90009
+  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_Corsymyr.baf~
+USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+END
+
+/* subrace mod from tipun. EE only */
+/* TriggerOverride(Player1,Global("SUBRACE","LOCALS",3)) */
+ACTION_IF (FILE_EXISTS_IN_GAME ~SR_DROW.spl~) BEGIN
+  PRINT @90014
+  EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_tipun.baf~
+USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+END
+
+ACTION_IF (!FILE_EXISTS_IN_GAME ~SED.spl~ AND !FILE_EXISTS_IN_GAME ~SrED.spl~ AND !FILE_EXISTS_IN_GAME ~SR_DROW.spl~) THEN BEGIN
+  PRINT @90013 /* No subrace mod detected. Installing drow specific reply option to Adalon's dialogue...~ */
+  COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\detect_drowpc.d~
+	USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+END

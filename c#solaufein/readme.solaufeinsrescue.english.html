@@ -108,11 +108,13 @@ The mod is compatible with Imoen 4 Ever.<br />
 <br />
 For BGII / BGT you need to install the main component ("Core Mod") of "Infinity Animations" to see the drider animations in the game. If IA is not installed before the main component of the Solaufein mod, the component "Enable Drider Animations in this Mod" of this mod can be installed later to enable the drider animations. <br />
 <br />
-There is some crossmod content in this mod. Solaufein's Rescue - jastey's Solaufein NPC for BGII should be installed after:<br />
--Corsymyr's BG:EE Subrace mod (if your PC is supposed to be drow)<br />
--FinnJO's Subrace mod (if your PC is supposed to be drow)<br /> 
--Welverin's Subrace mod (if your PC is supposed to be drow)<br />
--Lava's Eilistraee's Song: install Solaufein's Rescue after Eilistraee's Song to make the two mods fully compatible.<br />
+There is some crossmod content in this mod. The main component of Solaufein's Rescue - jastey's Solaufein NPC for BGII should be installed after:<br />
+-Lava's Eilistraee's Song to make the two mods fully compatible.<br />
+The component "Install Detection for Drow PC" should be installed after the following mods - if your PC is supposed to be drow and you are planning on installing one of the subrace mods:<br />
+-Corsymyr's BG:EE Subrace mod<br />
+-FinnJO's Subrace mod<br /> 
+-tipun's Subrace mod<br />
+-Welverin's Subrace mod<br />
 <br />
 All other crossmod is inside the <a href="https://www.gibberlings3.net/mods/npcs/crossmod/">Crossmod Banter Pack</a> which should be installed after Solaufein (from v1.5).<br />
 
@@ -149,7 +151,14 @@ Install this component later if you want to install the main component of Solauf
 <br />
 The forth, optional component enables to install the alternative portrait for Solaufein, also from Holger Kirste!<br />
 <br />
-The fifth, optional component adds one additonal reply option to Adalon's dialogue, with which the player can tell that the PC is drow. This will set a variable so that Solaufein will address the PC as drow. This was content of the main component before but I made it a separate component for v2 because it might be immersion breaking in case players do not plan on playing as drow PC. The detection of the subrace mods mentioned above is independent to this.<br />
+The fifth, optional component is for detection in case you want to play with a drow PC. If it is installed, a variable in game will be set so that Solaufein will address the PC as drow. It works as follows:<br />
+If no subrace mod is detected, this component adds one additonal reply option for en elven PC to Adalon's dialogue, with which the player can tell that the PC is drow. It will show after Adalon revealed her plan about the drow illusion. This might be immersion breaking in case players do not plan on playing as drow PC. Click this reply option to make Solaufein recognize the PC as a drow when they meet later.<br />
+If one of the subrace mods is detected, no reply option to Adalon will be added. The detection of the PC being drow using the subrace mods will happen automatically in game (via script). The subrace mods that are considered are the following:<br />
+-Corsymyr's BG:EE Subrace mod<br />
+-FinnJO's Subrace mod<br /> 
+-tipun's Subrace mod<br />
+-Welverin's Subrace mod<br />
+Install this component after any subrace mods for the drow detection to kick in.<br />
 
 <h2> <a name="note" id="note">Please note</a></h2>
 The mod needs to be installed before visiting the Underdark for the first time because of area modifications of the main Underdark area. For BGII/BGT and using the drider animations you probably need to start a new game.<br />
@@ -173,9 +182,7 @@ Solaufein as a full-fledged party member: friendship path (with 26 base dialogue
 <br />
 There is a small encounter in Athkatla with two follow-ups, the last in Amkethran (to call this a quest would be highly exaggerated). The PC can lay down his arms for those, though.<br />
 <br />
-Solaufein will acknowledge your PC being a drow - but do not expect him to be available to teach drow lore, as he tries to leave all this behind. For activation, you either have to install one of the subrace mods before the Solaufein mod: Supported mods are (so far, only English version is considered since these mods aren't traify_d yet): Welverin's Subrace mod, FinnJO's Subrace mod, Corsymyr's BG:EE Subrace mod.<br />
-<br />
-Alternatively, for "hand-made" drow NPCs there is one reply option added to Adalon's dialogue for en elven PC to tell her that Player1 is a drow if the 5th component of the mod is installed. It will show after Adalon revealed her plan about the drow illusion. Only click this if Solaufein should adddress your PC as a drow. <br />
+Solaufein will acknowledge your PC being a drow (if you install the optional component) - but do not expect him to be available to teach drow lore, as he tries to leave all this behind. For activation, you have to install the fifth component. It either detects one of the subrace mods if they were installed before the 5th component of the Solaufein mod (so far, only English version is considered since these mods aren't traify_d yet): Welverin's Subrace mod, FinnJO's Subrace mod, Corsymyr's BG:EE Subrace mod, tipun's Subrace mod). Without any subrace mods for "hand-made" drow PCs, the fifth component adds one reply option to Adalon's dialogue for en elven PC to tell her that Player1 is a drow. It will show after Adalon revealed her plan about the drow illusion. Only click this if Solaufein should adddress your PC as a drow. This reply option will not be added if detection happens automatically in case of one of the subrace mods. <br />
 
 
 <h2> <a name="7th" id="7th">7th Party Member Mode</a></h2>
@@ -342,6 +349,11 @@ This mod is also not developed, supported, or endorsed by BioWare, Black Isle St
 
 <h1><a name="version" id="version">Version History</a></h1>
 <div class="section">
+Version 2.2:</br>
+- fixed detection for tipun's subrace mod.<br />
+- moved crossmod for subrace mods into 5th component and deactivated drow reply option if subrace mods are detected.<br />
+- Updated readme with description of changed 5th component.<br />
+<br />
 Version 2.1:</br>
 - tipun's subrace mod for EE considered for check whether PC is drow.<br />
 - fixed install error if subrace mod(s) were detected.<br />

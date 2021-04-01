@@ -7,13 +7,16 @@
 
 @90006   = ~Install alternative portrait #2 from Chinasky~
 
-@90007   = ~Install additional Detection for Drow PC~
+@90007   = ~Install Detection for Drow PC~
 
 @90008   = ~FinnJO's Subrace mod or Welverin's Subrace mod detected. Installing crossmod content...~
 @90009   = ~Corsymyr's BG:EE Subrace mod detected. Installing crossmod content...~
 @90010   = ~Eilistraee's Song mod detected. Installing crossmod content...~
 
-/* new for v2.2 */
+/* new for v2.1 */
 @90011   = ~This mod is not compatible with this game.~
 @90012   = ~This mod needs to be installed before EET_End on your EET install.~
 
+/* new for v2.2 */
+@90013   = ~No subrace mod detected. Installing drow specific reply option to Adalon's dialogue...~
+@90014   = ~tipun's Subrace mod detected. Installing crossmod content...~
