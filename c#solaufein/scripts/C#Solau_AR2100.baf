@@ -34,7 +34,7 @@ IF
 	Global("C#SolauRettung","GLOBAL",2)
 THEN
 	RESPONSE #100
-		ActionOverride("Felsspalte",CreateItem("c#sorun1",1,0,0))
+		ActionOverride("C#Felsspalte",CreateItem("c#sorun1",1,0,0))
 		SetGlobal("C#SolauRettung","GLOBAL",3)
 		Continue()
 END

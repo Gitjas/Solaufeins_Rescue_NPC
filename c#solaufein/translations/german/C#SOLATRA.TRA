@@ -95,8 +95,8 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @85   = ~Habt keine Sorge. Ihr werdet mir von dieser Eskapade nichts mehr anmerken. Ich werde Euch dort erwarten.~
 @86   = ~Ist das so?~
 @87   = ~Gerne würde ich Euch belohnen, doch ich habe nichts von Wert... Ich werde mich wieder in die schwarzen Schatten drücken und hoffen, dass der Fall des Hauses Despana genug Unruhe gestiftet hat, um mich zu verbergen.~
-@88   = ~Wenn ich es mir so überlege, möchte ich Euch doch so, wie Ihr vorher wart, oben an der Oberfläche treffen!~
-@89   = ~Ich hätte Euch gerne in der Gruppe, Solaufein, aber mit den Erfahrungen, die Ihr hier in der Drinnenkammer gemacht habt.~
+@88   = ~Wenn ich es mir so überlege, möchte ich Euch doch so, wie Ihr vorher wart, oben an der Oberfläche treffen! (Nur Weimers Solaufein wird auftauchen.)~
+@89   = ~Ich hätte Euch gerne in der Gruppe, Solaufein, aber mit den Erfahrungen, die Ihr hier in der Drinnenkammer gemacht habt. (Auch jasteys Solaufein wird auftauchen.)~
 @90   = ~Ich hätte Euch gerne in der Gruppe, Solaufein. Begleitet mich!~
 @91   = ~Ich wünsche Euch viel Glück, Solaufein. Lebt wohl!~
 @92   = ~Nun denn, dann verschwindet!~
@@ -2016,8 +2016,8 @@ Ich habe Solaufein aus den Drinnenkammern gerettet und ihm ein Schicksal als Dri
 @1935  = ~[PC] Solaufein, obwohl ich die gefälschten Dracheneier von Euch genommen habe, hätte ich sie nicht gebraucht, um Haus Despana zu zerstören.~ 
 
 /* C#solau.baf */
-@1934 = ~Verdammte Sonne!~
-@1935 = ~Ah, das ist besser.~
+@1936 = ~Verdammte Sonne!~
+@1937 = ~Ah, das ist besser.~
 
 /* c#solaufein_interjections_ee.D */
 @1940 = ~Sind wir *jetzt* fertig?~

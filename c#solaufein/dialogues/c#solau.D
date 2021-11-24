@@ -94,6 +94,7 @@ ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
 RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)
 SetGlobal("C#SolauJoined","GLOBAL",2) 
+SetGlobal("C#LevelUp","LOCALS",0)
 SetInterrupt(TRUE)~ SOLVED_JOURNAL @1795 EXIT
 END
 
@@ -183,6 +184,7 @@ ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
 RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)
 SetGlobal("C#SolauJoined","GLOBAL",2) 
+SetGlobal("C#LevelUp","LOCALS",0)
 SetInterrupt(TRUE)~ SOLVED_JOURNAL @1795 EXIT
 END
 
@@ -218,6 +220,7 @@ ChangeAIScript("",GENERAL)
 ChangeAIScript("",DEFAULT)
 RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)
 SetGlobal("C#SolauJoined","GLOBAL",2) 
+SetGlobal("C#LevelUp","LOCALS",0)
 SetInterrupt(TRUE)~ EXIT
 END
 

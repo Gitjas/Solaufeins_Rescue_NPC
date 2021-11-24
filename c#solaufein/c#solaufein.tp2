@@ -2,7 +2,7 @@ BACKUP ~C#Solaufein\backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~2.2 Beta~ 
+VERSION ~3pre~ 
 
 README ~C#Solaufein/readme.solaufeinsrescue.%LANGUAGE%.html~ ~C#Solaufein/readme.solaufeinsrescue.english.html~
 
@@ -127,8 +127,15 @@ LANGUAGE ~English~
          ~C#Solaufein\Translations\english\setup.tra~
          ~C#Solaufein\Translations\english\game.tra~
 
+LANGUAGE ~Russian~
+         ~russian~   
+         ~C#Solaufein\Translations\english\setup.tra~
+         ~C#Solaufein\Translations\russian\game.tra~
+
 
 BEGIN @90000
+DESIGNATED 0
+LABEL JasteysSolaufeinRescue-Main
 REQUIRE_PREDICATE GAME_IS ~bgt bg2ee tob eet~ @90011
 FORBID_COMPONENT ~EET_end.tp2~ ~0~ @90012
 FORBID_COMPONENT ~EET_end.tp2~ ~1~ @90012
@@ -210,7 +217,7 @@ END
     fj_vertex_3    = 3819 + (1783 << 16)
     STR_VAR
     fj_structure_type = container
-    fj_name           = ~Felsspalte~
+    fj_name           = ~C#Felsspalte~
   END
 
 BUT_ONLY
@@ -845,6 +852,8 @@ END //ES
 */
 
 BEGIN @90001
+DESIGNATED 1
+LABEL JasteysSolaufeinRescue-Give_Ust_Natha_Solaufein_Portrait
 
 REQUIRE_COMPONENT ~c#solaufein/setup-c#solaufein.tp2~ ~0~ @90003
 
@@ -869,6 +878,8 @@ BUT_ONLY_IF_IT_CHANGES
  */
 
 BEGIN @90002
+DESIGNATED 2
+LABEL JasteysSolaufeinRescue-Drider_Animations
 
 REQUIRE_PREDICATE !(GAME_IS ~bg2ee eet~) @90004
 /* BGII / BGT version: IA needs to be installed for the drider animations */
@@ -910,6 +921,8 @@ BUT_ONLY_IF_IT_CHANGES
 /////////////////////////////////////////////////////////
 
 BEGIN @90006
+DESIGNATED 3
+LABEL JasteysSolaufeinRescue-Alternative_Portrait
 REQUIRE_COMPONENT ~c#solaufein/setup-c#solaufein.tp2~ ~0~ @90003
 
 
@@ -934,6 +947,8 @@ END
 /////////////////////////////////////////////////////////
 
 BEGIN @90007
+DESIGNATED 4
+LABEL JasteysSolaufeinRescue-Detection_for_Drow_PC
 REQUIRE_COMPONENT ~c#solaufein/setup-c#solaufein.tp2~ ~0~ @90003
 
 /* detect subrace mods */

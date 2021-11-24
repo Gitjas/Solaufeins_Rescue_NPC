@@ -356,7 +356,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @344  = ~*You* participated in raids to the surface?! Innocent people were murdered!~
 @345  = ~Well, that is what the surfacers see, and it's indeed a desired outcome. However, one important reason young males go on raids to the surface is to impress their matron. Going on surface raids is very dangerous for us drow. Anyone who manages to come back with a... trophy proves his courage and fighting prowess.~
 @346  = ~What kind of 'trophy' are we talking about here?~
-@347  = ~The actual trophies were... surfacer heads, other proof of their deaths, or living surfacers for the slave pits - for the honor of Lolth~
+@347  = ~The actual trophies were... surfacer heads, other proof of their deaths, or living surfacers for the slave pits - for the honor of Lolth.~
 @348  = ~Did you collect... 'trophies' yourself as well?~
 @349  = ~You are different than other drow, Solaufein.~
 @350  = ~Of course I have!~
@@ -481,7 +481,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @469  = ~But it is not only my diminished combat prowess that concerns me. It is also my... feelings.~
 @470  = ~Your way of living, of treating with one another - the friendly words and gestures, the trust you grant each other... At the beginning, I was thrilled. It filled me like a rush, it felt like being on a surge of excitement. I was willing to endure the infirmities caused by the sun and separation from the Underdark. I knew I had to pay a price and expected to adjust to it after some time.~
 @471  = ~Well my physical weakness persists, as you well know. But... that alone wouldn't be such a problem if I didn't feel like I was actively compounding them!~
-@472  = ~I notice myself mimicing your friendly ways. I am... relaxing - even though my physical restrictions still persist, my mind seems to relax, as absurd as this sounds. My vigilance is lacking. I am turning myself into easy prey if I don't watch out!~
+@472  = ~I notice myself mimicking your friendly ways. I am... relaxing - even though my physical restrictions still persist, my mind seems to relax, as absurd as this sounds. My vigilance is lacking. I am turning myself into easy prey if I don't watch out!~
 @473  = ~My harsh words came from a sudden feeling of... uncertainty. I felt like I was being knocked off my feet. Being here is far more overwhelming than I would have ever expected, <CHARNAME>.~
 @474  = ~You are starting to trust in others, Solaufein.~
 @475  = ~You are not alone. We'll have your back.~
@@ -636,7 +636,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @624  = ~I guess that impression has changed?~
 @625  = ~That was probably a good thing. It provided a useful rationalization for any mistakes we made in our impersonations.~
 @626  = ~I don't want to hear about it in so much detail, Solaufein.~
-@627  = ~But I would never have thought it possible for our aquaintance to have developed into what it has, had someone told me.~
+@627  = ~But I would never have thought it possible for our acquaintance to have developed into what it has, had someone told me.~
 @628  = ~What I said to you the other day wasn't meant as a simple compliment, <CHARNAME>. To curry favor with someone is not what I do. I really can only admire your fighting style. You have to know that for us, the drow, you surfacers always seem soft at first...~ [c#ablank]
 @629  = ~This is due to the friendly manners you cultivate with each other. A drow with these manners wouldn't survive the day.~
 @630  = ~You already said something to that effect.~
@@ -744,7 +744,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @731  = ~I slowly have to become accustomed to this new situation where trust is a different kind of strength. The strength of those who support each other out of their free will. How I envied you surfacers for this! And I still do, because to my mind it's a great effort.~
 @732  = ~And yet it is a... pleasant sensation. I feel alive, as much alive as I haven't for a long time. Who would have thought that such a youngling as you could awaken such feelings inside of me!~
 @733  = ~I told you I couldn't pick up my surfacer armor before rejoining you...~ [c#ablank]
-@734  = ~The whole truth is that I couldn't get to it any more because there were too many enemies in the vicinity. I... I didn't dare to risk it, fearing I might be detected. And I didn't have time to wait as you were approaching the exit.~
+@734  = ~The whole truth is that I couldn't get to it anymore because there were too many enemies in the vicinity. I... I didn't dare to risk it, fearing I might be detected. And I didn't have time to wait as you were approaching the exit.~
 @735  = ~I didn't dare to! Just because some rotten drow were gathered near the crevice it was hidden in.~
 @736  = ~You were already quite unsettled because of your decision to go to the surface.~
 @737  = ~You had emerged from the drider chamber only moments before. It's not shameful to avoid a fight in such circumstances.~
@@ -798,7 +798,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @783  = ~I didn't do it for them.~
 @784  = ~The elves only do their duty.~
 @785  = ~Still, they should be prepared for drow attacks. Now with the silver dragon gone, my kin will be uninhibited.~
-@786  = ~I now stand where the megalomaniac House Despana was preparing to invade: the secret eleven city. Only I am here to protect it.~
+@786  = ~I now stand where the megalomaniac House Despana was preparing to invade: the secret elven city. Only I am here to protect it.~
 @787  = ~That's right.~
 @788  = ~Yes, and I hope for your sake that you will do so.~
 @789  = ~Well, considering good Elhan has unleashed his magic on me, I have no other choice.~
@@ -815,7 +815,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @800  = ~I would like to add something to his words.~
 @801  = ~Of course. But you know what I mean.~
 @802  = ~Ah?~
-@803  = ~Between friends, none of that stuff about manners and language matters at all.  Friends trust each other and realize that there are times when a friend will use a language they do not understand, and that is okay.  With a solid bedrock of trust small rudeness becomes inconsequential.~
+@803  = ~Between friends, none of that stuff about manners and language matters at all.  Friends trust each other and realize that there are times when a friend will use a language they do not understand, and that is alright.  With a solid bedrock of trust small rudeness becomes inconsequential.~
 @804  = ~He was right about what he said to you. You still have a lot to learn.~
 @805  = ~Well, I am sure you will succeed in finding what you are searching for.~
 @806  = ~But yes, that is exactly what I am doing, and I think it is the right thing to do with his words, <CHARNAME>.~
@@ -865,7 +865,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 /* #58982 for male drow/Solaufein */
 @847  = ~Oh sure, I have Solaufein, don't I? That means I *must* be a servant of the drow.~
 /* #58987 for male drow/Solaufein */
-@848  = ~Especially since there is still the matter of the drow you bring with you. I will return to her later, rest assured.~
+@848  = ~Especially since there is still the matter of the drow you bring with you. I will return to him later, rest assured.~
 /* #59231 for male drow/Solaufein */
 @849  = ~Keep that drow of yours under guard. None of his kind has seen the beauty of an elven city since their fall. I would blindfold him if I could. Others would put his eyes out.~
 /* #59129 for male drow/Solaufein */
@@ -886,7 +886,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @859  = ~With the casting of this spell, my doubts are assuaged. Solaufein, you are bound to the task, and I fear no treachery. Let death be the penalty if I am wrong.~
 @860  = ~I swore loyalty to <CHARNAME>. Apply your geas to me then, if you think it necessary.~
 @861  = ~I really hope that you're being sarcastic, <CHARNAME>.~
-@862  = ~That should be sufficient... Although I would have preferred to not rely on your drow allies, <CHARNAME>, go, and bring the Lanthorpe back to us!~
+@862  = ~That should be sufficient... Although I would have preferred to not rely on your drow allies, <CHARNAME>, go, and bring the Lanthorn back to us!~
 @863  = ~Moving on to your male drow companion... If my mages could not read your intentions so thoroughly, I would believe that you are working with the drow.~
 @864  = ~Solaufein, you too are now bound to the task, and I fear no treason.~
 @865  = ~No, I cannot support that, <CHARNAME>. This drow represents what I want to achieve!~
@@ -946,7 +946,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @917  = ~Because it's so much more interesting to talk to you about him, Sir Anomen.~
 @918  = ~Why do you ask?~
 @919  = ~You're not really interested in asking me about the dogma of my god, are you?~
-@920  = ~Indeed I am. I watch your daily internals struggles to follow the dogma of your god with great interest.~
+@920  = ~Indeed I am. I watch your daily internal struggles to follow the dogma of your god with great interest.~
 @921  = ~How lucky for me to have a drow watching my every move. What makes you an expert on my 'internal struggles'?!~
 @922  = ~Oh, I'm not an expert of your internal struggles in particular, but I am well able to recognize the bearing of someone who bears an inner conflict but does not wish to show it.  Sir Anomen, you could say that in this area I am definitely what you could call an 'expert' based on my life experiences.~
 @923  = ~[Jaheira] Solaufein, stay more to my left and protect our flanks!~
@@ -958,7 +958,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @929  = ~[Jaheira] You think I behave like a drow female? The comparison is ridiculous, Solaufein!~
 @930  = ~[Solaufein] Considering my head is still attached to my body it was an inappropriate comparison, indeed. I do recognize that you are nothing like them, Jaheira. It was your tone - spoken by a female in a potential combat situation... It seems my conditioning to follow such commands without question in the heat of the moment runs deeper than I thought.~
 @931  = ~[Jaheira] I wanted to communicate clearly and succinctly. A potential combat situation is no place for excessive wordiness. Yet... you are not the first one to tell me that my tone might sound harsh and commanding at times. I will... tone it down in the future.~
-@932  = ~[Solaufein] You are probably not surprised that I find it difficult to name most of the plants we encounter, but you it may surprise you that this is mostly because I am seeing them in the light of the day for the first time, not in the dim light of the night.~
+@932  = ~[Solaufein] You are probably not surprised that I find it difficult to name most of the plants we encounter, but it may surprise you that this is mostly because I am seeing them in the light of the day for the first time, not in the dim light of the night.~
 @933  = ~[Jaheira] That, indeed, is a reason I didn't expect. Well, if you have any questions concerning the plants we encounter, especially the fruit-bearing trees, edible roots, and herbs then do not hesitate to profit from my knowledge.~
 @934  = ~Solaufein, how much do you know about the surface world's flora?~
 @935  = ~If <CHARNAME> allowed it, I would have challenged you openly and, if you accepted, I would have killed you in honourable combat.~
@@ -984,7 +984,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @955  = ~Fantasy? They all happened for real and are nothing but the truth!~
 @956  = ~That is exactly what I mean. I never met someone like you in the Underdark. Of course, no one would expect to among the drow, but I have never encountered someone like you among the other races either. If there were any they did not show themselves, obviously.~
 @957  = ~I know, everything in honor of the Spider Queen and all the fun for the Handmaidens of Lolth.~
-@958  = ~Ammusingly expressed, but very true.~
+@958  = ~Amusingly expressed, but very true.~
 @959  = ~So, the elf with the dark skin wonders why Minsc carries a hamster with him?~
 @960  = ~Well... To be honest, I wondered in Ust Natha why you don't have more than one.~
 @961  = ~More? Is the dark elf saying that he thinks hamsters on a warrior are a normal sight?~
@@ -1398,7 +1398,7 @@ I also need to decide what to do with the Silver Lady's eggs as soon as possible
 @1365 = ~So what?~
 @1366 = ~That's right, and hypothetically had I understood the full implications of what your heritage would mean for my first steps into my new life on the surface... I'm not sure if I would have made the same decision had things been slightly different.~
 @1367 = ~I'm not saying I'm reconsidering my position. I am too tightly tied with your story to be able to distance myself from it at this time and even if it wasn't I would assist you in your struggle out of gratitude for my rescue from the drider chambers.~
-@1368 = ~Though to be honest, the real reason I choose to stay with you is our friendship.  I've you to thank for teaching me the value of honor and trust between friends and I am not going to betray that trust.~
+@1368 = ~Though, to be honest, the real reason I choose to stay with you is our friendship. I've you to thank for teaching me the value of honor and trust between friends and I am not going to betray that trust.~
 @1369 = ~But it is the type of thing that would make a person stop and think for a moment, you must admit? I have not quite given up the lessons that centuries of experience drilled into me of weighing the personal benefits and risks of every situation, even if I don't act accordingly.~
 @1370 = ~And even more spiders...~
 @1371 = ~Just in case anyone wondered: no, I do not feel at home amongst them. Let us kill this vermin and move on.~
@@ -2016,8 +2016,8 @@ I saved Solaufein from being turned into a drider. Alas, he didn't seem interest
 @1935  = ~[PC] Solaufein, although you gave me fake dragon eggs, I wouldn't have needed them to watch House Despana fall.~ 
 
 /* C#solau.baf */
-@1934 = ~Accursed sun!~
-@1935 = ~Ah, that is much better.~
+@1936 = ~Accursed sun!~
+@1937 = ~Ah, that is much better.~
 
 /* c#solaufein_interjections_ee.D */
 @1940 = ~Are we finished *now*?~
@@ -2045,7 +2045,7 @@ I saved Solaufein from being turned into a drider. Alas, he didn't seem interest
 @2511 = ~[Keldorn] If you understand this then you've learned a lot about surfacers' ways, Solaufein.~
 @2512 = ~[Keldorn] I will tell you this, so this whole exchange wasn't for naught. If you feel as if your heart breaks, as if the life-giving sun sets for eternity, if darkness and desolation took over your soul - but you still wish the other person well from the bottom of your heart. Then, Solaufein, then you loved the person who betrayed you.~
 @2513 = ~[Solaufein] I... I do not think I will ever feel this way, Keldorn. Still wishing the other well?...~
-@2514 = ~[Keldorn] Then this will be your test, Solaufen. The test whether you can truly leave your drow culture behind. Never stop striving for it.~
+@2514 = ~[Keldorn] Then this will be your test, Solaufein. The test whether you can truly leave your drow culture behind. Never stop striving for it.~
 @2515 = ~[Solaufein] I will not, Keldorn. Your words could have been from my Lady Eilistraee herself, and I will take them to heart.~ 
 @2516 = ~[Solaufein] Minsc, when I first saw you with... that hamster I thought you were a toy for <CHARNAME>, a crazed warrior <PRO_HESHE> tolerated because you were still a capable fighter. I now know that you are a warrior from Rashemen who came to these shores on a journey of self-discovery with your "witch" who you had sworn to protect.~
 @2517 = ~[Minsc] Dynaheir! Minsc and Boo lost Dynaheir, and everyone responsible for it will fall to Minsc's wrath!~

@@ -186,17 +186,17 @@ Solaufein will acknowledge your PC being a drow (if you install the optional com
 
 
 <h2> <a name="7th" id="7th">7th Party Member Mode</a></h2>
-If you need the party slot for someone else, Solaufein can be kicked out of the party and told to "fall in behind the others", then he will follow as a "familiar" or, as I call it "7th party member". If in 7th party member mode he needs to join the group from time to time to level up. In 7th party member mode Solaufein can be selected and given commands, as well as told to use quick slot items ab special abilities. All his dialogues, banters, and interjections will trigger as normal. Note: the frequency of banters will not be influenced by banter accellerator mods while following in 7th party member mode, as the banter have to be triggered by Solaufein's script instead of the engine. There are three different spaced timers available, though. Times between banters can be changed via PID. Just tell Solaufein that he should banter more or less often and the timer between banters will be changed accordingly.<br />
+If you need the party slot for someone else, Solaufein can be kicked out of the party and told to "fall in behind the others", then he will follow as a "familiar" or, as I call it "7th party member". If in 7th party member mode he needs to join the group from time to time to level up. In 7th party member mode Solaufein can be selected and given commands, as well as told to use quick slot items and special abilities. All his dialogues, banters, and interjections will trigger as normal. Note: the frequency of banters will not be influenced by banter accellerator mods while following in 7th party member mode, as the banter have to be triggered by Solaufein's script instead of the engine. There are three different spaced timers available, though. Times between banters can be changed via PID. Just tell Solaufein that he should banter more or less often and the timer between banters will be changed accordingly.<br />
 <br />
-To rejoin the group, talk to him and tell him you need "access to (his) inventory", and he will rejoin as a full party member. If you time this accordingly, the moment he is in group before any other kicked out NPC reaches the PC for his post-kickout dialogue is sufficient to let Solaufein level up and rearrange his items, without having to finally kick out any other party NPC to achieve this. (Unless those just leave without a follow-up dialogue, of course.)<br />
+To rejoin the group, talk to him and tell him you need "access to (his) inventory", and he will rejoin as a full party member. If you time this accordingly, the moment he is in group before any other kicked out NPC reaches the PC for his post-kickout dialogue is sufficient to let Solaufein level up and rearrange his items, without having to finally kick out any other party NPC to achieve this. (Unless if those just leave without a follow-up dialogue, of course.)<br />
 <br />
-He cannot die while following as a 7th party member, but will remain at 1 HP. If Solaufein's HP fall to 1 HP during a fight, he will pass out. Healing him then will not change this. His alignment will change to "neutral" so enemies stop attacking him. Once the fight is over, he will regain consciousness, be healed fully, and rejoin the party as an ally/familiar. The full healing might be seen as a cheat, but it's one way to fix the engine behavior (not to call it bug) with Solaufein dying upon rejoining if his HP are too low.<br />
+He cannot die while following as a 7th party member, but will remain at 1 HP. If Solaufein's HP fall to 1 HP during a fight, he will pass out. Healing him then will not change this. His alignment will change to "neutral" so enemies stop attacking him. Once the fight is over, he will regain consciousness, be healed fully, and rejoin the party as an ally/familiar. The full healing might be seen as a cheat, but it's one way to fix the engine behavior (not to call it bug) with Solaufein dying upon rejoining if his HPs are too low.<br />
 <br />
 The 1 HP drop out can be prevented if Solaufein is healed in time during a fight. If told to he will give a warning before his HP drop too low, but this seems to be buggy in BGT.<br />
 <br />
 Note: Following as a familiar means Solaufein will always be behind the last full group member, for walking as well as area transitions. This is unfortunate if you need him as a full fighter or even tank who is supposed to be in first line upon unexpected fights.<br />
 <br />
-NOTE: Unfortunately, the "7th group member mode" in the game requires special handling to accommodate all restrictions: 
+NOTE: Unfortunately, the "7th party member mode" in the game requires special handling to accommodate all restrictions: 
 (The hints are a mix of the existing engine restrictions and the workarounds I used).<br />
 -The NPC has no "Clear Fog of War" around him in the 7th GM. So he can "disappear" in the "black" area of the map. (If you click on the whole group and let them gather at one place, the NPC will also try to do so, if they are not stuck somewhere. In that case only the teleportation cheat "Ctrl+j" helps to gather the group again. This has not happened to me yet, but it is theoretically possible if the NPC is chasing an enemy, for example).<br />
 -Items in the NPC's inventory are *not* recognized as items owned by the group. This is an engine problem. It follows that quest items that are needed in the game should not be in the NPC's inventory if they are to be recognized by the quest giver. Examples: Elvenhair's book, Ankheg shell for Taerom, etc.<br />
@@ -210,7 +210,7 @@ NOTE: Unfortunately, the "7th group member mode" in the game requires special ha
 Short summary of things to keep in mind while playing:<br />
 -After each quest event and after moving to the 7th PMM, check whether the PC has lost items from the inventory that should be picked back up from the floor.<br />
 -Save before adding a 7th PM back to the group. If the game then crashes, reload the save game. This should prevent the crash from occurring.<br />
--Es ist nötig und auch zu empfehlen, nicht-kritische Questitems nicht im Inventar der 7. GM sondern in dem der normalen Gruppenmitglieder zu haben.<br />
+-It is necessary and also recommended to have non-critical quest items not in the inventory of the 7th GM but in that of the normal party members.<br />
 -Take quest items out of bottomless bags in the 7th PM's inventory before approaching the appropriate quest givers, or at least save the game to prevent the "crash bug" before taking the NPC back as a full PM.<br />
 <br />
 
@@ -240,7 +240,15 @@ Solaufein's stats are the following:
 		<li>INT: 14</li>
 		<li>WIS: 11</li>
 		<li>CHA: 10</li>
-      </ul> <br />
+      </ul>
+Upon first meeting, he is at level 12 and comes ill equipped with weapons and armor when he joins the group. His weapon pips when first meeting in the Underdark are:
+      <ul> 
+		<li>Long Sword: ++</li>
+		<li>Scimitar: ++</li>
+		<li>Sword and Shield Style: ++</li>
+		<li>Two Weapon Style: ++</li>
+      </ul>
+<br />
 Solaufein uses a soundset created from his original BGII voiceovers.<br /><br />
 Both portraits are taken from pictures of drow fighters by Holger Kirste. Thank you very much to Holger Kirste!<br />
  There is an alternate portrait that can be installed by the fourth, optional component:<br /><br />
@@ -260,9 +268,14 @@ Note: The friendship path also deals with Solaufein's problems of actually allow
 
 <h1><a name="issues" id="issues">Known Issues</a></h1>
 <div class="section">
-In some game cutscenes, Solaufein might be visible at places where he shouldn't be as 7th party member. I'm not sure how to solve this.</br>
-</br>
-Solaufein has no clear fog of war effect, so when following as 7th party member, he might "vanish" behind the line of sight. Rearranging the whole group's position should bring him back at the PC's side. (The reason is that the engines cannot handle more than 8 creatures with CFoW - and that includes the 6 party members and cutscene spies.)</br>
+Short summary of things to keep in mind while playing in 7th party member mode:<br />
+-After each quest event and after moving to the 7th PMM, check whether the PC has lost items from the inventory that should be picked back up from the floor.<br />
+-Save before adding a 7th PM back to the group. If the game then crashes, reload the save game. This should prevent the crash from occurring.<br />
+-It is necessary and also recommended to have non-critical quest items not in the inventory of the 7th GM but in that of the normal party members.<br />
+-Take quest items out of bottomless bags in the 7th PM's inventory before approaching the appropriate quest givers, or at least save the game to prevent the "crash bug" before taking the NPC back as a full PM.<br />
+In some game cutscenes, Brandock might be visible at places where he shouldn't be as 7th party member. I'm not sure how to solve this.</br>
+-Items in Solaufein's inventory will not be recognized by quest givers. Exception is some custom mod items for which I specifically scripted in that they are being noticed.</br>
+-Solaufein has no clear fog of war effect, so when following as 7th party member, he might "vanish" behind the line of sight. Rearranging the whole group's position should bring him back at the PC's side. (The reason is that the engines cannot handle more than 8 creatures with CFoW - and that includes the 6 party members and cutscene spies.)</br>
 </div>
 
 <h1><a name="acknow" id="acknow">Credits</a></h1>
@@ -276,6 +289,7 @@ Many thanks to <strong>Holger Kirste</strong> for the wonderful drow portraits! 
 <strong>Knight:</strong> For granting me the use of his spells Faerie Fire and Darkness from his drow kit.</br>
 <strong>Morywen:</strong> Beta tests and constructive criticism.</br> 
 <strong>S.:</strong> Beta tests, proof reading, and constructive criticism.</br> 
+<strong>scheele:</strong> Russian version.</br>
 <strong>viader:</strong> For granting the use of the drider animations imported from IWDII to BGII:EE from his Extended Animations Mod.</br> 
 <strong>White Agnus:</strong> For a lot of help with coding.</br> 
 </br>
@@ -349,6 +363,16 @@ This mod is also not developed, supported, or endorsed by BioWare, Black Isle St
 
 <h1><a name="version" id="version">Version History</a></h1>
 <div class="section">
+Version 3:</br>
+- Russian version added, by Scheele.<br />
+- Added Solaufein's weapon pips and a note that he comes ill equipped with weapons into the readme.<br />
+- Added more notes about playing in 7th party member note to the readme.<br />
+- Added globally unique LABELs to support Project Infinity.<br />
+- Changed Solaufein's automated level-up scripts: He will only level up to the PC's level if: he joins the first time for SoA/ToB OR he joins after being a 7th party member. No more automatic level-up although he is in party or was separated for a while.</br>
+- Container added to Underdark has prefixed name.<br />
+- Corrected doubled tra numbers in GAME.tra.<br />
+- Typo corrections.<br />
+<br />
 Version 2.2:</br>
 - fixed detection for tipun's subrace mod.<br />
 - moved crossmod for subrace mods into 5th component and deactivated drow reply option if subrace mods are detected.<br />

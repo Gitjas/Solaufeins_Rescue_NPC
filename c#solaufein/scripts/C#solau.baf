@@ -199,6 +199,7 @@ IF
 	Global("C#SolaufeinSummoned","GLOBAL",1)
 THEN
 	RESPONSE #100
+		SetGlobal("C#LevelUp","LOCALS",0)
 		StartDialogueNoSet(Player1)
 END
 
@@ -225,7 +226,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("C#Solaufein_SunEffect","GLOBAL",1)
-DisplayString(Myself,@1934)
+DisplayString(Myself,@1936)
     ApplySpellRES("c#soblin",Myself)
 END
 
@@ -239,7 +240,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("C#Solaufein_SunEffect","GLOBAL",0)  
-DisplayString(Myself,@1935)  
+DisplayString(Myself,@1937)  
     ApplySpellRES("c#sobrec",Myself)
 END
 

@@ -45,14 +45,16 @@ ToB up to 8.000.000
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",36)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",36)
 	XPGT(Player1,10999999)
 	XPLT(Myself,11000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",36)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",36)	
 		ChangeStat(Myself,XP,11000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -61,14 +63,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",35)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",35)
 	XPGT(Player1,10499999)
 	XPLT(Myself,10500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",35)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",35)	
 		ChangeStat(Myself,XP,10500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -77,14 +81,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",34)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",34)
 	XPGT(Player1,9999999)
 	XPLT(Myself,10000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",34)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",34)	
 		ChangeStat(Myself,XP,10000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -93,14 +99,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",33)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",33)
 	XPGT(Player1,9499999)
 	XPLT(Myself,9500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",33)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",33)	
 		ChangeStat(Myself,XP,9500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -109,14 +117,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",32)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",32)
 	XPGT(Player1,8999999)
 	XPLT(Myself,9000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",32)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",32)	
 		ChangeStat(Myself,XP,9000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -125,14 +135,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",31)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",31)
 	XPGT(Player1,8499999)
 	XPLT(Myself,8500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",31)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",31)	
 		ChangeStat(Myself,XP,8500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -141,14 +153,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",30)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",30)
 	XPGT(Player1,7999999)
 	XPLT(Myself,8000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",30)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",30)	
 		ChangeStat(Myself,XP,8000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -157,14 +171,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",29)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",29)
 	XPGT(Player1,7499999)
 	XPLT(Myself,7500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",29)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",29)	
 		ChangeStat(Myself,XP,7500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -173,14 +189,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",28)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",28)
 	XPGT(Player1,6999999)
 	XPLT(Myself,7000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",28)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",28)	
 		ChangeStat(Myself,XP,7000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -189,14 +207,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",27)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",27)
 	XPGT(Player1,6499999)
 	XPLT(Myself,6500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",27)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",27)	
 		ChangeStat(Myself,XP,6500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -205,14 +225,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",26)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",26)
 	XPGT(Player1,5999999)
 	XPLT(Myself,6000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",26)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",26)	
 		ChangeStat(Myself,XP,6000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -221,14 +243,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",25)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",25)
 	XPGT(Player1,5499999)
 	XPLT(Myself,5500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",25)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",25)	
 		ChangeStat(Myself,XP,5500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -237,14 +261,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",24)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",24)
 	XPGT(Player1,4999999)
 	XPLT(Myself,5000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",24)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",24)	
 		ChangeStat(Myself,XP,5000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -253,14 +279,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",23)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",23)
 	XPGT(Player1,4499999)
 	XPLT(Myself,4500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",23)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",23)	
 		ChangeStat(Myself,XP,4500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -269,14 +297,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",22)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",22)
 	XPGT(Player1,3999999)
 	XPLT(Myself,4000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",22)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",22)	
 		ChangeStat(Myself,XP,4000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -285,14 +315,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",21)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",21)
 	XPGT(Player1,2499999)
 	XPLT(Myself,3500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",21)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",21)	
 		ChangeStat(Myself,XP,3500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -302,14 +334,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",20)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",20)
 	XPGT(Player1,2999999)
 	XPLT(Myself,3000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",20)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",20)	
 		ChangeStat(Myself,XP,3000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -318,14 +352,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",19)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",19)
 	XPGT(Player1,2749999)
 	XPLT(Myself,2750000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",19)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",19)	
 		ChangeStat(Myself,XP,2750000,SET)
 		SetInterrupt(TRUE)
 END
@@ -334,14 +370,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",18)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",18)
 	XPGT(Player1,2499999)
 	XPLT(Myself,2500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",18)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",18)	
 		ChangeStat(Myself,XP,2500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -351,14 +389,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",17)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",17)
 	XPGT(Player1,2249999)
 	XPLT(Myself,2250000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",17)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",17)	
 		ChangeStat(Myself,XP,2250000,SET)
 		SetInterrupt(TRUE)
 END
@@ -368,14 +408,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",16)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",16)
 	XPGT(Player1,1999999)
 	XPLT(Myself,2000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",16)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",16)	
 		ChangeStat(Myself,XP,2000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -384,14 +426,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",15)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",15)
 	XPGT(Player1,1749999)
 	XPLT(Myself,1750000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",15)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",15)	
 		ChangeStat(Myself,XP,1750000,SET)
 		SetInterrupt(TRUE)
 END
@@ -401,14 +445,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",14)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",14)
 	XPGT(Player1,1499999)
 	XPLT(Myself,1500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",14)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",14)	
 		ChangeStat(Myself,XP,1500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -417,14 +463,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",13)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",13)
 	XPGT(Player1,1249999)
 	XPLT(Myself,1250000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",13)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",13)	
 		ChangeStat(Myself,XP,1250000,SET)
 		SetInterrupt(TRUE)
 END
@@ -433,14 +481,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",12)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",12)
 	XPGT(Player1,999999)
 	XPLT(Myself,1000000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",12)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",12)	
 		ChangeStat(Myself,XP,1000000,SET)
 		SetInterrupt(TRUE)
 END
@@ -449,14 +499,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",11)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",11)
 	XPGT(Player1,749999)
 	XPLT(Myself,750000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",11)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",11)	
 		ChangeStat(Myself,XP,750000,SET)
 		SetInterrupt(TRUE)
 END
@@ -465,14 +517,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",10)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",10)
 	XPGT(Player1,499999)
 	XPLT(Myself,500000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",10)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",10)	
 		ChangeStat(Myself,XP,500000,SET)
 		SetInterrupt(TRUE)
 END
@@ -483,14 +537,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",9)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",9)
 	XPGT(Player1,249999)
 	XPLT(Myself,250000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",9)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",9)	
 		ChangeStat(Myself,XP,250000,SET)
 		SetInterrupt(TRUE)
 END
@@ -499,14 +555,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",8)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",8)
 	XPGT(Player1,124999)
 	XPLT(Myself,125000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",8)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",8)	
 		ChangeStat(Myself,XP,125000,SET)
 		SetInterrupt(TRUE)
 END
@@ -515,14 +573,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",7)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",7)
 	XPGT(Player1,63999)
 	XPLT(Myself,64000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",7)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",7)	
 		ChangeStat(Myself,XP,64000,SET)
 		SetInterrupt(TRUE)
 END
@@ -531,14 +591,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",6)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",6)
 	XPGT(Player1,31999)
 	XPLT(Myself,32000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",6)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",6)	
 		ChangeStat(Myself,XP,32000,SET)
 		SetInterrupt(TRUE)
 END
@@ -547,14 +609,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",5)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",5)
 	XPGT(Player1,15999)
 	XPLT(Myself,16000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",5)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",5)	
 		ChangeStat(Myself,XP,16000,SET)
 		SetInterrupt(TRUE)
 END
@@ -564,14 +628,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",4)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",4)
 	XPGT(Player1,7999)
 	XPLT(Myself,8000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",4)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",4)	
 		ChangeStat(Myself,XP,8000,SET)
 		SetInterrupt(TRUE)
 END
@@ -581,14 +647,16 @@ END
 
 IF
 	InParty(Myself)
-	GlobalLT("C#LevelUp","LOCALS",3)
+	Global("C#LevelUp","LOCALS",0)
+	GlobalLT("C#LevelUpCount","LOCALS",3)
 	XPGT(Player1,3999)
 	XPLT(Myself,4000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",3)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",3)	
 		ChangeStat(Myself,XP,4000,SET)
 		SetInterrupt(TRUE)
 END
@@ -598,14 +666,18 @@ END
 IF
 	InParty(Myself)
 	Global("C#LevelUp","LOCALS",0)
+	Global("C#LevelUpCount","LOCALS",0)
 	XPGT(Player1,1999)
 	XPLT(Myself,2000)
 	CheckStat(Player1, 0, LEVELDRAIN)
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("C#LevelUp","LOCALS",2)	
+		SetGlobal("C#LevelUp","LOCALS",1)
+		SetGlobal("C#LevelUpCount","LOCALS",2)	
 		ChangeStat(Myself,XP,2000,SET)
 		SetInterrupt(TRUE)
 END
+
+
 
