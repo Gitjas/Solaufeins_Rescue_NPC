@@ -99,3 +99,32 @@ Dem Ziel steht ein Rettungswurf zu, um sich im Augenblick des Erschaffens der Sp
 
 @35  = ~(schnaubt)~
 @36  = ~(gähn)~
+
+@37 = ~Dunkelheit (Veränderung)
+
+Erschaffungszyklus
+
+Grad: 1
+Reichweite: 70 m
+Wirkungsbereich: 1 Wesen
+Wirkungsdauer: 1 Runde pro Stufe bis zu einer Maximaldauer von 16 Runden
+Zeitaufwand: 4
+Rettungswurf: Keine Wirkung
+
+Dieser Zauber erzeugt eine kreisförmige Sphäre magischer Dunkelheit mit einem Durchmesser von etwa 2 Metern über dem Ziel. Innerhalb dieser Sphäre herscht absolute Dunkelheit, so wie in einem fensterlosen, unbeleuchteten Raum. Dadurch sinkt die Sichtweite des Zieles praktisch auf 0, selbst dann, wenn es über die Fähigkeit der Infravision verfügt. Durch die fehlende Orientierung in dieser Dunkelheit erleidet das Ziel einen Malus von -1 auf seine Trefferwürfe und +1 auf die Rüstklasse pro Stufe des Zaubernden bis zu maximalen Maluswerten von jeweils vier. Sichtabhängige Schadensmodifikatoren, wie der mehrfache Schaden eines hinterhältigen Angriffes, werden aufgehoben.
+
+Von diesem Zauber nicht betroffen sind Kreaturen der Finsternis und Wesen, die ihre Orientierung nicht vom Sichtkontakt abhängig machen, etwa Tiere, die ihrem ausgeprägten Hör- oder Geruchssinn folgen können. Ebenfalls nicht betroffen sind übergroße Wesen, da die Sphäre nicht groß genug ist, um sie einzuhüllen.
+
+Dem Ziel steht ein Rettungswurf zu, um sich im Augenblick des Erschaffens der Sphäre ihrem Wirkungsbereich zu entziehen. Einmal erschaffen, bleibt die Sphäre auf dem Ziel ruhen und bewegt sich mit ihm, solange wie die Wirkungsdauer des Spruches vorhält, oder bis er vorzeitig durch einen Bannzauber gebrochen wird.~
+@38 = ~Feenfeuer (Veränderung)
+
+Wetterzyklus
+
+Grad: 1
+Reichweite: 50 m
+Wirkungsbereich: 9 m Radius
+Wirkungsdauer: 4 Runden pro Stufe bis zu einer Maximaldauer von 16 Runden
+Zeitaufwand: 4
+Rettungswurf: Nein
+
+Nach Aussprechen dieses Zaubers, werden die Gegner im Wirkungsbereich von farbigen Lichtern umtanzt, was insbesondere in der Dunkelheit die Wahrscheinlichkeit eines erfolgreichen Angriffs auf sie erhöht. Der Betroffene erhält daher einen Malus von 1 auf seine Rüstungsklasse pro Stufe des Zaubernden bis zu einem maximalen Malus von vier. Außerdem enttarnen die tanzenden Lichter auch unsichtbare Gegner. Sie verfolgen die Betroffenen auch über den anfänglichen Wirkungsbereich des Zaubers hinaus, solange, bis die Wirkung des Zaubers endet oder mittels "Magie bannen" vorzeitig beendet wird.~

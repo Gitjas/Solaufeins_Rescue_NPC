@@ -74,15 +74,15 @@
 
 Solaufein, der männliche Kämpfer aus Ust Natha, hat mich vor der Stadt noch einmal abgepasst. Leider hat ihn dadurch die Zofe Lolths erwischt, die ihn bereits länger verfolgt hatte, und daher noch gar nichts über die Vorgänge in der Stadt und meine Verwicklung darin wusste... Sie hat ihn zu den Drinnenbrutkammern gebracht, die von irgendwo hier unten zu erreichen sind. 
 Wenn ich Solaufein ein Schicksal als Drinne ersparen möchte, sollte ich ihn dort befreien! Solaufein hatte vesucht, mir noch etwas über einen Gegenstand in einer Felsspalte neben der Brücke vor der Stadt Ust Natha zu sagen. Vielleicht sollte ich dort hineinschauen, um zu sehen, was er meinte.
-Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbringe. Wie lange dauert so eine Drinnenverwandlung?...~
-@68   = ~Vel'uss zhah doerin? *Kivvin*! Elgg mina!~
+Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbringe. Wie lange dauert so eine Drinnenverwandlung? ...~
+@68   = ~Vel'uss zhah gaer? *Kivvin*! Ulu da'rex!~
 @69   = ~Wer kommt da? Was wollt Ihr hier? Ihr habt hier nichts zu suchen!~
 @70   = ~Veldrin!~
 @71   = ~Ich... ich danke Euch. Ihr habt mich aus der Drinnenkammer befreit! Ihr habt den Runenstein gefunden, wie ich es gehofft hatte.~
 @72   = ~Wie geht es Euch?~
 @73   = ~In der Tat. Ich hoffe, Ihr könnt mich belohnen!~
 @74   = ~Ich war nur zufällig hier.~
-@75   = ~Ol zhah dos?... Ihr seid es, nicht wahr? Oberweltler... Jetzt sehe ich Eure wahre Gestalt.~
+@75   = ~Ol zhah dos? ... Ihr seid es, nicht wahr? Oberweltler... Jetzt sehe ich Eure wahre Gestalt.~
 @76   = ~(schnaubt) Wenn Ihr ein paar rostige Messer und eine alte Rüstung mit Euch zur Oberfläche nehmen wollt, denn mehr könnte ich Euch nicht anbieten, was in Eurer Welt von Dauer ist.~
 @77   = ~Welch freundliche Frage, und das, nachdem Ihr mich aus dieser äußerst misslichen Lage befreien musstet, in die ich mich durch meine Unachtsamkeit selbst gebracht habe. Um sie Euch zu beantworten: Es geht mir den Umständen entsprechend gut, Veldrin.~
 @78   = ~Zufällig? Zufällig habt Ihr den Runenstein für den Eingang zur Drinnenhöhle geholt, die anwesenden Drow und Drinnen getötet und meinen Kokoon geöffnet? Was für ein glücklicher Zufall für mich, in der Tat, Veldrin.~
@@ -207,7 +207,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @195  = ~Wenn ich nicht wüsste, dass Ihr hervorragend kämpfen könnt, dann würde ich mir jetzt Sorgen um unsere Kampfkraft machen.~
 @196  = ~Es ist nicht so, als könnte ich es verheimlichen. Ich halte es auch nicht für gut, so zu tun, als ließe es mich kalt. Ich bin ein erfahrener Kämpfer und Entbehrungen gewohnt. Ich kann mit den Beeinträchtigungen durch die Sonne umgehen, ohne die Nerven zu verlieren, aber der Verlust meiner Magie ist eine andere Größenordnung.~
 @197  = ~Selbst ein Drow weiß, wann es keinen Sinn macht, etwas vorzuspielen!~
-@198  = ~Ihr seid also ein Kind Bhaals? Ich kenne die Überlieferungen des Alaundo. Die Prophezeihungen, nach denen die Bhaalkinder die Schwertküste mit Chaos überziehen werden...~ [c#ablank]
+@198  = ~Ihr seid also ein Kind Bhaals? Ich kenne die Überlieferungen des Alaundo. Die Prophezeihungen, nach denen die Bhaalkinder die Welt mit Chaos überziehen werden...~ [c#ablank]
 @199  = ~Ja, das bin ich.~
 @200  = ~Das kommt mir bekannt vor, ja...~
 @201  = ~Das ließ sich wohl nicht geheim halten.~
@@ -598,7 +598,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @586  = ~Die Ausschließlichkeit, mit der sie sich mit mir abgab, fiel auf. Das Haus Despana beschloss, dass unsere Verbindung über das hinausging, was sich für Drow gehörte. Mich konnten sie jedoch nicht bestrafen, meine Verbindungen verhinderten es. Es war ja nichts wirklich geschehen, außer, dass die gute Mutter Ardulace um das Durchsetzungsvermögen und Führungsqualitäten ihrer ältesten Tochter besorgt war. Und so ließ sie die Zofen Lolths auf Phaere los.~
 @587  = ~Diese trieben ihr jegliche wohlgesonnenen Gefühle mir gegenüber aus. Phaere hatte sehr gut verstanden, warum sie so grausam bestraft wurde, und sie hatte keine Hemmungen, es mir danach zu Verstehen zu geben. Oh, wie gerne sie sich an mir gerächt hätte! Aber ich war ein zu hoch stehendes Männchen, und mein Haus war zu einflussreich, und wir waren beide dazu verdammt, weiteruleben.~
 @588  = ~Meine Stellung als Drowkommandeur erhielt ich kurze Zeit später, als ich mich aus Alternativlosigkeit in mein Training stürzte und mich in meinen Diensten für die Spinnengöttin überbot... Ihr hättet es vielleicht Verzweiflung genannt. Ich sah damals nur die vergangene Chance, die Gunst einer einflussreichen ersten Tochter zu besitzen, und wusste, dass mein Leben nun sehr viel anstrengender werden würde.~
-@589  = ~Erst später stellte ich mich der Erkenntnis, dass es mehr gewesen war... Für mich, und ich weiß nicht, aber ich denke für Phaere ebenso. Ich hatte mich auf sie als Partnerin konzentriert, wie es für einen Drow nicht nur ansatzweise üblich ist... Wir Männchen leben, um den höheren Weibchen zu Diensten zu sein. Viele meiner Brüder überbieten sich darin, der Mutter Oberin und den höherrangigen Töchtern zu gefallen, aber eine davon bevorzugen? Gerne in deren Nähe sein, einfach so?... Unmöglich.~
+@589  = ~Erst später stellte ich mich der Erkenntnis, dass es mehr gewesen war... Für mich, und ich weiß nicht, aber ich denke für Phaere ebenso. Ich hatte mich auf sie als Partnerin konzentriert, wie es für einen Drow nicht nur ansatzweise üblich ist... Wir Männchen leben, um den höheren Weibchen zu Diensten zu sein. Viele meiner Brüder überbieten sich darin, der Mutter Oberin und den höherrangigen Töchtern zu gefallen, aber eine davon bevorzugen? Gerne in deren Nähe sein, einfach so? ... Unmöglich.~
 @590  = ~Mein Leben wurde danach komplizierter. Ich war enttäuscht und ernüchtert worden, aus purem Glück dem Tode entgangen, hatte die als Gegnerin, die mir so viel bedeutet hatte. Es war nur eine Frage der Zeit, bis ich meine Zwiespältigkeit endlich realisierte und mein Herz Eilistraee mit dem Silberhaar zuwandte.~
 @591  = ~Es war zu dieser Zeit, dass ich einen Ausfall an die Oberfläche kommandierte. Ich weiß noch, wie ich da stand, als das erste Licht am Horizont den Aufgang der Sonne ankündigte. Wie ich dort stand, und erwog, in die falsche Richtung zu laufen, der aufgehenden Sonne entgegen...~
 @592  = ~Aber ich habe es nicht getan. Ich habe mich in meinem Leben eingerichtet, war Handlanger der machtbesessenen Weibchen, und hielt mich so gut es ging aus allem raus, was ich nicht zur unmittelbaren Festigung meiner Position brauchte.~
@@ -645,7 +645,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @633  = ~Das kann schon sein. Lasst uns weitermachen.~
 @634  = ~Nicht so. Höflich, unterwürfig, das ja. Aber nicht freundlich. Nicht in dem Sinne, wie ich es meinte.~
 @635  = ~Das stimmt.~
-@636  = ~Das stimmt! Habt Ihr das etwa jetzt gerade geschlussfolgert, oder habt Ihr dazu meine unzähligen, jammernden Bekundungen der letzten Zeit herangezogen?...~
+@636  = ~Das stimmt! Habt Ihr das etwa jetzt gerade geschlussfolgert, oder habt Ihr dazu meine unzähligen, jammernden Bekundungen der letzten Zeit herangezogen? ...~
 @637  = ~Lasst mich das erklären... Als junger Drow waren mir Eure Gebräuche fremd. Ich hielt Euch für schwach und leichtgläubig... Zu vertrauen bedeutet bei uns verraten zu werden.~
 @638  = ~Später merkte ich, dass Ihr gerade durch dieses Vertrauen und die Gemeinschaft, die Ihr daraus untereinander formt, stark seid. Ich lernte Respekt Euch gegenüber.~
 @639  = ~Und nun bin ich hier... und beneide Euch darum.~
@@ -898,13 +898,13 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @871  = ~Er ist also ein Drow, aber Ihr metzelt ihn nicht nieder. Was hab' ich dann mir zuschulden kommen lassen? Ich habe mein Volk verlassen... Ihr werdet feststellen, dass ich ganz anders bin, sogar als Euer Drow-Freund.~
 @872  = ~Interessant. Vielleicht seid Ihr nicht derselbe <PRO_RACE>, dem ich begegnet bin. Viel kann sich in einer relativ kurzen Zeitspanne verändern... das weiß ich wohl.~
 @873  = ~Wartet!~
-@874  = ~Ihr seid Drizzt Do'Urden aus Menzoberranzan? Ein Anhänger Eilistraees! Ich bin auf der Suche nach Euch... nach solchen wie Euch.~
+@874  = ~Ihr seid Drizzt Do'Urden aus Menzoberranzan? Ein Abtrünniger Lolths! Ich bin auf der Suche nach Euch... nach solchen wie Euch.~
 @875  = ~Hm, schön zu hören. Doch ich sehe Euch in Begleitung dieses <PRO_RACE>en. Seid Ihr sicher, dass Ihr Euch die richtige Führung für dieses Vorhaben ausgesucht habt?~
 @876  = ~Ich weiß nicht, was zwischen Euch vorgefallen ist. Zu mir war <CHARNAME> gnädig.~
 @877  = ~Das höre ich nur zu gern. Verzagt nicht. Ihr werdet hier oben viele Eurer Fähigkeiten verlieren. Dafür werdet Ihr eine Freiheit finden, die Ihr Euch nicht habt vorstellen können.~
 @878  = ~Wobei ich keine falschen Hoffnungen schüren möchte. Ihr seid der Feind der Oberweltler, und der Großteil wird Euch immer feindlich gesinnt bleiben und Euch jagen, egal, was Ihr tut. Merkt Euch das, und sucht Euch die wenigen, die Euch wohlgesonnen sind.~
 @879  = ~Gebt die Suche nicht auf, Freund. Aber vergesst vor Suchen nicht, der Welt um Euch herum Aufmerksamkeit zu schenken. Es könnte sonst sein, dass Ihr einen Freund überseht.~
-@880  = ~Ich... Usstan inbal ulu joros nin. Vel'bol zhah folggash?~
+@880  = ~Ich... Usstan ssrig'luin ulu joros dos folbol.  Lu'oh xun usstan u'thet folggash?~
 @881  = ~Meine Ohren haben Laute dieser Sprache lange nicht mehr vernommen. Warum fragt Ihr mich das? Warum fragt Ihr nicht Euren Begleiter?~
 @882  = ~Ist das nicht offensichtlich? Wir haben mehr Gemeinsamkeiten. Ihr könnt es mir so erklären, dass ich es verstehe.~
 @883  = ~Ihr traut mir viel zu. Wie soll ich etwas in ein paar Sätzen erklären, das man über längere Zeit selbst erleben muss, um es zu verstehen? Aber ich will nicht unhöflich sein, und es versuchen.~
@@ -1047,7 +1047,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1018 = ~Ihr seid also ein Tiefling.~
 @1019 = ~Gut erkannt! Und ich muss sagen, ich vermute stark, dass Ihr ein Dunkelelf seid.~
 @1020 = ~In der Tat!~
-@1021 = ~Und das habe ich gesehen, obwohl Ihr Dunkelelfen in der Sonne alle gleich ausseht! Dieser Spatz hat ein scharfes Auge, nicht wahr?...~
+@1021 = ~Und das habe ich gesehen, obwohl Ihr Dunkelelfen in der Sonne alle gleich ausseht! Dieser Spatz hat ein scharfes Auge, nicht wahr? ...~
 @1022 = ~Solaufein, ich habe den Eindruck, dass Ihr zu mir herüberschaut, ist es nicht so, mein schwarzer Wolf aus dem Unterreich?~
 @1023 = ~Solaufein, habt Ihr keine anderen Tieflinge getroffen in Eurer dunklen Stadt im Unterreich?~
 @1024 = ~Ich muss gestehen, dass ich das habe, Haer'Dalis. Ich habe mich gefragt, was wohl die Mutter Oberin meines Hauses gesagt hätte, wenn sie Euch mit Eurer Schauspielergruppe zu Gesicht bekommen hätte.~
@@ -1256,7 +1256,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1227 = ~Jaheira, diese Pflanze dort ähnelt der, die Ihr mir früher einmal gezeigt habt, für den ganz bestimmten Zweck... wenn Ihr Euch erinnert.~
 @1228 = ~Nicht berühren! Diese ist nicht die, auf die ich Euch aufmerksam gemacht hatte. Diese hier ist eine eigene Art, die nur in diesen Breiten wächst. Sie führt bei Berührung zu juckenden Hautstellen!~
 @1229 = ~Ihr meint, ich hätte keine mitnehmen sollen, als ich letzthin hinter die Büsche ging?~
-@1230 = ~Habt Ihr...?~
+@1230 = ~Habt Ihr ...?~
 @1231 = ~Nein, da Ihr es bereits gesagt habt: Sie ließ meine Hände jucken. Ich bin nicht masochistisch genug, die Wirkung auch an anderen Hautpartien auszuprobieren.~
 @1232 = ~Das... erleichtert mich zu hören. Aber auch dieses mal möchte ich dieses Thema nicht vertiefen.~
 @1233 = ~Jan, gehe ich recht in der Annahme, dass Ihr Euch gegen einen göttlichen Thron entscheiden würdet?~
@@ -1345,7 +1345,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1316 = ~Vor nicht allzu langer Zeit hättet Ihr keine Diskussionen dieses Inhalts mit mir geführt.~
 @1317 = ~Das ist wahr, aber ich bin und bleibe nun einmal Drow. Und daher ist es...~
 @1318 = ~Ich... ich frage mich, wer von uns beiden sich jetzt gerade an seinem alten Selbst festhält... Drow.~
-@1319 = ~Ihr meint, ich messe mit zweierlei Maß?... Da könntet Ihr Recht haben.~
+@1319 = ~Ihr meint, ich messe mit zweierlei Maß? ... Da könntet Ihr Recht haben.~
 @1320 = ~(schnaubt) Ja, nur bringen wird es mir nichts als einen früheren Tod.~
 @1321 = ~Einen... einen früheren Tod als welchen? Den, den <CHARNAME> Euch in Ust Natha erspart hat? Oder den als Drinne?~
 @1322 = ~Jetzt vermischt Ihr verschiedene Argumente. Ich sprach davon, dass ich noch schwächer und ein leichteres Ziel bin - durch die Überlegungen über Gut und Böse, die meine Entscheidungskraft mindern. Auch in Eurer Welt ist Schwäche nicht immer eine Stärke.~
@@ -1616,7 +1616,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1581 = ~An was ich letzthin dachte wären besser auf Euch Oberweltler zugeschnittene Dienste gewesen...~
 @1582 = ~(schnaubt) Das wollt Ihr nicht wirklich, <CHARNAME>. Nicht von mir.~
 @1583 = ~Habt Ihr es wirklich in Betracht gezogen?~
-@1584 = ~Und... So als Experiment, ob ich als Oberweltler beeindruckt wäre?...~
+@1584 = ~Und... So als Experiment, ob ich als Oberweltler beeindruckt wäre? ...~
 @1585 = ~Warum seid Ihr so sicher, dass ich es nicht wollen würde?~
 @1586 = ~Das werde ich auch hoffen. Ich habe keinerlei Bedürfnis danach.~
 @1587 = ~In der Tat. Schlagt soetwas nie vor, wenn wir weiterhin Freunde bleiben sollen.~
@@ -1631,14 +1631,14 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1596 = ~Seid nicht albern. Ihr wollt dies nicht als Profession lernen, <CHARNAME>. Nicht die Grausamkeiten, die die Drow gelehrt bekommen. Und das ist alles, was ich Euch lehren könnte.~
 @1597 = ~Grausamkeiten? Das zu hören entsetzt mich. Es ist das Gegenteil dessen, was ich mit körperlicher Liebe verbinde, Solaufein.~
 @1598 = ~Das klingt eher, als müsste ich Euch etwas beibringen - dringend!~
-@1599 = ~Naja, das mit dem Lehren war vielleicht keine gute Idee. Aber ansonsten...?~
+@1599 = ~Naja, das mit dem Lehren war vielleicht keine gute Idee. Aber ansonsten? ...~
 @1600 = ~Wisst Ihr, wie jung Ihr im Vergleich zu mir seid, <CHARNAME>?~
 @1601 = ~Ist das ein Problem?~
 @1602 = ~Nein, weil Ihr mir nicht Euer genaues Alter nennt.~
 @1603 = ~Umso mehr könntet Ihr mich lehren.~
 @1604 = ~Vielleicht habe ich auch hier einen Bedarf, die Gebräuche der Drow mit Angenehmem zu ersetzen. Doch falls dies so ist, dann habe ich kein Verlangen, dass Ihr hierzu mein Lehrmeister seid.~
 @1605 = ~Und oh, die Weibchen und höheren Männchen genießen durchaus. Es ist nicht für alle nur Pein.~
-@1606 = ~Ihr seid auch ein höheres Männchen gewesen, Solaufein?...~
+@1606 = ~Ihr seid auch ein höheres Männchen gewesen, Solaufein? ...~
 @1607 = ~Nicht mein ganzes Leben, <CHARNAME>.~
 @1608 = ~Und als ich eines war, war ich mit genug Empathie verflucht, um nicht das von anderen einzufordern, was ich selbst so ungern gegeben habe.~
 @1609 = ~Mein Verlangen nach körperlichen Intimitäten ist gering, <CHARNAME>. Und wenn, dann bin ich alt genug, um sie nicht mit einem Küken wie Euch zu stillen.~
@@ -1700,7 +1700,7 @@ Ich sollte mich auch entscheiden, ob ich Adalon lieber erst ihre Eier zurückbrin
 @1665 = ~Bewahren... Wie hätte ich sie davor bewahren sollen? Das Einzige, was wir hätten tun können, wäre eine Flucht in die Ungewissheit gewesen.~
 @1666 = ~Glaubt nicht, dass es für Phaere in Frage gekommen wäre! Oder für mich, wenn ich ehrlich sein soll. Es war ein Spiel, das uns faszinierte, und es funktionierte aufgrund Phaeres hoher Stellung als älteste Tochter. Wir profitierten beide davon. Sie hatte einen ergebenen und starken Kämpfer, und ich die Gunst eines hohen Weibchens.~
 @1667 = ~Beides hätte nichts mehr bedeutet, wären wir geflohen. Wir waren weit davon entfernt, diese Möglichkeiten hinter uns zu lassen. Wäre es dazu gekommen, hätten wir uns wohl bald aus anderem Grund gegenseitig getötet!~
-@1668 = ~Phaere hatte nur noch ihre Ambition, mehr war ihr nicht geblieben. Ein gutes Einschätzungsvermögen aber hatte sie auch vorher nicht. Sie sah nur ihre Ziele, und sie nutzte die Möglichkeiten, die sich ihr boten, und das ist danach nicht besser geworden. Im Gegenteil, nun verbiss sie sich in Ideen, und solange nichts offensichtlich Gegenläufiges passierte, war sie nicht mehr von ihnen abzubringen. Ihr erinnert Euch, woraus wir sie vor Eurem ersten Treffen befreit haben?...~
+@1668 = ~Phaere hatte nur noch ihre Ambition, mehr war ihr nicht geblieben. Ein gutes Einschätzungsvermögen aber hatte sie auch vorher nicht. Sie sah nur ihre Ziele, und sie nutzte die Möglichkeiten, die sich ihr boten, und das ist danach nicht besser geworden. Im Gegenteil, nun verbiss sie sich in Ideen, und solange nichts offensichtlich Gegenläufiges passierte, war sie nicht mehr von ihnen abzubringen. Ihr erinnert Euch, woraus wir sie vor Eurem ersten Treffen befreit haben? ...~
 @1669 = ~Dass sah ich auch als Grund an, warum sie sich so auf Euch fixiert hat. Eine fremde Truppe, vermeintlich aus Ched Nassad... und Ihr standet mit ihr bei der Beschwörungszeremonie! So eine Ignoranz muss man erst einmal aufbringen, einer Gruppe fremder Drow, und seien sie noch so jung und willig, derartig viel Macht zu geben.~
 @1670 = ~Aber der Apfel fällt nicht weit vom Stamm, wie Ihr Oberflächler sagt. Ardulace hat erlaubt, dass Ihr mit in den Tempel kommt. Sie ist wohl ihrer eigenen Überheblichkeit aufgesessen, wie es scheint, und ein Stück weit Phaeres Verblendung anheimgefallen.~
 @1671 = ~Aber es passt, wie gesagt. Verbissen, wie Phaere war, hat sie sich an Euch geklammert, die Ihr so wunderbar verfügbar wart in der Zeit der Kriegsvorbereitungen. Und es kam, wie ich es erwartet hatte: Sie ist über ihre Verbissenheit gestolpert.~
@@ -2043,7 +2043,7 @@ Ich habe Solaufein aus den Drinnenkammern gerettet und ihm ein Schicksal als Dri
 @2510 = ~[Solaufein] Ich... Ja, das tat ich, und ich verstehe nun, dass es falsch war. Ich bitte um Entschuldigung, Keldorn.~
 @2511 = ~[Keldorn] Wenn Ihr das nun versteht, dann habt Ihr eine Menge über die Oberweltler gelernt, Solaufein.~
 @2512 = ~[Keldorn] Ich werde Euch noch dies sagen, so dass dieser ganze Austausch nicht umsonst war. Wenn Ihr Euch fühlt, als würde Euch das Herz brechen, als wäre die Leben spendende Sonne für immer untergegangen, wenn Dunkelheit und Verzweiflung von Eurer Seele Besitz ergreifen - und Ihr der anderen Person dennoch von ganzem Herzen Gutes wünscht. Dann, Solaufein. Dann habt Ihr die Person, die Euch verriet geliebt.~
-@2513 = ~[Solaufein] So... so zu fühlen wird mir wohl nie vergönnt sein, Keldorn. Der anderen Person von ganzem Herzen noch Gutes wünschen?...~
+@2513 = ~[Solaufein] So... so zu fühlen wird mir wohl nie vergönnt sein, Keldorn. Der anderen Person von ganzem Herzen noch Gutes wünschen? ...~
 @2514 = ~[Keldorn] Dann lasst dies Euer Test sein, Solaufen. Der Test, ob Ihr wahrhaftig die Wege der Dunkelelfen hinter Euch lassen könnt. Hört nie auf, danach zu streben.~
 @2515 = ~[Solaufein] Das werde ich nicht, Keldorn. Eure Worte könnten von meiner Dame Eilistraee selbst stammen, und ich werde sie mir zu Herzen nehmen.~ 
 @2516 = ~[Solaufein] Minsk, als ich Euch das erste mal mit diesem... Hamster sah, dachte ich, <CHARNAME> würde Euch zum Spaß mitnehmen, ein Verrückter, den <PRO_HESHE> mitnimmt, weil er noch ein brauchbarer Kämpfer ist. Ich weiß nun, dass Ihr ein Krieger aus Rashemen seid, und hierher kamt als Beschützer Eurer "Hexe" auf Eurer beider Studienreise.~

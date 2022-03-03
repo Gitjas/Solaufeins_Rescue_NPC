@@ -3,7 +3,7 @@
 @2  = ~A drow! Inside our city!~ 
 @3  = ~Cursed rivvin! Do they want to bind us to the stake again?!~
 @4  = ~Caution, <CHARNAME>. Do not draw your weapons. There will be no blood shed in this city because of me.~ 
-@5  = ~(snort!) No, there won't be any blood shed indeed if they burn us alive, fool. <CHARNAME>, I expect you to defend us against such a murderous mob!~
+@5  = ~(snort) No, there won't be any blood shed indeed if they burn us alive, fool. <CHARNAME>, I expect you to defend us against such a murderous mob!~
 @6  = ~But... Look! Look! It's... BY THE GODS! It is...~
 @7  = ~Drizzt! It's Drizzt!~ 
 @8  = ~Drizzt Do'Urden, the good, righteous drow!~
@@ -24,7 +24,7 @@
 @23 = ~I have some of his hair!~ 
 @24 = ~Drizzt, you're a *hero*! We love you!~
 @25 = ~*giggle*~
-@26 = ~That was... beyond words. (snort!) I am not certain when I will overcome the shock of being helpless... at the hands of three young surfacer women.~
+@26 = ~That was... beyond words. I am not certain when I will overcome the shock of being helpless - at the hands of three young surfacer women.~
 @27 = ~Thank you for staying calm, Solaufein.~
 @28 = ~(grin) I think you made a good impression there.~
 @29 = ~(scoff) Yes, the surface holds many new dangers indeed!~

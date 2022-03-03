@@ -58,7 +58,7 @@ Not affected by this spell are creatures of darkness and creatures which do not 
 
 The target can try a saving throw to evade the spell effect at the moment of creation of the sphere. Once created, the sphere stays on the target and moves with it as long as the duration of the spell lasts, or until it is prematurely terminated by a Dispel Magic.
 ~
-@7  = ~Faery Fire~
+@7  = ~Faerie Fire~
 @8  = ~Darkness~ 
 @9  = ~Dimension Door~
 @10 = ~When asked about his past, SOLAUFEIN tells what you already know from meeting him in Ust Natha. When you try to elicit more from him, his answer is: "I am a drow, <CHARNAME>, and I did what drow usually do. What do you expect?"~ 
@@ -87,5 +87,34 @@ The target can try a saving throw to evade the spell effect at the moment of cre
 @32 = ~Alexia~
 @33 = ~Lydia~
 @34 = ~Alexia's father~
-@35 = ~(snort!)~
+@35 = ~(snort)~
 @36 = ~(yawn)~
+
+@37 = ~Darkness 
+(Alteration)
+
+Level: 1
+Sphere: Creation
+Range: 90 feet
+Area of Effect: 1 Creature
+Duration: 1 round per level until a max pf 16 rounds
+Casting Time: 4
+Saving Throw: No effect
+
+This spell creates a circular sphere of magical darkness with a diameter of about 2 meters around the target. Within this sphere absolute darkness prevails, just as in a windowless, unlit room. Thus, the sight of the target decreases practically to 0, even if it has the infravision ability. By the lack of orientation in the darkness, the target gets a 1 penalty to hit rolls as well as to AC per caster level up to a penalty of 4 each. Sight-dependent damage modifiers, such as the multiple damage of a sneak attack will be negated.
+
+Not affected by this spell are creatures of darkness and creatures which do not get orientation by sight, like animals which can follow strong hearing or sense of smell. Also oversized creatures will not be affected, because the sphere is not large enough to envelop them.
+
+The target can try a saving throw to evade the spell effect at the moment of creation of the sphere. Once created, the sphere stays on the target and moves with it as long as the duration of the spell lasts, or until it is prematurely terminated by a Dispel Magic.~
+@38 = ~Faerie Fire 
+(Alteration)
+
+Level: 1
+Sphere: Weather
+Range: 70 feet
+Duration: 4 rounds per level until a max of 16 rounds
+Casting Time: 4
+Area of Effect: 10-ft. radius
+Saving Throw: None
+
+This spell outlines one or more creatures with a pale violet glow, making positions and movements easily visible. Outlined creatures are easier to strike, giving them an Armor Class penalty of -1 per level until a penalty of -4. Moreover, the dancing lights also unmask invisible enemies. They pursues those affected even beyond the initial area of spell effect, until the effect of the spell ends or is prematurely terminated by "Dispel Magic".~
