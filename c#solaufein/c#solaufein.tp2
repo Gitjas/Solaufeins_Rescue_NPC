@@ -2,7 +2,7 @@ BACKUP ~C#Solaufein\backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~3~ 
+VERSION ~3.1~ 
 
 README ~C#Solaufein/readme.solaufeinsrescue.%LANGUAGE%.html~ ~C#Solaufein/readme.solaufeinsrescue.english.html~
 
@@ -386,17 +386,16 @@ EXTEND_TOP ~AR2500.bcs~ ~C#Solaufein\Scripts\C#Solau_AR2500.baf~
 EXTEND_BOTTOM ~AMCARRAS.bcs~ ~C#Solaufein\Scripts\AMCARRAS_add.baf~
 
 
+
 /* in case Player1 gets rested via cutscene and not by RestParty() while Solaufein is not in the group */
 /* spell and idea taken from Zed Nocear's BG1 trigger simulations! */
 
 ACTION_IF !(FILE_CONTAINS_EVALUATED (~baldur.BCS~ ~"C#FATIG1"~))
     THEN BEGIN
-        EXTEND_TOP ~baldur.bcs~   ~C#Solaufein/scripts/c#solau_fatig_pc.baf~
-        EXTEND_TOP ~baldur25.bcs~   ~C#Solaufein/scripts/c#solau_fatig_pc.baf~
+        EXTEND_TOP ~baldur.bcs~   ~C#Solaufein/scripts/c#_7thpm_baldur_add.baf~
+        EXTEND_TOP ~baldur25.bcs~   ~C#Solaufein/scripts/c#_7thpm_baldur_add.baf~
         COPY ~C#Solaufein/spells/C#FATIG1.SPL~ ~override~
     END
-
-
 
 /* Solaufein kit */
 
@@ -464,9 +463,13 @@ COPY ~C#Solaufein\spells/c#somar2.spl~ ~override/c#somar2.spl~
 
 COPY ~C#Solaufein\spells/c#sofeen.spl~ ~override/c#sofeen.spl~
   SAY NAME1 @7 
+SAY UNIDENTIFIED_DESC  @38 
+SAY DESC  @38 
 
 COPY ~C#Solaufein\spells/c#sodark.spl~ ~override/c#sodark.spl~
   SAY NAME1 @8
+SAY UNIDENTIFIED_DESC  @37 
+SAY DESC  @37 
 
 COPY ~C#Solaufein\spells/c#sodimd.spl~ ~override/c#sodimd.spl~
   SAY NAME1 @9
@@ -828,7 +831,7 @@ COPY_EXISTING ~AR2401.BCS~ ~override~
 BUT_ONLY
 
 // Get state for C#SOLAU %dazu_04% @156 (c#solau.d)
-/* ~(snort!) So much for my noble approach. But I understand your answer - I would have done the same, in your place. I will follow you discretely then.~ */
+/* ~(snort) So much for my noble approach. But I understand your answer - I would have done the same, in your place. I will follow you discretely then.~ */
 OUTER_SET dazu_04 = STATE_WHICH_SAYS 156 IN ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ FROM ~c#solau~
 
 // Get state for C#SOLAU %dazu_05% @2703 (c#solau.d)
