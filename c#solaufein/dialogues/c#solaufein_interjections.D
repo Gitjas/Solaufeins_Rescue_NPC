@@ -28,7 +28,7 @@ See("C#Solaufein")
 END
 
 EXTEND_BOTTOM C6ELHAN2 24
-IF ~See("C#Solaufein")
+IF ~InMyArea("C#Solaufein")
 OR(2) InParty("C#Solaufein") Global("C#SolauJoined","GLOBAL",2)
 OR(2)
 !InParty("hexxat")
