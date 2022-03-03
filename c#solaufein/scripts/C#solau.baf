@@ -6,6 +6,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 
+/* party rested: reset variables */
 /* spell and principle taken from Zed Nocear's BG1 Trigger Simulations! */
 
 IF
@@ -642,9 +643,7 @@ END
 IF //sonne.. Weather change (no weather)
     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
     TimeOfDay(DAY)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
@@ -668,9 +667,7 @@ END
 IF
      OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
     TimeOfDay(DAY)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
@@ -710,9 +707,7 @@ END
 IF //sonne.. Weather change (no weather)
     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
     TimeOfDay(DAY)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
@@ -736,9 +731,7 @@ END
 IF
      OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
     TimeOfDay(DAY)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
@@ -777,9 +770,7 @@ END
 IF //Weather change (no weather)
     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
     TimeOfDay(NIGHT)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
@@ -800,9 +791,7 @@ END
 IF
     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
     TimeOfDay(NIGHT)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
@@ -840,9 +829,7 @@ END
 
 IF 
     OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
@@ -866,9 +853,7 @@ END
 IF
      OR(2) InParty(Myself) Global("C#SolauJoined","GLOBAL",2)
     TimeOfDay(DAY)
-    OR(2)
     AreaType(OUTDOOR)
-    AreaType(CITY)
     See(Player1)
     !StateCheck(Player1,CD_STATE_NOTVALID)
     !Detect([ENEMY])
