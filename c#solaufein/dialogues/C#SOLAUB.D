@@ -2117,6 +2117,7 @@ CombatCounter(0)
 OR(2)
 	Global("C#SolaufeinFriends","GLOBAL",1)
 	Global("C#Solaufein_AerieBanter","GLOBAL",7)
+GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)
 Global("C#Solaufein_AerieBanterToB","GLOBAL",0)
 InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN C#SOLAUB aerie_tob_01
 @1307 DO ~SetGlobal("C#Solaufein_AerieBanterToB","GLOBAL",1)~
