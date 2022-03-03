@@ -1,0 +1,18 @@
+Changes in v3.1:
+
+in "C#SOLATRA.TRA":
+@68   = ~Vel'uss zhah gaer? *Kivvin*! Ulu da'rex!~
+
+@75   = ~Ol zhah dos...? It is you, is it not? Surfacer... Now I see your true appearance.~
+
+@198  = ~So, you are a child of Bhaal? I know Alaundo's Prophecies. The ones that say the Bhaalspawn will bring chaos...~ [c#ablank]
+
+@874  = ~You are Drizzt Do'Urden from Menzoberranzan? A renegate from Lolth! I have been searching for you... for drow like you.~
+
+@880  = ~I... Usstan ssrig'luin ulu joros dos folbol.  Lu'oh xun usstan u'thet folggash?~
+
+new lines in "game.tra":
+
+@37 description of ability "Darkness" (taken from @6)
+
+@38 description of ability "Faerie Fire" (taken from @6)
