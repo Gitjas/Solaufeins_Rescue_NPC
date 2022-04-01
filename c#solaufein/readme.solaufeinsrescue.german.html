@@ -198,7 +198,7 @@ Das Ohn&auml;chtigwerden im Kampf kann verhindert werden, indem Solaufein rechtz
 <br />
 HINWEIS: Leider ben&ouml;tigt der "7. Gruppenmitglieds-Modus" im Spiel ein besonderes Handling, um alle Einschr&auml;nkungen zu ber&uuml;cksichtigen: 
 (Die Hinweise sind eine Mischung aus den vorhandenen Enginerestriktionen und den von mir verwendeten Workarounds.)<br />
--Der NPC hat im 7.GM keinen "Clear Fog of War" um sich herum. Er kann also im "schwarzen" Bereich der Karte "verschwinden". (Wenn man die gesamte Gruppe anklickt und zu einer Stelle laufen l&auml;sst, wird er es ebenfalls versuchen, sofern er nicht irgendwo feststeckt o.&auml;. Dann hilft nur noch der Teleportationscheat "Strg+j" um die Gruppe wieder zu versammeln. Mir ist das so noch nicht geschehen, es ist aber theoretisch m&ouml;glich, wenn der NPC z.B. einen Feind verfolgt.)<br />
+-Der NPC hat im 7.GM keinen "Clear Fog of War" um sich herum. Er kann also im "schwarzen" Bereich der Karte "verschwinden". Leider kommt er dann manchmal auch nicht, wenn man die gesamte Gruppe anklickt und zu einer Stelle laufen l&auml;sst. Eventuell hilft dann der Teleportationscheat "Strg+j" um die Gruppe wieder zu versammeln, ansonsten muss man ihn wieder einsammeln, indem er in das Sichfeld eines Gruppenmitgliedes kommt.<br />
 -Items im Inventar werden *nicht* als Items im Besitz der Gruppe erkannt. Dies ist ein Engineproblem. Daraus folgt, dass Questitems die im Spiel ben&ouml;tigt werden, nicht im Inventar des NPCs sein sollten, wenn sie vom Questgeber erkannt werden sollen. Beispiele: Elvenhaars Buch, Ankhegpanzer f&uuml;r Taerom etc.<br />
 -Als "critical" getaggte Quest-Items werden beim Wechsel in den 7. GMM in das Inventar des HC verschoben. Dadurch landen eventuell Gegenst&auml;nde aus dem Inventar des HC auf dem Boden. Dies ist ein Engineproblem. Daraus ergibt sich, dass Ihr immer nach Wechsel des NPC in de 7.GMM nachschauen solltet, ob Items auf dem Boden gelandet sind!<br />
 -Wenn bei einem meiner Quests speziell f&uuml;r diesen NPC neue Items &uuml;bergeben werden, erscheinen diese immer im Inventar der Gruppe bzw. HC, auch wenn sie eigentlich der NPC erhalten soll. Dies ist ein Engineproblem. Auch wenn ich es so gescriptet haben sollte, dass die Gegenst&auml;nde schlussendlich im Inventar des NPCs sind, werden sie trotzdem &uuml;ber das Inventar des HC geh&auml;ndelt. Wie sonst auch im Spiel k&ouml;nnen auch hierbei Gegenst&auml;nde aus dem Inventar auf dem Boden gelandet sein.<br />
@@ -208,6 +208,8 @@ HINWEIS: Leider ben&ouml;tigt der "7. Gruppenmitglieds-Modus" im Spiel ein beson
 -- 2. Problem mit Items im Nimmevollen Beutel: Befand sich das weggebene Item in einem Nimmervollen Beutel, dann st&uuml;rt aus unerfindlichen Gr&uuml;nden das Spiel ab, wenn der NPC danach wieder &uuml;ber die PID-Option als vollwertiges Mitglied in die Gruppe aufgenommen werden soll. Dieser "Absturzbug" l&auml;sst sich umgehen, indem das Spiel gespeichert und wieder geladen wird.<br />
 <br />
 Nochmal in K&uuml;rze die wichtigsten Tips zusammengefast:<br />
+-In manchen Cutscenes und Traumsequenzen wird Solaufein als 7. Gruppenmitglied ebenfalls dabei sein. Ich habe vor, das in einer späteren Version für die mir bekannten Cutscenes zu beheben.</br>
+-Solaufein hat keinen sogenannten "Clear Fog of War"-Effekt, wenn er als 7. Gruppenmitglied mitl&auml;uft. (Der Grund hierf&uuml;r ist, dass die Engine nicht mehr als 8 Kreaturen pro Gebiet mit dieser Eigenschaft h&auml;ndeln kann - darin inbegriffen sind die 6 Gruppenmitglieder und eventuelle Cutscene-Spione!) Das hei&szlig;t, dass das Gebiet, in dem er sich befindet, nicht gesehen werden kann und Solaufein so im dunklen Bereich "verloren gehen" kann. Leider kann es dabei passieren, dass er nicht mehr zur restlichen Gruppe l&auml;uft sondern einfach abseits stehen bleibt und erst wieder "eingesammelt wird" wenn er im Sichtbereich eines Gruppenmitglieds ist. Also am besten immer darauf achten, dass er nicht einen anderen Weg nimmt als die richtigen Gruppenmitglider.</br>
 -Nach jedem Questereignis und nach dem Wechsel in den 7.GMM nochmal schauen, ob der HC Items aus dem Inventar verloren hat, die wieder vom Boden aufgelesen werden sollten.<br />
 -Speichern, bevor ein 7. GM wieder in die Gruppe aufgenommen werden soll. Sollte das Spiel dann abst&uuml;rzen, den Spielstand neu laden. Damit sollte der Absturz nicht auftreten.<br />
 -Es ist n&ouml;tig und auch zu empfehlen, nicht-kritische Questitems nicht im Inventar der 7. GM sondern in dem der normalen Gruppenmitglieder zu haben.<br />
@@ -369,6 +371,9 @@ This mod is also not developed, supported, or endorsed by BioWare, Black Isle St
 
 <h1><a name="version" id="version">Versionshistorie</a></h1>
 <div class="section">
+Version 3.2:</br>
+- Russian version completed and improved, by Scheele.<br />
+<br />
 Version 3.1:</br>
 - ToB banter with Aerie should not happen in SoA.<br />
 - Comments on sun and moon will only happen in OUTDOOR area (not CITY).<br />
