@@ -5,7 +5,7 @@ With this modification the game character Solaufein, drow fighter from Ust Natha
  
 Compatibility with Weimers Solaufein for this case is described below in detail.
 
-Solaufein can also follow as a '7th party member' in case your group already consists of 6 persons. More details about this please see below.
+Solaufein can also follow as a '7th party member' in case your group already consists of 6 persons. More details about this please refer to readme.
 
 The second, optional mod component offers the possibility to give the game Solaufein in Ust Natha the mod's portrait. If you want to see this in the game, this component has to be installed after Weimer's Solaufein.
 
