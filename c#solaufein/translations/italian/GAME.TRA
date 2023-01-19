@@ -1,0 +1,117 @@
+/* in-game texts */
+@1   = ~Runa di Protezione~
+@2   = ~Questa è chiaramente una delle rune impiegate dai drow per neutralizzare le protezioni magiche. Con questa runa potrai accedere ad una delle entrate finora sigillate. ~
+/* epilogue: no friendship */
+@3  = ~Non si sa molto degli ultimi giorni di Solaufein.  Sebbene alcuni sostengano che abbia combattuto accanto alla Progenie di Bhaal della profezia di Alaundo, si conosce poco della sua storia dopo la dipartita da <CHARNAME>. Sappiamo che Solaufein - afflitto dagli scarsi legami con i suoi precedenti compagni - ha viaggiato senza meta per qualche tempo, prima di raggiungere i recessi dell'Undermountain sotto Waterdeep alla ricerca di altri seguaci si Eilistraee in superficie.
+
+E' stato lì, presso la Camminata della Vergine Oscura, che Solaufein ha trovato finalmente dei veri amici e compagni tra i drow seguaci di Eilistraee in superficie.  Sebbene abbia trovato la pace con i suoi fratelli di superficie - come infine si è abituato a chiamarli - è rimasto sempre un carattere distaccato.~ 
+
+/* epilogue: friendship */
+@4  = ~Non si sa molto degli ultimi giorni di Solaufein.  Sebbene alcuni sostengano che abbia combattuto accanto alla Progenie di Bhaal della profezia di Alaundo, si conosce poco della sua storia dopo la dipartita da <CHARNAME>. Quello che è noto è che dopo il tuo addio, Solaufein ha viaggiato per il Faerûn trovando il suo posto tra gli abitanti della superficie. Occasionalmente, si reca a Waterdeep e da lì raggiunge l'Undermountain per far visita ai seguaci di Eilistraee che vivono in superficie.
+
+Lì, alla Camminata della Vergine Oscura, Solaufein ha trovato molti drow come lui e altre razze adunate in quella strana comunità. Tuttavia, sebbene abbia trovato dei veri amici e compagni tra i drow seguaci di Eilistraee che vivono in superficie, non ha limitato la sua amicizia ai soli individui della sua razza. Rafforzato dalla sua amicizia con <CHARNAME>, Solaufein ha imparato a stringere amicizia con molti abitanti della superficie, come li chiama con affetto. I suoi ultimi giorni sono avvolti dall'oscurità, ma coloro che lo conoscono non hanno dubbi che li abbia trascorsi in compagnia dei suoi buoni e veri amici.~
+@5   = ~Guerriero Drow~
+@6   = ~Guerriero Drow 
+Quello dei drow è un mondo in cui i conflitti violenti sono all'ordine del giorno. Se la violenza della loro educazione rende i drow combattenti eccezionali secondo gli standard di superficie, i guerrieri drow d'élite ricevono spesso anche un addestramento speciale a un ristretto gruppo di abilità magiche. Si tratta di una precauzione utile a dispensare i combattenti drow d'élite dall'uso della loro innata magia razziale, che potrebbe fallire durante un'incursione in superficie durata più del previsto.
+
+  Vantaggi:
+  -Ottiene 2% di resistenza alla magia per livello fino ad un Massimo di 80% a livello 16.
+  - Abilità innate: Fuoco Fatuo, Oscurità, Porta Dimensionale, e Dissolvi Magia, 1 volta al giorno 
+  
+  Svantaggi:
+  -Alla luce solare, il drow soffre le seguenti penalità:
+	-Penalità di 4 a THACO ed AC
+	-Penalità di 2 punti a tutti i tiri-salvezza
+	-Raggio della visuale ridotto a 2
+	-Riduzione della resistenza alla magia del 50% (partendo da 100%)
+  
+Descrizione delle abilità:
+Fuoco Fatuo (Alterazione)
+
+Livello: 1
+Sfera: Tempo atmosferico
+Raggio d’azione: 20 m
+Durata: 4 round per livello fino a un massimo di 16 round
+Tempo di lancio: 4
+Area d’effetto: raggio di 3 m
+Tiro salvezza: nessuno 
+
+Quando viene pronunciato questo incantesimo, gli avversari entro il raggio d’effetto vengono circondati da luci colorate danzanti, che li evidenziano, rendendoli più vulnerabili, soprattutto nell’oscurità. Perciò, chi li attacca ottiene un bonus di +1 ai tiri per colpire. Inoltre, questi bagliori svelano anche nemici invisibili e seguono il bersaglio anche al di là del raggio di lancio, finché l’incantesimo non termina o non viene dissolto.
+
+
+Oscurità (Alterazione)
+
+Livello: 1
+Sfera: Creazione
+Raggio d’azione: 30 m
+Area d’effetto: 1 creatura
+Durata: 1 round per livello fino a un massimo di 16 round
+Tempo di lancio: 4
+Tiro salvezza: nessun effetto
+
+Questo incantesimo genera sul bersaglio una sfera di oscurità magica con un diametro di circa 2 m. All’interno di questa sfera regna un’oscurità assoluta, come in una stanza buia senza finestre. Perciò il raggio di vista del bersaglio si riduce praticamente a zero, anche quando egli si avvale dell’infravisione. A causa della perdita di orientamento, il bersaglio subisce un malus di -4 ai tiri per colpire ed alla classe di Armatura. I modificatori di danno dipendenti dalla visuale, come i moltiplicatori di un colpo furtivo alle spalle, sono annullati.
+
+Non sono affette da questa magia le creature dell’oscurità e quelle che si possono orientare senza fare uso della vista, alcuni animali che possono seguire precipuamente i propri sensi dell’udito e dell’odorato. Sono pure immuni le creature enormi, che non possono essere completamente avvolte dalla sfera.
+
+Il bersaglio ha diritto ad un tiro-salvezza, per sfuggire al campo della sfera mentre viene generata. Una volta creata, la sfera staziona sul bersaglio muovendosi con lui, finché la sua durata ha termine, o finché non viene dissolta.~
+
+@7   = ~Fuoco Fatuo~
+@8   = ~Oscurità~
+@9   = ~Porta Dimensionale~
+@10   = ~Alle domande sul suo passato, SOLAUFEIN risponde raccontando quanto già sai dal vostro incontro ad Ust-Natha. Se cerchi di spingerlo a fornirti altre informazioni, risponde semplicemente: "Sono un drow, <CHARNAME>, ed ho fatto appunto quello che i drow fanno. Che cosa ti aspetti?"~
+@11 = ~Drider~
+@12 = ~Ah.~ [c#solau6]
+@13 = ~Dolore!~ [c#sola17] 
+@14 = ~Una vittoria brillante!~ [c#solau9]
+@15 = ~Lasciami stare.~ [UDSOLA13] 
+@16 = ~Sei un pazzo, abitante di superficie!~ [UDSOLA11]
+@17 = ~Vedo.~ [c#solau3]
+@18 = ~Come se non avessi abbastanza da fare!~ [c#solau2]
+@19 = ~Non mi piace aspettare!~ [c#solau8] 
+@20 = ~Sei un pazzo!~ [c#sola15]
+@21 = ~Per il bene dei deboli!~ [c#sola16] 
+@22 = ~Non è finita!~ [c#sola14] 
+@23 = ~Ah!~ [c#solau5]
+@24 = ~Faccio quello che devo.~ [c#solau1] 
+@25 = ~Faccio quello che devo, quando devo. Sappilo.~ [UDSOLA01]
+@26 = ~Bene.~ [c#sola12]
+@27 = ~Se devo.~ [c#sola11]
+@28 = ~Brillante!~ [c#sola18]
+@29 = ~Distrutto!~ [c#sola10]
+@30 = ~Mordi il suo cuore nero!~ [c#sola13]
+
+@31 = ~Melissa~
+@32 = ~Alexia~
+@33 = ~Lydia~
+@34 = ~Padre di Alexia ~
+@35 = ~(Sbuffa)~
+@36 = ~(Sbadiglia)~
+
+@37 = ~Oscurità 
+(Alterazione)
+
+Livello: 1
+Sfera: Creazione
+Range: 30 metri
+Area d'Effetto: 1 Creatura
+Durata: 1 round per livello fino a un massimo di 16 round
+Tempo di Lancio: 4
+Tiro Salvezza: Nessuno
+
+Questo incantesimo crea una sfera circolare di oscurità magica con un diametro di circa 2 metri attorno al bersaglio. All'interno di questa sfera prevale l'oscurità assoluta, proprio come in una stanza senza finestre e senza luce. Pertanto, la vista del bersaglio si riduce a 0, anche se ha l'abilità di infravisione. A causa della mancanza di orientamento nell'oscurità, il bersaglio riceve una penalità di 1 ai tiri per colpire e alla CA per livello dell'incantatore fino a un massimo di 4 per ciascuno. I modificatori di danno che dipendono dalla vista, come i danni multipli di un attacco furtivo, verranno annullati.
+
+Non sono influenzate da questo incantesimo le creature dell'oscurità e le creature che non si orientano con la vista, come gli animali con un forte olfatto o udito. Anche le creature di grandi dimensioni non saranno interessate, perché la sfera non è abbastanza grande da avvolgerle.
+
+Il bersaglio può tentare un tiro salvezza per eludere l'effetto dell'incantesimo al momento della creazione della sfera. Una volta creata, la sfera rimane sul bersaglio e si muove con esso per tutta la durata dell'incantesimo o finché non viene terminata prematuramente da Dissolvi Magie.
+~@38 = ~Fuoco Fatuo 
+(Alterazione)
+
+Livello: 1
+Sfera: Tempo Atmosferico
+Raggio: 24 metri
+Durata: 4 round per livello fino a un massimo di 16 round
+Tempo di Lancio: 4
+Area d'Effetto: 3 metri di raggio
+Tiro Salvezza: Nessuno
+
+Questo incantesimo delinea una o più creature con un bagliore viola pallido, rendendo facilmente visibile la loro posizione e i loro movimenti. Le creature delineate sono più facili da colpire, subendo una penalità alla Classe Armatura di -1 per livello fino a una penalità di -4. Inoltre, le luci danzanti rivelano i nemici invisibili. L'incantesimo segue i soggetti colpiti anche oltre l'area iniziale, fino a quando l'effetto dell'incantesimo non termina o viene interrotto da "Dissolvi Magia".~

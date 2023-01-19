@@ -1093,8 +1093,6 @@ THEN
 //    RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",1800) //s %SOLAUFEIN_TIMER%
     RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",%SOLAUFEIN_TIMER%)
     RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500) //s
-		PlaySong(0)
-		PlaySound("C#SOLAU")
     StartDialogNoSet(Player1)
 END
 
@@ -1140,8 +1138,6 @@ THEN
   RESPONSE #100
     RealSetGlobalTimer("C#SolauDialogTimer","GLOBAL",%SOLAUFEIN_TIMERTOB%)
     RealSetGlobalTimer("C#SolauSceneryTimer","GLOBAL",500) //s
-		PlaySong(0)
-		PlaySound("C#SOLAU")
     StartDialogNoSet(Player1)
 END
 

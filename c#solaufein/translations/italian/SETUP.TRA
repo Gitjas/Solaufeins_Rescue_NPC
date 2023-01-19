@@ -1,0 +1,23 @@
+@90000   = ~Il Salvataggio di Solaufein: Jastey's Solaufein NPC per BGII~
+@90001   = ~Dai a Solaufein in Ust Natha il ritratto della Mod~
+@90002   = ~Abilita le Animazioni dei Drider in questa Mod~
+@90003   = ~La mod Jastey's Solaufein non è installata~
+@90004   = ~Questa componente non è richiesta per BGII:EE~
+@90005   = ~La componente base della mod d'animazione richiesta non è installata o l'animazione è mancante, vedi il readme.~
+
+@90006   = ~Installa il ritratto alternativo #2 da Chinasky~
+
+@90007   = ~Installa Detection for Drow PC~
+
+@90008   = ~Mod FinnJO's Subrace o mod Welverin's Subrace rilevate. Installazione del contenuto crossmod in corso...~
+@90009   = ~Mod BG:EE Subrace di Corsymyr's individuata. Installazione del contenuto crossmod in corso...~
+@90010   = ~Mod Eilistraee's Song rilevata. Installazione del contenuto crossmod in corso...~
+
+/* new for v2.1 */
+@90011   = ~Questa mod non è compatibile con questo gioco.~
+@90012   = ~Questa mod richiede di essere installata prima di EET_End nella tua installazione di EET.~
+
+/* new for v2.2 */
+@90013   = ~Nessuna subrace mod individuata. Installazione dell'opzione di dialogo nel dialogo con Adalon in corso...~
+@90014   = ~Mod Subrace di tipun individuata. Installazione del contenuto crossmod in corso...~
+

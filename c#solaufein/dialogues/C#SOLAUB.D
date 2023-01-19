@@ -98,7 +98,7 @@ See("C#Solaufein")
 Global("C#Solaufein_JaheiraBanter","GLOBAL",0)~ THEN jaheira_00
 SAY @923 /* ~[Jaheira] Solaufein, stay more to my left and protect our flanks!~ */
 = @924 /* ~[Jaheira] ...It provides better coverage against enemy rogues.~ */
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",1)~ EXTERN C#SOLAUB jaheira_00
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",1)~ EXTERN C#SOLAUJ jaheira_00
 END
 END
 
@@ -117,13 +117,13 @@ See("C#Solaufein")
 Global("C#Solaufein_JaheiraBanter","GLOBAL",0)~ THEN jaheira_00
 SAY @923
 = @924
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",1)~ EXTERN C#SOLAUB jaheira_00
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",1)~ EXTERN C#SOLAUJ jaheira_00
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB jaheira_00
+IF ~~ THEN C#SOLAUJ jaheira_00
 @925 /* ~[Solaufein] Yes, Jaheira. I will do so right away!~ */
 DO ~RealSetGlobalTimer("C#Solau_JaheiraBanterTimer","GLOBAL",10)~
 EXIT
@@ -133,13 +133,13 @@ IF ~Global("C#Solaufein_JaheiraBanter","GLOBAL",2)~ THEN C#SOLAUJ jaheira_00_fol
 @926 /* ~[Solaufein] ...It... also gives you a better angle to keep an eye on me, the *drow*?~ */ DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",3)~ 
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @927 /* ~[Jaheira] That... is true, but it was not my intention. <CHARNAME> obviously trusts you, so we should make the best of it. I was thinking about the best tactical formation against unexpected attacks.~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @927
-== C#SOLAUB @928 /* ~[Solaufein] You did, and I still agree. Yet, when you commanded me so sternly, I jumped to obey like you were one of the Handmaidens.  Who would have thought that though the Priestesses of Lolth always claimed that the elves were our natural hated enemies, I would still find so many similarities in your mannerisms.~ */
+== C#SOLAUJ @928 /* ~[Solaufein] You did, and I still agree. Yet, when you commanded me so sternly, I jumped to obey like you were one of the Handmaidens.  Who would have thought that though the Priestesses of Lolth always claimed that the elves were our natural hated enemies, I would still find so many similarities in your mannerisms.~ */
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @929 /* ~[Jaheira] You think I behave like a drow female? The comparison is ridiculous, Solaufein!~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @929
-== C#SOLAUB @930 /* ~[Solaufein] Considering my head is still attached to my body it was an inappropriate comparison, indeed. I do recognize that you are nothing like them, Jaheira. It was your tone - spoken by a female in a potential combat situation... It seems my conditioning to follow such commands without question in the heat of the moment runs deeper than I thought.~ */
+== C#SOLAUJ @930 /* ~[Solaufein] Considering my head is still attached to my body it was an inappropriate comparison, indeed. I do recognize that you are nothing like them, Jaheira. It was your tone - spoken by a female in a potential combat situation... It seems my conditioning to follow such commands without question in the heat of the moment runs deeper than I thought.~ */
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @931 /* ~[Jaheira] I wanted to communicate clearly and succinctly. A potential combat situation is no place for excessive wordiness. Yet... you are not the first one to tell me that my tone might sound harsh and commanding at times. I will... tone it down in the future.~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @931
-== C#SOLAUB @1219 /* ~[Solaufein] I thank you for the sentiment, Jaheira. Although I'm the one who really needs to learn the lesson.  It is going to be a bigger effort than I thought to free myself from old habits and social conditioning.~ */
+== C#SOLAUJ @1219 /* ~[Solaufein] I thank you for the sentiment, Jaheira. Although I'm the one who really needs to learn the lesson.  It is going to be a bigger effort than I thought to free myself from old habits and social conditioning.~ */
 EXIT
 
 APPEND BJAHEIR
@@ -156,7 +156,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_JaheiraBanter","GLOBAL",3)~ THEN jaheira_02
 SAY @934 /* ~[Jaheira] Solaufein, how much do you know about the surface world's flora?~ */
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",4)~ EXTERN C#SOLAUB jaheira_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",4)~ EXTERN C#SOLAUJ jaheira_02
 END
 END
 
@@ -174,20 +174,20 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_JaheiraBanter","GLOBAL",3)~ THEN jaheira_02
 SAY @934
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",4)~ EXTERN C#SOLAUB jaheira_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_JaheiraBanter","GLOBAL",4)~ EXTERN C#SOLAUJ jaheira_02
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB jaheira_02
+IF ~~ THEN C#SOLAUJ jaheira_02
 @932 /* ~[Solaufein] You are probably not surprised that I find it difficult to name most of the plants we encounter, but you it may surprise you that this is mostly because I am seeing them in the light of the day for the first time, not in the dim light of the night.~ */
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @933 /* ~[Jaheira] That, indeed, is a reason I didn't expect. Well, if you have any questions concerning the plants we encounter, especially the fruit-bearing trees, edible roots, and herbs then do not hesitate to profit from my knowledge.~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @933
-== C#SOLAUB @937 /* ~[Solaufein] You would teach me? I am surprised and humbled, Jaheira. I thank you in advance for your offer.~ */
+== C#SOLAUJ @937 /* ~[Solaufein] You would teach me? I am surprised and humbled, Jaheira. I thank you in advance for your offer.~ */
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @938 /* ~[Jaheira] It's not charity, Solaufein. <CHARNAME> decided we travel together, so I would prefer not to be accidentally poisoned at our next meal.~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @938
-== C#SOLAUB @939 /* ~[Solaufein] I see. I will try not to poison you accidentally, then.~ */
+== C#SOLAUJ @939 /* ~[Solaufein] I see. I will try not to poison you accidentally, then.~ */
 == BJAHEIR IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @940 /* ~[Jaheira] That sounded... Never mind.~ */
 == BJAHEI25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @940
 EXIT
@@ -208,7 +208,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_MazzyBanter","GLOBAL",0)~ THEN mazzy_01
 SAY @941
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",1)~ EXTERN C#SOLAUB mazzy_01
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",1)~ EXTERN C#SOLAUJ mazzy_01
 END
 END
 
@@ -226,22 +226,22 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_MazzyBanter","GLOBAL",0)~ THEN mazzy_01
 SAY @941
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",1)~ EXTERN C#SOLAUB mazzy_01
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",1)~ EXTERN C#SOLAUJ mazzy_01
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB mazzy_01
+IF ~~ THEN C#SOLAUJ mazzy_01
 @942
 == BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @943
 = @944
 == BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @943
 = @944
-== C#SOLAUB @945
+== C#SOLAUJ @945
 == BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @935
 == BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @935
-== C#SOLAUB @936
+== C#SOLAUJ @936
 EXIT
 
 /* Solaufein - Mazzy */
@@ -308,7 +308,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_MinscBanter","GLOBAL",1)~ THEN minsc_02
 SAY @959
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_MinscBanter","GLOBAL",2)~ EXTERN C#SOLAUB minsc_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MinscBanter","GLOBAL",2)~ EXTERN C#SOLAUJ minsc_02
 END
 END
 
@@ -326,20 +326,20 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_MinscBanter","GLOBAL",1)~ THEN minsc_02
 SAY @959
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_MinscBanter","GLOBAL",2)~ EXTERN C#SOLAUB minsc_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MinscBanter","GLOBAL",2)~ EXTERN C#SOLAUJ minsc_02
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB minsc_02
+IF ~~ THEN C#SOLAUJ minsc_02
 @960
 == BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @961
 == BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @961
-== C#SOLAUB @962
+== C#SOLAUJ @962
 == BMINSC IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @963
 == BMINSC25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @963
-== C#SOLAUB @964
+== C#SOLAUJ @964
 EXIT
 
 
@@ -381,7 +381,7 @@ See("C#Solaufein")
 Global("C#Solaufein_KorganBanter","GLOBAL",0)~ THEN korgan_01
 SAY @969
 = @970
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_KorganBanter","GLOBAL",1)~ EXTERN C#SOLAUB korgan_01
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_KorganBanter","GLOBAL",1)~ EXTERN C#SOLAUJ korgan_01
 END
 END
 
@@ -400,17 +400,17 @@ See("C#Solaufein")
 Global("C#Solaufein_KorganBanter","GLOBAL",0)~ THEN korgan_01
 SAY @969 
 = @970
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_KorganBanter","GLOBAL",1)~ EXTERN C#SOLAUB korgan_01
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_KorganBanter","GLOBAL",1)~ EXTERN C#SOLAUJ korgan_01
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB korgan_01
+IF ~~ THEN C#SOLAUJ korgan_01
 @971
 == BKORGAN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @972
 == BKORGA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @972
-== C#SOLAUB @973
+== C#SOLAUJ @973
 == BKORGAN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @974
 == BKORGA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @974
 EXIT
@@ -454,7 +454,7 @@ APPEND MAZZYJ
 IF WEIGHT #-1
 ~Global("C#Solaufein_MazzyBanter","GLOBAL",3)~ THEN mazzy_03
 SAY @982 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",4)~ EXTERN C#SOLAUB mazzy_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",4)~ EXTERN C#SOLAUJ mazzy_03
 END
 END //APPEND
 
@@ -462,12 +462,12 @@ APPEND MAZZY25J
 IF WEIGHT #-1
 ~Global("C#Solaufein_MazzyBanter","GLOBAL",3)~ THEN mazzy_03
 SAY @982 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",4)~ EXTERN C#SOLAUB mazzy_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_MazzyBanter","GLOBAL",4)~ EXTERN C#SOLAUJ mazzy_03
 END
 END //APPEND
 
 CHAIN
-IF ~~ THEN C#SOLAUB mazzy_03
+IF ~~ THEN C#SOLAUJ mazzy_03
 @983
 = @984
 == BMAZZY IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @985
@@ -476,7 +476,7 @@ IF ~~ THEN C#SOLAUB mazzy_03
 == BMAZZY25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @985
 = @986
 = @2524
-== C#SOLAUB @2525
+== C#SOLAUJ @2525
 END
 IF ~~ THEN DO ~RestParty()~ EXIT
 
@@ -654,7 +654,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_HaerDalisBanter","GLOBAL",1)~ THEN haerdalis_02
 SAY @1022
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_HaerDalisBanter","GLOBAL",2)~ EXTERN C#SOLAUB haerdalis_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_HaerDalisBanter","GLOBAL",2)~ EXTERN C#SOLAUJ haerdalis_02
 END
 END
 
@@ -672,7 +672,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_HaerDalisBanter","GLOBAL",1)~ THEN haerdalis_02
 SAY @1022
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_HaerDalisBanter","GLOBAL",2)~ EXTERN C#SOLAUB haerdalis_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_HaerDalisBanter","GLOBAL",2)~ EXTERN C#SOLAUJ haerdalis_02
 END
 
 /* ToB - only */
@@ -691,25 +691,25 @@ OR(2)
 Global("C#Solaufein_HaerDalisBanterToB","GLOBAL",0)
 GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN haerdalis_03
 SAY @1023
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_HaerDalisBanterToB","GLOBAL",1)~ EXTERN C#SOLAUB haerdalis_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_HaerDalisBanterToB","GLOBAL",1)~ EXTERN C#SOLAUJ haerdalis_03
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB haerdalis_02
+IF ~~ THEN C#SOLAUJ haerdalis_02
 @1024
 == BHAERDA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1025
 == BHAERD25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1025
-== C#SOLAUB @1026
+== C#SOLAUJ @1026
 EXIT
 
 
 CHAIN
-IF ~~ THEN C#SOLAUB haerdalis_03
+IF ~~ THEN C#SOLAUJ haerdalis_03
 @1027
 == BHAERD25 @1028
-== C#SOLAUB @1029
+== C#SOLAUJ @1029
 EXIT
 
 
@@ -796,7 +796,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_AnomenBanter","GLOBAL",2)~ THEN anomen_03
 SAY @1046
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",3)~ EXTERN C#SOLAUB anomen_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",3)~ EXTERN C#SOLAUJ anomen_03
 END
 
 IF WEIGHT #-1
@@ -811,7 +811,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_AnomenBanter","GLOBAL",3)~ THEN anomen_04
 SAY @1047
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",4)~ EXTERN C#SOLAUB anomen_04
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",4)~ EXTERN C#SOLAUJ anomen_04
 END
 END
 
@@ -829,7 +829,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_AnomenBanter","GLOBAL",2)~ THEN anomen_03
 SAY @1046
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",3)~ EXTERN C#SOLAUB anomen_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",3)~ EXTERN C#SOLAUJ anomen_03
 END
 
 IF WEIGHT #-1
@@ -844,31 +844,31 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_AnomenBanter","GLOBAL",3)~ THEN anomen_04
 SAY @1047 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",4)~ EXTERN C#SOLAUB anomen_04
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AnomenBanter","GLOBAL",4)~ EXTERN C#SOLAUJ anomen_04
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB anomen_03
+IF ~~ THEN C#SOLAUJ anomen_03
 @1048
 == BANOMEN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1049
 == BANOME25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1049
-== C#SOLAUB @1050
+== C#SOLAUJ @1050
 EXIT
 
 CHAIN
-IF ~~ THEN C#SOLAUB anomen_04
+IF ~~ THEN C#SOLAUJ anomen_04
 @1051
 == BANOMEN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1052
 == BANOME25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1052
-== C#SOLAUB @1053
+== C#SOLAUJ @1053
 == BANOMEN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1054
 == BANOME25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1054
-== C#SOLAUB @1055
+== C#SOLAUJ @1055
 == BANOMEN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1056
 == BANOME25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1056
-== C#SOLAUB @1057
+== C#SOLAUJ @1057
 EXIT
 
 
@@ -891,7 +891,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",0)~ THEN nalia_01
 SAY @1058
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",1)~ EXTERN C#SOLAUB nalia_01
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",1)~ EXTERN C#SOLAUJ nalia_01
 END
 
 IF 
@@ -906,7 +906,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",1)~ THEN nalia_01_b
 SAY @2500
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",2)~ EXTERN C#SOLAUB nalia_01_b
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",2)~ EXTERN C#SOLAUJ nalia_01_b
 END
 
 IF WEIGHT #-1
@@ -922,7 +922,7 @@ See("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",3)~ THEN nalia_03
 SAY @1059
 = @1060
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUB nalia_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUJ nalia_03
 END
 
 IF WEIGHT #-1
@@ -937,7 +937,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",4)~ THEN nalia_04
 SAY @1061
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",5)~ EXTERN C#SOLAUB nalia_04
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",5)~ EXTERN C#SOLAUJ nalia_04
 END
 
 END
@@ -956,7 +956,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",0)~ THEN nalia_01
 SAY @1058
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",1)~ EXTERN C#SOLAUB nalia_01
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",1)~ EXTERN C#SOLAUJ nalia_01
 END
 
 IF 
@@ -971,7 +971,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",1)~ THEN nalia_01_b
 SAY @2500
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",2)~ EXTERN C#SOLAUB nalia_01_b
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",2)~ EXTERN C#SOLAUJ nalia_01_b
 END
 
 IF WEIGHT #-1
@@ -987,7 +987,7 @@ See("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",3)~ THEN nalia_03
 SAY @1059
 = @1060
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUB nalia_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",4)~ EXTERN C#SOLAUJ nalia_03
 END
 
 IF WEIGHT #-1
@@ -1002,7 +1002,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_NaliaBanter","GLOBAL",4)~ THEN nalia_04
 SAY @1061
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",5)~ EXTERN C#SOLAUB nalia_04
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",5)~ EXTERN C#SOLAUJ nalia_04
 END
 
 /* ToB only */
@@ -1020,34 +1020,34 @@ OR(2)
 	Global("C#Solaufein_NaliaBanter","GLOBAL",5)
 Global("C#Solaufein_NaliaBanterToB","GLOBAL",0)~ THEN nalia_05
 SAY @1062
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanterToB","GLOBAL",1)~ EXTERN C#SOLAUB nalia_05
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_NaliaBanterToB","GLOBAL",1)~ EXTERN C#SOLAUJ nalia_05
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB nalia_01
+IF ~~ THEN C#SOLAUJ nalia_01
 @1063
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1064
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1064
-== C#SOLAUB @1065
+== C#SOLAUJ @1065
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1066
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1066
-== C#SOLAUB @1067
+== C#SOLAUJ @1067
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1068
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1068
-== C#SOLAUB @1069
+== C#SOLAUJ @1069
 EXIT
 
 CHAIN
-IF ~~ THEN C#SOLAUB nalia_01_b
+IF ~~ THEN C#SOLAUJ nalia_01_b
 @2501
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2502
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2502
-== C#SOLAUB @2503
+== C#SOLAUJ @2503
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @2504
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @2504
-== C#SOLAUB @2505
+== C#SOLAUJ @2505
 EXIT
 
 
@@ -1059,43 +1059,43 @@ OR(2) Global("C#SolauJoined","GLOBAL",2) InParty(Myself)
 CombatCounter(0)
 !See([ENEMY])
 Global("C#Solaufein_NaliaBanter","GLOBAL",2)
-InParty("nalia") InMyArea("nalia") !StateCheck("nalia",CD_STATE_NOTVALID)~ THEN C#SOLAUB nalia_02
+InParty("nalia") InMyArea("nalia") !StateCheck("nalia",CD_STATE_NOTVALID)~ THEN C#SOLAUJ nalia_02
 @1070
 = @1071 DO ~SetGlobal("C#Solaufein_NaliaBanter","GLOBAL",3)~
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1072
 = @1073
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1072
 = @1073
-== C#SOLAUB @1074
+== C#SOLAUJ @1074
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1075
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1075
-== C#SOLAUB @1076
+== C#SOLAUJ @1076
 EXIT
 
 
 CHAIN
-IF ~~ THEN C#SOLAUB nalia_03
+IF ~~ THEN C#SOLAUJ nalia_03
 @1077
 EXIT
 
 
 CHAIN
-IF ~~ THEN C#SOLAUB nalia_04
+IF ~~ THEN C#SOLAUJ nalia_04
 @1078
 == BNALIA IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1079
 == BNALIA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1079
-== C#SOLAUB @1080
+== C#SOLAUJ @1080
 EXIT
 
 
 /* ToB */
 CHAIN
-IF ~~ THEN C#SOLAUB nalia_05
+IF ~~ THEN C#SOLAUJ nalia_05
 @1081
 == BNALIA25 @1082
-== C#SOLAUB @1083
+== C#SOLAUJ @1083
 == BNALIA25 @1084
-== C#SOLAUB @1085
+== C#SOLAUJ @1085
 == BNALIA25 @1086
 EXIT
 
@@ -1490,7 +1490,7 @@ See("C#Solaufein")
 Global("C#Solaufein_EdwinABanter","GLOBAL",1)~ THEN edwina_02
 SAY @1173
 =  @1174
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_EdwinABanter","GLOBAL",2)~ EXTERN C#SOLAUB edwina_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_EdwinABanter","GLOBAL",2)~ EXTERN C#SOLAUJ edwina_02
 END
 END
 
@@ -1509,17 +1509,17 @@ See("C#Solaufein")
 Global("C#Solaufein_EdwinABanter","GLOBAL",1)~ THEN edwina_02
 SAY @1173
 =  @1174 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_EdwinABanter","GLOBAL",2)~ EXTERN C#SOLAUB edwina_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_EdwinABanter","GLOBAL",2)~ EXTERN C#SOLAUJ edwina_02
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB edwina_02
+IF ~~ THEN C#SOLAUJ edwina_02
 @1175 
 == BEDWIN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1176
 == BEDWIN25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1176
-== C#SOLAUB @1177
+== C#SOLAUJ @1177
 == BEDWIN IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1178
 == BEDWIN25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1178
 EXIT
@@ -1610,8 +1610,8 @@ Global("C#Solaufein_SarevokBanter","GLOBAL",2)
 OR(2) Global("C#SolauJoined","GLOBAL",2) InParty("C#Solaufein") 
 InMyArea("C#Solaufein") !StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN BSAREV25 sarevok_03
 @1196 DO ~SetGlobal("C#Solaufein_SarevokBanter","GLOBAL",3)~
-== C#SOLAUB @1197
-== C#SOLAUB @1198
+== C#SOLAUJ @1197
+== C#SOLAUJ @1198
 == BSAREV25 @1199
 EXIT
 
@@ -1729,7 +1729,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_ViconiaBanter","GLOBAL",3)~ THEN viconia_03
 SAY @1222
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",4)~ EXTERN C#SOLAUB viconia_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",4)~ EXTERN C#SOLAUJ viconia_03
 END
 END
 
@@ -1747,17 +1747,17 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_ViconiaBanter","GLOBAL",3)~ THEN viconia_03
 SAY @1222 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",4)~ EXTERN C#SOLAUB viconia_03
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_ViconiaBanter","GLOBAL",4)~ EXTERN C#SOLAUJ viconia_03
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB viconia_03
+IF ~~ THEN C#SOLAUJ viconia_03
 @1223
 == BVICONI IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1224
 == BVICON25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1224
-== C#SOLAUB @1225
+== C#SOLAUJ @1225
 = @1226 
 EXIT
 
@@ -2020,7 +2020,7 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_AerieBanter","GLOBAL",6)~ THEN aerie_07
 SAY @1245
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",7)~ EXTERN C#SOLAUB aerie_07
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",7)~ EXTERN C#SOLAUJ aerie_07
 END
 END
 
@@ -2038,22 +2038,22 @@ See("C#Solaufein")
 !Dead("C#Solaufein")
 Global("C#Solaufein_AerieBanter","GLOBAL",6)~ THEN aerie_07
 SAY @1245 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",7)~ EXTERN C#SOLAUB aerie_07
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanter","GLOBAL",7)~ EXTERN C#SOLAUJ aerie_07
 END
 
 END
 
 CHAIN
-IF ~~ THEN C#SOLAUB aerie_07
+IF ~~ THEN C#SOLAUJ aerie_07
 @1246
 == BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1284
 == BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1284
-== C#SOLAUB @1285
+== C#SOLAUJ @1285
 = @1286 
 = @1299
 == BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1287
 == BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1287
-== C#SOLAUB @2526
+== C#SOLAUJ @2526
 == BAERIE IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1303
 == BAERIE25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1303
 EXIT
@@ -2154,20 +2154,20 @@ GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN aerie_08
 SAY @1304
 = @1305
 = @1306 
-IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanterToB","GLOBAL",2)~ EXTERN C#SOLAUB aerie_tob_02
+IF ~~ THEN DO ~SetGlobal("C#Solaufein_AerieBanterToB","GLOBAL",2)~ EXTERN C#SOLAUJ aerie_tob_02
 END
 
 END
 
 
 CHAIN
-IF ~~ THEN C#SOLAUB aerie_tob_02
+IF ~~ THEN C#SOLAUJ aerie_tob_02
 @1320
 == BAERIE25 @1321
-== C#SOLAUB @1322
+== C#SOLAUJ @1322
 == BAERIE25 @1323
-== C#SOLAUB @1324
+== C#SOLAUJ @1324
 == BAERIE25 @1325
-== C#SOLAUB @1326
+== C#SOLAUJ @1326
 = @1327
 EXIT

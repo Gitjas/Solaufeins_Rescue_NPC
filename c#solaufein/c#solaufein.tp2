@@ -1,12 +1,12 @@
-BACKUP ~C#Solaufein\backup~
+BACKUP ~C#Solaufein/backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~3.2~ 
+VERSION ~4.0~ 
 
 README ~C#Solaufein/readme.solaufeinsrescue.%LANGUAGE%.html~ ~C#Solaufein/readme.solaufeinsrescue.english.html~
 
-AUTO_TRA ~C#Solaufein\Translations\autotra/%s~
+AUTO_TRA ~C#Solaufein/Translations/autotra/%s~
 
 
 ALWAYS
@@ -59,7 +59,7 @@ ACTION_IF !FILE_EXISTS ~C#Solaufein/Install/c#solaufeinreinstall.mrk~ BEGIN
    * Copies tra files into the autotra-folder (to leave the originals untouched)
    */
   DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
-    COPY ~C#Solaufein\Translations/%LANGUAGE%~  ~C#Solaufein\Translations/autotra/%LANGUAGE%~
+    COPY ~C#Solaufein/Translations/%LANGUAGE%~  ~C#Solaufein/Translations/autotra/%LANGUAGE%~
   END
 
   LAF autotra_workaround END
@@ -73,7 +73,7 @@ ACTION_DEFINE_ARRAY fl#reload BEGIN game END
     INT_VAR
       infer_charsets = 1
     STR_VAR
-      tra_path = EVAL ~C#Solaufein\Translations/autotra~
+      tra_path = EVAL ~C#Solaufein/Translations/autotra~
       noconvert_array = fl#noconvert
       reload_array = fl#reload
   END
@@ -110,8 +110,8 @@ END //c#solaufeinreinstall.mrk
 
 
     //TRAs declared in LANGUAGE must be reloaded
-  LOAD_TRA ~C#Solaufein\Translations/autotra/english/game.tra~
-  LOAD_TRA ~C#Solaufein\Translations/autotra/%LANGUAGE%/game.tra~
+  LOAD_TRA ~C#Solaufein/Translations/autotra/english/game.tra~
+  LOAD_TRA ~C#Solaufein/Translations/autotra/%LANGUAGE%/game.tra~
 
 
 END //ALWAYS
@@ -119,18 +119,23 @@ END //ALWAYS
 
 LANGUAGE ~Deutsch~
          ~german~   
-         ~C#Solaufein\Translations\german\setup.tra~
-         ~C#Solaufein\Translations\german\game.tra~
+         ~C#Solaufein/Translations/german/setup.tra~
+         ~C#Solaufein/Translations/german/game.tra~
 
 LANGUAGE ~English~
          ~english~   
-         ~C#Solaufein\Translations\english\setup.tra~
-         ~C#Solaufein\Translations\english\game.tra~
+         ~C#Solaufein/Translations/english/setup.tra~
+         ~C#Solaufein/Translations/english/game.tra~
 
 LANGUAGE ~Russian~
          ~russian~   
-         ~C#Solaufein\Translations\english\setup.tra~
-         ~C#Solaufein\Translations\russian\game.tra~
+         ~C#Solaufein/Translations/english/setup.tra~
+         ~C#Solaufein/Translations/russian/game.tra~
+
+LANGUAGE ~Italian~
+         ~italian~   
+         ~C#Solaufein/Translations/italian/setup.tra~
+         ~C#Solaufein/Translations/italian/game.tra~
 
 
 BEGIN @90000
@@ -141,7 +146,7 @@ FORBID_COMPONENT ~EET_end.tp2~ ~0~ @90012
 FORBID_COMPONENT ~EET_end.tp2~ ~1~ @90012
 
 
-ADD_JOURNAL TITLE (@1799) @67 @1795 @1796 @1797 @1798 USING ~C#Solaufein\Translations\autotra/%LANGUAGE%/C#SOLATRA.TRA~
+ADD_JOURNAL TITLE (@1799) @67 @1795 @1796 @1797 @1798 USING ~C#Solaufein/Translations/autotra/%LANGUAGE%/C#SOLATRA.TRA~
 
 
 COPY_EXISTING ~ar2100.are~ ~override~
@@ -226,14 +231,14 @@ BUT_ONLY
 
 
 /* areas */
-COPY ~C#Solaufein\area~ ~Override~
+COPY ~C#Solaufein/area~ ~Override~
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-  COPY ~C#Solaufein\area\C#SO01_EE.MOS~ ~Override\C#SO01.MOS~
-  COPY ~C#Solaufein\pvrz~ ~Override~
+  COPY ~C#Solaufein/area/C#SO01_EE.MOS~ ~Override/C#SO01.MOS~
+  COPY ~C#Solaufein/pvrz~ ~Override~
 END
 ELSE BEGIN
-  COPY ~C#Solaufein\tis_v1~ ~Override~
+  COPY ~C#Solaufein/tis_v1~ ~Override~
 END
 
 /* place ambient into override folder to prevent area from crashing */
@@ -241,16 +246,16 @@ COPY_EXISTING ~AM0804.WAV~ ~override~
 
 
 /* bams */
-COPY ~C#Solaufein\bams~ ~Override~
+COPY ~C#Solaufein/bams~ ~Override~
 
 
 /* vvc */
-COPY ~C#Solaufein\vvc~ ~Override~
+COPY ~C#Solaufein/vvc~ ~Override~
 
 
 
 /* effects */
-COPY ~C#Solaufein\eff~ ~Override~
+COPY ~C#Solaufein/eff~ ~Override~
 
 
 /* items */
@@ -267,33 +272,33 @@ WRITE_ASCII 0x58 ~CMISC2N~ #8
 END
 
 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\C#SOLAU.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/C#SOLAU.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\C#SOLAUJ.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\c#solaufein_interjections.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/C#SOLAUJ.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/c#solaufein_interjections.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-  COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\c#solaufein_interjections_ee.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+  COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/c#solaufein_interjections_ee.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 END
 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\scenery_dialogues_soa.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/scenery_dialogues_soa.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\sola_quest.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/sola_quest.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\C#SOLAUB.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/C#SOLAUB.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
 EXTEND_BOTTOM ~mazzyd.bcs~ ~C#Solaufein/scripts/c#solau_mazzyd.baf~ EVALUATE_BUFFER
 
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\C#SOLAUB_ee.d~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/C#SOLAUB_ee.d~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 END
 
 
@@ -306,14 +311,14 @@ ACTION_IF GAME_IS ~tob bg2ee eet~ THEN BEGIN
 USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
   //  epilogue: ##
-  EXTEND_TOP ~AR6200.bcs~ ~c#solaufein\scripts\solau_epilog_AR6200.baf~
+  EXTEND_TOP ~AR6200.bcs~ ~c#solaufein/scripts/solau_epilog_AR6200.baf~
 
   /* no friendship */
-  COPY ~c#solaufein\2da\c#soepxx.2da~ ~override/c#soep01.2da~
+  COPY ~c#solaufein/2da/c#soepxx.2da~ ~override/c#soep01.2da~
   REPLACE ~99999~ @3
 
   /* friendship */
-  COPY ~c#solaufein\2da\c#soepxx.2da~ ~override/c#soep02.2da~
+  COPY ~c#solaufein/2da/c#soepxx.2da~ ~override/c#soep02.2da~
   REPLACE ~99999~ @4
 
 END
@@ -322,68 +327,68 @@ END
 
 
 //The PID, to be compiled as last dialogue file
- COMPILE ~C#Solaufein\Dialogues\C#SOLAU_PID.d~ 
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+ COMPILE ~C#Solaufein/Dialogues/C#SOLAU_PID.d~ 
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
 
-COMPILE EVALUATE_BUFFER ~C#Solaufein\Scripts\C#SOLAU.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~
+COMPILE EVALUATE_BUFFER ~C#Solaufein/Scripts/C#SOLAU.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~
 
 ACTION_IF GAME_IS ~bgt tob~ THEN BEGIN
-  EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein\Scripts\c#_lvl.baf~ EVALUATE_BUFFER
+  EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/Scripts/c#_lvl.baf~ EVALUATE_BUFFER
 END
 
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-  EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein\Scripts\c#_lvl_ee.baf~ EVALUATE_BUFFER
-  EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein\Scripts\C#solau_ee.baf~ EVALUATE_BUFFER
+  EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/Scripts/c#_lvl_ee.baf~ EVALUATE_BUFFER
+  EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/Scripts/C#solau_ee.baf~ EVALUATE_BUFFER
 END
 
 
-COMPILE ~C#Solaufein\Scripts\C#SOLAU1.baf~
-COMPILE ~C#Solaufein\Scripts\c#socut1.baf~
-COMPILE ~C#Solaufein\Scripts\c#socut2.baf~
-COMPILE ~C#Solaufein\Scripts\c#socut3.baf~
+COMPILE ~C#Solaufein/Scripts/C#SOLAU1.baf~
+COMPILE ~C#Solaufein/Scripts/c#socut1.baf~
+COMPILE ~C#Solaufein/Scripts/c#socut2.baf~
+COMPILE ~C#Solaufein/Scripts/c#socut3.baf~
 
 
-COMPILE ~C#Solaufein\Scripts\c#sodrsc.baf~
-COMPILE ~C#Solaufein\Scripts\c#sodrf0.baf~
-COMPILE ~C#Solaufein\Scripts\c#sodrm1.baf~
+COMPILE ~C#Solaufein/Scripts/c#sodrsc.baf~
+COMPILE ~C#Solaufein/Scripts/c#sodrf0.baf~
+COMPILE ~C#Solaufein/Scripts/c#sodrm1.baf~
 
-COMPILE ~C#Solaufein\Scripts\c#somob1.baf~
-COMPILE ~C#Solaufein\Scripts\c#somob5.baf~
+COMPILE ~C#Solaufein/Scripts/c#somob1.baf~
+COMPILE ~C#Solaufein/Scripts/c#somob5.baf~
 
-COMPILE ~C#Solaufein\Scripts\c#so01.baf~
+COMPILE ~C#Solaufein/Scripts/c#so01.baf~
 
-COMPILE ~C#Solaufein\Scripts\c#sopass.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE ~C#Solaufein\Scripts\c#sococ1.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE ~C#Solaufein\Scripts\c#sococ2.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE ~C#Solaufein\Scripts\c#sococ3.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE ~C#Solaufein\Scripts\c#sococ4.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE ~C#Solaufein\Scripts\c#sococ5.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE ~C#Solaufein\Scripts\c#sococ6.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
-COMPILE ~C#Solaufein\Scripts\c#sobrut.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sopass.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sococ1.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sococ2.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sococ3.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sococ4.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sococ5.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sococ6.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
+COMPILE ~C#Solaufein/Scripts/c#sobrut.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
-EXTEND_BOTTOM ~AR0300.bcs~ ~C#Solaufein\Scripts\C#Solau_AR0300.baf~
-EXTEND_BOTTOM ~AR0800.bcs~ ~C#Solaufein\Scripts\C#Solau_AR0800.baf~
-EXTEND_BOTTOM ~AR0900.bcs~ ~C#Solaufein\Scripts\C#Solau_AR0900.baf~
-EXTEND_BOTTOM ~AR1000.bcs~ ~C#Solaufein\Scripts\C#Solau_AR1000.baf~
+EXTEND_BOTTOM ~AR0300.bcs~ ~C#Solaufein/Scripts/C#Solau_AR0300.baf~
+EXTEND_BOTTOM ~AR0800.bcs~ ~C#Solaufein/Scripts/C#Solau_AR0800.baf~
+EXTEND_BOTTOM ~AR0900.bcs~ ~C#Solaufein/Scripts/C#Solau_AR0900.baf~
+EXTEND_BOTTOM ~AR1000.bcs~ ~C#Solaufein/Scripts/C#Solau_AR1000.baf~
 
-EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein\Scripts\C#Solau_AR2100.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/Scripts/C#Solau_AR2100.baf~
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 
-EXTEND_TOP ~AR2401.bcs~ ~C#Solaufein\Scripts\C#Solau_AR2401.baf~
+EXTEND_TOP ~AR2401.bcs~ ~C#Solaufein/Scripts/C#Solau_AR2401.baf~
 
-EXTEND_TOP ~AR2500.bcs~ ~C#Solaufein\Scripts\C#Solau_AR2500.baf~
+EXTEND_TOP ~AR2500.bcs~ ~C#Solaufein/Scripts/C#Solau_AR2500.baf~
 
-EXTEND_BOTTOM ~AMCARRAS.bcs~ ~C#Solaufein\Scripts\AMCARRAS_add.baf~
+EXTEND_BOTTOM ~AMCARRAS.bcs~ ~C#Solaufein/Scripts/AMCARRAS_add.baf~
 
 
 
@@ -407,7 +412,8 @@ ADD_KIT ~C#SoDrow~ ///Solaufein's drow kit
 ~
 
   // appended column-wise to WEAPPROF.2da
-  ~C#SoDrow  5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 2 2 3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5~
+//  ~C#SoDrow  5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 2 2 3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5~
+  ~C#SoDrow  5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
      
   // appended to ABCLASRQ.2da
   ~C#SoDrow                 9       0       0       0       0       0
@@ -456,22 +462,22 @@ LAF fl#add_kit_ee STR_VAR kit_name = C#SoDrow END
 /*  spells */
 
 
-COPY ~C#Solaufein\spells/c#soblin.spl~ ~override/c#soblin.spl~
-COPY ~C#Solaufein\spells/c#sobrec.spl~ ~override/c#sobrec.spl~
-COPY ~C#Solaufein\spells/c#somar2.spl~ ~override/c#somar2.spl~
+COPY ~C#Solaufein/spells/c#soblin.spl~ ~override/c#soblin.spl~
+COPY ~C#Solaufein/spells/c#sobrec.spl~ ~override/c#sobrec.spl~
+COPY ~C#Solaufein/spells/c#somar2.spl~ ~override/c#somar2.spl~
 
 
-COPY ~C#Solaufein\spells/c#sofeen.spl~ ~override/c#sofeen.spl~
+COPY ~C#Solaufein/spells/c#sofeen.spl~ ~override/c#sofeen.spl~
   SAY NAME1 @7 
 SAY UNIDENTIFIED_DESC  @38 
 SAY DESC  @38 
 
-COPY ~C#Solaufein\spells/c#sodark.spl~ ~override/c#sodark.spl~
+COPY ~C#Solaufein/spells/c#sodark.spl~ ~override/c#sodark.spl~
   SAY NAME1 @8
 SAY UNIDENTIFIED_DESC  @37 
 SAY DESC  @37 
 
-COPY ~C#Solaufein\spells/c#sodimd.spl~ ~override/c#sodimd.spl~
+COPY ~C#Solaufein/spells/c#sodimd.spl~ ~override/c#sodimd.spl~
   SAY NAME1 @9
 
 
@@ -498,7 +504,7 @@ END
 /* sound */
 
 
-COPY ~C#Solaufein\Creatures\C#SOlau1.cre~ ~override\C#SOlau1.CRE~ 
+COPY ~C#Solaufein/Creatures/C#SOlau1.cre~ ~override/C#SOlau1.CRE~ 
 
 
 ACTION_IF (FILE_EXISTS ~C#Solaufein/sound/%LANGUAGE%~) BEGIN
@@ -514,8 +520,8 @@ COPY ~C#Solaufein/sound/c#ablank.wav~ ~override~
 
 /* cre */
 
-COPY 	~C#Solaufein\Creatures\C#Sola12.cre~ ~override\C#Sola12.cre~
- 	~C#Solaufein\Creatures\C#Soltob.cre~ ~override\C#Soltob.cre~
+COPY 	~C#Solaufein/Creatures/C#Sola12.cre~ ~override/C#Sola12.cre~
+ 	~C#Solaufein/Creatures/C#Soltob.cre~ ~override/C#Soltob.cre~
   WRITE_SHORT   0x244 0
   WRITE_SHORT 0x246 0x4000 + ~%C#SoDrow%~
 SAY NAME1 #50874 //~Solaufein~
@@ -568,28 +574,28 @@ SAY NAME2 #50874 //~Solaufein~
 SAY BIO @10
 
 
-COPY ~C#Solaufein\Creatures\C#SOcre1.cre~ ~override\C#SOcre1.CRE~  //Imrae
-COPY ~C#Solaufein\Creatures\c#sodrf0.cre~ ~override\c#sodrf0.CRE~ 
+COPY ~C#Solaufein/Creatures/C#SOcre1.cre~ ~override/C#SOcre1.CRE~  //Imrae
+COPY ~C#Solaufein/Creatures/c#sodrf0.cre~ ~override/c#sodrf0.CRE~ 
 WRITE_ASCII 0x248 ~c#sodrsc~ #8  //override script
 WRITE_ASCII 0x250 ~c#sodrf0~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrf0~ #8
 WRITE_ASCII 0x2cc ~c#sodrf0~ #8 
-COPY ~C#Solaufein\Creatures\c#sodrf0.cre~ ~override\c#sodrf1.CRE~
+COPY ~C#Solaufein/Creatures/c#sodrf0.cre~ ~override/c#sodrf1.CRE~
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
 WRITE_ASCII 0x250 ~c#sodrf0~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrf1~ #8
 WRITE_ASCII 0x2cc ~c#sodrf1~ #8 
-COPY ~C#Solaufein\Creatures\c#sodrm0.cre~ ~override\c#sodrm0.CRE~ 
+COPY ~C#Solaufein/Creatures/c#sodrm0.cre~ ~override/c#sodrm0.CRE~ 
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
 WRITE_ASCII 0x250 ~c#sodrf0~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrm0~ #8
 WRITE_ASCII 0x2cc ~c#sodrm0~ #8 
-COPY ~C#Solaufein\Creatures\c#sodrm0.cre~ ~override\c#sodrm1.CRE~
+COPY ~C#Solaufein/Creatures/c#sodrm0.cre~ ~override/c#sodrm1.CRE~
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
 WRITE_ASCII 0x250 ~c#sodrm1~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrm1~ #8
 WRITE_ASCII 0x2cc ~c#sodrm1~ #8 
-COPY ~C#Solaufein\Creatures\c#sodrc0.cre~ ~override\c#sodrc0.CRE~ 
+COPY ~C#Solaufein/Creatures/c#sodrc0.cre~ ~override/c#sodrc0.CRE~ 
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
 WRITE_ASCII 0x250 ~C#solau1~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrc0~ #8
@@ -598,7 +604,7 @@ WRITE_ASCII 0x2cc ~c#sodrc0~ #8
 /* Driders. Polymorph to drider-animation via script in-game! */
 
 /* male */
-COPY ~C#Solaufein\Creatures\c#sodrf0.cre~ ~override\c#sodrd1.CRE~
+COPY ~C#Solaufein/Creatures/c#sodrf0.cre~ ~override/c#sodrd1.CRE~
 //SAY NAME1 @11
 //SAY NAME2 @11
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
@@ -606,7 +612,7 @@ WRITE_ASCII 0x250 ~c#sodrf0~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrd1~ #8
 WRITE_ASCII 0x2cc ~c#sodrd1~ #8 
 
-COPY ~C#Solaufein\Creatures\c#sodrf0.cre~ ~override\c#sodrd2.CRE~
+COPY ~C#Solaufein/Creatures/c#sodrf0.cre~ ~override/c#sodrd2.CRE~
 //SAY NAME1 @11
 //SAY NAME2 @11
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
@@ -614,7 +620,7 @@ WRITE_ASCII 0x250 ~c#sodrm1~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrd2~ #8
 WRITE_ASCII 0x2cc ~c#sodrd2~ #8 
 
-COPY ~C#Solaufein\Creatures\c#sodrm0.cre~ ~override\c#sodrd3.CRE~
+COPY ~C#Solaufein/Creatures/c#sodrm0.cre~ ~override/c#sodrd3.CRE~
 //SAY NAME1 @11
 //SAY NAME2 @11
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
@@ -623,7 +629,7 @@ WRITE_ASCII 0x280 ~c#sodrd3~ #8
 WRITE_ASCII 0x2cc ~c#sodrd3~ #8 
 
 /* female */
-COPY ~C#Solaufein\Creatures\c#sodrc0.cre~ ~override\c#sodrd4.CRE~
+COPY ~C#Solaufein/Creatures/c#sodrc0.cre~ ~override/c#sodrd4.CRE~
 //SAY NAME1 @11
 //SAY NAME2 @11
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
@@ -631,7 +637,7 @@ WRITE_ASCII 0x250 ~c#sodrf0~ #8  //class script
 WRITE_ASCII 0x280 ~c#sodrd4~ #8
 WRITE_ASCII 0x2cc ~c#sodrd4~ #8 
 
-COPY ~C#Solaufein\Creatures\c#sodrf0.cre~ ~override\c#sodrd5.CRE~
+COPY ~C#Solaufein/Creatures/c#sodrf0.cre~ ~override/c#sodrd5.CRE~
 //SAY NAME1 @11
 //SAY NAME2 @11
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
@@ -641,7 +647,7 @@ WRITE_ASCII 0x2cc ~c#sodrd5~ #8
 
 /* spiders */
 
-COPY ~C#Solaufein\Creatures\c#sospd1.cre~ ~override\c#sospd1.CRE~
+COPY ~C#Solaufein/Creatures/c#sospd1.cre~ ~override/c#sospd1.CRE~
 WRITE_ASCII 0x248 ~c#sodrsc~ #8
 WRITE_ASCII 0x280 ~c#sospd1~ #8
 WRITE_ASCII 0x2cc ~c#sospd1~ #8 
@@ -649,7 +655,7 @@ WRITE_ASCII 0x2cc ~c#sospd1~ #8
 
 /* dead spiders */
 
-COPY ~C#Solaufein\Creatures\c#sospdd.cre~ ~override\c#sospdd.CRE~
+COPY ~C#Solaufein/Creatures/c#sospdd.cre~ ~override/c#sospdd.CRE~
 
 /* SvA quest */
 COPY ~C#Solaufein/Creatures/c#somob1.cre~ ~override/c#somob1.CRE~
@@ -780,7 +786,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
 COPY ~C#Solaufein/animations/ee/sound~ ~override~
 COPY ~C#Solaufein/animations/ee/bam~ ~override~
 
-EXTEND_BOTTOM ~C#SO01.bcs~ ~c#solaufein\scripts\C#So01_driderchange.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~C#SO01.bcs~ ~c#solaufein/scripts/C#So01_driderchange.baf~ EVALUATE_BUFFER
 
 COPY_EXISTING ~C#sococ2.bcs~ ~override~
 DECOMPILE_AND_PATCH BEGIN
@@ -832,19 +838,19 @@ BUT_ONLY
 
 // Get state for C#SOLAU %dazu_04% @156 (c#solau.d)
 /* ~(snort) So much for my noble approach. But I understand your answer - I would have done the same, in your place. I will follow you discretely then.~ */
-OUTER_SET dazu_04 = STATE_WHICH_SAYS 156 IN ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ FROM ~c#solau~
+OUTER_SET dazu_04 = STATE_WHICH_SAYS 156 IN ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ FROM ~c#solau~
 
 // Get state for C#SOLAU %dazu_05% @2703 (c#solau.d)
 /* ~Search for me outside of the elven camp.~ */
-OUTER_SET dazu_05 = STATE_WHICH_SAYS 2703 IN ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ FROM ~c#solau~
+OUTER_SET dazu_05 = STATE_WHICH_SAYS 2703 IN ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ FROM ~c#solau~
 
 COMPILE EVALUATE_BUFFER ~C#Solaufein/crossmod/eilistraeessong_compatibility.d~
 
 /* my Solaufein will talk about Eilistraee's Clearing if he joins at Underdark exit */
-EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein\crossmod\Eilistraeessong_c#solau.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/crossmod/Eilistraeessong_c#solau.baf~ EVALUATE_BUFFER
 
 /* remove extra Solaufein from ES (my Solaufein will take over quest start) */
-EXTEND_TOP ~AR2401.bcs~ ~C#Solaufein\crossmod\eilistraeessong_ar2401.baf~
+EXTEND_TOP ~AR2401.bcs~ ~C#Solaufein/crossmod/eilistraeessong_ar2401.baf~
 
 END //ES
 
@@ -891,10 +897,10 @@ REQUIRE_PREDICATE ((GAME_IS ~bg2 tob bgt~) AND (MOD_IS_INSTALLED ~SETUP-INFINITY
 REQUIRE_COMPONENT ~c#solaufein/setup-c#solaufein.tp2~ ~0~ @90003
 
 
-COPY ~c#solaufein\animations\bg2~ ~override~
+COPY ~c#solaufein/animations/bg2~ ~override~
 
 
-EXTEND_BOTTOM ~C#SO01.bcs~ ~c#solaufein\scripts\C#So01_driderchange.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~C#SO01.bcs~ ~c#solaufein/scripts/C#So01_driderchange.baf~ EVALUATE_BUFFER
 
 COPY_EXISTING ~C#sococ2.bcs~ ~override~
 DECOMPILE_AND_PATCH BEGIN
@@ -958,14 +964,14 @@ REQUIRE_COMPONENT ~c#solaufein/setup-c#solaufein.tp2~ ~0~ @90003
 ACTION_IF (FILE_EXISTS_IN_GAME ~SED.spl~ OR (FILE_EXISTS_IN_GAME ~SrED.spl~ AND NOT FILE_EXISTS_IN_GAME ~srsquir.cre~)) BEGIN
   PRINT @90008
   EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGII.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 END
 
 /* subrace mod from Corsymyr. EE only */
 ACTION_IF (FILE_EXISTS_IN_GAME ~SrED.spl~ AND FILE_EXISTS_IN_GAME ~srsquir.cre~) BEGIN
   PRINT @90009
   EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_Corsymyr.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 END
 
 /* subrace mod from tipun. EE only */
@@ -973,11 +979,11 @@ END
 ACTION_IF (FILE_EXISTS_IN_GAME ~SR_DROW.spl~) BEGIN
   PRINT @90014
   EXTEND_TOP ~AR2100.bcs~ ~C#Solaufein/crossmod/AR2100_subraceBGEE_tipun.baf~
-USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 END
 
 ACTION_IF (!FILE_EXISTS_IN_GAME ~SED.spl~ AND !FILE_EXISTS_IN_GAME ~SrED.spl~ AND !FILE_EXISTS_IN_GAME ~SR_DROW.spl~) THEN BEGIN
   PRINT @90013 /* No subrace mod detected. Installing drow specific reply option to Adalon's dialogue...~ */
-  COMPILE EVALUATE_BUFFER ~C#Solaufein\Dialogues\detect_drowpc.d~
-	USING ~C#Solaufein\Translations\autotra/%s\c#solatra.tra~ 
+  COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/detect_drowpc.d~
+	USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 END

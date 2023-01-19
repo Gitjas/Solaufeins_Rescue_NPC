@@ -183,7 +183,7 @@ InParty("Neera")
 InMyArea("C#Solaufein") !StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN BNeera neera_02
 @1879 DO ~SetGlobal("C#Solaufein_NeeraBanter","GLOBAL",2)~
 END
-IF ~~ THEN EXTERN C#SolauB neera_02
+IF ~~ THEN EXTERN C#SOLAUJ neera_02
 
 CHAIN
 IF WEIGHT #-1
@@ -196,18 +196,18 @@ InParty("Neera")
 InMyArea("C#Solaufein") !StateCheck("C#Solaufein",CD_STATE_NOTVALID)~ THEN BNeera25 neera_02
 @1879 DO ~SetGlobal("C#Solaufein_NeeraBanter","GLOBAL",2)~
 END
-IF ~~ THEN EXTERN C#SolauB neera_02
+IF ~~ THEN EXTERN C#SOLAUJ neera_02
 
 
 CHAIN
-IF ~~ THEN C#SolauB neera_02
+IF ~~ THEN C#SOLAUJ neera_02
 @1880
 == BNeera IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1881
 == BNeera25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1881
-== C#SOLAUB @1882
+== C#SOLAUJ @1882
 == BNeera IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1883
 == BNeera25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1883
-== C#SOLAUB @1884
+== C#SOLAUJ @1884
 EXIT
 
 
@@ -257,7 +257,7 @@ Global("C#Solaufein_RasaadBanter","GLOBAL",1)
 InParty("Rasaad") InMyArea("Rasaad") !StateCheck("Rasaad",CD_STATE_NOTVALID)~ THEN BRASAAD rasaad_03
 @1913 DO ~SetGlobal("C#Solaufein_RasaadBanter","GLOBAL",2)~
 END
-IF ~~ THEN EXTERN C#SolauB rasaad_03
+IF ~~ THEN EXTERN C#SOLAUJ rasaad_03
 
 CHAIN
 IF WEIGHT #-1
@@ -270,14 +270,14 @@ Global("C#Solaufein_RasaadBanter","GLOBAL",1)
 InParty("Rasaad") InMyArea("Rasaad") !StateCheck("Rasaad",CD_STATE_NOTVALID)~ THEN BRASAA25 rasaad_03
 @1913 DO ~SetGlobal("C#Solaufein_RasaadBanter","GLOBAL",2)~
 END
-IF ~~ THEN EXTERN C#SolauB rasaad_03
+IF ~~ THEN EXTERN C#SOLAUJ rasaad_03
 
 CHAIN
-IF ~~ THEN C#SolauB rasaad_03
+IF ~~ THEN C#SOLAUJ rasaad_03
 @1914
 == BRASAAD IF ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN @1915
 == BRASAA25 IF ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN @1915
-== C#SolauB @1916
+== C#SOLAUJ @1916
 EXIT
 
 
