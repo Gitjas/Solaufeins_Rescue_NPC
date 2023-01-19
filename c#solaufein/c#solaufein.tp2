@@ -465,6 +465,9 @@ LAF fl#add_kit_ee STR_VAR kit_name = C#SoDrow END
 COPY ~C#Solaufein/spells/c#soblin.spl~ ~override/c#soblin.spl~
 COPY ~C#Solaufein/spells/c#sobrec.spl~ ~override/c#sobrec.spl~
 COPY ~C#Solaufein/spells/c#somar2.spl~ ~override/c#somar2.spl~
+COPY ~C#Solaufein/spells/c#somar3.spl~ ~override/c#somar3.spl~
+COPY ~C#Solaufein/spells/c#somar4.spl~ ~override/c#somar4.spl~
+COPY ~C#Solaufein/spells/c#somar5.spl~ ~override/c#somar5.spl~
 
 
 COPY ~C#Solaufein/spells/c#sofeen.spl~ ~override/c#sofeen.spl~
