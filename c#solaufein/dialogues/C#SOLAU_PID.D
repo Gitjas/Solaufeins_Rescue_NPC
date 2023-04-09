@@ -17,7 +17,8 @@ SAY @1373
 ++ @1374 + gruebeln_03 
 ++ @1375 + gruebeln_03 
 ++ @1376 + gruebeln_01
-++ @1377 + gruebeln_04 
+++ @1377 + gruebeln_04
++ ~Global("C#%NPCname%Joined","GLOBAL",2)~ + @200020 /* ~I want to give you orders how to follow me.~ */ + script_chose 
 ++ @1378 + gruebeln_06 
 END 
 
@@ -301,18 +302,9 @@ SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
 + ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInParty(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ + join
 
 
-+ ~Global("C#Solaufein_HPAlarm","GLOBAL",0) Global("C#SolauJoined","GLOBAL",2)~ + @1852 /* ~Solaufein, please warn me if your health gets too low in the next fight.~ */ DO ~SetGlobal("C#Solaufein_HPAlarm","GLOBAL",1)~ + hp_alarm
-+ ~Global("C#Solaufein_HPAlarm","GLOBAL",1) Global("C#SolauJoined","GLOBAL",2)~ + @1853 /* ~Solaufein, I want you to stop warning me about your health conditions in our fights.~ */ DO ~SetGlobal("C#Solaufein_HPAlarm","GLOBAL",0)~ + hp_alarm
++ ~Global("C#%NPCname%Joined","GLOBAL",2)~ + @200020 /* ~I want to give you orders how to follow me.~ */ + script_chose
 
-+ ~!Global("C#Solaufein_BanterSpeed","GLOBAL",-1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1930 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",-1) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_SLOW%)~ + hp_alarm
-+ ~!Global("C#Solaufein_BanterSpeed","GLOBAL",1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1931 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",1) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)~ + hp_alarm
 
-+ ~Global("C#Solaufein_BanterSpeed","GLOBAL",-1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1932 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",0) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)~ + hp_alarm
-+ ~Global("C#Solaufein_BanterSpeed","GLOBAL",1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1933 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",0) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)~ + hp_alarm
 
 + ~Global("C#SolauJoined","GLOBAL",2)~ + @43 + kickout_companion_01
 
@@ -320,6 +312,93 @@ Global("C#SolauJoined","GLOBAL",2)~ + @1933 DO ~SetGlobal("C#Solaufein_BanterSpe
 END
 
 
+IF ~~ THEN script_chose
+SAY @200015 /* ~What do you want me to do?~ */
+++ @200005 /* ~If we encounter enemies...~ */ + script_chose_01
++ ~Global("c#gotopc","LOCALS",0)~ + @200001 /* ~I want you to stay in sight.~ */ DO ~SetGlobal("c#gotopc","LOCALS",1)~ + i_will
++ ~GlobalGT("c#gotopc","LOCALS",0)~ + @200002 /* ~Stop staying in sight.~ */ DO ~SetGlobal("c#gotopc","LOCALS",0) ChangeAIScript("",DEFAULT)~ + i_will
++ ~Global("c#traps","LOCALS",0)
+Class(Myself,THIEF_ALL)~ + @200003 /* ~I want you to look out out for traps.~ */ DO ~SetGlobal("c#traps","LOCALS",1)~ + i_will
++ ~Global("c#traps","LOCALS",1)
+Class(Myself,THIEF_ALL)~ + @200004 /* ~Stop looking for traps.~ */ DO ~SetGlobal("c#traps","LOCALS",0)~ + i_will
++ ~Global("C#HPAlarm","LOCALS",0)~ + @1852 /* ~Solaufein, please warn me if your health gets too low in the next fight.~ */ DO ~SetGlobal("C#HPAlarm","LOCALS",1)~ + i_will
++ ~Global("C#HPAlarm","LOCALS",1)~ + @1853 /* ~Solaufein, I want you to stop warning me about your health conditions in our fights.~ */ DO ~SetGlobal("C#HPAlarm","LOCALS",0)~ + i_will
+
++ ~!Global("C#Solaufein_BanterSpeed","GLOBAL",-1)
+Global("C#SolauJoined","GLOBAL",2)~ + @1930 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",-1) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_SLOW%)~ + i_will
++ ~!Global("C#Solaufein_BanterSpeed","GLOBAL",1)
+Global("C#SolauJoined","GLOBAL",2)~ + @1931 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",1) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)~ + i_will
++ ~Global("C#Solaufein_BanterSpeed","GLOBAL",-1)
+Global("C#SolauJoined","GLOBAL",2)~ + @1932 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",0) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)~ + i_will
++ ~Global("C#Solaufein_BanterSpeed","GLOBAL",1)
+Global("C#SolauJoined","GLOBAL",2)~ + @1933 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",0) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)~ + i_will
+
+++ @200006 /* ~Leave everything as it is.~ */ EXIT
+END
+
+IF ~~ THEN script_chose_01
+SAY @200016 /* ~Yes?~ */
++ ~Global("c#mage1","LOCALS",0)
+Class(Myself,MAGE_ALL)~ + @200007 /* ~I want you to fight enemies you see with magic.~ */ DO ~SetGlobal("c#mage1","LOCALS",1)
+SetGlobal("c#mage2","LOCALS",0)
+SetGlobal("c#cautio","LOCALS",0)
+SetGlobal("c#melee","LOCALS",0)
+SetGlobal("c#ranged","LOCALS",0)
+SetGlobal("c#defend","LOCALS",0)
+SetGlobal("c#nothin","LOCALS",0)~ + i_will
++ ~Global("c#mage2","LOCALS",0)
+Class(Myself,MAGE_ALL)~ + @200008 /* ~I want you to first prepare yourself and fight enemies with magic if you see them.~ */ DO ~SetGlobal("c#mage1","LOCALS",0)
+SetGlobal("c#mage2","LOCALS",1)
+SetGlobal("c#cautio","LOCALS",0)
+SetGlobal("c#melee","LOCALS",0)
+SetGlobal("c#ranged","LOCALS",0)
+SetGlobal("c#defend","LOCALS",0)
+SetGlobal("c#nothin","LOCALS",0)~ + i_will
+
++ ~Global("c#cautio","LOCALS",0)~ + @200009 /* ~I want you to run away from enemies so you don't have to fight.~ */ DO ~SetGlobal("c#mage1","LOCALS",0)
+SetGlobal("c#mage2","LOCALS",0)
+SetGlobal("c#cautio","LOCALS",1)
+SetGlobal("c#melee","LOCALS",0)
+SetGlobal("c#ranged","LOCALS",0)
+SetGlobal("c#defend","LOCALS",0)
+SetGlobal("c#nothin","LOCALS",0)~ + i_will
++ ~Global("c#melee","LOCALS",0)~ + @200010 /* ~I want you to fight with melee weapons if you see enemies.~ */ DO ~SetGlobal("c#mage1","LOCALS",0)
+SetGlobal("c#mage2","LOCALS",0)
+SetGlobal("c#cautio","LOCALS",0)
+SetGlobal("c#melee","LOCALS",1)
+SetGlobal("c#ranged","LOCALS",0)
+SetGlobal("c#defend","LOCALS",0)
+SetGlobal("c#nothin","LOCALS",0)~ + i_will
++ ~Global("c#ranged","LOCALS",0)~ + @200011 /* ~I want you to fight with ranged weapons if you see enemies.~ */ DO ~SetGlobal("c#mage1","LOCALS",0)
+SetGlobal("c#mage2","LOCALS",0)
+SetGlobal("c#cautio","LOCALS",0)
+SetGlobal("c#melee","LOCALS",0)
+SetGlobal("c#ranged","LOCALS",1)
+SetGlobal("c#defend","LOCALS",0)
+SetGlobal("c#nothin","LOCALS",0)~ + i_will
++ ~Global("c#defend","LOCALS",0)~ + @200012 /* ~I want you to only defend yourself if attacked.~ */ DO ~SetGlobal("c#mage1","LOCALS",1)
+SetGlobal("c#mage2","LOCALS",0)
+SetGlobal("c#cautio","LOCALS",0)
+SetGlobal("c#melee","LOCALS",0)
+SetGlobal("c#ranged","LOCALS",0)
+SetGlobal("c#defend","LOCALS",1)
+SetGlobal("c#nothin","LOCALS",0)~ + i_will
++ ~Global("c#nothin","LOCALS",0)~ + @200013 /* ~I want you to do absolutely nothing in a fight.~ */ DO ~SetGlobal("c#mage1","LOCALS",1)
+SetGlobal("c#mage2","LOCALS",0)
+SetGlobal("c#cautio","LOCALS",0)
+SetGlobal("c#melee","LOCALS",0)
+SetGlobal("c#ranged","LOCALS",0)
+SetGlobal("c#defend","LOCALS",0)
+SetGlobal("c#nothin","LOCALS",1)~ + i_will
+
+++ @200014 /* ~I have no new order for fights.~ */ + script_chose
+END
+
+
+IF ~~ THEN i_will
+SAY @1855 /* ~As you wish.~ */
+IF ~~ THEN EXIT
+END
 
 
 /* Fot ToB-only (summoned by fate spirit), friendship 
@@ -354,20 +433,7 @@ SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
 
 + ~!InParty(Myself) Global("C#SolauJoined","GLOBAL",2) NumInParty(6)~ + @1851 /* ~Solaufein, come nearer, I need access to your inventory.~ */ + join
 
-
-+ ~Global("C#Solaufein_HPAlarm","GLOBAL",0) Global("C#SolauJoined","GLOBAL",2)~ + @1852 /* ~Solaufein, please warn me if your health gets too low in the next fight.~ */ DO ~SetGlobal("C#Solaufein_HPAlarm","GLOBAL",1)~ + hp_alarm
-+ ~Global("C#Solaufein_HPAlarm","GLOBAL",1) Global("C#SolauJoined","GLOBAL",2)~ + @1853 /* ~Solaufein, I want you to stop warning me about your health conditions in our fights.~ */ DO ~SetGlobal("C#Solaufein_HPAlarm","GLOBAL",0)~ + hp_alarm
-
-
-+ ~!Global("C#Solaufein_BanterSpeed","GLOBAL",-1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1930 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",-1) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_SLOW%)~ + hp_alarm
-+ ~!Global("C#Solaufein_BanterSpeed","GLOBAL",1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1931 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",1) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_FAST%)~ + hp_alarm
-
-+ ~Global("C#Solaufein_BanterSpeed","GLOBAL",-1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1932 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",0) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)~ + hp_alarm
-+ ~Global("C#Solaufein_BanterSpeed","GLOBAL",1)
-Global("C#SolauJoined","GLOBAL",2)~ + @1933 DO ~SetGlobal("C#Solaufein_BanterSpeed","GLOBAL",0) RealSetGlobalTimer("C#SolauBanterTimer","GLOBAL",%SOLAUFEIN_BANTER_NORMAL%)~ + hp_alarm
++ ~Global("C#%NPCname%Joined","GLOBAL",2)~ + @200020 /* ~I want to give you orders how to follow me.~ */ + script_chose
 
 + ~Global("C#SolauJoined","GLOBAL",2)~ + @43 + kickout_companion_01
 
@@ -394,10 +460,6 @@ ChangeEnemyAlly(Myself,NEUTRAL)
 SetGlobal("C#SolauJoined","GLOBAL",1) JoinParty()~ EXIT
 END
 
-IF ~~ THEN hp_alarm
-SAY @1855 /* ~As you wish.~ */
-IF ~~ THEN EXIT
-END
 
 
 

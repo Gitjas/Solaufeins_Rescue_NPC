@@ -97,8 +97,8 @@ Dem Ziel steht ein Rettungswurf zu, um sich im Augenblick des Erschaffens der Sp
 @34  = ~Alexias Vater~
 
 
-@35  = ~(schnaubt)~
-@36  = ~(gähn)~
+//@35  = 
+//@36  = 
 
 @37 = ~Dunkelheit (Veränderung)
 
@@ -128,3 +128,28 @@ Zeitaufwand: 4
 Rettungswurf: Nein
 
 Nach Aussprechen dieses Zaubers, werden die Gegner im Wirkungsbereich von farbigen Lichtern umtanzt, was insbesondere in der Dunkelheit die Wahrscheinlichkeit eines erfolgreichen Angriffs auf sie erhöht. Der Betroffene erhält daher einen Malus von 1 auf seine Rüstungsklasse pro Stufe des Zaubernden bis zu einem maximalen Malus von vier. Außerdem enttarnen die tanzenden Lichter auch unsichtbare Gegner. Sie verfolgen die Betroffenen auch über den anfänglichen Wirkungsbereich des Zaubers hinaus, solange, bis die Wirkung des Zaubers endet oder mittels "Magie bannen" vorzeitig beendet wird.~
+
+
+/* c#7thpmm_thingies.tpa */
+@200000 = ~(gähn)~
+@200001 = ~Bleibt immer in meiner Sichtweite.~
+@200002 = ~Ihr müsst nicht mehr in meiner Sichtweite bleiben.~
+@200003 = ~Sucht nach Fallen.~ 
+@200004 = ~Sucht nicht mehr nach Fallen.~
+@200005 = ~Für den Fall, dass wir auf Feinde treffen...~
+@200006 = ~Wir belassen es, wie es ist.~
+@200007 = ~Bekämpft Feinde mit Euren Zaubern.~
+@200008 = ~I want you to first prepare yourself and fight enemies with magic if you see them.~
+@200009 = ~Ich möchte, dass Ihr Euch immer so von Feinden entfernt, dass Ihr sie nicht bekämpfen müsst.~
+@200010 = ~Wenn wir auf Feinde stoßen, bekämpft sie mit Nahkampfwaffen.~
+@200011 = ~Wenn Feinde da sind, bekämpft sie mit Eurer Fernkampfwaffe.~
+@200012 = ~Verteidigt Euch wirklich nur, wenn Ihr angegriffen werdet.~
+@200013 = ~Kämpft in einem Kampf überhaupt nicht.~
+@200014 = ~Ich habe keine neuen Anweisungen für Euer Verhalten in einem Kampf.~
+@200015 = ~Was soll ich für Euch tun?~
+@200016 = ~Was dann?~
+//@200017   = 
+//@200018   = 
+//@200019   = 
+@200020   = ~Ich möchte Euch Anweisungen geben, wie Ihr mir folgen sollt.~
+

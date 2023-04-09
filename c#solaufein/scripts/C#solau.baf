@@ -29,7 +29,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("C#SolaufeinRestCounter","GLOBAL",1)
 		Rest()
-		ReallyForceSpellRES("C#SOREST",Myself)	
+		ReallyForceSpellRES("c#7rest",Myself)	
 		SetInterrupt(TRUE)
 END
 
@@ -71,7 +71,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		ReallyForceSpellRES("C#SOREST","C#Solaufein")     	
+		ReallyForceSpellRES("c#7rest","C#Solaufein")     	
 		SetGlobal("C#Solaufein_IsUnconscious","GLOBAL",0)		
 		DisplayStringHead(Myself,@1856)
 		ChangeEnemyAlly(Myself, FAMILIAR)
@@ -99,7 +99,7 @@ END
 /* follows as familiar: Solaufein warns about HP too low: auto pause. auto pause can be switched on and off via PID */
 
 IF
-	Global("C#Solaufein_HPAlarm","GLOBAL",1)  //PC told Solaufein to warn
+	Global("C#HPAlarm","LOCALS",1)  //PC told Solaufein to warn
 	Global("C#Solaufein_HPAlarmDone","GLOBAL",0)
 	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
 	!CombatCounter(0)
@@ -114,7 +114,7 @@ END
 /* follows as familiar: Solaufein warns about HP too low: no auto pause. auto pause can be switched on and off via PID */
 
 IF
-	Global("C#Solaufein_HPAlarm","GLOBAL",0)  //PC told Solaufein not to warn
+	Global("C#HPAlarm","LOCALS",0)  //PC told Solaufein not to warn
 	Global("C#Solaufein_HPAlarmDone","GLOBAL",0)
 	Global("C#SolauJoined","GLOBAL",2)  //follows as 7th party member
 	!CombatCounter(0)
@@ -169,7 +169,7 @@ IF
 THEN
   RESPONSE #100
 		SetInterrupt(FALSE)
-		ReallyForceSpellRES("C#SOREST","C#Solaufein") //make sure there is no negative effect
+		ReallyForceSpellRES("c#7rest","C#Solaufein") //make sure there is no negative effect
 		ReallyForceSpellRES("C#MIN5HP","C#Solaufein") //give him min 5 HP and immunities
 		SetGlobal("C#Solaufein_Has1HPEffect","GLOBAL",1)
 		IncrementGlobal("C#7thPartyMemberRestCounter","GLOBAL",1)

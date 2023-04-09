@@ -84,8 +84,8 @@ Il bersaglio ha diritto ad un tiro-salvezza, per sfuggire al campo della sfera m
 @32 = ~Alexia~
 @33 = ~Lydia~
 @34 = ~Padre di Alexia ~
-@35 = ~(Sbuffa)~
-@36 = ~(Sbadiglia)~
+//@35 = 
+//@36 = 
 
 @37 = ~Oscurità 
 (Alterazione)
@@ -115,3 +115,28 @@ Area d'Effetto: 3 metri di raggio
 Tiro Salvezza: Nessuno
 
 Questo incantesimo delinea una o più creature con un bagliore viola pallido, rendendo facilmente visibile la loro posizione e i loro movimenti. Le creature delineate sono più facili da colpire, subendo una penalità alla Classe Armatura di -1 per livello fino a una penalità di -4. Inoltre, le luci danzanti rivelano i nemici invisibili. L'incantesimo segue i soggetti colpiti anche oltre l'area iniziale, fino a quando l'effetto dell'incantesimo non termina o viene interrotto da "Dissolvi Magia".~
+
+/* c#7thpmm_thingies.tpa */
+@200000 = ~(Sbadiglia)~
+@200001 = ~I want you to stay in sight.~
+@200002 = ~Stop staying in sight.~
+@200003 = ~I want you to look out out for traps.~ 
+@200004 = ~Stop looking for traps.~
+@200005 = ~If we encounter enemies...~
+@200006 = ~Leave everything as it is.~
+@200007 = ~I want you to fight enemies you see with magic.~
+@200008 = ~I want you to first prepare yourself and fight enemies with magic if you see them.~
+@200009 = ~I want you to run away from enemies so you don't have to fight.~
+@200010 = ~I want you to fight with melee weapons if you see enemies.~
+@200011 = ~I want you to fight with ranged weapons if you see enemies.~
+@200012 = ~I want you to only defend yourself if attacked.~
+@200013 = ~Do not fight at all, no matter what.~
+@200014 = ~I have no new instructions for fights.~
+@200015 = ~What do you want me to do?~
+@200016 = ~Yes?~
+//@200017   = 
+//@200018   = 
+//@200019   = 
+@200020   = ~I want to give you instructions how to follow me.~
+
+

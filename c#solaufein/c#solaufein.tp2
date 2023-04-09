@@ -2,7 +2,7 @@ BACKUP ~C#Solaufein/backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~4.0~ 
+VERSION ~4.1~ 
 
 README ~C#Solaufein/readme.solaufeinsrescue.%LANGUAGE%.html~ ~C#Solaufein/readme.solaufeinsrescue.english.html~
 
@@ -43,12 +43,20 @@ APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
     OUTER_SPRINT ~Drideranimation_female~ ~DRIDER_FEMALE~
 
   ACTION_IF GAME_IS ~eet~ THEN BEGIN
-OUTER_SPRINT ~IsContiGameToB~ ~Global("NEWGAME_TOB","GLOBAL",0)~
-OUTER_SPRINT ~IsNewGameToB~ ~Global("NEWGAME_TOB","GLOBAL",1)~
+    OUTER_SPRINT ~IsContiGameToB~ ~Global("NEWGAME_TOB","GLOBAL",0)~
+    OUTER_SPRINT ~IsNewGameToB~ ~Global("NEWGAME_TOB","GLOBAL",1)~
   END
   ACTION_IF NOT GAME_IS ~eet~ THEN BEGIN
-  OUTER_SPRINT ~IsContiGameToB~ ~False()~
-  OUTER_SPRINT ~IsNewGameToB~ ~~
+    OUTER_SPRINT ~IsContiGameToB~ ~False()~
+    OUTER_SPRINT ~IsNewGameToB~ ~~
+  END
+
+/* extras needed for 7th party member mode */
+  OUTER_SPRINT "NPCname" "Solaufein"
+  ACTION_IF GAME_IS ~eet bg2ee~ THEN BEGIN
+    OUTER_SPRINT ~RunAwayFromNoLeaveArea~ ~RunAwayFromNoLeaveArea~
+  END ELSE BEGIN
+    OUTER_SPRINT ~RunAwayFromNoLeaveArea~ ~RunAwayFrom~
   END
 
 /* all following actions are only processed ONCE for the whole mod, independent of un- and reinstalling of single components */
@@ -338,6 +346,9 @@ ACTION_IF GAME_IS ~bgt tob~ THEN BEGIN
   EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/Scripts/c#_lvl.baf~ EVALUATE_BUFFER
 END
 
+/* extras needed for 7th party member mode */
+EXTEND_BOTTOM ~C#SOLAU.bcs~ ~%MOD_FOLDER%/7thpmm/script_patch/set_7pmm_scripts.baf~ EVALUATE_BUFFER
+
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
   EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/Scripts/c#_lvl_ee.baf~ EVALUATE_BUFFER
   EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/Scripts/C#solau_ee.baf~ EVALUATE_BUFFER
@@ -392,15 +403,8 @@ EXTEND_BOTTOM ~AMCARRAS.bcs~ ~C#Solaufein/Scripts/AMCARRAS_add.baf~
 
 
 
-/* in case Player1 gets rested via cutscene and not by RestParty() while Solaufein is not in the group */
-/* spell and idea taken from Zed Nocear's BG1 trigger simulations! */
-
-ACTION_IF !(FILE_CONTAINS_EVALUATED (~baldur.BCS~ ~"C#FATIG1"~))
-    THEN BEGIN
-        EXTEND_TOP ~baldur.bcs~   ~C#Solaufein/scripts/c#_7thpm_baldur_add.baf~
-        EXTEND_TOP ~baldur25.bcs~   ~C#Solaufein/scripts/c#_7thpm_baldur_add.baf~
-        COPY ~C#Solaufein/spells/C#FATIG1.SPL~ ~override~
-    END
+/* extras needed for 7th party member mode */
+INCLUDE ~%MOD_FOLDER%/7thpmm/c#7thpmm_thingies.tpa~
 
 /* Solaufein kit */
 
@@ -739,29 +743,6 @@ END ELSE BEGIN
   COMPILE ~c#solaufein/Dialogues/C#SOLAU_ToB_fatesp.D~ USING ~C#Solaufein/Translations/autotra/%LANGUAGE%/c#solatra.tra~
 END
 
-
-
-
-
-/* 1 HP effect spell!! (gives 5 HP and a lot of protections against things that would kill + Regeneration of 1 HP / 6s */
-
-/* This line is crappy but I need one that works for Grey the dog, too */
-ADD_SECTYPE C#1HPEffect @36  
-
-/* 5 HP effect spell and a lot of other protections against deaths + Regeneration */
-COPY ~C#Solaufein/spells/c#min5hp.spl~ ~override~
-WRITE_BYTE 0x27 C#1HPEffect
-WRITE_BYTE 0xa2 C#1HPEffect
-
-/* remove 5 HP effect and all other protections */
-COPY ~C#Solaufein/spells/c#min0hp.spl~ ~override~
-WRITE_BYTE 0xa2 C#1HPEffect
-
-/* Work-around: Solaufein gets restored after a fight */
-
-COPY ~C#Solaufein/spells/c#grrest.spl~ ~override/c#sorest.spl~ //This is A7REST from Argent's Djinni Companion!
-SAY NAME1 @35
-SAY NAME2 @35
 
 /* Ensures that Solaufein won't leave the party because of reputation */
 

@@ -86,8 +86,8 @@
 @32 = ~Алексия~
 @33 = ~Лидия~
 @34 = ~Отец Алексии~
-@35 = ~(фыркает!)~
-@36 = ~(зевок)~
+//@35 = 
+//@36 = 
 
 @37 = ~Тьма
 (Изменение)
@@ -117,3 +117,27 @@
 Спасбросок: Нет
 
 Это заклинание очерчивает одно или несколько существ бледно-фиолетовым свечением, делая позиции и движения легко различимыми. Очерченных существ легче поразить, ввиду их штрафа к классу брони -1 за уровень до -4. Более того, пляшущие огни также демаскируют невидимых врагов. Они преследуют пораженных даже за пределами начальной области действия заклинания, пока эффект заклинания не закончится или не будет преждевременно прерван заклинанием "Рассеять магию".~
+
+/* c#7thpmm_thingies.tpa */
+@200000 = ~(зевок)~
+@200001 = ~I want you to stay in sight.~
+@200002 = ~Stop staying in sight.~
+@200003 = ~I want you to look out out for traps.~ 
+@200004 = ~Stop looking for traps.~
+@200005 = ~If we encounter enemies...~
+@200006 = ~Leave everything as it is.~
+@200007 = ~I want you to fight enemies you see with magic.~
+@200008 = ~I want you to first prepare yourself and fight enemies with magic if you see them.~
+@200009 = ~I want you to run away from enemies so you don't have to fight.~
+@200010 = ~I want you to fight with melee weapons if you see enemies.~
+@200011 = ~I want you to fight with ranged weapons if you see enemies.~
+@200012 = ~I want you to only defend yourself if attacked.~
+@200013 = ~Do not fight at all, no matter what.~
+@200014 = ~I have no new instructions for fights.~
+@200015 = ~What do you want me to do?~
+@200016 = ~Yes?~
+//@200017   = 
+//@200018   = 
+//@200019   = 
+@200020   = ~I want to give you instructions how to follow me.~
+
