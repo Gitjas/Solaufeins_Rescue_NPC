@@ -2,7 +2,7 @@ BACKUP ~C#Solaufein/backup~
 AUTHOR ~Please post at G3 or Kerzenburgforum, refer to readme.~ 
 
 
-VERSION ~4.2~ 
+VERSION ~5.0~ 
 
 README ~C#Solaufein/readme.solaufeinsrescue.%LANGUAGE%.html~ ~C#Solaufein/readme.solaufeinsrescue.english.html~
 
@@ -58,6 +58,9 @@ APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   END ELSE BEGIN
     OUTER_SPRINT ~RunAwayFromNoLeaveArea~ ~RunAwayFrom~
   END
+
+INCLUDE ~C#Solaufein/lib/extra_regexp_vars.tph~
+OUTER_SPRINT newline ~%WNL%%LNL%%MNL%%TAB% ~
 
 /* all following actions are only processed ONCE for the whole mod, independent of un- and reinstalling of single components */
 
@@ -796,47 +799,8 @@ BUT_ONLY_IF_IT_CHANGES
 
 END //~bg2ee eet~
 
-/* crossmod */
 
 
-/* Eilistraee's Song */
-ACTION_IF FILE_EXISTS_IN_GAME ~ESxMH.dlg~ BEGIN
-  PRINT @90010
-
-
-INCLUDE ~C#Solaufein/lib/extra_regexp_vars.tph~
-OUTER_SPRINT newline ~%WNL%%LNL%%MNL%%TAB% ~
-
-COPY_EXISTING ~AR2401.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		SPRINT textToReplace ~\(!Exists("C#Solaufein")[%newline%]*!InParty("C#Solaufein")\)~
-		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
-		PATCH_IF (num_matches > 0) BEGIN
-			REPLACE_TEXTUALLY ~%textToReplace%~ ~~
-			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
-		END ELSE BEGIN
-			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
-		END
-	END
-BUT_ONLY
-
-// Get state for C#SOLAU %dazu_04% @156 (c#solau.d)
-/* ~(snort) So much for my noble approach. But I understand your answer - I would have done the same, in your place. I will follow you discretely then.~ */
-OUTER_SET dazu_04 = STATE_WHICH_SAYS 156 IN ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ FROM ~c#solau~
-
-// Get state for C#SOLAU %dazu_05% @2703 (c#solau.d)
-/* ~Search for me outside of the elven camp.~ */
-OUTER_SET dazu_05 = STATE_WHICH_SAYS 2703 IN ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ FROM ~c#solau~
-
-COMPILE EVALUATE_BUFFER ~C#Solaufein/crossmod/eilistraeessong_compatibility.d~
-
-/* my Solaufein will talk about Eilistraee's Clearing if he joins at Underdark exit */
-EXTEND_BOTTOM ~C#SOLAU.bcs~   ~C#Solaufein/crossmod/Eilistraeessong_c#solau.baf~ EVALUATE_BUFFER
-
-/* remove extra Solaufein from ES (my Solaufein will take over quest start) */
-EXTEND_TOP ~AR2401.bcs~ ~C#Solaufein/crossmod/eilistraeessong_ar2401.baf~
-
-END //ES
 
 /*
 /////////////////////////////////////
@@ -971,3 +935,6 @@ ACTION_IF (!FILE_EXISTS_IN_GAME ~SED.spl~ AND !FILE_EXISTS_IN_GAME ~SrED.spl~ AN
   COMPILE EVALUATE_BUFFER ~C#Solaufein/Dialogues/detect_drowpc.d~
 	USING ~C#Solaufein/Translations/autotra/%s/c#solatra.tra~ 
 END
+
+
+

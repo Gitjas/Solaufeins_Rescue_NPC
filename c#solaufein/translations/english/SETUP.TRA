@@ -11,7 +11,7 @@
 
 @90008   = ~FinnJO's Subrace mod or Welverin's Subrace mod detected. Installing crossmod content...~
 @90009   = ~Corsymyr's BG:EE Subrace mod detected. Installing crossmod content...~
-@90010   = ~Eilistraee's Song mod detected. Installing crossmod content...~
+//@90010   = ~Eilistraee's Song mod detected. Installing crossmod content...~
 
 /* new for v2.1 */
 @90011   = ~This mod is not compatible with this game.~
